@@ -5020,3 +5020,132 @@ a.admin-list-row { text-decoration: none; color: inherit; }
 .admin-assist-msg { font-size: var(--admin-text-sm); line-height: 1.5; padding: 6px 9px; border-radius: var(--admin-radius-sm); background: var(--admin-surface); border: 1px solid var(--admin-line-soft); }
 .admin-assist-msg--me { background: color-mix(in srgb, var(--admin-accent) 8%, transparent); border: 0; }
 .admin-assist-input { font: inherit; font-size: var(--admin-text-base); padding: 7px 9px; border: 1px solid var(--admin-line); border-radius: var(--admin-radius-sm); }
+
+/* ─── Roadmap / backlog components (three embedded <style> strings folded in, renamed by exact class name) ─ */
+
+/* Client roadmap backlog editor (admin /edges/client-roadmaps) */
+.admin-backlog-editor { --pri-now:var(--color-primary-blue); --pri-next:var(--color-ok-ink); --pri-later:var(--color-grey-600); --pri-park:var(--color-amber-ink); }
+.admin-backlog-editor .admin-backlog-editor-group { margin-bottom:16px; border:1px solid color-mix(in srgb, var(--color-primary-blue) 22%, transparent); border-radius:14px; background:var(--color-bg-primary); overflow:hidden; }
+.admin-backlog-editor .admin-backlog-editor-group.archived { opacity:.55; }
+.admin-backlog-editor .admin-backlog-editor-group.neutral { border-color:var(--admin-line); }
+.admin-backlog-editor .admin-backlog-editor-group-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:0; padding:11px 16px; background:color-mix(in srgb, var(--color-primary-blue) 7%, transparent); cursor:pointer; }
+.admin-backlog-editor .admin-backlog-editor-group.neutral .admin-backlog-editor-group-head { background:var(--color-grey-50); cursor:default; }
+.admin-backlog-editor .admin-backlog-editor-step { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; padding:3px 9px; border-radius:99px; background:var(--color-primary-blue); color:var(--color-bg-primary); }
+.admin-backlog-editor .admin-backlog-editor-group-title { font-weight:700; font-size:15px; }
+.admin-backlog-editor .admin-backlog-editor-count { font-size:12px; font-weight:600; color:var(--color-primary-blue); background:color-mix(in srgb, var(--color-primary-blue) 10%, transparent); border-radius:99px; padding:2px 9px; }
+.admin-backlog-editor .admin-backlog-editor-caret { border:none; background:none; cursor:pointer; padding:0 2px; font-size:12px; color:var(--color-primary-blue); font-family:inherit; transition:transform .15s ease; }
+.admin-backlog-editor .admin-backlog-editor-caret.closed { transform:rotate(-90deg); }
+.admin-backlog-editor .admin-backlog-editor-group-tools { display:flex; gap:8px; align-items:center; margin-left:auto; }
+.admin-backlog-editor .admin-backlog-editor-group-body { padding:12px 16px 14px; }
+.admin-backlog-editor .admin-backlog-editor-group-intro { color:var(--color-text-body); font-size:13px; margin:0 0 12px; }
+.admin-backlog-editor .admin-backlog-editor-item { border:1px solid var(--admin-line); border-radius:12px; padding:13px 15px; margin-bottom:9px; background:var(--color-bg-primary); }
+.admin-backlog-editor .admin-backlog-editor-item.archived { opacity:.55; }
+.admin-backlog-editor .admin-backlog-editor-item-top { display:flex; gap:9px; align-items:flex-start; flex-wrap:wrap; }
+.admin-backlog-editor .admin-backlog-editor-ref { flex:none; font-size:12px; font-weight:700; color:var(--color-primary-blue); background:color-mix(in srgb, var(--color-primary-blue) 10%, transparent); border-radius:6px; padding:3px 7px; }
+.admin-backlog-editor .admin-backlog-editor-title { font-weight:650; font-size:14px; flex:1 1 220px; }
+.admin-backlog-editor .admin-backlog-editor-pills { display:flex; gap:4px; flex-wrap:wrap; }
+.admin-backlog-editor .admin-backlog-editor-pill { font-size:12px; font-weight:600; padding:4px 11px; border-radius:99px; border:1px solid var(--admin-line); background:var(--color-bg-primary); color:var(--color-text-body); cursor:pointer; font-family:inherit; }
+.admin-backlog-editor .admin-backlog-editor-pill:hover { border-color:var(--color-primary-blue); color:var(--color-primary-blue); }
+.admin-backlog-editor .admin-backlog-editor-pill.on-now { background:var(--pri-now); border-color:var(--pri-now); color:var(--color-bg-primary); }
+.admin-backlog-editor .admin-backlog-editor-pill.on-next { background:color-mix(in srgb, var(--color-ok-ink) 15%, transparent); border-color:var(--pri-next); color:var(--pri-next); }
+.admin-backlog-editor .admin-backlog-editor-pill.on-later { background:var(--color-grey-75); border-color:var(--color-grey-300); color:var(--pri-later); }
+.admin-backlog-editor .admin-backlog-editor-pill.on-park { background:var(--color-amber-bg); border-color:var(--color-warn-strong); color:var(--pri-park); }
+.admin-backlog-editor .admin-backlog-editor-body { font-size:13px; margin-top:8px; color:var(--color-primary-dark); }
+.admin-backlog-editor .admin-backlog-editor-body .k { color:var(--color-text-body); font-weight:600; }
+.admin-backlog-editor .admin-backlog-editor-chips { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; align-items:center; }
+.admin-backlog-editor .admin-backlog-editor-chip { font-size:11px; font-weight:600; color:var(--color-text-body); border:1px solid var(--color-bg-secondary); border-radius:99px; padding:2px 9px; }
+.admin-backlog-editor .admin-backlog-editor-chip.tok { color:var(--color-primary-blue); border-color:color-mix(in srgb, var(--color-primary-blue) 15%, transparent); background:color-mix(in srgb, var(--color-primary-blue) 8%, transparent); }
+.admin-backlog-editor .admin-backlog-editor-chip.client { color:var(--color-ok-ink); border-color:color-mix(in srgb, var(--color-ok-ink) 25%, transparent); background:color-mix(in srgb, var(--color-ok-ink) 10%, transparent); }
+.admin-backlog-editor .admin-backlog-editor-actions { display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+.admin-backlog-editor .admin-backlog-editor-link { font-size:12px; font-weight:600; color:var(--color-primary-blue); background:none; border:none; cursor:pointer; padding:0; font-family:inherit; }
+.admin-backlog-editor .admin-backlog-editor-link.danger { color:var(--color-err-ink); }
+.admin-backlog-editor .admin-backlog-editor-link.muted { color:var(--color-text-body); }
+.admin-backlog-editor .admin-backlog-editor-form { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; }
+.admin-backlog-editor .admin-backlog-editor-form .full { grid-column:1 / -1; }
+.admin-backlog-editor .admin-backlog-editor-form label { font-size:12px; font-weight:600; color:var(--color-text-body); display:block; margin-bottom:3px; }
+.admin-backlog-editor .admin-backlog-editor-form input, .admin-backlog-editor .admin-backlog-editor-form textarea, .admin-backlog-editor .admin-backlog-editor-form select { width:100%; font-family:inherit; font-size:13px; padding:7px 9px; border:1px solid var(--admin-line); border-radius:8px; box-sizing:border-box; }
+.admin-backlog-editor .admin-backlog-editor-form textarea { min-height:52px; resize:vertical; }
+.admin-backlog-editor .admin-backlog-editor-proposed { border:1px solid var(--color-warn-strong); background:var(--color-amber-bg); border-radius:12px; padding:14px 16px; margin-bottom:18px; }
+.admin-backlog-editor .admin-backlog-editor-proposed h3 { margin:0 0 8px; font-size:14px; color:var(--color-amber-ink); }
+.admin-backlog-editor .admin-backlog-editor-add { margin-top:6px; }
+.admin-backlog-editor .admin-backlog-editor-err { color:var(--color-err-ink); font-size:12px; margin-top:6px; }
+.admin-backlog-editor .admin-backlog-editor-empty { border:1px dashed var(--admin-faint); border-radius:12px; padding:22px 24px; }
+.admin-backlog-editor .admin-backlog-editor-empty p { margin:0 0 12px; color:var(--color-text-body); font-size:14px; }
+.admin-backlog-editor .admin-backlog-editor-empty .row { display:flex; gap:10px; flex-wrap:wrap; }
+.admin-backlog-editor .admin-backlog-editor-btn { font-family:inherit; font-size:13px; font-weight:600; cursor:pointer; border-radius:99px; padding:8px 16px; border:1px solid var(--color-primary-blue); background:var(--color-primary-blue); color:var(--color-bg-primary); }
+.admin-backlog-editor .admin-backlog-editor-btn.ghost { background:var(--color-bg-primary); color:var(--color-primary-blue); }
+.admin-backlog-editor .admin-backlog-editor-newgroup { border:1px dashed var(--admin-faint); border-radius:12px; padding:14px 16px; margin-bottom:20px; }
+@media (max-width:640px){ .admin-backlog-editor .admin-backlog-editor-form { grid-template-columns:1fr; } }
+
+/* Client roadmap backlog, portal view (/portal/roadmap) */
+.admin-backlog-portal { --pri-now:var(--color-primary-blue); --pri-next:var(--color-ok-ink); --pri-later:var(--color-grey-600); --pri-park:var(--color-amber-ink); max-width: 880px; }
+.admin-backlog-portal .admin-backlog-portal-intro { background:color-mix(in srgb, var(--color-primary-blue) 8%, transparent); border-radius:10px; padding:14px 16px; font-size:14px; margin:0 0 16px; }
+.admin-backlog-portal .admin-backlog-portal-counts { display:flex; gap:6px; flex-wrap:wrap; margin:0 0 18px; }
+.admin-backlog-portal .admin-backlog-portal-count { font-size:12px; font-weight:600; color:var(--color-text-body); padding:4px 11px; border-radius:99px; background:var(--color-grey-75); }
+.admin-backlog-portal .admin-backlog-portal-group { margin-bottom:22px; }
+.admin-backlog-portal .admin-backlog-portal-group-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:0 0 4px; }
+.admin-backlog-portal .admin-backlog-portal-step { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; padding:3px 9px; border-radius:99px; background:color-mix(in srgb, var(--color-primary-blue) 10%, transparent); color:var(--color-primary-blue); }
+.admin-backlog-portal .admin-backlog-portal-group-title { font-weight:700; font-size:15px; }
+.admin-backlog-portal .admin-backlog-portal-group-intro { color:var(--color-text-body); font-size:13px; margin:2px 0 12px; }
+.admin-backlog-portal .admin-backlog-portal-item { border:1px solid var(--admin-line); border-radius:12px; padding:13px 15px 13px 12px; margin-bottom:9px; background:var(--color-bg-primary); display:flex; gap:10px; align-items:flex-start; }
+.admin-backlog-portal .admin-backlog-portal-item.dragging { box-shadow:0 8px 24px color-mix(in srgb, var(--color-primary-dark) 14%, transparent); border-color:var(--color-primary-blue); }
+.admin-backlog-portal .admin-backlog-portal-handle { flex:none; cursor:grab; color:var(--color-grey-300); font-size:16px; line-height:1.2; padding:2px 2px 0; user-select:none; touch-action:none; }
+.admin-backlog-portal .admin-backlog-portal-handle:hover { color:var(--color-primary-blue); }
+.admin-backlog-portal .admin-backlog-portal-main { flex:1; min-width:0; }
+.admin-backlog-portal .admin-backlog-portal-item-top { display:flex; gap:9px; align-items:flex-start; flex-wrap:wrap; }
+.admin-backlog-portal .admin-backlog-portal-ref { flex:none; font-size:12px; font-weight:700; color:var(--color-primary-blue); background:color-mix(in srgb, var(--color-primary-blue) 10%, transparent); border-radius:6px; padding:3px 7px; }
+.admin-backlog-portal .admin-backlog-portal-title { font-weight:650; font-size:14px; flex:1 1 220px; }
+.admin-backlog-portal .admin-backlog-portal-pills { display:flex; gap:4px; flex-wrap:wrap; }
+.admin-backlog-portal .admin-backlog-portal-pill { font-size:12px; font-weight:600; padding:4px 11px; border-radius:99px; border:1px solid var(--admin-line); background:var(--color-bg-primary); color:var(--color-text-body); cursor:pointer; font-family:inherit; }
+.admin-backlog-portal .admin-backlog-portal-pill:hover { border-color:var(--color-primary-blue); color:var(--color-primary-blue); }
+.admin-backlog-portal .admin-backlog-portal-pill.on-now { background:var(--pri-now); border-color:var(--pri-now); color:var(--color-bg-primary); }
+.admin-backlog-portal .admin-backlog-portal-pill.on-next { background:color-mix(in srgb, var(--color-ok-ink) 15%, transparent); border-color:var(--pri-next); color:var(--pri-next); }
+.admin-backlog-portal .admin-backlog-portal-pill.on-later { background:var(--color-grey-75); border-color:var(--color-grey-300); color:var(--pri-later); }
+.admin-backlog-portal .admin-backlog-portal-pill.on-park { background:var(--color-amber-bg); border-color:var(--color-warn-strong); color:var(--pri-park); }
+.admin-backlog-portal .admin-backlog-portal-body { font-size:13px; margin-top:8px; color:var(--color-primary-dark); }
+.admin-backlog-portal .admin-backlog-portal-body .k { color:var(--color-text-body); font-weight:600; }
+.admin-backlog-portal .admin-backlog-portal-chips { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; align-items:center; }
+.admin-backlog-portal .admin-backlog-portal-chip { font-size:11px; font-weight:600; color:var(--color-text-body); border:1px solid var(--color-bg-secondary); border-radius:99px; padding:2px 9px; }
+.admin-backlog-portal .admin-backlog-portal-chip.tok { color:var(--color-primary-blue); border-color:color-mix(in srgb, var(--color-primary-blue) 15%, transparent); background:color-mix(in srgb, var(--color-primary-blue) 8%, transparent); }
+.admin-backlog-portal .admin-backlog-portal-chip.mine { color:var(--color-ok-ink); border-color:color-mix(in srgb, var(--color-ok-ink) 25%, transparent); background:color-mix(in srgb, var(--color-ok-ink) 10%, transparent); }
+.admin-backlog-portal .admin-backlog-portal-chip.proposed { color:var(--color-amber-ink); border-color:var(--color-warn-strong); background:var(--color-amber-bg); }
+.admin-backlog-portal .admin-backlog-portal-hint { font-size:11px; color:var(--color-grey-400); margin-top:6px; }
+.admin-backlog-portal .admin-backlog-portal-propose { margin-top:8px; border:1px dashed var(--admin-faint); border-radius:12px; padding:12px 14px; }
+.admin-backlog-portal .admin-backlog-portal-propose input, .admin-backlog-portal .admin-backlog-portal-propose textarea, .admin-backlog-portal .admin-backlog-portal-propose select { width:100%; font-family:inherit; font-size:13px; padding:7px 9px; border:1px solid var(--admin-line); border-radius:8px; box-sizing:border-box; margin-bottom:8px; }
+.admin-backlog-portal .admin-backlog-portal-btn { font-family:inherit; font-size:13px; font-weight:600; cursor:pointer; border-radius:99px; padding:8px 16px; border:1px solid var(--color-primary-blue); background:var(--color-primary-blue); color:var(--color-bg-primary); }
+.admin-backlog-portal .admin-backlog-portal-btn.ghost { background:var(--color-bg-primary); color:var(--color-primary-blue); }
+.admin-backlog-portal .admin-backlog-portal-link { font-size:12px; font-weight:600; color:var(--color-primary-blue); background:none; border:none; cursor:pointer; padding:0; font-family:inherit; }
+.admin-backlog-portal .admin-backlog-portal-err { color:var(--color-err-ink); font-size:12px; margin-top:6px; }
+/* Touch: the reorder handle and the four priority pills are the whole point of
+   this page for account admins, and both were ~20-25px targets. Grow them, and
+   lift the propose-form fields to 16px so iOS does not zoom on focus. Desktop
+   keeps its denser sizing. */
+@media (pointer: coarse) {
+  .admin-backlog-portal .admin-backlog-portal-handle { padding:11px 12px; font-size:20px; }
+  .admin-backlog-portal .admin-backlog-portal-pills { gap:8px; }
+  .admin-backlog-portal .admin-backlog-portal-pill { padding:9px 14px; }
+  .admin-backlog-portal .admin-backlog-portal-propose input, .admin-backlog-portal .admin-backlog-portal-propose textarea, .admin-backlog-portal .admin-backlog-portal-propose select { font-size:16px; }
+}
+
+/* Team client roadmap (/team/clients/[id]/roadmap and the AI Program roadmap tab) */
+.admin-roadmap { --pri-now:var(--color-primary-blue); --pri-next:var(--color-ok-ink); --pri-later:var(--color-grey-600); --pri-park:var(--color-amber-ink); max-width: 880px; }
+.admin-roadmap .admin-roadmap-group { margin-bottom: 22px; }
+.admin-roadmap .admin-roadmap-group-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:0 0 4px; }
+.admin-roadmap .admin-roadmap-step { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; padding:3px 9px; border-radius:99px; background:color-mix(in srgb, var(--color-primary-blue) 10%, transparent); color:var(--color-primary-blue); }
+.admin-roadmap .admin-roadmap-group-title { font-weight:700; font-size:15px; }
+.admin-roadmap .admin-roadmap-group-intro { color:var(--color-text-body); font-size:13px; margin:2px 0 12px; }
+.admin-roadmap .admin-roadmap-item { border:1px solid var(--admin-line); border-radius:12px; padding:13px 15px; margin-bottom:9px; background:var(--color-bg-primary); }
+.admin-roadmap .admin-roadmap-item-top { display:flex; gap:9px; align-items:flex-start; flex-wrap:wrap; }
+.admin-roadmap .admin-roadmap-ref { flex:none; font-size:12px; font-weight:700; color:var(--color-primary-blue); background:color-mix(in srgb, var(--color-primary-blue) 10%, transparent); border-radius:6px; padding:3px 7px; }
+.admin-roadmap .admin-roadmap-title { font-weight:650; font-size:14px; flex:1 1 220px; }
+.admin-roadmap .admin-roadmap-pri { flex:none; font-size:12px; font-weight:700; padding:4px 11px; border-radius:99px; }
+.admin-roadmap .admin-roadmap-pri.now { background:var(--pri-now); color:var(--color-bg-primary); }
+.admin-roadmap .admin-roadmap-pri.next { background:color-mix(in srgb, var(--color-ok-ink) 15%, transparent); color:var(--pri-next); }
+.admin-roadmap .admin-roadmap-pri.later { background:var(--color-grey-75); color:var(--pri-later); }
+.admin-roadmap .admin-roadmap-pri.park { background:var(--color-amber-bg); color:var(--pri-park); }
+.admin-roadmap .admin-roadmap-body { font-size:13px; margin-top:8px; color:var(--color-primary-dark); }
+.admin-roadmap .admin-roadmap-body .k { color:var(--color-text-body); font-weight:600; }
+.admin-roadmap .admin-roadmap-chips { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; align-items:center; }
+.admin-roadmap .admin-roadmap-chip { font-size:11px; font-weight:600; color:var(--color-text-body); border:1px solid var(--color-bg-secondary); border-radius:99px; padding:2px 9px; }
+.admin-roadmap .admin-roadmap-chip.tok { color:var(--color-primary-blue); border-color:color-mix(in srgb, var(--color-primary-blue) 15%, transparent); background:color-mix(in srgb, var(--color-primary-blue) 8%, transparent); }
+.admin-roadmap .admin-roadmap-chip.client { color:var(--color-ok-ink); border-color:color-mix(in srgb, var(--color-ok-ink) 25%, transparent); background:color-mix(in srgb, var(--color-ok-ink) 10%, transparent); }
