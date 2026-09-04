@@ -1,4 +1,5 @@
 import { Resend } from 'resend'
+import { PALETTE } from '@/lib/design/palette'
 import { companyOs } from '@/lib/supabase'
 import { getOrCreatePerson } from '@/lib/company-os'
 import { promotePersonToLead } from '@/lib/lifecycle'
@@ -106,11 +107,11 @@ export async function POST(req: NextRequest) {
       html: `
         <h2>New AI Audit Request</h2>
         <table style="border-collapse:collapse;width:100%;font-family:sans-serif;font-size:15px">
-          <tr><td style="padding:8px 16px 8px 0;color:#666;width:140px">Name</td><td style="padding:8px 0"><strong>${name}</strong></td></tr>
-          <tr><td style="padding:8px 16px 8px 0;color:#666">Email</td><td style="padding:8px 0"><a href="mailto:${email}">${email}</a></td></tr>
-          <tr><td style="padding:8px 16px 8px 0;color:#666">Company</td><td style="padding:8px 0">${company}</td></tr>
-          <tr><td style="padding:8px 16px 8px 0;color:#666">Team size</td><td style="padding:8px 0">${teamSize || '—'}</td></tr>
-          <tr><td style="padding:8px 16px 8px 0;color:#666;vertical-align:top">Message</td><td style="padding:8px 0">${message ? message.replace(/\n/g, '<br>') : '—'}</td></tr>
+          <tr><td style="padding:8px 16px 8px 0;color:${PALETTE.greyMid};width:140px">Name</td><td style="padding:8px 0"><strong>${name}</strong></td></tr>
+          <tr><td style="padding:8px 16px 8px 0;color:${PALETTE.greyMid}">Email</td><td style="padding:8px 0"><a href="mailto:${email}">${email}</a></td></tr>
+          <tr><td style="padding:8px 16px 8px 0;color:${PALETTE.greyMid}">Company</td><td style="padding:8px 0">${company}</td></tr>
+          <tr><td style="padding:8px 16px 8px 0;color:${PALETTE.greyMid}">Team size</td><td style="padding:8px 0">${teamSize || '—'}</td></tr>
+          <tr><td style="padding:8px 16px 8px 0;color:${PALETTE.greyMid};vertical-align:top">Message</td><td style="padding:8px 0">${message ? message.replace(/\n/g, '<br>') : '—'}</td></tr>
         </table>
       `,
     })

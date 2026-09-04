@@ -1,4 +1,5 @@
 import { Resend } from 'resend'
+import { PALETTE } from '@/lib/design/palette'
 import { supabase, companyOs } from '@/lib/supabase'
 import {
   getOrCreatePerson,
@@ -151,7 +152,7 @@ export async function POST(req: NextRequest) {
           .filter((x) => x.a)
           .map(
             (x) =>
-              `<tr><td style="padding:6px 16px 6px 0;color:#666;vertical-align:top">Q: ${escapeHtml(x.q)}</td><td style="white-space:pre-wrap">${escapeHtml(x.a)}</td></tr>`,
+              `<tr><td style="padding:6px 16px 6px 0;color:${PALETTE.greyMid};vertical-align:top">Q: ${escapeHtml(x.q)}</td><td style="white-space:pre-wrap">${escapeHtml(x.a)}</td></tr>`,
           )
           .join('')
         const resend = new Resend(apiKey)
@@ -163,15 +164,15 @@ export async function POST(req: NextRequest) {
           html: `
             <h2>New job application</h2>
             <table style="border-collapse:collapse;font-family:sans-serif;font-size:15px">
-              <tr><td style="padding:6px 16px 6px 0;color:#666">Role</td><td><strong>${escapeHtml(job_title)}</strong> (${escapeHtml(job_slug)})</td></tr>
-              <tr><td style="padding:6px 16px 6px 0;color:#666">Applicant</td><td>${escapeHtml(full_name)}</td></tr>
-              <tr><td style="padding:6px 16px 6px 0;color:#666">Email</td><td><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td></tr>
-              <tr><td style="padding:6px 16px 6px 0;color:#666">Phone</td><td>${phone ? escapeHtml(phone) : '—'}</td></tr>
-              <tr><td style="padding:6px 16px 6px 0;color:#666">LinkedIn</td><td>${linkedin ? `<a href="${escapeHtml(linkedin)}">${escapeHtml(linkedin)}</a>` : '—'}</td></tr>
-              <tr><td style="padding:6px 16px 6px 0;color:#666">Resume</td><td>${signed?.signedUrl ? `<a href="${signed.signedUrl}">Download (7-day link)</a>` : escapeHtml(storagePath)}</td></tr>
-              ${cover_letter ? `<tr><td style="padding:6px 16px 6px 0;color:#666;vertical-align:top">Cover letter</td><td style="white-space:pre-wrap">${escapeHtml(cover_letter)}</td></tr>` : ''}
+              <tr><td style="padding:6px 16px 6px 0;color:${PALETTE.greyMid}">Role</td><td><strong>${escapeHtml(job_title)}</strong> (${escapeHtml(job_slug)})</td></tr>
+              <tr><td style="padding:6px 16px 6px 0;color:${PALETTE.greyMid}">Applicant</td><td>${escapeHtml(full_name)}</td></tr>
+              <tr><td style="padding:6px 16px 6px 0;color:${PALETTE.greyMid}">Email</td><td><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td></tr>
+              <tr><td style="padding:6px 16px 6px 0;color:${PALETTE.greyMid}">Phone</td><td>${phone ? escapeHtml(phone) : '—'}</td></tr>
+              <tr><td style="padding:6px 16px 6px 0;color:${PALETTE.greyMid}">LinkedIn</td><td>${linkedin ? `<a href="${escapeHtml(linkedin)}">${escapeHtml(linkedin)}</a>` : '—'}</td></tr>
+              <tr><td style="padding:6px 16px 6px 0;color:${PALETTE.greyMid}">Resume</td><td>${signed?.signedUrl ? `<a href="${signed.signedUrl}">Download (7-day link)</a>` : escapeHtml(storagePath)}</td></tr>
+              ${cover_letter ? `<tr><td style="padding:6px 16px 6px 0;color:${PALETTE.greyMid};vertical-align:top">Cover letter</td><td style="white-space:pre-wrap">${escapeHtml(cover_letter)}</td></tr>` : ''}
               ${answersHtml}
-              <tr><td style="padding:6px 16px 6px 0;color:#666">Application ID</td><td><code>${application.id}</code></td></tr>
+              <tr><td style="padding:6px 16px 6px 0;color:${PALETTE.greyMid}">Application ID</td><td><code>${application.id}</code></td></tr>
             </table>
           `,
         })

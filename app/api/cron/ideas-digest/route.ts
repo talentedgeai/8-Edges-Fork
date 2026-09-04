@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { PALETTE } from "@/lib/design/palette"
 import { companyOs } from "@/lib/supabase";
 import { sendTransactionalEmail } from "@/lib/email";
 import { notifyOps } from "@/lib/lark";
@@ -71,7 +72,7 @@ export async function GET(req: Request) {
       .map(
         (r) =>
           `<li><strong>${escapeHtml(r.title)}</strong> — ${escapeHtml(submitter(r))}` +
-          `${r.takeaway ? `<br/><span style="color:#666">${escapeHtml(r.takeaway)}</span>` : ""}</li>`,
+          `${r.takeaway ? `<br/><span style="color:${PALETTE.greyMid}">${escapeHtml(r.takeaway)}</span>` : ""}</li>`,
       )
       .join("")}</ul>`;
 
