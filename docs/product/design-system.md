@@ -50,13 +50,18 @@ definitions themselves.
   genuinely new component is needed, add it to `admin.css` under the
   Components section and to `/admin/patterns` in the same PR.
 
-## Migration status: complete (4 Sep 2026)
+## Migration status: complete, including the design-debt backlog (4 Sep 2026)
 
-Every OS surface now runs on the one system. `app/admin/admin.css` carries two
-namespaces only: `.admin-*` (components) and `.u-*` (layout utilities). The 34
-per-feature prefixes are gone; each was renamed by exact class name into
-`.admin-<component>-*` and its consumers updated. Before and after numbers,
-and the measuring commands, are in `docs/product/design-system-migration.md`.
+Every surface runs on the one system. Stylesheets carry three namespaces
+only: `.admin-*` (`admin.css`), `.site-*` (`globals.css`, `workflows.css`,
+`eight-edges-app.css`, `plans.css`) and `.u-*` (`utilities.css`); the only
+exceptions are ten content-bound `post-*` / `btn-primary` classes that live
+inside stored article HTML. No component carries a style block, no file
+outside `tokens.css` / `palette.json` holds a raw colour, the type and
+spacing scales are clean, and every remaining inline style is data-driven
+and marked `layout-ok`. The audit, the 13-item backlog, the PR per item and
+the before/after numbers are in `docs/product/design-debt.md` (this repo,
+`ds/debt-base2`); the upstream history follows.
 
 | PR | Surface |
 |---|---|

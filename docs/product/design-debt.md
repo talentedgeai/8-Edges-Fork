@@ -184,8 +184,54 @@ One PR per item, into `ds/debt-base2`. The PR column fills in as they merge.
 | 10 | Inline styles: team intranet and client portal | `app/team`, `app/portal` | 35 unmarked | Converters, then `admin-card-foot`, `admin-overview-text`, `admin-details-summary` | #26 |
 | 11 | Inline styles: public pages | home, case studies, Vietnam experience, flight info, error pages | 51 unmarked (2 styled) | `site-inline.pl`, then `site-*` classes in `globals.css` | #27 |
 | 12 | Overlapping component classes | `admin.css` | 3 pairs, 11 rules, 5 consumers | Campaign progress on `admin-meter`; avatar button on `admin-avatar`; `admin-tag-xs` on `admin-tag-pill` | #28 |
-| 13 | Colour columns in the database | `company_os.tags.color`, `company_os.epics.color` | no rows to inspect | Writers verified on token lists; recorded here; nothing to migrate in this fork | |
+| 13 | Colour columns in the database | `company_os.tags.color`, `company_os.epics.color` | no rows to inspect | Writers verified on token lists; recorded here; nothing to migrate in this fork | #29 |
 
-## After
+## After (close-out, 4 Sep 2026)
 
-Filled in by the close-out PR.
+Measured on `ds/debt-base2` after backlog item 12, with the same commands.
+
+| Measure | Before (`67a447bb`) | After |
+|---|---|---|
+| `style={{` blocks in `app/`, `components/`, `lib/` | 206 (93 files) | 69 (39 files) |
+| Guardrail view: styled / layout-only | 15 / 160 | 13 / 34 |
+| Inline styles without a `layout-ok` marker | 145 | **0** |
+| Styled-inline ceiling | 26 | 13 (the real count; all runtime token variables) |
+| Inline-layout ratchet baseline | 6 files stale | empty (0 files) |
+| Design ratchet: inline styles | 206 in 93 files | 78 in 44 files, every one `layout-ok` |
+| Design ratchet: page-prefixed selectors in `globals.css` | 319 | 44, all `post-*` (content-bound) |
+| Prefixes in `globals.css` | 125 + `site-` | `site-` (1192 rules) plus the 10 content-bound `post-*` / `btn-primary` classes |
+| Prefixes in `workflows.css` / `eight-edges-app.css` / `plans.css` | `wf-` `app-` `plib-` `rnw-` / `e8a-` / `brief-` | `site-` only |
+| Prefixes in `admin.css` / `utilities.css` | `admin-` / `u-` | `admin-` (1502 rules, 1022 selectors) / `u-` |
+| Raw colours outside `tokens.css` / `palette.json` | 31 (6 API email routes) | **0** |
+| Painters (OG, email) not reading the palette module | 6 | **0** |
+| Values off the type / spacing scales | 1 / 41 | **0 / 0** |
+| Page-level `maxWidth` off the sanctioned widths | 0 | 0 |
+| Components with their own `<style>` block | 0 | 0 |
+| Private colour aliases | 0 | 0 |
+| Overlapping component classes | 3 pairs | **0** (9 rules removed, 6 modifiers added) |
+| CI | none (Actions disabled, no `.github/`) | `design-guardrails.yml`: check-tokens, check-assets, ratchet, crons on every PR |
+
+Class renames were done by exact class name generated from each
+stylesheet, never by prefix: 697 in `globals.css`, 252 across the three
+private stylesheets, consumers updated in 114 files. After every later PR
+the tree was swept for the old names; the sweep after item 10 found eight
+files building class names in template literals (`wf-actor-${…}`,
+`dept-${…}`) that an exact-name rewrite cannot see, fixed in item 11.
+
+**Exceptions, recorded on purpose.** `post-body`, `post-body-inner`,
+`post-content`, `post-divider`, `post-figure`, `fig-source`, `fig-note`,
+`faq-item`, `btn-primary` and the `idea-in-brief` block stay unrenamed:
+they can appear inside article HTML stored in the database (ingested from
+`blog/`, allowed by `lib/post-html-schema.ts`), so renaming them is a
+content migration this fork cannot run. They are the 44 page-prefixed
+rules the ratchet still counts, and its baseline holds them there.
+
+**What stays inline, and why.** 78 `style={{}}` blocks remain, every one
+data-driven and marked: progress and share widths, runtime stage / epic /
+channel / series colours (token variables), the role-tag `--tag` variable,
+slider offsets, prop-driven aspect ratios and sizes, the pattern library's
+type-ramp demo and swatch chips, hidden inputs.
+
+**Screenshots against production.** Not possible: this fork has no Vercel
+project or database. Every PR was built locally with `next build` and
+passed the four CI jobs.
