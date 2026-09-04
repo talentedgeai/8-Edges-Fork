@@ -2871,13 +2871,13 @@ a.admin-chip:hover { border-color: var(--admin-accent); color: var(--admin-accen
      transparent centered ::after. .admin-input-eye is already position:absolute
      (it contains its own ::after), the rest need a positioning context. */
   .admin-search-clear,
-  .admin-avatarbtn,
+  .admin-avatar--btn,
   .admin-lead-pin-btn,
   .admin-team-chip-x,
   .admin-phototag-x { position: relative; }
   .admin-search-clear::after,
   .admin-input-eye::after,
-  .admin-avatarbtn::after,
+  .admin-avatar--btn::after,
   .admin-lead-pin-btn::after,
   .admin-team-chip-x::after,
   .admin-phototag-x::after {
