@@ -41,11 +41,11 @@ export default function InvoiceSyncWorkflowPage() {
       {/* The flow */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">The flow</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The flow</span>
+          <h2 className="site-section-title site-section-title--sm">
             Four steps, once a week, unattended
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             This is the automation behind our <Link href="/workflows/monthly-invoicing">Monthly Invoicing</Link>{' '}
             cadence: humans run the billing rhythm, the sync keeps every system telling the same story.
           </p>
@@ -64,10 +64,10 @@ export default function InvoiceSyncWorkflowPage() {
       {/* Step detail */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             Step by step
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             How each step works
           </h2>
           <StepCards

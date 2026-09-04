@@ -25,57 +25,57 @@ const STEPS = [
 
 export default function ReserveSaigonPrivatePage() {
   return (
-    <main className="reserve-page">
+    <main className="site-reserve-page">
       {/* Hero band */}
-      <section className="reserve-hero">
-        <div className="reserve-container">
-          <span className="section-label">Saigon private retreat</span>
-          <h1 className="reserve-title">Reserve your retreat</h1>
-          <p className="reserve-subtitle">
+      <section className="site-reserve-hero">
+        <div className="site-reserve-container">
+          <span className="site-section-label">Saigon private retreat</span>
+          <h1 className="site-reserve-title">Reserve your retreat</h1>
+          <p className="site-reserve-subtitle">
             Pick your days and team. The total updates live, and your dates lock in the moment you
             pay. Changed your mind?{" "}
-            <Link href="/saigon-private" className="reserve-inline-link">Back to the details</Link>.
+            <Link href="/saigon-private" className="site-reserve-inline-link">Back to the details</Link>.
           </p>
         </div>
       </section>
 
       {/* Body: recap + checkout */}
-      <section className="reserve-body">
-        <div className="reserve-container reserve-grid">
+      <section className="site-reserve-body">
+        <div className="site-reserve-container site-reserve-grid">
           {/* Left: what you get + trust + what happens next */}
-          <div className="reserve-recap">
+          <div className="site-reserve-recap">
             <div>
-              <span className="reserve-recap-label">What you get</span>
-              <ul className="reserve-incl">
+              <span className="site-reserve-recap-label">What you get</span>
+              <ul className="site-reserve-incl">
                 {INCLUDED.map((it) => (
                   <li key={it.head}>
-                    <span className="reserve-incl-check">✓</span>
+                    <span className="site-reserve-incl-check">✓</span>
                     <span>
-                      <span className="reserve-incl-head">{it.head}</span>
-                      <span className="reserve-incl-sub">{it.sub}</span>
+                      <span className="site-reserve-incl-head">{it.head}</span>
+                      <span className="site-reserve-incl-sub">{it.sub}</span>
                     </span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="reserve-risk">
-              <p className="reserve-risk-head">Book with confidence</p>
-              <p className="reserve-risk-body">
+            <div className="site-reserve-risk">
+              <p className="site-reserve-risk-head">Book with confidence</p>
+              <p className="site-reserve-risk-body">
                 Full refund up to 30 days before your start date. Inside 30 days, reschedule to any
                 date in the next 6 months at no charge. Secure checkout via Stripe.
               </p>
             </div>
 
             <div>
-              <span className="reserve-recap-label">What happens next</span>
-              <ol className="reserve-steps">
+              <span className="site-reserve-recap-label">What happens next</span>
+              <ol className="site-reserve-steps">
                 {STEPS.map((s) => (
                   <li key={s.n}>
-                    <span className="reserve-step-num">{s.n}</span>
+                    <span className="site-reserve-step-num">{s.n}</span>
                     <span>
-                      <span className="reserve-incl-head">{s.head}</span>
-                      <span className="reserve-incl-sub">{s.sub}</span>
+                      <span className="site-reserve-incl-head">{s.head}</span>
+                      <span className="site-reserve-incl-sub">{s.sub}</span>
                     </span>
                   </li>
                 ))}
@@ -84,7 +84,7 @@ export default function ReserveSaigonPrivatePage() {
           </div>
 
           {/* Right: the form (carries its own live total + Reserve button) */}
-          <aside className="reserve-form-col">
+          <aside className="site-reserve-form-col">
             <PrivateSessionReserve />
           </aside>
         </div>

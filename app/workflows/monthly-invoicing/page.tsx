@@ -41,11 +41,11 @@ export default function MonthlyInvoicingWorkflowPage() {
       {/* The billing cycle timeline */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">The cycle</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The cycle</span>
+          <h2 className="site-section-title site-section-title--sm">
             One month, four dates
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             The whole workflow hangs on a fixed calendar. Same dates every month, no judgment calls.
           </p>
           <div className="wf-timeline">
@@ -98,10 +98,10 @@ export default function MonthlyInvoicingWorkflowPage() {
       {/* Step detail */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             Step by step
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             The five steps
           </h2>
           <StepCards

@@ -41,11 +41,11 @@ export default function CertificationWorkflowPage() {
       {/* The flow */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">The flow</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The flow</span>
+          <h2 className="site-section-title site-section-title--sm">
             Five steps, repeated per mission
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             The AI Officer program runs as six missions, each ending in a real artifact. The loop below runs inside
             every one of them, and each artifact becomes raw material for the next mission.
           </p>
@@ -65,10 +65,10 @@ export default function CertificationWorkflowPage() {
       {/* Step detail */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             Step by step
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             How the loop works
           </h2>
           <StepCards

@@ -40,11 +40,11 @@ export default function PeoplePage() {
         lead="Not a hotel. A small team who built this for you, and learned your name before you arrived."
       />
 
-      <div className="xp-people-grid">
+      <div className="site-xp-people-grid">
         {MAIN.map((p) => (
-          <Link key={p.href} href={p.href} className="xp-person-card">
+          <Link key={p.href} href={p.href} className="site-xp-person-card">
             <PlaceholderImage label={`Photo: ${p.name}`} aspect="4 / 5" style={{ marginBottom: 16 }} />
-            <div className="xp-person-top">
+            <div className="site-xp-person-top">
               <h2>{p.name}</h2>
               <span className="ti">{p.title}</span>
             </div>
@@ -59,12 +59,12 @@ export default function PeoplePage() {
 
       <div style={{ marginTop: 56 }}>
         <h2
-          className="h-section"
+          className="site-h-section"
           style={{ fontSize: "clamp(24px, 3vw, 34px)", marginBottom: 8 }}
         >
           And the team
         </h2>
-        <ul className="xp-team-list">
+        <ul className="site-xp-team-list">
           <li>
             <span className="nm">Tam</span>, who has cared for this home for eighteen years.
           </li>

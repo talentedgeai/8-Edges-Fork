@@ -248,7 +248,7 @@ export function TeamChatWidget() {
           <aside className="admin-drawer admin-chat-panel" role="dialog" aria-label="Team assistant">
             <div className="admin-drawer-head">
               <div>
-                <div className="admin-drawer-eyebrow brand-label">8 Edges Team</div>
+                <div className="admin-drawer-eyebrow site-brand-label">8 Edges Team</div>
                 <h2 className="admin-drawer-title">Assistant</h2>
               </div>
               <div className="admin-chat-head-actions">

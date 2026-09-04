@@ -26,7 +26,7 @@ export default function TheWeekPage() {
         style={{ marginTop: 40 }}
       />
 
-      <div className="xp-blocks">
+      <div className="site-xp-blocks">
         <Block heading="The working day">
           <p>
             9am to 6pm, every day. Focused, hands-on work on AI and infinite leverage

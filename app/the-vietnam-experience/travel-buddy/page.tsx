@@ -24,7 +24,7 @@ export default function TravelBuddyPage() {
         style={{ marginTop: 40 }}
       />
 
-      <div className="xp-blocks">
+      <div className="site-xp-blocks">
         <Block heading="What it does">
           <p>
             Where to eat, how to get there, and what is worth your time. Travel Buddy

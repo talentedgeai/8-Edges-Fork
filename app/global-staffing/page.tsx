@@ -94,17 +94,17 @@ export default function GlobalStaffingPage() {
   return (
     <main>
       {/* HERO */}
-      <section className="svc-hero">
-        <div className="svc-hero-bg" />
-        <div className="svc-hero-grid" />
+      <section className="site-svc-hero">
+        <div className="site-svc-hero-bg" />
+        <div className="site-svc-hero-grid" />
         <div className="container">
-          <div className="svc-hero-inner">
-            <div className="svc-hero-text">
+          <div className="site-svc-hero-inner">
+            <div className="site-svc-hero-text">
               <h1>Hire AI-Trained Engineers in Vietnam. 75% Less Than US Rates, Deployed in 3 Weeks.</h1>
-              <p className="svc-hero-sub">Stop waiting six months to hire. Every engineer we place is trained in our AI Officer methodology before day one, so they ship work, not learn the basics.</p>
-              <a href="/contact" className="btn btn-contact">Book a Conversation →</a>
+              <p className="site-svc-hero-sub">Stop waiting six months to hire. Every engineer we place is trained in our AI Officer methodology before day one, so they ship work, not learn the basics.</p>
+              <a href="/contact" className="btn site-btn-contact">Book a Conversation →</a>
             </div>
-            <div className="svc-hero-img">
+            <div className="site-svc-hero-img">
               <Image src="/services/images/services-global-staffing-hero.jpeg" alt="Global Staffing" width={640} height={480} priority />
             </div>
           </div>
@@ -115,29 +115,29 @@ export default function GlobalStaffingPage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">Why Edge8</span>
-            <h2 className="section-title">AI-Trained Talent at a Fraction of the Cost</h2>
+            <span className="site-section-label">Why Edge8</span>
+            <h2 className="site-section-title">AI-Trained Talent at a Fraction of the Cost</h2>
           </div>
-          <div className="who-grid-4 u-mt-8">
-            <div className="who-card-4 reveal">
+          <div className="site-who-grid-4 u-mt-8">
+            <div className="site-who-card-4 reveal">
               <div className="site-stat u-mb-2">75%</div>
-              <div className="who-card-title">Cost Savings</div>
-              <p className="who-card-desc">Save up to 75% compared to equivalent US or European talent, without sacrificing quality.</p>
+              <div className="site-who-card-title">Cost Savings</div>
+              <p className="site-who-card-desc">Save up to 75% compared to equivalent US or European talent, without sacrificing quality.</p>
             </div>
-            <div className="who-card-4 reveal">
+            <div className="site-who-card-4 reveal">
               <div className="site-stat u-mb-2">AI</div>
-              <div className="who-card-title">AI-Trained</div>
-              <p className="who-card-desc">Every team member is trained in our AI Officer methodology before they join your team.</p>
+              <div className="site-who-card-title">AI-Trained</div>
+              <p className="site-who-card-desc">Every team member is trained in our AI Officer methodology before they join your team.</p>
             </div>
-            <div className="who-card-4 reveal">
+            <div className="site-who-card-4 reveal">
               <div className="site-stat u-mb-2">Weeks</div>
-              <div className="who-card-title">Start Fast</div>
-              <p className="who-card-desc">Onboard your first team member in 2–4 weeks. No 6-month hiring cycles.</p>
+              <div className="site-who-card-title">Start Fast</div>
+              <p className="site-who-card-desc">Onboard your first team member in 2–4 weeks. No 6-month hiring cycles.</p>
             </div>
-            <div className="who-card-4 reveal">
+            <div className="site-who-card-4 reveal">
               <div className="site-stat u-mb-2">Flex</div>
-              <div className="who-card-title">Flexible Models</div>
-              <p className="who-card-desc">Part-time, full-time, or project-based. Scale your team up or down as your needs evolve.</p>
+              <div className="site-who-card-title">Flexible Models</div>
+              <p className="site-who-card-desc">Part-time, full-time, or project-based. Scale your team up or down as your needs evolve.</p>
             </div>
           </div>
         </div>
@@ -147,14 +147,14 @@ export default function GlobalStaffingPage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">The Roles</span>
-            <h2 className="section-title">Specialized AI-Empowered Talent</h2>
+            <span className="site-section-label">The Roles</span>
+            <h2 className="site-section-title">Specialized AI-Empowered Talent</h2>
           </div>
-          <div className="choice-grid u-mt-8">
-            <div className="choice-card reveal">
-              <div className="choice-label">Role 1</div>
-              <div className="choice-role-title">AI Officers</div>
-              <ul className="choice-role-bullets">
+          <div className="site-choice-grid u-mt-8">
+            <div className="site-choice-card reveal">
+              <div className="site-choice-label">Role 1</div>
+              <div className="site-choice-role-title">AI Officers</div>
+              <ul className="site-choice-role-bullets">
                 <li>AI program design & management</li>
                 <li>Process automation implementation</li>
                 <li>Team AI training & coaching</li>
@@ -162,10 +162,10 @@ export default function GlobalStaffingPage() {
                 <li>AI tools evaluation & selection</li>
               </ul>
             </div>
-            <div className="choice-card featured reveal">
-              <div className="choice-label">Role 2 · Most Requested</div>
-              <div className="choice-role-title">AI Engineers</div>
-              <ul className="choice-role-bullets">
+            <div className="site-choice-card featured reveal">
+              <div className="site-choice-label">Role 2 · Most Requested</div>
+              <div className="site-choice-role-title">AI Engineers</div>
+              <ul className="site-choice-role-bullets">
                 <li>Custom AI agent development</li>
                 <li>CRM & workflow automation</li>
                 <li>Data pipeline construction</li>
@@ -173,10 +173,10 @@ export default function GlobalStaffingPage() {
                 <li>AI model fine-tuning & deployment</li>
               </ul>
             </div>
-            <div className="choice-card reveal">
-              <div className="choice-label">Role 3</div>
-              <div className="choice-role-title">Marketing Professionals</div>
-              <ul className="choice-role-bullets">
+            <div className="site-choice-card reveal">
+              <div className="site-choice-label">Role 3</div>
+              <div className="site-choice-role-title">Marketing Professionals</div>
+              <ul className="site-choice-role-bullets">
                 <li>AI-powered content creation</li>
                 <li>SEO & GEO optimization</li>
                 <li>Social media management</li>
@@ -191,40 +191,40 @@ export default function GlobalStaffingPage() {
       {/* TESTIMONIALS */}
       <section className="testimonials section">
         <div className="container">
-          <div className="testimonials-header reveal">
-            <span className="section-label">Testimonials</span>
-            <h2 className="section-title">What Our Clients Say</h2>
+          <div className="site-testimonials-header reveal">
+            <span className="site-section-label">Testimonials</span>
+            <h2 className="site-section-title">What Our Clients Say</h2>
           </div>
         </div>
         <div className="container site-overflow-visible">
-          <div className="testimonials-viewport" ref={viewportRefGS}>
-            <div className="testimonials-track" ref={trackRefGS}>
+          <div className="site-testimonials-viewport" ref={viewportRefGS}>
+            <div className="site-testimonials-track" ref={trackRefGS}>
               {extTestimonialsGS.map((t, i) => (
-                <div key={i} className={`testimonial-card t-card-gs${i === activeExtIdxGS ? ' active' : ''}`}>
-                  <span className="testimonial-quote">&ldquo;</span>
-                  <p className="testimonial-text">{t.text}</p>
-                  <div className="testimonial-person">
-                    <Image src={t.avatar} alt={t.name} width={52} height={52} className="testimonial-avatar" />
+                <div key={i} className={`site-testimonial-card t-card-gs${i === activeExtIdxGS ? ' active' : ''}`}>
+                  <span className="site-testimonial-quote">&ldquo;</span>
+                  <p className="site-testimonial-text">{t.text}</p>
+                  <div className="site-testimonial-person">
+                    <Image src={t.avatar} alt={t.name} width={52} height={52} className="site-testimonial-avatar" />
                     <div>
-                      <div className="testimonial-name">{t.name}</div>
-                      <div className="testimonial-role">{t.role}</div>
+                      <div className="site-testimonial-name">{t.name}</div>
+                      <div className="site-testimonial-role">{t.role}</div>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="testimonials-nav">
-            <div className="testimonials-dots">
+          <div className="site-testimonials-nav">
+            <div className="site-testimonials-dots">
               {testimonials.map((_, i) => (
-                <button key={i} className={`testimonials-dot${i === currentTestimonialGS ? ' active' : ''}`} onClick={() => scrollToTestimonialGS(i)} aria-label={`Go to testimonial ${i + 1}`} />
+                <button key={i} className={`site-testimonials-dot${i === currentTestimonialGS ? ' active' : ''}`} onClick={() => scrollToTestimonialGS(i)} aria-label={`Go to testimonial ${i + 1}`} />
               ))}
             </div>
-            <div className="testimonials-arrows">
-              <button className="testimonials-arrow" onClick={() => scrollToTestimonialGS((currentTestimonialGS - 1 + T_COUNT_GS) % T_COUNT_GS)} aria-label="Previous">
+            <div className="site-testimonials-arrows">
+              <button className="site-testimonials-arrow" onClick={() => scrollToTestimonialGS((currentTestimonialGS - 1 + T_COUNT_GS) % T_COUNT_GS)} aria-label="Previous">
                 <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
               </button>
-              <button className="testimonials-arrow" onClick={() => scrollToTestimonialGS((currentTestimonialGS + 1) % T_COUNT_GS)} aria-label="Next">
+              <button className="site-testimonials-arrow" onClick={() => scrollToTestimonialGS((currentTestimonialGS + 1) % T_COUNT_GS)} aria-label="Next">
                 <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18" /></svg>
               </button>
             </div>
@@ -233,15 +233,15 @@ export default function GlobalStaffingPage() {
       </section>
 
       {/* CTA */}
-      <section className="contact-blue section">
+      <section className="site-contact-blue section">
         <div className="container">
-          <div className="contact-blue-inner">
+          <div className="site-contact-blue-inner">
             <div className="reveal">
-              <h2 className="section-title u-mb-4">Ready to Build Your AI-Ready Team?</h2>
-              <p className="section-sub">Start with a free consultation to find the right global talent for your needs.</p>
+              <h2 className="site-section-title u-mb-4">Ready to Build Your AI-Ready Team?</h2>
+              <p className="site-section-sub">Start with a free consultation to find the right global talent for your needs.</p>
             </div>
-            <div className="contact-blue-cta reveal">
-              <a href="/contact" className="btn btn-contact">Book a Conversation →</a>
+            <div className="site-contact-blue-cta reveal">
+              <a href="/contact" className="btn site-btn-contact">Book a Conversation →</a>
             </div>
           </div>
         </div>

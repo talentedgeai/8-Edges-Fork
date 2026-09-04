@@ -22,7 +22,7 @@ export default function TracPage() {
 
       <PlaceholderImage label="Photo: Trac" aspect="4 / 5" maxWidth="24rem" style={{ marginTop: 40 }} />
 
-      <div className="xp-blocks">
+      <div className="site-xp-blocks">
         <Block heading="What he builds">
           <p>
             Travel Buddy, the booking systems, the quiet automations that make the week
@@ -33,7 +33,7 @@ export default function TracPage() {
             He is also the clearest proof of the idea you came for. A small team, shipping
             like a large one, because every one of them is leveraged by the AI they build.
           </p>
-          <p className="xp-aside">
+          <p className="site-xp-aside">
             A fuller profile, in his own words, is being written for this page.
           </p>
         </Block>

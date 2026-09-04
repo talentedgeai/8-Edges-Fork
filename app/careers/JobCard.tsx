@@ -24,29 +24,29 @@ export default function JobCard({ job }: { job: Job }) {
     : `mailto:${job.applyEmail}?subject=${encodeURIComponent(`Application: ${job.title}`)}`
 
   return (
-    <div className={`job-card reveal${job.featured ? ' featured' : ''}`}>
-      <div className="job-card-tags">
-        <span className={`job-dept dept-${deptSlug}`}>{job.department}</span>
-        {job.featured && <span className="job-badge-featured">Featured</span>}
+    <div className={`site-job-card reveal${job.featured ? ' featured' : ''}`}>
+      <div className="site-job-card-tags">
+        <span className={`site-job-dept dept-${deptSlug}`}>{job.department}</span>
+        {job.featured && <span className="site-job-badge-featured">Featured</span>}
       </div>
 
-      <h3 className="job-title">
+      <h3 className="site-job-title">
         <Link href={`/careers/${job.slug}/`}>{job.title}</Link>
       </h3>
 
-      <div className="job-meta">
-        <span className="job-meta-item">{job.location}</span>
-        <span className="job-meta-sep">·</span>
-        <span className="job-meta-item">{job.type}</span>
+      <div className="site-job-meta">
+        <span className="site-job-meta-item">{job.location}</span>
+        <span className="site-job-meta-sep">·</span>
+        <span className="site-job-meta-item">{job.type}</span>
       </div>
 
-      <p className="job-excerpt">{job.excerpt}</p>
+      <p className="site-job-excerpt">{job.excerpt}</p>
 
-      <div className="job-card-actions">
-        <Link href={`/careers/${job.slug}/`} className="btn btn-outline job-toggle-btn">
+      <div className="site-job-card-actions">
+        <Link href={`/careers/${job.slug}/`} className="btn site-btn-outline site-job-toggle-btn">
           View Role Details
         </Link>
-        <a href={applyHref} className="btn btn-primary job-apply-btn">
+        <a href={applyHref} className="btn btn-primary site-job-apply-btn">
           Apply Now →
         </a>
       </div>

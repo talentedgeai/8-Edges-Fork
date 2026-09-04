@@ -31,10 +31,10 @@ export default function LeadershipCoachProgramPage() {
       {/* The guardrail */}
       <section className="section wf-section--dark-sm">
         <div className="container">
-          <span className="section-label wf-chip--on-dark">
+          <span className="site-section-label wf-chip--on-dark">
             The rule above the whole plan
           </span>
-          <h2 className="section-title wf-title-xl">
+          <h2 className="site-section-title wf-title-xl">
             The coach preps and drafts. The human decides.
           </h2>
           <p className="wf-hero-sub u-mt-3">
@@ -48,11 +48,11 @@ export default function LeadershipCoachProgramPage() {
       {/* 1D Define */}
       <section className="section">
         <div className="container">
-          <span className="section-label">1D · Define</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">1D · Define</span>
+          <h2 className="site-section-title site-section-title--sm">
             Define the problem
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             The original problem: a leader&apos;s 1-1s are only as good as their prep and their memory. The first
             version proved the workflow (AI preps every biweekly 1-1, logs every commitment, reads retention risk, and
             holds the coach to coaching instead of telling). Moving it into the company OS solved two problems the
@@ -79,7 +79,7 @@ export default function LeadershipCoachProgramPage() {
               </ul>
             </div>
           </div>
-          <p className="section-sub u-mt-6">
+          <p className="site-section-sub u-mt-6">
             Success looks like: every team member has current FAST goals laddered to a company objective or KPI; every
             1-1 is prepped, held, and logged in the portal; retention risk is named early; the coach&apos;s
             coach / mentor / direct split moves toward 80/15/5; and the prototype tooling is fully retired.
@@ -90,13 +90,13 @@ export default function LeadershipCoachProgramPage() {
       {/* 2D Discover */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             2D · Discover
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Discover the data
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Everything the coach reads lives in the company OS. The coach never invents facts about people: thin reads
             are marked low-confidence, and an unset goal says so.
           </p>
@@ -159,11 +159,11 @@ export default function LeadershipCoachProgramPage() {
       {/* 3D Design */}
       <section className="section">
         <div className="container">
-          <span className="section-label">3D · Design</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">3D · Design</span>
+          <h2 className="site-section-title site-section-title--sm">
             Design the workflow
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             The concept model first: four things that are never confused with each other.
           </p>
           <div className="wf-table-wrap">
@@ -237,7 +237,7 @@ export default function LeadershipCoachProgramPage() {
           </div>
 
           <h3 className="wf-lead--lg u-m-0 u-mt-8">The biweekly cycle</h3>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             The heart of the design is a two-week loop with one human step:
           </p>
           <FlowRail
@@ -250,7 +250,7 @@ export default function LeadershipCoachProgramPage() {
             ]}
             repeatNote="The loop repeats every two weeks, and it is not a straight line: the recap has a review-then-publish gate, check-ins feed the next prep, and trends feed the coaching focus."
           />
-          <p className="section-sub u-mt-5">
+          <p className="site-section-sub u-mt-5">
             The full operational document, loops and branches included, is published as its own workflow:{' '}
             <Link href="/workflows/one-on-one-coaching">The Biweekly 1-1 Coaching Cycle</Link>.
           </p>
@@ -260,10 +260,10 @@ export default function LeadershipCoachProgramPage() {
       {/* 4D Determine */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             4D · Determine
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Determine the ROI
           </h2>
           <div className="wf-info-grid u-mt-6">
@@ -295,11 +295,11 @@ export default function LeadershipCoachProgramPage() {
       {/* 5D Deploy */}
       <section className="section">
         <div className="container">
-          <span className="section-label">5D · Deploy</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">5D · Deploy</span>
+          <h2 className="site-section-title site-section-title--sm">
             Deploy to production
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             The runtime: the company OS database as the system of record, the team portal as the interface (a coaching
             dashboard for the coach, a my-coaching view for each member, goals transparent on team profiles), a daily
             07:45 cron as the scheduler, and Claude for prep, recaps, and trends, with every call failing soft so an

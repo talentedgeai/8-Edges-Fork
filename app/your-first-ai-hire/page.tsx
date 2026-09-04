@@ -98,17 +98,17 @@ export default function YourFirstAIHirePage() {
   return (
     <main>
       {/* HERO */}
-      <section className="svc-hero">
-        <div className="svc-hero-bg" />
-        <div className="svc-hero-grid" />
+      <section className="site-svc-hero">
+        <div className="site-svc-hero-bg" />
+        <div className="site-svc-hero-grid" />
         <div className="container">
-          <div className="svc-hero-inner">
-            <div className="svc-hero-text">
+          <div className="site-svc-hero-inner">
+            <div className="site-svc-hero-text">
               <h1>Your First AI Hire, Done Right</h1>
-              <p className="svc-hero-sub">Stop guessing about AI. Get your first dedicated AI Officer in place within 30 days, and start seeing real results by Month 2.</p>
-              <a href="https://ai-officer.typeform.com/letstalk" className="btn btn-contact" target="_blank" rel="noopener noreferrer">Claim Your Spot Now →</a>
+              <p className="site-svc-hero-sub">Stop guessing about AI. Get your first dedicated AI Officer in place within 30 days, and start seeing real results by Month 2.</p>
+              <a href="https://ai-officer.typeform.com/letstalk" className="btn site-btn-contact" target="_blank" rel="noopener noreferrer">Claim Your Spot Now →</a>
             </div>
-            <div className="svc-hero-img">
+            <div className="site-svc-hero-img">
               <Image src="/services/images/services-your-first-ai-hire-hero-session.webp" alt="An Edge8 client and engineer in a working session" width={640} height={640} priority />
             </div>
           </div>
@@ -119,38 +119,38 @@ export default function YourFirstAIHirePage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">The Problem</span>
-            <h2 className="section-title">Most Companies Fail at AI Before They Start</h2>
-            <p className="section-sub u-mt-4">The bottleneck isn&apos;t the technology. It&apos;s the leadership.</p>
+            <span className="site-section-label">The Problem</span>
+            <h2 className="site-section-title">Most Companies Fail at AI Before They Start</h2>
+            <p className="site-section-sub u-mt-4">The bottleneck isn&apos;t the technology. It&apos;s the leadership.</p>
           </div>
-          <div className="problem-cards u-mt-8">
-            <div className="problem-card reveal">
-              <div className="problem-card-icon">
+          <div className="site-problem-cards u-mt-8">
+            <div className="site-problem-card reveal">
+              <div className="site-problem-card-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
               </div>
-              <div className="problem-card-title">No One Owns AI</div>
-              <p className="problem-card-desc">Everyone&apos;s &quot;exploring&quot; AI tools, but no one is accountable for results. Without an owner, nothing gets implemented.</p>
+              <div className="site-problem-card-title">No One Owns AI</div>
+              <p className="site-problem-card-desc">Everyone&apos;s &quot;exploring&quot; AI tools, but no one is accountable for results. Without an owner, nothing gets implemented.</p>
             </div>
-            <div className="problem-card reveal">
-              <div className="problem-card-icon">
+            <div className="site-problem-card reveal">
+              <div className="site-problem-card-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
               </div>
-              <div className="problem-card-title">Wrong Hire, Wrong Cost</div>
-              <p className="problem-card-desc">A full-time AI executive costs $150K–$300K+ and takes 6+ months to hire. Most companies can&apos;t afford to wait or to guess.</p>
+              <div className="site-problem-card-title">Wrong Hire, Wrong Cost</div>
+              <p className="site-problem-card-desc">A full-time AI executive costs $150K–$300K+ and takes 6+ months to hire. Most companies can&apos;t afford to wait or to guess.</p>
             </div>
-            <div className="problem-card reveal">
-              <div className="problem-card-icon">
+            <div className="site-problem-card reveal">
+              <div className="site-problem-card-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
               </div>
-              <div className="problem-card-title">Scattered Experiments</div>
-              <p className="problem-card-desc">Teams run disconnected AI pilots that never scale. Without strategic direction, you get 10% of the potential value.</p>
+              <div className="site-problem-card-title">Scattered Experiments</div>
+              <p className="site-problem-card-desc">Teams run disconnected AI pilots that never scale. Without strategic direction, you get 10% of the potential value.</p>
             </div>
-            <div className="problem-card reveal">
-              <div className="problem-card-icon">
+            <div className="site-problem-card reveal">
+              <div className="site-problem-card-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               </div>
-              <div className="problem-card-title">Missed Window</div>
-              <p className="problem-card-desc">Your competitors are moving now. Every month without AI leadership is a month of competitive advantage lost forever.</p>
+              <div className="site-problem-card-title">Missed Window</div>
+              <p className="site-problem-card-desc">Your competitors are moving now. Every month without AI leadership is a month of competitive advantage lost forever.</p>
             </div>
           </div>
         </div>
@@ -160,29 +160,29 @@ export default function YourFirstAIHirePage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">The Solution</span>
-            <h2 className="section-title">Your Dedicated AI Officer, Without the $300K Mistake</h2>
+            <span className="site-section-label">The Solution</span>
+            <h2 className="site-section-title">Your Dedicated AI Officer, Without the $300K Mistake</h2>
           </div>
-          <div className="timeline-steps u-mt-8">
+          <div className="site-timeline-steps u-mt-8">
             {[
               { month: 'Month 1', label: 'Phase 1', title: 'Train & First Wins', desc: 'Your AI Officer joins the team, works alongside our AI engineers building real AI programs, and begins their AI Officer Certification in both Generative and Agentic AI. First wins ship this month.', cost: '$1,800' },
               { month: 'Month 2', label: 'Phase 2', title: 'Collaborate', desc: 'Foundation established. AI Officer Certification continues. They start contributing as a collaborator, helping build AI programs for your company.', cost: '$1,800' },
               { month: 'Month 3', label: 'Phase 3', title: 'Scale & Systemize', desc: 'AI Officer Certification complete. Programs scale across your workflows so your team operates more autonomously.', cost: '$1,800' },
             ].map((step, i) => (
-              <div key={i} className="timeline-step">
-                <div className="timeline-left">
-                  <div className={`timeline-dot${i === 2 ? ' mint' : ''}`}>{i + 1}</div>
+              <div key={i} className="site-timeline-step">
+                <div className="site-timeline-left">
+                  <div className={`site-timeline-dot${i === 2 ? ' mint' : ''}`}>{i + 1}</div>
                 </div>
-                <div className="timeline-right">
-                  <div className="timeline-label u-accent">{step.month} · {step.label} · <strong>{step.cost}</strong></div>
-                  <div className="timeline-title">{step.title}</div>
-                  <div className="timeline-desc">{step.desc}</div>
+                <div className="site-timeline-right">
+                  <div className="site-timeline-label u-accent">{step.month} · {step.label} · <strong>{step.cost}</strong></div>
+                  <div className="site-timeline-title">{step.title}</div>
+                  <div className="site-timeline-desc">{step.desc}</div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="guarantee-box reveal">
-            <div className="guarantee-box-title">⚡ Our Guarantee</div>
+          <div className="site-guarantee-box reveal">
+            <div className="site-guarantee-box-title">⚡ Our Guarantee</div>
             <p>If you don&apos;t see measurable AI impact within 90 days, we work for free until you do. We&apos;re that confident.</p>
           </div>
           <div className="u-mt-6">
@@ -196,14 +196,14 @@ export default function YourFirstAIHirePage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">The Math</span>
-            <h2 className="section-title">$5,400 vs $150,000+</h2>
-            <p className="section-sub u-mt-4">The numbers make this decision obvious.</p>
+            <span className="site-section-label">The Math</span>
+            <h2 className="site-section-title">$5,400 vs $150,000+</h2>
+            <p className="site-section-sub u-mt-4">The numbers make this decision obvious.</p>
           </div>
-          <div className="math-compare u-mt-8">
-            <div className="math-box good reveal">
-              <div className="math-price u-ok-strong">$5,400</div>
-              <div className="math-label">Edge8 AI Officer Program (3 months)</div>
+          <div className="site-math-compare u-mt-8">
+            <div className="site-math-box good reveal">
+              <div className="site-math-price u-ok-strong">$5,400</div>
+              <div className="site-math-label">Edge8 AI Officer Program (3 months)</div>
               <ul className="u-stack u-mt-5 u-p-0 u-list-plain">
                 {['Dedicated AI Officer on Day 1', 'First program live by Month 1', 'AI Officer Certification (Generative + Agentic) included', 'Full team training included', 'ROI guarantee', 'No long-term commitment'].map((item) => (
                   <li key={item} className="site-check-item">
@@ -212,9 +212,9 @@ export default function YourFirstAIHirePage() {
                 ))}
               </ul>
             </div>
-            <div className="math-box bad reveal">
-              <div className="math-price u-err-strong">$150,000+</div>
-              <div className="math-label">Hiring a Full-Time AI Executive</div>
+            <div className="site-math-box bad reveal">
+              <div className="site-math-price u-err-strong">$150,000+</div>
+              <div className="site-math-label">Hiring a Full-Time AI Executive</div>
               <ul className="u-stack u-mt-5 u-p-0 u-list-plain">
                 {['6+ months to hire', 'No guarantee of results', 'Risk of wrong hire', 'Benefits & equity on top', 'You get one person\'s knowledge'].map((item) => (
                   <li key={item} className="site-check-item">
@@ -231,12 +231,12 @@ export default function YourFirstAIHirePage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">Who It&apos;s For</span>
-            <h2 className="section-title">Built for Ambitious Founders</h2>
+            <span className="site-section-label">Who It&apos;s For</span>
+            <h2 className="site-section-title">Built for Ambitious Founders</h2>
           </div>
-          <div className="who-grid u-mt-8">
-            <div className="who-card reveal">
-              <div className="who-card-title">You&apos;re in the Right Place If...</div>
+          <div className="site-who-grid u-mt-8">
+            <div className="site-who-card reveal">
+              <div className="site-who-card-title">You&apos;re in the Right Place If...</div>
               <ul className="u-stack u-gap-3 u-mt-3 u-p-0 u-list-plain">
                 {['$2M–$50M revenue business', 'CEO/founder ready to commit to AI', '10–500 employees', 'Specific business problems to solve', 'Want ROI within 90 days'].map((item) => (
                   <li key={item} className="site-check-item">
@@ -245,8 +245,8 @@ export default function YourFirstAIHirePage() {
                 ))}
               </ul>
             </div>
-            <div className="who-card reveal">
-              <div className="who-card-title">This Is NOT for You If...</div>
+            <div className="site-who-card reveal">
+              <div className="site-who-card-title">This Is NOT for You If...</div>
               <ul className="u-stack u-gap-3 u-mt-3 u-p-0 u-list-plain">
                 {['You want AI magic without effort', 'You\'re not ready to change processes', 'You\'re looking for a quick fix', 'You don\'t believe AI has real business value'].map((item) => (
                   <li key={item} className="site-check-item">
@@ -262,10 +262,10 @@ export default function YourFirstAIHirePage() {
       {/* MEET THE FOUNDER */}
       <section className="section">
         <div className="container">
-          <div className="meet-dave">
+          <div className="site-meet-dave">
             <div className="reveal">
-              <span className="section-label">Meet the Founder</span>
-              <h2 className="section-title">Dave Hajdu, CAIO</h2>
+              <span className="site-section-label">Meet the Founder</span>
+              <h2 className="site-section-title">Dave Hajdu, CAIO</h2>
               <p className="site-lead u-mt-4">
                 Dave spent 25 years in tech, from automating millions of rows of data at Microsoft to founding EO Vietnam and building AI programs for 50+ companies. He created the AI Officer Certification, now deployed across Southeast Asia and North America.
               </p>
@@ -274,7 +274,7 @@ export default function YourFirstAIHirePage() {
               </p>
               <a href="https://ai-officer.typeform.com/letstalk" className="btn btn-primary u-mt-6" target="_blank" rel="noopener noreferrer">Schedule Your Free Consultation</a>
             </div>
-            <Image src="/services/images/services-your-first-ai-hire-Dave Hajdu.jpeg" alt="Dave Hajdu" width={480} height={640} className="meet-dave-img reveal" />
+            <Image src="/services/images/services-your-first-ai-hire-Dave Hajdu.jpeg" alt="Dave Hajdu" width={480} height={640} className="site-meet-dave-img reveal" />
           </div>
         </div>
       </section>
@@ -282,40 +282,40 @@ export default function YourFirstAIHirePage() {
       {/* TESTIMONIALS */}
       <section className="testimonials section">
         <div className="container">
-          <div className="testimonials-header reveal">
-            <span className="section-label">Testimonials</span>
-            <h2 className="section-title">What Our Clients Say</h2>
+          <div className="site-testimonials-header reveal">
+            <span className="site-section-label">Testimonials</span>
+            <h2 className="site-section-title">What Our Clients Say</h2>
           </div>
         </div>
         <div className="container site-overflow-visible">
-          <div className="testimonials-viewport" ref={viewportRefT}>
-            <div className="testimonials-track" ref={trackRefT}>
+          <div className="site-testimonials-viewport" ref={viewportRefT}>
+            <div className="site-testimonials-track" ref={trackRefT}>
               {extTestimonials.map((t, i) => (
-                <div key={i} className={`testimonial-card t-card-svc${i === activeExtIdx ? ' active' : ''}`}>
-                  <span className="testimonial-quote">&ldquo;</span>
-                  <p className="testimonial-text">{t.text}</p>
-                  <div className="testimonial-person">
-                    <Image src={t.avatar} alt={t.name} width={52} height={52} className="testimonial-avatar" />
+                <div key={i} className={`site-testimonial-card t-card-svc${i === activeExtIdx ? ' active' : ''}`}>
+                  <span className="site-testimonial-quote">&ldquo;</span>
+                  <p className="site-testimonial-text">{t.text}</p>
+                  <div className="site-testimonial-person">
+                    <Image src={t.avatar} alt={t.name} width={52} height={52} className="site-testimonial-avatar" />
                     <div>
-                      <div className="testimonial-name">{t.name}</div>
-                      <div className="testimonial-role">{t.role}</div>
+                      <div className="site-testimonial-name">{t.name}</div>
+                      <div className="site-testimonial-role">{t.role}</div>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="testimonials-nav">
-            <div className="testimonials-dots">
+          <div className="site-testimonials-nav">
+            <div className="site-testimonials-dots">
               {testimonials.map((_, i) => (
-                <button key={i} className={`testimonials-dot${i === currentTestimonialT ? ' active' : ''}`} onClick={() => scrollToTestimonialT(i)} aria-label={`Go to testimonial ${i + 1}`} />
+                <button key={i} className={`site-testimonials-dot${i === currentTestimonialT ? ' active' : ''}`} onClick={() => scrollToTestimonialT(i)} aria-label={`Go to testimonial ${i + 1}`} />
               ))}
             </div>
-            <div className="testimonials-arrows">
-              <button className="testimonials-arrow" onClick={() => scrollToTestimonialT((currentTestimonialT - 1 + T_COUNT_T) % T_COUNT_T)} aria-label="Previous">
+            <div className="site-testimonials-arrows">
+              <button className="site-testimonials-arrow" onClick={() => scrollToTestimonialT((currentTestimonialT - 1 + T_COUNT_T) % T_COUNT_T)} aria-label="Previous">
                 <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
               </button>
-              <button className="testimonials-arrow" onClick={() => scrollToTestimonialT((currentTestimonialT + 1) % T_COUNT_T)} aria-label="Next">
+              <button className="site-testimonials-arrow" onClick={() => scrollToTestimonialT((currentTestimonialT + 1) % T_COUNT_T)} aria-label="Next">
                 <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18" /></svg>
               </button>
             </div>
@@ -324,15 +324,15 @@ export default function YourFirstAIHirePage() {
       </section>
 
       {/* CTA */}
-      <section className="contact-blue section">
+      <section className="site-contact-blue section">
         <div className="container">
-          <div className="contact-blue-inner">
+          <div className="site-contact-blue-inner">
             <div className="reveal">
-              <h2 className="section-title u-mb-4">Ready to Make Your First AI Hire?</h2>
-              <p className="section-sub">77 spots remaining this year. Claim yours before your competitor does.</p>
+              <h2 className="site-section-title u-mb-4">Ready to Make Your First AI Hire?</h2>
+              <p className="site-section-sub">77 spots remaining this year. Claim yours before your competitor does.</p>
             </div>
-            <div className="contact-blue-cta reveal">
-              <a href="https://ai-officer.typeform.com/letstalk" className="btn btn-contact" target="_blank" rel="noopener noreferrer">Claim Your Spot Now →</a>
+            <div className="site-contact-blue-cta reveal">
+              <a href="https://ai-officer.typeform.com/letstalk" className="btn site-btn-contact" target="_blank" rel="noopener noreferrer">Claim Your Spot Now →</a>
             </div>
           </div>
         </div>

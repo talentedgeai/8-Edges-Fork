@@ -11,9 +11,9 @@ const EFFECTIVE_DATE = 'July 18, 2026'
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="xp-page">
-      <article className="xp-article">
-        <Link href="/" className="xp-backlink">
+    <div className="site-xp-page">
+      <article className="site-xp-article">
+        <Link href="/" className="site-xp-backlink">
           ← Edge8
         </Link>
 
@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
           lead="This policy explains what information Talent Edge LLC, doing business as Edge8 (“Edge8,” “we,” “us”), collects across our website, client portal, and related services, and how we use, share, and protect it."
         />
 
-        <div className="xp-blocks">
+        <div className="site-xp-blocks">
           <Block heading="Information we collect">
             <p>
               <strong>Information you provide directly.</strong> This includes your name, email

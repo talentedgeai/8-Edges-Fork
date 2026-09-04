@@ -20,11 +20,11 @@ export default function AiProgramsPage() {
   return (
     <main>
       {/* HERO */}
-      <section className="page-hero">
+      <section className="site-page-hero">
         <div className="container">
-          <div className="page-hero-inner">
-            <h1 className="section-title">Ship 3 AI Agents a Quarter. Without Hiring a CTO.</h1>
-            <p className="page-hero-sub">We design, build, and deploy AI agents that take the highest-volume work off your team. Most clients see their first agent in production inside 30 days, with the next two close behind.</p>
+          <div className="site-page-hero-inner">
+            <h1 className="site-section-title">Ship 3 AI Agents a Quarter. Without Hiring a CTO.</h1>
+            <p className="site-page-hero-sub">We design, build, and deploy AI agents that take the highest-volume work off your team. Most clients see their first agent in production inside 30 days, with the next two close behind.</p>
           </div>
         </div>
       </section>
@@ -33,24 +33,24 @@ export default function AiProgramsPage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">What Is an AI Program</span>
-            <h2 className="section-title">More Than Tools. A System of AI Agents.</h2>
+            <span className="site-section-label">What Is an AI Program</span>
+            <h2 className="site-section-title">More Than Tools. A System of AI Agents.</h2>
             <p className="site-lead u-mt-4 u-max-7">
               An AI Program is a coordinated system of AI agents that work together to automate your business processes, analyze your data, and execute your marketing, running 24/7 without human intervention. Think of it as building a team of AI employees, each trained for a specific function.
             </p>
           </div>
-          <div className="ai-program-stats u-mt-8">
-            <div className="ai-stat-card reveal">
-              <div className="ai-stat-num">Route</div>
-              <p className="ai-stat-label">Information through your organization with intelligent AI routing agents that know where data needs to go</p>
+          <div className="site-ai-program-stats u-mt-8">
+            <div className="site-ai-stat-card reveal">
+              <div className="site-ai-stat-num">Route</div>
+              <p className="site-ai-stat-label">Information through your organization with intelligent AI routing agents that know where data needs to go</p>
             </div>
-            <div className="ai-stat-card reveal">
-              <div className="ai-stat-num">Monitor</div>
-              <p className="ai-stat-label">Critical business data 24/7 with AI agents that alert, analyze, and act on what matters most</p>
+            <div className="site-ai-stat-card reveal">
+              <div className="site-ai-stat-num">Monitor</div>
+              <p className="site-ai-stat-label">Critical business data 24/7 with AI agents that alert, analyze, and act on what matters most</p>
             </div>
-            <div className="ai-stat-card reveal">
-              <div className="ai-stat-num">Execute</div>
-              <p className="ai-stat-label">Marketing, sales, and operations tasks automatically, so your team focuses on strategy, not execution</p>
+            <div className="site-ai-stat-card reveal">
+              <div className="site-ai-stat-num">Execute</div>
+              <p className="site-ai-stat-label">Marketing, sales, and operations tasks automatically, so your team focuses on strategy, not execution</p>
             </div>
           </div>
         </div>
@@ -60,22 +60,22 @@ export default function AiProgramsPage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">Case Studies</span>
-            <h2 className="section-title">AI Programs We&apos;ve Built</h2>
+            <span className="site-section-label">Case Studies</span>
+            <h2 className="site-section-title">AI Programs We&apos;ve Built</h2>
           </div>
-          <div className="cs-grid u-mt-8">
+          <div className="site-cs-grid u-mt-8">
             {caseStudies.map((cs) => (
-              <Link key={cs.slug} href={`/case-studies/${cs.slug}`} className="cs-card reveal">
-                <Image src={cs.image} alt={cs.title} width={600} height={220} className="cs-card-img" />
-                <div className="cs-card-body">
-                  <div className="cs-card-title">{cs.title}</div>
-                  <p className="cs-card-desc">{cs.description}</p>
-                  <div className="cs-card-highlights">
+              <Link key={cs.slug} href={`/case-studies/${cs.slug}`} className="site-cs-card reveal">
+                <Image src={cs.image} alt={cs.title} width={600} height={220} className="site-cs-card-img" />
+                <div className="site-cs-card-body">
+                  <div className="site-cs-card-title">{cs.title}</div>
+                  <p className="site-cs-card-desc">{cs.description}</p>
+                  <div className="site-cs-card-highlights">
                     {cs.highlights.map((h) => (
-                      <span key={h} className="cs-card-highlight">{h}</span>
+                      <span key={h} className="site-cs-card-highlight">{h}</span>
                     ))}
                   </div>
-                  <span className="cs-card-more">View Case Study →</span>
+                  <span className="site-cs-card-more">View Case Study →</span>
                 </div>
               </Link>
             ))}

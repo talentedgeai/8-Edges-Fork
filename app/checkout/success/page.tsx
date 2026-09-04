@@ -42,22 +42,22 @@ export default async function CheckoutSuccess({ searchParams }: { searchParams: 
   return (
     <main>
       <section className="hero u-pb-0">
-        <div className="hero-bg" />
-        <div className="hero-grid" />
+        <div className="site-hero-bg" />
+        <div className="site-hero-grid" />
         <div className="container">
-          <div className="hero-content">
-            <div className="hero-eyebrow">✓ Reservation confirmed</div>
-            <h1 className="hero-headline">
+          <div className="site-hero-content">
+            <div className="site-hero-eyebrow">✓ Reservation confirmed</div>
+            <h1 className="site-hero-headline">
               You&rsquo;re <span className="accent">in.</span>
             </h1>
-            <p className="hero-sub">
+            <p className="site-hero-sub">
               Your Saigon private retreat is reserved{amount ? ` — ${amount} paid` : ""}. We&rsquo;ve
               sent a receipt{email ? ` to ${email}` : ""}, and the team will follow up shortly with
               what to expect.
             </p>
-            <div className="hero-actions u-mt-6">
+            <div className="site-hero-actions u-mt-6">
               <Link href="/" className="btn btn-primary">Back to home</Link>
-              <Link href="/saigon-private" className="btn btn-ghost-light">Retreat details</Link>
+              <Link href="/saigon-private" className="btn site-btn-ghost-light">Retreat details</Link>
             </div>
           </div>
         </div>
@@ -65,22 +65,22 @@ export default async function CheckoutSuccess({ searchParams }: { searchParams: 
 
       <section className="section">
         <div className="container">
-          <div className="form-card site-max-600 u-mx-auto">
-            <span className="reserve-recap-label">What happens next</span>
-            <ol className="reserve-steps">
+          <div className="site-form-card site-max-600 u-mx-auto">
+            <span className="site-reserve-recap-label">What happens next</span>
+            <ol className="site-reserve-steps">
               {STEPS.map((s) => (
                 <li key={s.n}>
-                  <span className="reserve-step-num">{s.n}</span>
+                  <span className="site-reserve-step-num">{s.n}</span>
                   <span>
-                    <span className="reserve-incl-head">{s.head}</span>
-                    <span className="reserve-incl-sub">{s.sub}</span>
+                    <span className="site-reserve-incl-head">{s.head}</span>
+                    <span className="site-reserve-incl-sub">{s.sub}</span>
                   </span>
                 </li>
               ))}
             </ol>
             <p className="site-note u-mt-5">
               Questions? Email{" "}
-              <a href="mailto:quan@edge8.ai" className="reserve-inline-link">quan@edge8.ai</a>.
+              <a href="mailto:quan@edge8.ai" className="site-reserve-inline-link">quan@edge8.ai</a>.
             </p>
           </div>
         </div>

@@ -41,11 +41,11 @@ export default function ClientWorkRequestsWorkflowPage() {
       {/* The flow */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">The flow</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The flow</span>
+          <h2 className="site-section-title site-section-title--sm">
             One loop, two client decisions
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             This is the client side of the loop. The contractor side runs on{' '}
             <Link href="/workflows/contractor-payments">Contractor Payments</Link>, and the invoice lands in the ledger
             kept true by <Link href="/workflows/invoice-sync">QuickBooks Invoice Sync</Link>.
@@ -67,11 +67,11 @@ export default function ClientWorkRequestsWorkflowPage() {
       {/* The scope loop */}
       <section className="section u-pt-0 u-pb-8">
         <div className="container">
-          <span className="section-label">A branch</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">A branch</span>
+          <h2 className="site-section-title site-section-title--sm">
             Adding scope, mid-flight
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Work already underway and the client wants more? They add scope right on the same request. They never
             touch the hours — the added scope goes back to the contractor to re-estimate, and the client approves
             again before the extra work counts. Same request, same gate, still one invoice at the end.
@@ -90,10 +90,10 @@ export default function ClientWorkRequestsWorkflowPage() {
       {/* Step detail */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             Step by step
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             How each step works
           </h2>
           <StepCards

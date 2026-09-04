@@ -22,7 +22,7 @@ export default function DavePage() {
 
       <PlaceholderImage label="Photo: Dave" aspect="4 / 5" maxWidth="24rem" style={{ marginTop: 40 }} />
 
-      <div className="xp-blocks">
+      <div className="site-xp-blocks">
         <Block heading="Why he built this">
           <p>
             Dave got tired of watching smart people learn to use AI when they could be
@@ -38,7 +38,7 @@ export default function DavePage() {
             requires. Dave may join in person or be available remotely. Either way, the
             system he built is what makes the week run.
           </p>
-          <p className="xp-aside">
+          <p className="site-xp-aside">
             A fuller profile, in his own words, is being written for this page.
           </p>
         </Block>

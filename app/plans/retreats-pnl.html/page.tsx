@@ -26,7 +26,7 @@ export default function RetreatsPnlBrief() {
               <span>/</span>
               <span>Program Brief</span>
             </div>
-            <h1 className="section-title">Infinite Leverage Retreats P&amp;L</h1>
+            <h1 className="site-section-title">Infinite Leverage Retreats P&amp;L</h1>
             <p className="wf-hero-sub">
               Move retreat profit-and-loss out of a fragile Excel workbook and onto the Events module in the Edge8
               admin, with a confidential, history-preserving home for employee wages that only Dave and Mai can see.
@@ -49,13 +49,13 @@ export default function RetreatsPnlBrief() {
       {/* D1 · Define */}
       <section className="section">
         <div className="container">
-          <span className="section-label brief-d">
+          <span className="site-section-label brief-d">
             <strong>D1</strong> · Definition of the Problem
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             A fast-growing program run by hand
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Operations runs the P&amp;L for every Private and Public Infinite Leverage Retreat in a shared Excel
             workbook. As the program grows, that manual work compounds; the fix is to make the process the product.
           </p>
@@ -96,15 +96,15 @@ export default function RetreatsPnlBrief() {
       </section>
 
       {/* D2 · Datasources */}
-      <section className="section section--tint">
+      <section className="section site-section--tint">
         <div className="container">
-          <span className="section-label brief-d wf-section--white">
+          <span className="site-section-label brief-d wf-section--white">
             <strong>D2</strong> · Datasources Needed
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Everything already exists
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             The program pulls from the company database and two source workbooks. Nothing new is collected.
           </p>
           <div className="wf-table-wrap u-mt-6">
@@ -153,10 +153,10 @@ export default function RetreatsPnlBrief() {
       {/* D3 · Diagram & Workflow */}
       <section className="section">
         <div className="container">
-          <span className="section-label brief-d">
+          <span className="site-section-label brief-d">
             <strong>D3</strong> · Diagram &amp; Documented Workflow
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Two workstreams, one system
           </h2>
 
@@ -235,12 +235,12 @@ export default function RetreatsPnlBrief() {
       </section>
 
       {/* D4 · ROI */}
-      <section className="section section--tint">
+      <section className="section site-section--tint">
         <div className="container">
-          <span className="section-label brief-d wf-section--white">
+          <span className="site-section-label brief-d wf-section--white">
             <strong>D4</strong> · ROI Determined
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             The whole return is time saved
           </h2>
           <div className="brief-fast u-mt-5">
@@ -278,10 +278,10 @@ export default function RetreatsPnlBrief() {
       {/* D5 · Deploy */}
       <section className="section">
         <div className="container">
-          <span className="section-label brief-d">
+          <span className="site-section-label brief-d">
             <strong>D5</strong> · Deployment Plan
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Six phases, first action in 7 days
           </h2>
           <div className="wf-steps">
@@ -352,10 +352,10 @@ export default function RetreatsPnlBrief() {
       </section>
 
       {/* Out of scope + CTA */}
-      <section className="section section--tint">
+      <section className="section site-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">Scope</span>
-          <h2 className="section-title site-h-28">
+          <span className="site-section-label wf-section--white">Scope</span>
+          <h2 className="site-section-title site-h-28">
             Out of scope for v1
           </h2>
           <p className="brief-scope">
@@ -367,7 +367,7 @@ export default function RetreatsPnlBrief() {
             <Link href="/workflows/infinite-leverage-retreats" className="wf-back">
               ← See the workflow
             </Link>
-            <Link href="/contact" className="btn btn-secondary">
+            <Link href="/contact" className="btn site-btn-secondary">
               Talk to Edge8 →
             </Link>
           </div>

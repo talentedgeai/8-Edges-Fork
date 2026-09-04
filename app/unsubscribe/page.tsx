@@ -22,9 +22,9 @@ export default function UnsubscribePage({
   const personId = token ? verifyUnsubscribeToken(token) : null
 
   return (
-    <div className="xp-page">
-      <article className="xp-article">
-        <Link href="/" className="xp-backlink">
+    <div className="site-xp-page">
+      <article className="site-xp-article">
+        <Link href="/" className="site-xp-backlink">
           ← Edge8
         </Link>
 
@@ -34,7 +34,7 @@ export default function UnsubscribePage({
           lead="Manage the marketing email you receive from Edge8."
         />
 
-        <div className="xp-blocks">
+        <div className="site-xp-blocks">
           <Block heading={personId ? 'Confirm' : 'This link did not work'}>
             {personId && token ? (
               <UnsubscribeForm token={token} />

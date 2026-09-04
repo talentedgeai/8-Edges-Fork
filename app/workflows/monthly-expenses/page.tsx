@@ -41,11 +41,11 @@ export default function MonthlyExpensesWorkflowPage() {
       {/* The cycle */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">The cycle</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The cycle</span>
+          <h2 className="site-section-title site-section-title--sm">
             One close, four beats
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             The close starts and ends with the P&amp;L. In between, expenses are entered in two passes: Vietnam first,
             then US.
           </p>
@@ -99,10 +99,10 @@ export default function MonthlyExpensesWorkflowPage() {
       {/* Step detail */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             Step by step
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Creating the expense entries
           </h2>
           <StepCards

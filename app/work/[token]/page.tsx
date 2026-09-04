@@ -93,7 +93,7 @@ export default async function WorkRequestPage({ params }: { params: { token: str
   return (
     <main className={styles.page}>
       <div className={styles.card}>
-        <div className={`${styles.eyebrow} brand-label`}>Edge8 work request</div>
+        <div className={`${styles.eyebrow} site-brand-label`}>Edge8 work request</div>
         <h1 className={styles.title}>{req.title}</h1>
         <p className={styles.meta}>Hi {first} — this page is your private workspace for this job.</p>
 

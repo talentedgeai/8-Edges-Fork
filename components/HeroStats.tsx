@@ -83,23 +83,23 @@ export default function HeroStats() {
   }, [visible, attendees, workflows])
 
   return (
-    <section className="hero-stats" aria-label="Edge8 program results to date" ref={ref}>
+    <section className="site-hero-stats" aria-label="Edge8 program results to date" ref={ref}>
       <div className="container">
-        <div className="hero-stats-grid">
+        <div className="site-hero-stats-grid">
           {STATS.map((stat, i) => {
             const body = (
               <>
-                <div className="hero-stat-number">{counts[i]}</div>
-                <div className="hero-stat-label">{stat.label}</div>
-                <div className="hero-stat-sub">{stat.sub}</div>
+                <div className="site-hero-stat-number">{counts[i]}</div>
+                <div className="site-hero-stat-label">{stat.label}</div>
+                <div className="site-hero-stat-sub">{stat.sub}</div>
               </>
             )
             return stat.href ? (
-              <Link className="hero-stat reveal" key={stat.label} href={stat.href}>
+              <Link className="site-hero-stat reveal" key={stat.label} href={stat.href}>
                 {body}
               </Link>
             ) : (
-              <div className="hero-stat reveal" key={stat.label}>
+              <div className="site-hero-stat reveal" key={stat.label}>
                 {body}
               </div>
             )

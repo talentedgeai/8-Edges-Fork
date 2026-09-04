@@ -52,27 +52,27 @@ export default function SaigonPrivatePage() {
       <RevealObserver />
       {/* ═══ HERO ═══ */}
       <section className="hero" id="hero">
-        <div className="hero-bg" />
-        <div className="hero-grid" />
+        <div className="site-hero-bg" />
+        <div className="site-hero-grid" />
         <div className="container">
-          <div className="hero-content">
-            <div className="hero-eyebrow">Private Retreat · Saigon, Vietnam · 3–5 days</div>
-            <h1 className="hero-headline">
+          <div className="site-hero-content">
+            <div className="site-hero-eyebrow">Private Retreat · Saigon, Vietnam · 3–5 days</div>
+            <h1 className="site-hero-headline">
               Fly to Saigon. Fly home with the software{" "}
               <span className="accent">your business runs on.</span>
             </h1>
-            <p className="hero-sub">
+            <p className="site-hero-sub">
               Most founders spend $20,000 and six months hiring developers to build one app. In 3 to
               5 days, with engineers beside you, you walk out with two or three working applications
               on your real data, a Mac Mini running 8 AI agents, and the system to keep building
               forever. The flights aside, everything is handled. You just build.
             </p>
-            <div className="hero-actions u-mt-6">
+            <div className="site-hero-actions u-mt-6">
               <Link href="/reserve/saigon-private" className="btn btn-primary">Reserve a retreat →</Link>
-              <a href="#value" className="btn btn-ghost-light">See what you get</a>
+              <a href="#value" className="btn site-btn-ghost-light">See what you get</a>
             </div>
             <p className="u-mt-4">
-              <Link href="/the-vietnam-experience" className="text-link u-row">
+              <Link href="/the-vietnam-experience" className="site-text-link u-row">
                 Or see what a week in Saigon is like →
               </Link>
             </p>
@@ -81,28 +81,28 @@ export default function SaigonPrivatePage() {
       </section>
 
       {/* ═══ STATS STRIP ═══ */}
-      <section className="hero-stats" aria-label="What a private retreat delivers">
+      <section className="site-hero-stats" aria-label="What a private retreat delivers">
         <div className="container">
-          <div className="hero-stats-grid rt-stats-4">
-            <div className="hero-stat reveal">
-              <div className="hero-stat-number">$7K</div>
-              <div className="hero-stat-label">Starting price</div>
-              <div className="hero-stat-sub">USD · 3-day, first person</div>
+          <div className="site-hero-stats-grid site-rt-stats-4">
+            <div className="site-hero-stat reveal">
+              <div className="site-hero-stat-number">$7K</div>
+              <div className="site-hero-stat-label">Starting price</div>
+              <div className="site-hero-stat-sub">USD · 3-day, first person</div>
             </div>
-            <div className="hero-stat reveal">
-              <div className="hero-stat-number">2–3</div>
-              <div className="hero-stat-label">Apps you ship</div>
-              <div className="hero-stat-sub">live on your real data before you fly home</div>
+            <div className="site-hero-stat reveal">
+              <div className="site-hero-stat-number">2–3</div>
+              <div className="site-hero-stat-label">Apps you ship</div>
+              <div className="site-hero-stat-sub">live on your real data before you fly home</div>
             </div>
-            <div className="hero-stat reveal">
-              <div className="hero-stat-number">8</div>
-              <div className="hero-stat-label">Agents on a Mac Mini</div>
-              <div className="hero-stat-sub">configured and yours to take home</div>
+            <div className="site-hero-stat reveal">
+              <div className="site-hero-stat-number">8</div>
+              <div className="site-hero-stat-label">Agents on a Mac Mini</div>
+              <div className="site-hero-stat-sub">configured and yours to take home</div>
             </div>
-            <div className="hero-stat reveal">
-              <div className="hero-stat-number">3–5</div>
-              <div className="hero-stat-label">Days, fully private</div>
-              <div className="hero-stat-sub">just you, or you and your team</div>
+            <div className="site-hero-stat reveal">
+              <div className="site-hero-stat-number">3–5</div>
+              <div className="site-hero-stat-label">Days, fully private</div>
+              <div className="site-hero-stat-sub">just you, or you and your team</div>
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@ export default function SaigonPrivatePage() {
       {/* ═══ HERO REEL ═══ */}
       <section className="section u-pt-0">
         <div className="container">
-          <div className="rt-video reveal">
+          <div className="site-rt-video reveal">
             <iframe
               src="https://www.youtube.com/embed/Iw6MySwudEo?rel=0"
               title="What a private retreat produces"
@@ -126,17 +126,17 @@ export default function SaigonPrivatePage() {
       <section className="section wf-section--white">
         <div className="container">
           <div className="reveal u-max-7">
-            <span className="section-label">Read this first</span>
-            <h2 className="section-title">
+            <span className="site-section-label">Read this first</span>
+            <h2 className="site-section-title">
               You&rsquo;re not buying a course. You&rsquo;re buying an <span className="accent">asset.</span>
             </h2>
-            <p className="section-sub u-mt-4">
+            <p className="site-section-sub u-mt-4">
               A dev shop charges $20,000 to $50,000 to build one CRM. You leave with two or three
               working apps. An AI bootcamp is $5,000 and you go home with a notebook. This is days and
               thousands, and the software is already live before your flight home.
             </p>
           </div>
-          <div className="engage-grid reveal u-mt-8">
+          <div className="site-engage-grid reveal u-mt-8">
             <CompareCard label="Hire a dev shop" cost="$20K – $50K" detail="Per app. Months of waiting. You own a contract, not the skill." />
             <CompareCard label="Take an AI bootcamp" cost="Up to $5K" detail="You leave with notes and prompts. Nothing shipped." />
             <CompareCard label="The Saigon retreat" cost="From $7K" detail="2 to 3 apps live, a Mac Mini with 8 agents, and you can do it again." featured />
@@ -148,8 +148,8 @@ export default function SaigonPrivatePage() {
       <section className="section">
         <div className="container">
           <div className="reveal u-center-text site-max-620 u-mx-auto u-mb-8">
-            <span className="section-label">In their own words</span>
-            <h2 className="section-title">See what founders <span className="accent">have to say.</span></h2>
+            <span className="site-section-label">In their own words</span>
+            <h2 className="site-section-title">See what founders <span className="accent">have to say.</span></h2>
           </div>
           <VideoCarousel videos={[
             { id: "jRwrSYlaO4Q", title: "Edge8 proof of concept" },
@@ -164,28 +164,28 @@ export default function SaigonPrivatePage() {
       <section className="section wf-section--white">
         <div className="container">
           <div className="reveal u-mb-8 u-max-7">
-            <span className="section-label">Who you&rsquo;re working with</span>
-            <h2 className="section-title">The people who <span className="accent">make it yours.</span></h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">Who you&rsquo;re working with</span>
+            <h2 className="site-section-title">The people who <span className="accent">make it yours.</span></h2>
+            <p className="site-section-sub u-mt-4">
               Not a hotel. A small team who built this for you, and learned your name before you arrived.
             </p>
           </div>
           {/* Quan — featured */}
-          <div className="meet-dave">
+          <div className="site-meet-dave">
             <div className="reveal">
-              <span className="section-label">Retreat Host</span>
-              <h3 className="section-title site-h-30 u-mt-1">Quan</h3>
+              <span className="site-section-label">Retreat Host</span>
+              <h3 className="site-section-title site-h-30 u-mt-1">Quan</h3>
               <p className="site-lead u-mt-4">
                 Quan is the Retreat Host. He is the reason the week feels effortless: the car is
                 there, the table is booked, and you never think about logistics.
               </p>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/saigon-private/quan.jpg" alt="Quan, Retreat Host at Edge8" className="meet-dave-img reveal" />
+            <img src="/images/saigon-private/quan.jpg" alt="Quan, Retreat Host at Edge8" className="site-meet-dave-img reveal" />
           </div>
           {/* Dave + Trac — secondary */}
-          <div className="rt-team-secondary">
-            <div className="rt-team-card reveal">
+          <div className="site-rt-team-secondary">
+            <div className="site-rt-team-card reveal">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/dave-headshot.webp" alt="Dave Hajdu, Founder & CAIO" />
               <div>
@@ -197,7 +197,7 @@ export default function SaigonPrivatePage() {
                 </p>
               </div>
             </div>
-            <div className="rt-team-card reveal">
+            <div className="site-rt-team-card reveal">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/images/saigon-private/trac.jpg" alt="Trac, Lead Engineer" />
               <div>
@@ -217,9 +217,9 @@ export default function SaigonPrivatePage() {
       <section className="section">
         <div className="container">
           <div className="reveal u-mb-6 u-max-7">
-            <span className="section-label">Inside the retreat</span>
-            <h2 className="section-title">Heads down, <span className="accent">and together.</span></h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">Inside the retreat</span>
+            <h2 className="site-section-title">Heads down, <span className="accent">and together.</span></h2>
+            <p className="site-section-sub u-mt-4">
               Real founders and engineers, building side by side and breaking for lunch, through a
               week in Saigon.
             </p>
@@ -245,18 +245,18 @@ export default function SaigonPrivatePage() {
       <section className="section">
         <div className="container">
           <div className="reveal u-max-7">
-            <span className="section-label">What you walk out with</span>
-            <h2 className="section-title">Real software, <span className="accent">running on your data.</span></h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">What you walk out with</span>
+            <h2 className="site-section-title">Real software, <span className="accent">running on your data.</span></h2>
+            <p className="site-section-sub u-mt-4">
               Past teams have walked out with {PROOF.apps.join(", ")}, and more. {PROOF.line}
             </p>
           </div>
-          <div className="rt-outcomes reveal">
+          <div className="site-rt-outcomes reveal">
             {OUTCOMES.map((o) => (
-              <div className="rt-outcome" key={o.label}>
-                <span className="rt-outcome-num">{o.label}</span>
-                <h3 className="rt-outcome-title">{o.heading}</h3>
-                <p className="rt-outcome-desc">{o.desc}</p>
+              <div className="site-rt-outcome" key={o.label}>
+                <span className="site-rt-outcome-num">{o.label}</span>
+                <h3 className="site-rt-outcome-title">{o.heading}</h3>
+                <p className="site-rt-outcome-desc">{o.desc}</p>
               </div>
             ))}
           </div>
@@ -267,41 +267,41 @@ export default function SaigonPrivatePage() {
       </section>
 
       {/* ═══ VALUE STACK ═══ */}
-      <section className="section section--white section--anchor" id="value">
+      <section className="section site-section--white site-section--anchor" id="value">
         <div className="container">
           <div className="reveal u-max-7">
-            <span className="section-label">The math</span>
-            <h2 className="section-title">Here&rsquo;s everything <span className="accent">you get.</span></h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">The math</span>
+            <h2 className="site-section-title">Here&rsquo;s everything <span className="accent">you get.</span></h2>
+            <p className="site-section-sub u-mt-4">
               Priced at what each piece costs on its own. Add it up, then look at what you pay. That
               gap is the whole point.
             </p>
           </div>
 
-          <div className="rt-stack reveal">
-            <ul className="rt-stack-list">
+          <div className="site-rt-stack reveal">
+            <ul className="site-rt-stack-list">
               {VALUE_STACK.map((row) => (
                 <li key={row.item}>
-                  <span className="rt-stack-item">
-                    <span className="rt-stack-check">✓</span>
+                  <span className="site-rt-stack-item">
+                    <span className="site-rt-stack-check">✓</span>
                     {row.item}
                   </span>
-                  <span className="rt-stack-value">{row.value}</span>
+                  <span className="site-rt-stack-value">{row.value}</span>
                 </li>
               ))}
             </ul>
 
-            <div className="rt-price-box">
+            <div className="site-rt-price-box">
               <div>
-                <div className="rt-price-label">Total real value</div>
-                <div className="rt-price-strike">{VALUE_TOTAL}</div>
+                <div className="site-rt-price-label">Total real value</div>
+                <div className="site-rt-price-strike">{VALUE_TOTAL}</div>
               </div>
               <div className="u-right">
-                <div className="rt-price-label rt-price-label--accent">Your investment</div>
-                <div className="rt-price-big">From $7,000</div>
+                <div className="site-rt-price-label site-rt-price-label--accent">Your investment</div>
+                <div className="site-rt-price-big">From $7,000</div>
               </div>
             </div>
-            <p className="rt-stack-note">
+            <p className="site-rt-stack-note">
               $7,000 for a 3-day retreat, first person. Each extra day is $1,000. Each additional
               person is $1,000 per day, everything included. Build a $50,000 software stack for the
               price most people pay to learn about AI, then keep building after you land.
@@ -317,32 +317,32 @@ export default function SaigonPrivatePage() {
       <section className="section">
         <div className="container">
           <div className="reveal u-max-7">
-            <span className="section-label">Is this you</span>
-            <h2 className="section-title">Built for founders <span className="accent">done waiting.</span></h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">Is this you</span>
+            <h2 className="site-section-title">Built for founders <span className="accent">done waiting.</span></h2>
+            <p className="site-section-sub u-mt-4">
               A private retreat is for an operator ready to build the thing they have been saying they
               would build for two years, solo or with their team.
             </p>
           </div>
-          <ul className="rt-checks reveal">
+          <ul className="site-rt-checks reveal">
             {FILTER_BULLETS.map((line) => (
-              <li key={line}><span className="rt-check">✓</span>{line}</li>
+              <li key={line}><span className="site-rt-check">✓</span>{line}</li>
             ))}
           </ul>
         </div>
       </section>
 
       {/* ═══ RESERVE CTA ═══ */}
-      <section className="section section--tint section--anchor" id="reserve">
+      <section className="section site-section--tint site-section--anchor" id="reserve">
         <div className="container">
           <div className="reveal u-center-text site-max-620 u-mx-auto">
-            <span className="section-label">Reserve a private retreat</span>
-            <h2 className="section-title">Pick your days and team, then reserve.</h2>
-            <p className="section-sub u-mt-4 u-ml-auto u-mr-auto">
+            <span className="site-section-label">Reserve a private retreat</span>
+            <h2 className="site-section-title">Pick your days and team, then reserve.</h2>
+            <p className="site-section-sub u-mt-4 u-ml-auto u-mr-auto">
               The total updates live as you adjust. Pay by card via Stripe and your dates lock in
               immediately.
             </p>
-            <div className="hero-actions u-center u-mt-6">
+            <div className="site-hero-actions u-center u-mt-6">
               <Link href="/reserve/saigon-private" className="btn btn-primary">Reserve a retreat →</Link>
             </div>
           </div>
@@ -353,9 +353,9 @@ export default function SaigonPrivatePage() {
       <section className="section" id="programme">
         <div className="container">
           <div className="reveal u-max-7">
-            <span className="section-label">Programme</span>
-            <h2 className="section-title">What every day <span className="accent">looks like.</span></h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">Programme</span>
+            <h2 className="site-section-title">What every day <span className="accent">looks like.</span></h2>
+            <p className="site-section-sub u-mt-4">
               Every retreat starts with a private CAIO roadmap session and ends with a live production
               deployment. The 3-day ships a focused build; 4 and 5 days add more build time and a
               dedicated launch day.
@@ -370,14 +370,14 @@ export default function SaigonPrivatePage() {
       <section className="section wf-section--white">
         <div className="container">
           <div className="reveal u-max-7">
-            <span className="section-label">What&rsquo;s in the price</span>
-            <h2 className="section-title">Included, <span className="accent">and not included.</span></h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">What&rsquo;s in the price</span>
+            <h2 className="site-section-title">Included, <span className="accent">and not included.</span></h2>
+            <p className="site-section-sub u-mt-4">
               Everything the retreat needs to put working software in your hands is included. Things
               that scale with your business after, ads, ongoing API costs, domain renewals, are not.
             </p>
           </div>
-          <div className="rt-incl-cols reveal">
+          <div className="site-rt-incl-cols reveal">
             <IncludeCard label="Included" lines={INCLUDED} positive />
             <IncludeCard label="Not included" lines={NOT_INCLUDED} positive={false} />
           </div>
@@ -391,23 +391,23 @@ export default function SaigonPrivatePage() {
       <section className="section">
         <div className="container">
           <div className="reveal u-max-7">
-            <span className="section-label">Where you stay</span>
-            <h2 className="section-title">AIO-pad, <span className="accent">Lumiere Riverside.</span></h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">Where you stay</span>
+            <h2 className="site-section-title">AIO-pad, <span className="accent">Lumiere Riverside.</span></h2>
+            <p className="site-section-sub u-mt-4">
               Your team stays at the AIO-pad in Lumiere Riverside, in the leafy Thao Dien neighborhood
               of Saigon. Riverside views, a private car and driver, and the Travel Buddy app for
               everything else. 20 minutes to District 1.
             </p>
             <div className="u-row u-gap-3 u-wrap u-mt-5">
-              <Link href="/the-vietnam-experience/place" className="btn btn-ghost-light">
+              <Link href="/the-vietnam-experience/place" className="btn site-btn-ghost-light">
                 Explore the neighborhood →
               </Link>
-              <a href="https://www.aio-pad.com" target="_blank" rel="noopener noreferrer" className="btn btn-ghost-light">
+              <a href="https://www.aio-pad.com" target="_blank" rel="noopener noreferrer" className="btn site-btn-ghost-light">
                 See the apartments at aio-pad.com →
               </a>
             </div>
           </div>
-          <div className="rt-stay-grid reveal">
+          <div className="site-rt-stay-grid reveal">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/images/saigon-private/apartment.jpg" alt="Two-bedroom apartment at the AIO-pad in Lumiere Riverside" />
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -417,22 +417,22 @@ export default function SaigonPrivatePage() {
       </section>
 
       {/* ═══ THE VIETNAM EXPERIENCE TEASER ═══ */}
-      <section className="section section--tint">
+      <section className="section site-section--tint">
         <div className="container">
-          <div className="rt-xp-teaser reveal">
-            <div className="rt-xp-teaser-media">
+          <div className="site-rt-xp-teaser reveal">
+            <div className="site-rt-xp-teaser-media">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/experience/welcome.jpg" alt="The Saigon riverside at first light" />
             </div>
             <div className="rt-xp-teaser-copy">
-              <span className="section-label">The Vietnam Experience</span>
-              <h2 className="section-title">The week is more than <span className="accent">the build.</span></h2>
-              <p className="section-sub u-mt-4">
+              <span className="site-section-label">The Vietnam Experience</span>
+              <h2 className="site-section-title">The week is more than <span className="accent">the build.</span></h2>
+              <p className="site-section-sub u-mt-4">
                 9am to 6pm you build. Every evening, Saigon is yours, the food, the river, the city.
                 VIP arrival, a private driver, and the AIO-pad in Thao Dien. See what a week here is
                 really like.
               </p>
-              <Link href="/the-vietnam-experience" className="btn btn-ghost-light u-mt-5">
+              <Link href="/the-vietnam-experience" className="btn site-btn-ghost-light u-mt-5">
                 Explore The Vietnam Experience →
               </Link>
             </div>
@@ -444,32 +444,32 @@ export default function SaigonPrivatePage() {
       <section className="section wf-section--white">
         <div className="container">
           <div className="reveal u-max-7">
-            <span className="section-label">After you fly home</span>
-            <h2 className="section-title">The Polish. <span className="accent">We don&rsquo;t ship and ghost.</span></h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">After you fly home</span>
+            <h2 className="site-section-title">The Polish. <span className="accent">We don&rsquo;t ship and ghost.</span></h2>
+            <p className="site-section-sub u-mt-4">
               Working is not the same as production. Every retreat includes 40 human tokens, about 40
               hours of expert time, for the 30 days after you leave. Our team uses them to take your
               builds to production quality, fix the edge cases, and, if there is room, build the next
               thing with you.
             </p>
           </div>
-          <div className="engage-transparency reveal u-mt-8">
-            <div className="engage-transparency-eyebrow">The 30 days after</div>
-            <div className="engage-transparency-list">
-              <div className="engage-transparency-item">
+          <div className="site-engage-transparency reveal u-mt-8">
+            <div className="site-engage-transparency-eyebrow">The 30 days after</div>
+            <div className="site-engage-transparency-list">
+              <div className="site-engage-transparency-item">
                 <strong>40 human tokens included</strong>
                 <span>~40 hours of expert polish, free for 30 days</span>
               </div>
-              <div className="engage-transparency-item">
+              <div className="site-engage-transparency-item">
                 <strong>$2K per month to keep going</strong>
                 <span>40 more tokens every month, cancel anytime</span>
               </div>
-              <div className="engage-transparency-item">
+              <div className="site-engage-transparency-item">
                 <strong>2 meters, one dashboard</strong>
                 <span>Claude tokens and human tokens, side by side</span>
               </div>
             </div>
-            <p className="engage-transparency-line">
+            <p className="site-engage-transparency-line">
               Want to keep building after the first month? The Human Tokens subscription is $2,000 a
               month for 40 tokens, cancel anytime.
             </p>
@@ -481,22 +481,22 @@ export default function SaigonPrivatePage() {
       <section className="section wf-section--white">
         <div className="container">
           <div className="reveal u-max-7">
-            <span className="section-label">FAQ</span>
-            <h2 className="section-title">Common <span className="accent">questions.</span></h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">FAQ</span>
+            <h2 className="site-section-title">Common <span className="accent">questions.</span></h2>
+            <p className="site-section-sub u-mt-4">
               Not answered here? Email{" "}
-              <a href="mailto:quan@edge8.ai" className="text-link u-inline">quan@edge8.ai</a>{" "}
+              <a href="mailto:quan@edge8.ai" className="site-text-link u-inline">quan@edge8.ai</a>{" "}
               and we will reply within a business day.
             </p>
           </div>
-          <div className="rt-faq reveal">
+          <div className="site-rt-faq reveal">
             {FAQS.map((it, i) => (
-              <details className="rt-faq-item" key={i}>
+              <details className="site-rt-faq-item" key={i}>
                 <summary>
                   <span>{it.q}</span>
-                  <span className="rt-faq-toggle">+</span>
+                  <span className="site-rt-faq-toggle">+</span>
                 </summary>
-                <div className="rt-faq-body">{it.a}</div>
+                <div className="site-rt-faq-body">{it.a}</div>
               </details>
             ))}
           </div>
@@ -504,14 +504,14 @@ export default function SaigonPrivatePage() {
       </section>
 
       {/* ═══ FINAL CTA ═══ */}
-      <section className="audit-cta section">
+      <section className="site-audit-cta section">
         <div className="container">
-          <div className="audit-inner">
-            <div className="audit-text reveal">
-              <h2 className="section-title">Reserve your private retreat.</h2>
+          <div className="site-audit-inner">
+            <div className="site-audit-text reveal">
+              <h2 className="site-section-title">Reserve your private retreat.</h2>
               <p>Fly to Saigon. Fly home with the software your business runs on. From $7,000.</p>
             </div>
-            <div className="audit-cta-btn reveal">
+            <div className="site-audit-cta-btn reveal">
               <Link href="/reserve/saigon-private" className="btn btn-primary">Reserve a retreat →</Link>
             </div>
           </div>
@@ -523,29 +523,29 @@ export default function SaigonPrivatePage() {
 
 function CompareCard({ label, cost, detail, featured }: { label: string; cost: string; detail: string; featured?: boolean }) {
   return (
-    <div className={`engage-card${featured ? " featured" : ""}`}>
-      <span className="engage-tag">{label}</span>
-      <span className="rt-compare-cost">{cost}</span>
-      <p className="engage-desc">{detail}</p>
+    <div className={`site-engage-card${featured ? " featured" : ""}`}>
+      <span className="site-engage-tag">{label}</span>
+      <span className="site-rt-compare-cost">{cost}</span>
+      <p className="site-engage-desc">{detail}</p>
     </div>
   );
 }
 
 function ProgramBlock({ label, days }: { label: string; days: Array<{ num: string; title: string; sub: string; items: string[] }> }) {
   return (
-    <div className="rt-program">
-      <span className="rt-program-label">{label}</span>
-      <div className="rt-day-grid">
+    <div className="site-rt-program">
+      <span className="site-rt-program-label">{label}</span>
+      <div className="site-rt-day-grid">
         {days.map((day) => (
-          <div key={day.num} className="rt-day-card">
-            <div className="rt-day-meta">
-              <span className="rt-day-num">{day.num}</span>
-              <span className="rt-day-sub">{day.sub}</span>
+          <div key={day.num} className="site-rt-day-card">
+            <div className="site-rt-day-meta">
+              <span className="site-rt-day-num">{day.num}</span>
+              <span className="site-rt-day-sub">{day.sub}</span>
             </div>
-            <h3 className="rt-day-title">{day.title}</h3>
-            <ul className="rt-day-list">
+            <h3 className="site-rt-day-title">{day.title}</h3>
+            <ul className="site-rt-day-list">
               {day.items.map((item) => (
-                <li key={item}><span className="rt-day-dot" />{item}</li>
+                <li key={item}><span className="site-rt-day-dot" />{item}</li>
               ))}
             </ul>
           </div>
@@ -557,12 +557,12 @@ function ProgramBlock({ label, days }: { label: string; days: Array<{ num: strin
 
 function IncludeCard({ label, lines, positive }: { label: string; lines: string[]; positive: boolean }) {
   return (
-    <div className="rt-incl-card">
-      <span className={`rt-incl-label${positive ? "" : " rt-incl-label--neg"}`}>{label}</span>
-      <ul className="rt-incl-list">
+    <div className="site-rt-incl-card">
+      <span className={`site-rt-incl-label${positive ? "" : " site-rt-incl-label--neg"}`}>{label}</span>
+      <ul className="site-rt-incl-list">
         {lines.map((line) => (
           <li key={line}>
-            <span className={positive ? "rt-incl-yes" : "rt-incl-no"}>{positive ? "✓" : "×"}</span>
+            <span className={positive ? "site-rt-incl-yes" : "site-rt-incl-no"}>{positive ? "✓" : "×"}</span>
             {line}
           </li>
         ))}

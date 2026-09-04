@@ -80,7 +80,7 @@ export default function TripForm() {
 
   if (status === 'sent') {
     return (
-      <div className="apply-success">
+      <div className="site-apply-success">
         <h2>Thank you!</h2>
         <p>
           We&apos;ve received your details for the Vietnam adventure. If you still need to send
@@ -91,10 +91,10 @@ export default function TripForm() {
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} noValidate>
-      <p className="contact-form-eyebrow">Your family</p>
+    <form className="site-contact-form" onSubmit={handleSubmit} noValidate>
+      <p className="site-contact-form-eyebrow">Your family</p>
 
-      <div className="contact-field">
+      <div className="site-contact-field">
         <label htmlFor="family_name">Family name *</label>
         <input
           id="family_name"
@@ -106,8 +106,8 @@ export default function TripForm() {
         />
       </div>
 
-      <div className="contact-field-row">
-        <div className="contact-field">
+      <div className="site-contact-field-row">
+        <div className="site-contact-field">
           <label htmlFor="contact_name">Your name *</label>
           <input
             id="contact_name"
@@ -119,7 +119,7 @@ export default function TripForm() {
             onChange={handleFamily}
           />
         </div>
-        <div className="contact-field">
+        <div className="site-contact-field">
           <label htmlFor="contact_email">Email *</label>
           <input
             id="contact_email"
@@ -133,22 +133,22 @@ export default function TripForm() {
         </div>
       </div>
 
-      <p className="contact-form-eyebrow" style={{ marginTop: 12 }}>
+      <p className="site-contact-form-eyebrow" style={{ marginTop: 12 }}>
         Family members &amp; t-shirt sizes
       </p>
 
       {members.map((m, i) => (
-        <div key={i} className="trip-member">
-          <div className="trip-member-head">
-            <span className="trip-member-label">Member {i + 1}</span>
+        <div key={i} className="site-trip-member">
+          <div className="site-trip-member-head">
+            <span className="site-trip-member-label">Member {i + 1}</span>
             {members.length > 1 && (
-              <button type="button" className="trip-member-remove" onClick={() => removeMember(i)}>
+              <button type="button" className="site-trip-member-remove" onClick={() => removeMember(i)}>
                 Remove
               </button>
             )}
           </div>
-          <div className="contact-field-row">
-            <div className="contact-field">
+          <div className="site-contact-field-row">
+            <div className="site-contact-field">
               <label htmlFor={`name_${i}`}>Full name *</label>
               <input
                 id={`name_${i}`}
@@ -158,7 +158,7 @@ export default function TripForm() {
                 onChange={(e) => updateMember(i, { full_name: e.target.value })}
               />
             </div>
-            <div className="contact-field">
+            <div className="site-contact-field">
               <label htmlFor={`size_${i}`}>T-shirt size *</label>
               <select
                 id={`size_${i}`}
@@ -177,7 +177,7 @@ export default function TripForm() {
               </select>
             </div>
           </div>
-          <div className="contact-field">
+          <div className="site-contact-field">
             <label htmlFor={`passport_${i}`}>
               Passport photo(s) — optional, you can add more than one (max {MAX_PASSPORT_MB} MB each)
             </label>
@@ -189,9 +189,9 @@ export default function TripForm() {
               onChange={(e) => handlePassports(i, e)}
             />
             {m.passports.length > 0 && (
-              <div className="trip-files">
+              <div className="site-trip-files">
                 {m.passports.map((f, fi) => (
-                  <span key={fi} className="trip-file-name">
+                  <span key={fi} className="site-trip-file-name">
                     {f.name} ({Math.round(f.size / 1024)} KB)
                   </span>
                 ))}
@@ -201,11 +201,11 @@ export default function TripForm() {
         </div>
       ))}
 
-      <button type="button" className="btn trip-add" onClick={addMember}>
+      <button type="button" className="btn site-trip-add" onClick={addMember}>
         + Add family member
       </button>
 
-      <div className="trip-privacy">
+      <div className="site-trip-privacy">
         <strong>Passports — only if you haven&apos;t sent one yet</strong>
         <p>
           Most travelers have already sent their passports — if you have, you can skip this. For
@@ -230,13 +230,13 @@ export default function TripForm() {
         style={{ display: 'none' }}
       />
 
-      {error && <p className="apply-error">{error}</p>}
+      {error && <p className="site-apply-error">{error}</p>}
 
-      <button type="submit" className="btn btn-primary contact-submit" disabled={status === 'sending'}>
+      <button type="submit" className="btn btn-primary site-contact-submit" disabled={status === 'sending'}>
         {status === 'sending' ? 'Submitting…' : 'Submit'}
       </button>
 
-      <p className="contact-form-note">We&apos;ll only use these details to organize the trip.</p>
+      <p className="site-contact-form-note">We&apos;ll only use these details to organize the trip.</p>
     </form>
   )
 }

@@ -18,12 +18,12 @@ const REPO_URL = 'https://github.com/talentedgeai/8edges'
 export default function InstallGuidePage() {
   return (
     <main>
-      <section className="page-hero">
+      <section className="site-page-hero">
         <div className="container">
-          <div className="page-hero-inner">
-            <span className="section-label">The Full Install Guide</span>
-            <h1 className="section-title section-title--sm site-glyph-xl">From Fork to Live in an Afternoon</h1>
-            <p className="page-hero-sub">
+          <div className="site-page-hero-inner">
+            <span className="site-section-label">The Full Install Guide</span>
+            <h1 className="site-section-title site-section-title--sm site-glyph-xl">From Fork to Live in an Afternoon</h1>
+            <p className="site-page-hero-sub">
               Everything you need to get your own 8 Edges Operating System running: a GitHub fork, a free Supabase
               project, one SQL script, a handful of keys, and a Vercel deploy.
             </p>

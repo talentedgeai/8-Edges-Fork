@@ -21,19 +21,19 @@ const CHAPTERS = [
 
 export default function VietnamExperiencePage() {
   return (
-    <main className="xp-page">
+    <main className="site-xp-page">
       <RevealObserver />
       {/* Hero */}
       <section className="hero" id="hero">
-        <div className="hero-bg" />
-        <div className="hero-grid" />
+        <div className="site-hero-bg" />
+        <div className="site-hero-grid" />
         <div className="container">
-          <div className="hero-content">
-            <div className="hero-eyebrow">An AI retreat in Saigon</div>
-            <h1 className="hero-headline">
+          <div className="site-hero-content">
+            <div className="site-hero-eyebrow">An AI retreat in Saigon</div>
+            <h1 className="site-hero-headline">
               The <span className="accent">Vietnam Experience</span>
             </h1>
-            <p className="hero-sub">
+            <p className="site-hero-sub">
               You came for an AI Retreat. You will leave with a new way to live.
             </p>
           </div>
@@ -43,7 +43,7 @@ export default function VietnamExperiencePage() {
       {/* The slider */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <div className="xp-stage reveal">
+          <div className="site-xp-stage reveal">
             <ExperienceSlider />
           </div>
         </div>
@@ -53,15 +53,15 @@ export default function VietnamExperiencePage() {
       <section className="section" style={{ background: "var(--white)" }}>
         <div className="container">
           <div className="reveal" style={{ maxWidth: 760 }}>
-            <span className="section-label">The chapters</span>
-            <h2 className="section-title">Explore the <span className="accent">experience.</span></h2>
-            <p className="section-sub" style={{ marginTop: 16 }}>Step into any part of the week.</p>
+            <span className="site-section-label">The chapters</span>
+            <h2 className="site-section-title">Explore the <span className="accent">experience.</span></h2>
+            <p className="site-section-sub" style={{ marginTop: 16 }}>Step into any part of the week.</p>
           </div>
 
-          <div className="xp-chapters reveal">
+          <div className="site-xp-chapters reveal">
             {CHAPTERS.map((c) => (
-              <Link key={c.href} href={c.href} className="xp-card">
-                <div className="xp-card-top">
+              <Link key={c.href} href={c.href} className="site-xp-card">
+                <div className="site-xp-card-top">
                   <h3>{c.title}</h3>
                   <span className="ar" aria-hidden>→</span>
                 </div>

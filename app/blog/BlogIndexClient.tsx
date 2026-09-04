@@ -64,29 +64,29 @@ export default function BlogIndexClient({ posts, tabs }: { posts: UnifiedPostMet
   return (
     <main>
       {/* ═══ HERO ═══════════════════════════════════════════════ */}
-      <section className="blog-hero">
+      <section className="site-blog-hero">
         <div className="container">
-          <div className="blog-hero-inner">
-            <h1 className="section-title site-on-dark">AI Insights &amp; Business Intelligence</h1>
-            <p className="blog-hero-sub">Expert perspectives on AI strategy, leadership, and implementation from the Edge8 team.</p>
+          <div className="site-blog-hero-inner">
+            <h1 className="site-section-title site-on-dark">AI Insights &amp; Business Intelligence</h1>
+            <p className="site-blog-hero-sub">Expert perspectives on AI strategy, leadership, and implementation from the Edge8 team.</p>
 
             {featured && (
-              <Link href={`/post/${featured.slug}`} className="hero-featured-card">
+              <Link href={`/post/${featured.slug}`} className="site-hero-featured-card">
                 <Image
                   src={featured.image}
                   alt={featured.title}
                   width={600}
                   height={338}
-                  className="hero-featured-img"
+                  className="site-hero-featured-img"
                 />
-                <div className="hero-featured-body">
-                  <span className="hero-featured-cat">{featured.category}</span>
-                  <p className="hero-featured-date">
+                <div className="site-hero-featured-body">
+                  <span className="site-hero-featured-cat">{featured.category}</span>
+                  <p className="site-hero-featured-date">
                     {new Date(featured.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                   </p>
-                  <h2 className="hero-featured-title">{featured.title}</h2>
-                  <p className="hero-featured-excerpt">{featured.excerpt}</p>
-                  <span className="hero-featured-more">Read Article →</span>
+                  <h2 className="site-hero-featured-title">{featured.title}</h2>
+                  <p className="site-hero-featured-excerpt">{featured.excerpt}</p>
+                  <span className="site-hero-featured-more">Read Article →</span>
                 </div>
               </Link>
             )}
@@ -98,11 +98,11 @@ export default function BlogIndexClient({ posts, tabs }: { posts: UnifiedPostMet
       <section className="section">
         <div className="container">
           {/* Category filter tabs */}
-          <div className="blog-filter-tabs">
+          <div className="site-blog-filter-tabs">
             {allTabs.map((cat) => (
               <button
                 key={cat.slug}
-                className={`blog-filter-tab${activeCategory === cat.slug ? ' active' : ''}`}
+                className={`site-blog-filter-tab${activeCategory === cat.slug ? ' active' : ''}`}
                 onClick={() => setActiveCategory(cat.slug)}
               >
                 {cat.label}
@@ -113,10 +113,10 @@ export default function BlogIndexClient({ posts, tabs }: { posts: UnifiedPostMet
           {/* Card grid */}
           {filteredPosts.length > 0 ? (
             <>
-              <div className="blog-cards-grid">
+              <div className="site-blog-cards-grid">
                 {visiblePosts.map((post) => (
-                  <Link key={post.slug} href={`/post/${post.slug}`} className="blog-card reveal">
-                    <div className="blog-card-img-wrap">
+                  <Link key={post.slug} href={`/post/${post.slug}`} className="site-blog-card reveal">
+                    <div className="site-blog-card-img-wrap">
                       <Image
                         src={post.image}
                         alt={post.title}
@@ -124,14 +124,14 @@ export default function BlogIndexClient({ posts, tabs }: { posts: UnifiedPostMet
                         className="site-img-cover-only"
                       />
                     </div>
-                    <div className="blog-card-body">
-                      <span className="blog-card-cat">{post.category}</span>
-                      <span className="blog-card-date">
+                    <div className="site-blog-card-body">
+                      <span className="site-blog-card-cat">{post.category}</span>
+                      <span className="site-blog-card-date">
                         {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                       </span>
-                      <div className="blog-card-title">{post.title}</div>
-                      <p className="blog-card-excerpt">{post.excerpt}</p>
-                      <span className="blog-card-more">Read Article →</span>
+                      <div className="site-blog-card-title">{post.title}</div>
+                      <p className="site-blog-card-excerpt">{post.excerpt}</p>
+                      <span className="site-blog-card-more">Read Article →</span>
                     </div>
                   </Link>
                 ))}
@@ -140,7 +140,7 @@ export default function BlogIndexClient({ posts, tabs }: { posts: UnifiedPostMet
               {hasMore && <div ref={sentinelRef} className="site-hairline" aria-hidden="true" />}
             </>
           ) : (
-            <div className="blog-empty">
+            <div className="site-blog-empty">
               <p>No posts in this category yet. Check back soon.</p>
             </div>
           )}

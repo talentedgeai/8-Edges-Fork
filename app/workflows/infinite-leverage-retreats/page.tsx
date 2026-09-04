@@ -68,11 +68,11 @@ export default function InfiniteLeverageRetreatsWorkflowPage() {
       {/* The flow */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">The flow</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The flow</span>
+          <h2 className="site-section-title site-section-title--sm">
             Five stages, one running ledger
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             A private retreat is mostly human work: selling it, planning it, and delivering it in the room. What makes it
             repeatable is the layer underneath. From the moment a retreat is booked, it lives as a record that holds the
             budget, absorbs every cost as it happens, and closes itself into a profit number without a spreadsheet.
@@ -93,10 +93,10 @@ export default function InfiniteLeverageRetreatsWorkflowPage() {
       {/* Step detail */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             Step by step
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             From a signed date to a closed P&L
           </h2>
           <StepCards

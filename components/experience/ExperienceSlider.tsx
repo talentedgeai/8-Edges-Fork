@@ -176,12 +176,12 @@ export function ExperienceSlider() {
     <section
       aria-roledescription="carousel"
       aria-label="The Vietnam Experience"
-      className="xp-slider"
+      className="site-xp-slider"
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >
       <div
-        className="xp-track"
+        className="site-xp-track"
         style={{
           transform: `translateX(-${index * 100}%)`,
           transition: reduced ? "none" : "transform 600ms cubic-bezier(0.4, 0, 0.2, 1)",
@@ -192,23 +192,23 @@ export function ExperienceSlider() {
         ))}
       </div>
 
-      <button type="button" onClick={prev} aria-label="Previous" className="xp-arrow prev">
+      <button type="button" onClick={prev} aria-label="Previous" className="site-xp-arrow prev">
         <span aria-hidden>←</span>
       </button>
-      <button type="button" onClick={next} aria-label="Next" className="xp-arrow next">
+      <button type="button" onClick={next} aria-label="Next" className="site-xp-arrow next">
         <span aria-hidden>→</span>
       </button>
 
-      <div className="xp-controls">
+      <div className="site-xp-controls">
         <button
           type="button"
           onClick={() => setPaused((p) => !p)}
           aria-label={paused ? "Play slideshow" : "Pause slideshow"}
-          className="xp-play"
+          className="site-xp-play"
         >
           <span aria-hidden>{paused ? "▶" : "❚❚"}</span>
         </button>
-        <div className="xp-dots">
+        <div className="site-xp-dots">
           {SLIDES.map((s, i) => (
             <button
               key={i}
@@ -216,9 +216,9 @@ export function ExperienceSlider() {
               onClick={() => go(i)}
               aria-label={`Go to ${s.eyebrow}`}
               aria-current={i === index}
-              className="xp-dot-hit"
+              className="site-xp-dot-hit"
             >
-              <span className={i === index ? "xp-dot is-active" : "xp-dot"} />
+              <span className={i === index ? "site-xp-dot is-active" : "site-xp-dot"} />
             </button>
           ))}
         </div>
@@ -237,9 +237,9 @@ function SlideView({
   position: string;
 }) {
   return (
-    <div className="xp-slide" aria-hidden={!active}>
-      <div className="xp-slide-inner">
-        <div className="xp-slide-media">
+    <div className="site-xp-slide" aria-hidden={!active}>
+      <div className="site-xp-slide-inner">
+        <div className="site-xp-slide-media">
           {slide.image ? (
             <Image
               src={slide.image.src}
@@ -250,21 +250,21 @@ function SlideView({
               priority={active}
             />
           ) : (
-            <div className="xp-slide-placeholder">{slide.placeholder} · image soon</div>
+            <div className="site-xp-slide-placeholder">{slide.placeholder} · image soon</div>
           )}
         </div>
 
-        <div className="xp-slide-copy">
+        <div className="site-xp-slide-copy">
           <p className="eyebrow">{slide.eyebrow}</p>
-          <h2 className="xp-slide-title">{slide.title}</h2>
-          <div className="xp-slide-body">
+          <h2 className="site-xp-slide-title">{slide.title}</h2>
+          <div className="site-xp-slide-body">
             {slide.body.map((p, i) => (
               <p key={i}>{p}</p>
             ))}
           </div>
 
           {slide.people && (
-            <ul className="xp-people">
+            <ul className="site-xp-people">
               {slide.people.map((person) => (
                 <li key={person.name}>
                   <Link href={person.href}>
@@ -277,23 +277,23 @@ function SlideView({
             </ul>
           )}
           {slide.teamNote && (
-            <p className="xp-teamnote">
+            <p className="site-xp-teamnote">
               <Link href={slide.teamNote.href}>{slide.teamNote.text}</Link>
             </p>
           )}
 
           {slide.readMore && (
-            <Link href={slide.readMore.href} className="xp-readmore">
+            <Link href={slide.readMore.href} className="site-xp-readmore">
               {slide.readMore.label}
               <span className="ar" aria-hidden>→</span>
             </Link>
           )}
 
           {slide.ctas && (
-            <div className="xp-slide-ctas">
+            <div className="site-xp-slide-ctas">
               {slide.ctas.map((cta) => {
                 const external = !cta.href.startsWith("/");
-                const cls = cta.primary ? "btn btn-primary" : "btn btn-ghost";
+                const cls = cta.primary ? "btn btn-primary" : "btn site-btn-ghost";
                 const arrow = (
                   <span className="arrow" aria-hidden>{external ? "↗" : "→"}</span>
                 );
@@ -310,7 +310,7 @@ function SlideView({
             </div>
           )}
 
-          <p className="xp-slide-pos">{position}</p>
+          <p className="site-xp-slide-pos">{position}</p>
         </div>
       </div>
     </div>

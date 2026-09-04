@@ -190,11 +190,11 @@ export default function RecruitmentWorkflowPage() {
       {/* The problem */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">The problem</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The problem</span>
+          <h2 className="site-section-title site-section-title--sm">
             Hiring is drawn as a line and lived as a loop
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Most hiring processes fail in the gap between the tidy diagram and the messy reality:
           </p>
           <div className="wf-problems">
@@ -215,13 +215,13 @@ export default function RecruitmentWorkflowPage() {
       {/* The shape */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             The shape
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Three loops orbiting one pool
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Each loop runs on its own clock. None of them waits for the others, and all of them read from and write to
             the same candidate pool.
           </p>
@@ -265,8 +265,8 @@ export default function RecruitmentWorkflowPage() {
       {/* Loop 1: Demand */}
       <section className="section">
         <div className="container">
-          <span className="section-label">Loop 1 · Demand</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">Loop 1 · Demand</span>
+          <h2 className="site-section-title site-section-title--sm">
             Roles keep changing, the system keeps up
           </h2>
           <FlowRail
@@ -348,10 +348,10 @@ export default function RecruitmentWorkflowPage() {
       {/* Loop 2: Sourcing */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             Loop 2 · Sourcing
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Always on, across every channel
           </h2>
           <FlowRail
@@ -447,11 +447,11 @@ export default function RecruitmentWorkflowPage() {
       {/* Loop 3: Selection */}
       <section className="section">
         <div className="container">
-          <span className="section-label">Loop 3 · Selection</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">Loop 3 · Selection</span>
+          <h2 className="site-section-title site-section-title--sm">
             The real flowchart, every branch included
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             One candidate’s path through selection. Solid lines are the working process; dashed lines are the pool’s
             memory. Every “no” leads somewhere, and none of them is a shredder.
           </p>
@@ -597,13 +597,13 @@ export default function RecruitmentWorkflowPage() {
       {/* Every exit is a pool entry */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             The hub
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Every exit is a pool entry
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             “Rejected” is a status, not a delete. Every way out of the three loops lands in the pool with full
             history:
           </p>

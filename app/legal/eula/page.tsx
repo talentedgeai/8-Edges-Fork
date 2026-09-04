@@ -11,9 +11,9 @@ const EFFECTIVE_DATE = 'July 18, 2026'
 
 export default function TermsOfServicePage() {
   return (
-    <div className="xp-page">
-      <article className="xp-article">
-        <Link href="/" className="xp-backlink">
+    <div className="site-xp-page">
+      <article className="site-xp-article">
+        <Link href="/" className="site-xp-backlink">
           ← Edge8
         </Link>
 
@@ -23,7 +23,7 @@ export default function TermsOfServicePage() {
           lead="These terms (“Agreement”) govern your access to and use of the Edge8 website, client portal, and related services, operated by Talent Edge LLC, doing business as Edge8 (“Edge8,” “we,” “us”). By using our services, you agree to this Agreement."
         />
 
-        <div className="xp-blocks">
+        <div className="site-xp-blocks">
           <Block heading="Acceptance of terms">
             <p>
               By accessing or using the Edge8 website, client portal, or any related service, you
