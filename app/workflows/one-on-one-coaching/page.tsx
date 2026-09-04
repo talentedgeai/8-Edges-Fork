@@ -47,7 +47,7 @@ function CoachingCycleFlowchart() {
         viewBox="0 0 940 1060"
         role="img"
         aria-label="Biweekly coaching cycle flowchart: AI prep, the human 1-1, transcript auto-detection with a paste fallback, AI drafting both recap tiers, the coach review and publish gate, the shared recap, the mid-cycle check-in looping into the next prep, the private coach layer that never publishes, and monthly trend analysis feeding the next cycle"
-        className="wf-diagram wf-diagram--wide"
+        className="site-wf-diagram site-wf-diagram--wide"
       >
         <defs>
           <marker id="carr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -176,9 +176,9 @@ export default function OneOnOneCoachingWorkflowPage() {
           <p className="site-section-sub u-mt-3">
             Most leaders do not skip 1-1s. They run them without a system, and the same five things slip:
           </p>
-          <div className="wf-problems">
+          <div className="site-wf-problems">
             {PROBLEMS.map((p) => (
-              <div key={p} className="wf-problem">
+              <div key={p} className="site-wf-problem">
                 <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round">
                   <circle cx="12" cy="12" r="10" />
                   <line x1="12" y1="8" x2="12" y2="13" />
@@ -192,9 +192,9 @@ export default function OneOnOneCoachingWorkflowPage() {
       </section>
 
       {/* The shape */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             The shape
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -315,9 +315,9 @@ export default function OneOnOneCoachingWorkflowPage() {
       </section>
 
       {/* The scoreboard */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             The scoreboard
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -326,8 +326,8 @@ export default function OneOnOneCoachingWorkflowPage() {
           <p className="site-section-sub u-mt-3">
             Four concepts, four horizons, and they are never confused with each other:
           </p>
-          <div className="wf-table-wrap">
-            <table className="wf-table">
+          <div className="site-wf-table-wrap">
+            <table className="site-wf-table">
               <thead>
                 <tr>
                   <th>Concept</th>
@@ -376,8 +376,8 @@ export default function OneOnOneCoachingWorkflowPage() {
               </tbody>
             </table>
           </div>
-          <div className="wf-info-grid u-mt-6">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid u-mt-6">
+            <div className="site-wf-info-card">
               <h3>Goals ladder up ⇅ progress flows down</h3>
               <ul>
                 <li>Every FAST goal can ladder into the company goal tree at whichever altitude fits: an objective, a
@@ -388,7 +388,7 @@ export default function OneOnOneCoachingWorkflowPage() {
                   current goal&quot; is measured, not asserted</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why the distinction matters</h3>
               <ul>
                 <li>Goals are quarterly and public, so ambition is visible and peer-supported</li>
@@ -411,8 +411,8 @@ export default function OneOnOneCoachingWorkflowPage() {
           <p className="site-section-sub u-mt-3">
             Two standing reads per person keep the coaching grounded, and both live behind explicit rules:
           </p>
-          <div className="wf-info-grid u-mt-6">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid u-mt-6">
+            <div className="site-wf-info-card">
               <h3>The OCEAN profile</h3>
               <ul>
                 <li>Five personality dimensions, each with a rating and behavioral evidence, plus a snapshot and growth
@@ -423,7 +423,7 @@ export default function OneOnOneCoachingWorkflowPage() {
                 <li>Nobody else sees it: not the team, not the assistants</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>The retention read</h3>
               <ul>
                 <li>Built on job embeddedness: the three roots that keep people are belonging and fit, links to the
@@ -438,9 +438,9 @@ export default function OneOnOneCoachingWorkflowPage() {
       </section>
 
       {/* Privacy */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Two tiers, never mixed
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -450,8 +450,8 @@ export default function OneOnOneCoachingWorkflowPage() {
             The private coach layer and the person-facing layer are separate columns with separate query scopes.
             Mixing them is a code bug, not a human slip. The full access matrix:
           </p>
-          <div className="wf-table-wrap">
-            <table className="wf-table">
+          <div className="site-wf-table-wrap">
+            <table className="site-wf-table">
               <thead>
                 <tr>
                   <th>Data</th>
@@ -528,8 +528,8 @@ export default function OneOnOneCoachingWorkflowPage() {
           <h2 className="site-section-title site-section-title--sm">
             What runs it
           </h2>
-          <div className="wf-table-wrap">
-            <table className="wf-table">
+          <div className="site-wf-table-wrap">
+            <table className="site-wf-table">
               <thead>
                 <tr>
                   <th>Tool</th>
@@ -579,15 +579,15 @@ export default function OneOnOneCoachingWorkflowPage() {
       </section>
 
       {/* The guardrail */}
-      <section className="section wf-section--dark">
+      <section className="section site-wf-section--dark">
         <div className="container">
-          <span className="site-section-label wf-chip--on-dark">
+          <span className="site-section-label site-wf-chip--on-dark">
             The guardrail
           </span>
-          <h2 className="site-section-title wf-title-xl">
+          <h2 className="site-section-title site-wf-title-xl">
             The AI preps and drafts. The human decides.
           </h2>
-          <p className="wf-hero-sub u-mt-3">
+          <p className="site-wf-hero-sub u-mt-3">
             The rule that sits above every step: the AI never recommends promoting, managing out, ranking, or labeling
             a person. It surfaces the signal and proposes the move; the coach coaches the team. No permanent people
             decision is made during an emotional spike, and every claim the AI makes points to a behavior in the data.
@@ -599,8 +599,8 @@ export default function OneOnOneCoachingWorkflowPage() {
       <section className="section">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>The standing rules</h3>
               <ul>
                 <li>The 1-1 itself is the only human step, and it is the one that matters</li>
@@ -612,7 +612,7 @@ export default function OneOnOneCoachingWorkflowPage() {
                   same system</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why it works</h3>
               <ul>
                 <li>Every 1-1 gets the same depth of prep, on the busiest week and the quietest</li>

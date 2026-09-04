@@ -54,9 +54,9 @@ export default function PerformanceWorkflowPage() {
           <p className="site-section-sub u-mt-3">
             Performance is the easiest thing to work on and the easiest to work on badly:
           </p>
-          <div className="wf-problems">
+          <div className="site-wf-problems">
             {PROBLEMS.map((p) => (
-              <div key={p} className="wf-problem">
+              <div key={p} className="site-wf-problem">
                 <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round">
                   <circle cx="12" cy="12" r="10" />
                   <line x1="12" y1="8" x2="12" y2="13" />
@@ -70,9 +70,9 @@ export default function PerformanceWorkflowPage() {
       </section>
 
       {/* The flow */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             The flow
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -215,8 +215,8 @@ export default function PerformanceWorkflowPage() {
       <section className="section u-pt-0">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>The standing rules</h3>
               <ul>
                 <li>Measure before you optimize, and again after to prove it</li>
@@ -226,7 +226,7 @@ export default function PerformanceWorkflowPage() {
                 <li>Anything sensitive gets its own reviewable change</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why it works</h3>
               <ul>
                 <li>Effort lands on the real bottleneck, not the one that feels obvious</li>

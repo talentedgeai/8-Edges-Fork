@@ -109,18 +109,18 @@ function NodeShape({ n }: { n: GraphNode }) {
 
   switch (n.kind) {
     case 'trigger':
-      shape = <rect x={left} y={top} width={w} height={h} rx={10} className="wf-g-fill-dark" />
+      shape = <rect x={left} y={top} width={w} height={h} rx={10} className="site-wf-g-fill-dark" />
       titleFill = 'var(--white)'
       subFill = 'var(--mint)'
       break
     case 'action':
       shape = (
-        <rect x={left} y={top} width={w} height={h} rx={10} className="wf-g-node" />
+        <rect x={left} y={top} width={w} height={h} rx={10} className="site-wf-g-node" />
       )
       break
     case 'write':
       shape = (
-        <rect x={left} y={top} width={w} height={h} rx={10} className="wf-g-node wf-g-node--ok" />
+        <rect x={left} y={top} width={w} height={h} rx={10} className="site-wf-g-node site-wf-g-node--ok" />
       )
       break
     case 'decision': {
@@ -137,32 +137,32 @@ function NodeShape({ n }: { n: GraphNode }) {
       ]
         .map((p) => p.join(','))
         .join(' ')
-      shape = <polygon points={pts} className="wf-g-node wf-g-node--blue" />
+      shape = <polygon points={pts} className="site-wf-g-node site-wf-g-node--blue" />
       break
     }
     case 'wait':
       shape = (
-        <rect x={left} y={top} width={w} height={h} rx={h / 2} className="wf-g-node wf-g-node--amber" />
+        <rect x={left} y={top} width={w} height={h} rx={h / 2} className="site-wf-g-node site-wf-g-node--amber" />
       )
       break
     case 'human':
       shape = (
-        <rect x={left} y={top} width={w} height={h} rx={10} className="wf-g-node wf-g-node--strong" />
+        <rect x={left} y={top} width={w} height={h} rx={10} className="site-wf-g-node site-wf-g-node--strong" />
       )
       break
     case 'terminal':
-      shape = <rect x={left} y={top} width={w} height={h} rx={10} className="wf-g-node wf-g-node--soft" />
+      shape = <rect x={left} y={top} width={w} height={h} rx={10} className="site-wf-g-node site-wf-g-node--soft" />
       titleFill = 'var(--grey-mid)'
       subFill = 'var(--grey-mid)'
       break
     case 'flag':
       shape = (
-        <rect x={left} y={top} width={w} height={h} rx={10} className="wf-g-node wf-g-node--err" />
+        <rect x={left} y={top} width={w} height={h} rx={10} className="site-wf-g-node site-wf-g-node--err" />
       )
       break
     case 'state':
       shape = (
-        <rect x={left} y={top} width={w} height={h} rx={h / 2} className="wf-g-node wf-g-node--dark" />
+        <rect x={left} y={top} width={w} height={h} rx={h / 2} className="site-wf-g-node site-wf-g-node--dark" />
       )
       break
   }
@@ -176,7 +176,7 @@ function NodeShape({ n }: { n: GraphNode }) {
           x={x}
           y={firstBaseline + i * lineH}
           textAnchor="middle"
-          className="wf-g-title" style={{ fill: titleFill }} /* layout-ok: fill chosen per node kind at runtime */
+          className="site-wf-g-title" style={{ fill: titleFill }} /* layout-ok: fill chosen per node kind at runtime */
         >
           {line}
         </text>
@@ -186,7 +186,7 @@ function NodeShape({ n }: { n: GraphNode }) {
           x={x}
           y={firstBaseline + lines.length * lineH - 2}
           textAnchor="middle"
-          className="wf-g-sub" style={{ fill: subFill }} /* layout-ok: fill chosen per node kind at runtime */
+          className="site-wf-g-sub" style={{ fill: subFill }} /* layout-ok: fill chosen per node kind at runtime */
         >
           {n.sub}
         </text>
@@ -200,7 +200,7 @@ export function WorkflowGraph({ graph, caption }: { graph: WorkflowGraphDef; cap
 
   return (
     <figure className="u-m-0">
-      <div className="wf-graph-scroll">
+      <div className="site-wf-graph-scroll">
         <svg
           viewBox={`0 0 ${graph.width} ${graph.height}`}
           width="100%"
@@ -249,7 +249,7 @@ export function WorkflowGraph({ graph, caption }: { graph: WorkflowGraphDef; cap
                     x={labelPos[0]}
                     y={labelPos[1]}
                     textAnchor="middle"
-                    className={`wf-g-label wf-g-label--${kind === "fail" ? "fail" : kind === "agent" ? "agent" : "plain"}`}
+                    className={`site-wf-g-label wf-g-label--${kind === "fail" ? "fail" : kind === "agent" ? "agent" : "plain"}`}
                   >
                     {e.label}
                   </text>
@@ -262,7 +262,7 @@ export function WorkflowGraph({ graph, caption }: { graph: WorkflowGraphDef; cap
           ))}
         </svg>
       </div>
-      {caption ? <figcaption className="wf-graph-caption">{caption}</figcaption> : null}
+      {caption ? <figcaption className="site-wf-graph-caption">{caption}</figcaption> : null}
     </figure>
   )
 }
@@ -280,12 +280,12 @@ const LEGEND_SWATCH: Record<string, CSSProperties> = {
 
 export function GraphLegend({ items }: { items: Array<{ kind: string; label: string }> }) {
   return (
-    <div className="wf-graph-legend">
+    <div className="site-wf-graph-legend">
       {items.map((it) => (
         <span key={it.kind + it.label}>
           <i
             aria-hidden
-            className="wf-g-swatch" style={{ ...LEGEND_SWATCH[it.kind] }} /* layout-ok: swatch colours come from the legend table */
+            className="site-wf-g-swatch" style={{ ...LEGEND_SWATCH[it.kind] }} /* layout-ok: swatch colours come from the legend table */
           />
           {it.label}
         </span>

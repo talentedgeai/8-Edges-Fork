@@ -88,9 +88,9 @@ export default function ClientWorkRequestsWorkflowPage() {
       </section>
 
       {/* Step detail */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Step by step
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -179,8 +179,8 @@ export default function ClientWorkRequestsWorkflowPage() {
       <section className="section">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>The standing rules</h3>
               <ul>
                 <li>The client decides twice; nothing starts and nothing bills without them</li>
@@ -190,7 +190,7 @@ export default function ClientWorkRequestsWorkflowPage() {
                 <li>Contractor pay runs on its own monthly cycle, untouched by this flow</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why it works</h3>
               <ul>
                 <li>Requests skip the inbox and land where the work is tracked</li>

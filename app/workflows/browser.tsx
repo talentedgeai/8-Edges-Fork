@@ -30,16 +30,16 @@ function formatDate(date: string) {
 
 function WorkflowCard({ w }: { w: Workflow }) {
   return (
-    <Link href={`/workflows/${w.slug}`} className="wf-card">
-      <div className="wf-card-top">
+    <Link href={`/workflows/${w.slug}`} className="site-wf-card">
+      <div className="site-wf-card-top">
         <CategoryChip category={w.category} />
-        <span className="wf-card-date">{formatDate(w.date)}</span>
+        <span className="site-wf-card-date">{formatDate(w.date)}</span>
       </div>
-      <h3 className="wf-card-title">{w.title}</h3>
-      <p className="wf-card-excerpt">{w.excerpt}</p>
-      <div className="wf-card-foot">
-        <span className="wf-card-steps">{w.steps} steps</span>
-        <span className="wf-card-read">View workflow →</span>
+      <h3 className="site-wf-card-title">{w.title}</h3>
+      <p className="site-wf-card-excerpt">{w.excerpt}</p>
+      <div className="site-wf-card-foot">
+        <span className="site-wf-card-steps">{w.steps} steps</span>
+        <span className="site-wf-card-read">View workflow →</span>
       </div>
     </Link>
   )
@@ -47,12 +47,12 @@ function WorkflowCard({ w }: { w: Workflow }) {
 
 function WorkflowRow({ w }: { w: Workflow }) {
   return (
-    <Link href={`/workflows/${w.slug}`} className="wf-row">
+    <Link href={`/workflows/${w.slug}`} className="site-wf-row">
       <CategoryChip category={w.category} />
-      <span className="wf-row-title">{w.title}</span>
-      <span className="wf-row-steps">{w.steps} steps</span>
-      <span className="wf-row-date">{formatDate(w.date)}</span>
-      <span className="wf-row-arrow">→</span>
+      <span className="site-wf-row-title">{w.title}</span>
+      <span className="site-wf-row-steps">{w.steps} steps</span>
+      <span className="site-wf-row-date">{formatDate(w.date)}</span>
+      <span className="site-wf-row-arrow">→</span>
     </Link>
   )
 }
@@ -60,7 +60,7 @@ function WorkflowRow({ w }: { w: Workflow }) {
 function WorkflowSet({ workflows, layout }: { workflows: Workflow[]; layout: Layout }) {
   if (layout === 'list') {
     return (
-      <div className="wf-list">
+      <div className="site-wf-list">
         {workflows.map((w) => (
           <WorkflowRow key={w.slug} w={w} />
         ))}
@@ -68,7 +68,7 @@ function WorkflowSet({ workflows, layout }: { workflows: Workflow[]; layout: Lay
     )
   }
   return (
-    <div className="wf-grid">
+    <div className="site-wf-grid">
       {workflows.map((w) => (
         <WorkflowCard key={w.slug} w={w} />
       ))}
@@ -129,33 +129,33 @@ export default function WorkflowsBrowser({ workflows }: { workflows: Workflow[] 
     <>
       <section className="u-pt-7">
         <div className="container">
-          <div className="wf-controls">
-            <div className="wf-views" role="tablist" aria-label="View workflows by">
-              <span className="wf-views-label">View by</span>
+          <div className="site-wf-controls">
+            <div className="site-wf-views" role="tablist" aria-label="View workflows by">
+              <span className="site-wf-views-label">View by</span>
               {VIEWS.map((v) => (
                 <button
                   key={v.key}
                   role="tab"
                   aria-selected={view === v.key}
-                  className={`wf-view-tab${view === v.key ? ' active' : ''}`}
+                  className={`site-wf-view-tab${view === v.key ? ' active' : ''}`}
                   onClick={() => setView(v.key)}
                 >
                   {v.label}
                 </button>
               ))}
             </div>
-            <div className="wf-controls-right">
+            <div className="site-wf-controls-right">
               <input
                 type="search"
-                className="wf-search"
+                className="site-wf-search"
                 placeholder="Search workflows…"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 aria-label="Search workflows"
               />
-              <div className="wf-layouts" role="group" aria-label="Layout">
+              <div className="site-wf-layouts" role="group" aria-label="Layout">
                 <button
-                  className={`wf-layout-btn${layout === 'card' ? ' active' : ''}`}
+                  className={`site-wf-layout-btn${layout === 'card' ? ' active' : ''}`}
                   aria-label="Card view"
                   aria-pressed={layout === 'card'}
                   onClick={() => setLayout('card')}
@@ -163,7 +163,7 @@ export default function WorkflowsBrowser({ workflows }: { workflows: Workflow[] 
                   <CardIcon />
                 </button>
                 <button
-                  className={`wf-layout-btn${layout === 'list' ? ' active' : ''}`}
+                  className={`site-wf-layout-btn${layout === 'list' ? ' active' : ''}`}
                   aria-label="List view"
                   aria-pressed={layout === 'list'}
                   onClick={() => setLayout('list')}
@@ -179,20 +179,20 @@ export default function WorkflowsBrowser({ workflows }: { workflows: Workflow[] 
       {matches.length === 0 ? (
         <section className="u-pt-8 u-pb-9">
           <div className="container">
-            <p className="wf-empty">No workflows match &ldquo;{query}&rdquo;. Try a different word, or clear the search.</p>
+            <p className="site-wf-empty">No workflows match &ldquo;{query}&rdquo;. Try a different word, or clear the search.</p>
           </div>
         </section>
       ) : view === 'offices' ? (
         visibleOffices.map(({ office, workflows: officeWorkflows }, i) => (
           <section
             key={office}
-            className={`section wf-band${i % 2 === 1 ? " wf-band--tint" : ""}`}
+            className={`section site-wf-band${i % 2 === 1 ? " site-wf-band--tint" : ""}`}
           >
             <div className="container">
               <span className="site-section-label" style={i % 2 === 1 ? { background: 'var(--white)' } : undefined}>
                 {office} office
               </span>
-              <h2 className="site-section-title wf-title-lg u-mb-2">
+              <h2 className="site-section-title site-wf-title-lg u-mb-2">
                 {office}
               </h2>
               <p className="site-section-sub u-mb-6">

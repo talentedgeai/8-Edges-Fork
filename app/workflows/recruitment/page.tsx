@@ -52,7 +52,7 @@ function SelectionFlowchart() {
         viewBox="0 0 940 1400"
         role="img"
         aria-label="Selection flowchart: application to AI screen, two gates, screening call, interview rounds, offer, hire, with every no branch and every exit landing in the candidate pool"
-        className="wf-diagram wf-diagram--wide"
+        className="site-wf-diagram site-wf-diagram--wide"
       >
         <defs>
           <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -197,9 +197,9 @@ export default function RecruitmentWorkflowPage() {
           <p className="site-section-sub u-mt-3">
             Most hiring processes fail in the gap between the tidy diagram and the messy reality:
           </p>
-          <div className="wf-problems">
+          <div className="site-wf-problems">
             {PROBLEMS.map((p) => (
-              <div key={p} className="wf-problem">
+              <div key={p} className="site-wf-problem">
                 <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round">
                   <circle cx="12" cy="12" r="10" />
                   <line x1="12" y1="8" x2="12" y2="13" />
@@ -213,9 +213,9 @@ export default function RecruitmentWorkflowPage() {
       </section>
 
       {/* The shape */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             The shape
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -230,30 +230,30 @@ export default function RecruitmentWorkflowPage() {
             <div className="u-grid-auto-md">
               <div style={loopCard}>
                 <div className="u-mb-2 u-strong">⟳ Demand loop</div>
-                <div className="u-lg wf-dim">
+                <div className="u-lg site-wf-dim">
                   Roles open, pause, reopen, change shape mid-search, and close. Closing a role never throws away its
                   candidates.
                 </div>
               </div>
               <div style={loopCard}>
                 <div className="u-mb-2 u-strong">⟳ Sourcing loop</div>
-                <div className="u-lg wf-dim">
+                <div className="u-lg site-wf-dim">
                   Always on: inbound, LinkedIn, referrals, agencies, batch drops, and resurfacing people we already
                   know.
                 </div>
               </div>
               <div style={loopCard}>
                 <div className="u-mb-2 u-strong">⟳ Selection loop</div>
-                <div className="u-lg wf-dim">
+                <div className="u-lg site-wf-dim">
                   AI screen, screening call, as many interview rounds as the role needs, then offer. Moving backward
                   is normal.
                 </div>
               </div>
             </div>
-            <div className="wf-arrow-sep">⇅ ⇅ ⇅</div>
+            <div className="site-wf-arrow-sep">⇅ ⇅ ⇅</div>
             <div style={{ ...loopCard, textAlign: "center", borderWidth: 2 }} /* layout-ok: card style object shared with the loop diagram */>
               <div className="u-mb-1 u-strong">The Candidate Pool</div>
-              <div className="u-lg wf-dim">
+              <div className="u-lg site-wf-dim">
                 Everyone we have ever met: hired, rejected, parked, withdrawn. Ranked by AI screen, grouped by role
                 family, searchable forever. Every loop exits into it; the sourcing loop draws from it.
               </div>
@@ -346,9 +346,9 @@ export default function RecruitmentWorkflowPage() {
       </section>
 
       {/* Loop 2: Sourcing */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Loop 2 · Sourcing
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -457,8 +457,8 @@ export default function RecruitmentWorkflowPage() {
           </p>
           <SelectionFlowchart />
 
-          <div className="wf-info-grid u-mt-7">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid u-mt-7">
+            <div className="site-wf-info-card">
               <h3>AI on the interview panel</h3>
               <ul>
                 <li>The AI holds a seat on every round, from the recruiter screen to the founder chat, and a round with three people hands in four scorecards</li>
@@ -468,7 +468,7 @@ export default function RecruitmentWorkflowPage() {
                 <li>Rough transcription is handled, not trusted: it flags low-confidence quotes and never holds a garbled transcript against the candidate</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Human and AI, side by side</h3>
               <ul>
                 <li>Two separate reads at the resume, and again at every interview, catch what one reader alone would miss</li>
@@ -595,9 +595,9 @@ export default function RecruitmentWorkflowPage() {
       </section>
 
       {/* Every exit is a pool entry */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             The hub
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -607,8 +607,8 @@ export default function RecruitmentWorkflowPage() {
             “Rejected” is a status, not a delete. Every way out of the three loops lands in the pool with full
             history:
           </p>
-          <div className="wf-info-grid u-mt-6">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid u-mt-6">
+            <div className="site-wf-info-card">
               <h3>The ways out</h3>
               <ul>
                 <li>Rejected, always with a recorded reason</li>
@@ -618,7 +618,7 @@ export default function RecruitmentWorkflowPage() {
                 <li>Hired: off to onboarding, still on the record</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>What the pool does with them</h3>
               <ul>
                 <li>Ranks everyone by their best AI screen, across every application</li>
@@ -636,8 +636,8 @@ export default function RecruitmentWorkflowPage() {
       <section className="section">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>The standing rules</h3>
               <ul>
                 <li>Every role runs the same five-stage board. The loops vary; the record doesn’t</li>
@@ -649,7 +649,7 @@ export default function RecruitmentWorkflowPage() {
                 <li>Closing a role never throws away its candidates; nothing is ever deleted</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why it works</h3>
               <ul>
                 <li>The written process matches the real one, so people actually keep the system up to date</li>

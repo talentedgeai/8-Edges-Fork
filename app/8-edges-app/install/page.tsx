@@ -33,7 +33,7 @@ export default function InstallGuidePage() {
 
       <section className="section u-pt-5">
         <div className="container">
-          <div className="e8a-guide">
+          <div className="site-e8a-guide">
             <h2>Before you start</h2>
             <p>You need four free accounts and about an hour:</p>
             <ul>
@@ -67,7 +67,7 @@ cp .env.example .env.local`}</code></pre>
               <li>Open <code>supabase/schema.sql</code> from your fork, paste the whole file, and click <strong>Run</strong>.</li>
               <li>When it finishes, open the <strong>Table Editor</strong> and switch the schema selector to <code>company_os</code>. You should see 148 tables: people, deals, invoices, goals, coaching, and the rest. The <a href="/8-edges-app/data-atlas.html">Data Atlas</a> is the interactive map of what you just installed.</li>
             </ol>
-            <div className="e8a-guide-note">
+            <div className="site-e8a-guide-note">
               The script is idempotent: if a run is interrupted, run it again. It creates the <code>company_os</code> schema,
               every table, the rules baked into the database (for example, a key result cannot be saved without an
               accountable human), and the roles the data assistant uses.
@@ -75,8 +75,8 @@ cp .env.example .env.local`}</code></pre>
 
             <h2>Step 4: Set your keys</h2>
             <p>Nine required values in <code>.env.local</code> (and later in Vercel). Everything else in <code>.env.example</code> is optional.</p>
-            <div className="e8a-table-wrap u-mt-5">
-              <table className="e8a-table">
+            <div className="site-e8a-table-wrap u-mt-5">
+              <table className="site-e8a-table">
                 <thead>
                   <tr><th>Key</th><th>Where to get it</th></tr>
                 </thead>

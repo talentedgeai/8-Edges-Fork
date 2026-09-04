@@ -60,9 +60,9 @@ export default function BlogPublishingWorkflowPage() {
       </section>
 
       {/* Step detail */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Step by step
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -136,8 +136,8 @@ export default function BlogPublishingWorkflowPage() {
       <section className="section">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>Quality gates before anything ships</h3>
               <ul>
                 <li>Every image loads with a correct relative path</li>
@@ -146,7 +146,7 @@ export default function BlogPublishingWorkflowPage() {
                 <li>Navigation links resolve, and nothing extra sneaks in</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why it works</h3>
               <ul>
                 <li>One approval gate keeps humans in control of what gets said</li>

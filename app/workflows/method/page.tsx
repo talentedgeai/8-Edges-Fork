@@ -48,28 +48,28 @@ const FRAMEWORKS = [
 export default function MethodPage() {
   return (
     <main>
-      <section className="wf-hero">
+      <section className="site-wf-hero">
         <div className="container">
-          <div className="wf-hero-inner">
-            <div className="wf-breadcrumb">
+          <div className="site-wf-hero-inner">
+            <div className="site-wf-breadcrumb">
               <Link href="/workflows">Workflows</Link>
               <span>/</span>
               <span>Method</span>
             </div>
             <h1 className="site-section-title">How We Design Workflows</h1>
-            <p className="wf-hero-sub">
+            <p className="site-wf-hero-sub">
               We ground every workflow in validated business and academic frameworks, not prompt tricks. From that
               foundation, one method carries each page in this section: plan the program with the 5Ds, document the
               workflow in seven elements, assign each element to a human or a machine, test the document, then ship
               through three stage gates. It is the same method we teach in the AI Officer certification, applied to
               our own company.
             </p>
-            <div className="wf-hero-meta">
-              <span className="wf-meta-chip">Grounding <strong>Validated frameworks</strong></span>
-              <span className="wf-meta-chip">Planning <strong>5D Brief</strong></span>
-              <span className="wf-meta-chip">Anatomy <strong>7 elements</strong></span>
-              <span className="wf-meta-chip">Assignment <strong>Centaur Map</strong></span>
-              <span className="wf-meta-chip">Quality <strong>New Hire Test</strong></span>
+            <div className="site-wf-hero-meta">
+              <span className="site-wf-meta-chip">Grounding <strong>Validated frameworks</strong></span>
+              <span className="site-wf-meta-chip">Planning <strong>5D Brief</strong></span>
+              <span className="site-wf-meta-chip">Anatomy <strong>7 elements</strong></span>
+              <span className="site-wf-meta-chip">Assignment <strong>Centaur Map</strong></span>
+              <span className="site-wf-meta-chip">Quality <strong>New Hire Test</strong></span>
             </div>
           </div>
         </div>
@@ -92,9 +92,9 @@ export default function MethodPage() {
       </section>
 
       {/* 5D */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Step 1: Plan
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -124,16 +124,16 @@ export default function MethodPage() {
       </section>
 
       {/* Centaur + New hire test */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Step 3: Assign and test
           </span>
           <h2 className="site-section-title site-section-title--sm">
             The Centaur Map and the New Hire Test
           </h2>
-          <div className="wf-info-grid">
-            <div className="wf-info-card wf-section--white">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card site-wf-section--white">
               <h3>Centaur Map: human, machine, or both</h3>
               <ul>
                 <li>Every element gets an explicit assignment based on comparative advantage</li>
@@ -142,7 +142,7 @@ export default function MethodPage() {
                 <li>Where the machine needs data it does not have yet, the map names it</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint wf-section--white">
+            <div className="site-wf-info-card site-wf-info-card-mint site-wf-section--white">
               <h3>New Hire Test: the quality gate</h3>
               <ul>
                 <li>Someone who has never run the workflow runs it from the document alone</li>
@@ -165,18 +165,18 @@ export default function MethodPage() {
           <p className="site-section-sub u-mt-3">
             A documented workflow earns its way into production. It does not get declared into it.
           </p>
-          <div className="wf-stages">
-            <div className="wf-stage">
+          <div className="site-wf-stages">
+            <div className="site-wf-stage">
               <strong>S1 · Prototype</strong>
               <span>A clickable model of the workflow, built from the document</span>
             </div>
-            <span className="wf-stage-arrow">→</span>
-            <div className="wf-stage">
+            <span className="site-wf-stage-arrow">→</span>
+            <div className="site-wf-stage">
               <strong>S2 · Pilot</strong>
               <span>Run on a real slice of work, measured against a baseline</span>
             </div>
-            <span className="wf-stage-arrow">→</span>
-            <div className="wf-stage wf-stage-active">
+            <span className="site-wf-stage-arrow">→</span>
+            <div className="site-wf-stage site-wf-stage-active">
               <strong>S3 · Production</strong>
               <span>Every workflow published in this section runs here</span>
             </div>
@@ -185,9 +185,9 @@ export default function MethodPage() {
       </section>
 
       {/* Frameworks library */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             The library
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -197,17 +197,17 @@ export default function MethodPage() {
             The workflows in this section do not float free. They draw on a library of business frameworks we teach in
             our leadership and AI Officer programs, each one producing a dataset that AI can work from.
           </p>
-          <div className="wf-elements">
+          <div className="site-wf-elements">
             {FRAMEWORKS.map((f) => (
-              <div key={f.name} className="wf-element">
-                <div className="wf-element-head">
-                  <span className="wf-element-name">{f.name}</span>
+              <div key={f.name} className="site-wf-element">
+                <div className="site-wf-element-head">
+                  <span className="site-wf-element-name">{f.name}</span>
                 </div>
-                <p className="wf-element-desc">{f.use}</p>
+                <p className="site-wf-element-desc">{f.use}</p>
               </div>
             ))}
           </div>
-          <div className="wf-frameworks-cta">
+          <div className="site-wf-frameworks-cta">
             <div>
               <h3>Prompt frameworks are dead</h3>
               <p>Learn to apply real, tested academic and business frameworks to the problems you are trying to solve.</p>
@@ -222,7 +222,7 @@ export default function MethodPage() {
       {/* CTA */}
       <section className="section">
         <div className="container u-center-text">
-          <h2 className="site-section-title wf-title-lg u-mb-3">
+          <h2 className="site-section-title site-wf-title-lg u-mb-3">
             This method is teachable. And buildable.
           </h2>
           <p className="site-section-sub u-mx-auto u-mb-6">
@@ -238,7 +238,7 @@ export default function MethodPage() {
             </Link>
           </div>
           <p className="u-mt-6">
-            <Link href="/workflows" className="wf-back wf-link-muted">
+            <Link href="/workflows" className="site-wf-back site-wf-link-muted">
               ← All workflows
             </Link>
           </p>

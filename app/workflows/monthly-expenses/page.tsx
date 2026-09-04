@@ -49,46 +49,46 @@ export default function MonthlyExpensesWorkflowPage() {
             The close starts and ends with the P&amp;L. In between, expenses are entered in two passes: Vietnam first,
             then US.
           </p>
-          <div className="wf-timeline">
-            <div className="wf-tl-track">
-              <div className="wf-tl-stop">
-                <div className="wf-tl-day">
+          <div className="site-wf-timeline">
+            <div className="site-wf-tl-track">
+              <div className="site-wf-tl-stop">
+                <div className="site-wf-tl-day">
                   <strong>1</strong>
                   <span>Orient</span>
                 </div>
-                <div className="wf-tl-titlewrap">
-                  <div className="wf-tl-title">P&amp;L first</div>
-                  <p className="wf-tl-desc">Run the P&amp;L and compare to prior months before entering anything.</p>
+                <div className="site-wf-tl-titlewrap">
+                  <div className="site-wf-tl-title">P&amp;L first</div>
+                  <p className="site-wf-tl-desc">Run the P&amp;L and compare to prior months before entering anything.</p>
                 </div>
               </div>
-              <div className="wf-tl-stop">
-                <div className="wf-tl-day">
+              <div className="site-wf-tl-stop">
+                <div className="site-wf-tl-day">
                   <strong>2</strong>
                   <span>Vietnam</span>
                 </div>
-                <div className="wf-tl-titlewrap">
-                  <div className="wf-tl-title">Bank to sheet to QuickBooks</div>
-                  <p className="wf-tl-desc">Break down the bank transactions, fill the finance tracking sheet, enter in QuickBooks.</p>
+                <div className="site-wf-tl-titlewrap">
+                  <div className="site-wf-tl-title">Bank to sheet to QuickBooks</div>
+                  <p className="site-wf-tl-desc">Break down the bank transactions, fill the finance tracking sheet, enter in QuickBooks.</p>
                 </div>
               </div>
-              <div className="wf-tl-stop">
-                <div className="wf-tl-day">
+              <div className="site-wf-tl-stop">
+                <div className="site-wf-tl-day">
                   <strong>3</strong>
                   <span>US</span>
                 </div>
-                <div className="wf-tl-titlewrap">
-                  <div className="wf-tl-title">One entry per vendor</div>
-                  <p className="wf-tl-desc">Itemize the US expense sheet into QuickBooks, one expense entry per vendor.</p>
+                <div className="site-wf-tl-titlewrap">
+                  <div className="site-wf-tl-title">One entry per vendor</div>
+                  <p className="site-wf-tl-desc">Itemize the US expense sheet into QuickBooks, one expense entry per vendor.</p>
                 </div>
               </div>
-              <div className="wf-tl-stop">
-                <div className="wf-tl-day">
+              <div className="site-wf-tl-stop">
+                <div className="site-wf-tl-day">
                   <strong>4</strong>
                   <span>Verify</span>
                 </div>
-                <div className="wf-tl-titlewrap">
-                  <div className="wf-tl-title">Reconcile and spot check</div>
-                  <p className="wf-tl-desc">Check pass-throughs against invoices, run the P&amp;L again, flag anything weird.</p>
+                <div className="site-wf-tl-titlewrap">
+                  <div className="site-wf-tl-title">Reconcile and spot check</div>
+                  <p className="site-wf-tl-desc">Check pass-throughs against invoices, run the P&amp;L again, flag anything weird.</p>
                 </div>
               </div>
             </div>
@@ -97,9 +97,9 @@ export default function MonthlyExpensesWorkflowPage() {
       </section>
 
       {/* Step detail */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Step by step
           </span>
           <h2 className="site-section-title site-section-title--sm">

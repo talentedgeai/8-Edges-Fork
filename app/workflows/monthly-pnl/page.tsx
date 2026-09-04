@@ -49,46 +49,46 @@ export default function MonthlyPnlWorkflowPage() {
             The P&amp;L is not an event, it is the last step of a pipeline that runs all month. By the time the month
             closes, most of the work is already done.
           </p>
-          <div className="wf-timeline">
-            <div className="wf-tl-track">
-              <div className="wf-tl-stop">
-                <div className="wf-tl-day">
+          <div className="site-wf-timeline">
+            <div className="site-wf-tl-track">
+              <div className="site-wf-tl-stop">
+                <div className="site-wf-tl-day">
                   <strong>1-31</strong>
                   <span>Sync</span>
                 </div>
-                <div className="wf-tl-titlewrap">
-                  <div className="wf-tl-title">Data flows all month</div>
-                  <p className="wf-tl-desc">Invoices and expenses sync from QuickBooks continuously, mapped to clients and vendors.</p>
+                <div className="site-wf-tl-titlewrap">
+                  <div className="site-wf-tl-title">Data flows all month</div>
+                  <p className="site-wf-tl-desc">Invoices and expenses sync from QuickBooks continuously, mapped to clients and vendors.</p>
                 </div>
               </div>
-              <div className="wf-tl-stop">
-                <div className="wf-tl-day">
+              <div className="site-wf-tl-stop">
+                <div className="site-wf-tl-day">
                   <strong>1st</strong>
                   <span>Close</span>
                 </div>
-                <div className="wf-tl-titlewrap">
-                  <div className="wf-tl-title">Month closes</div>
-                  <p className="wf-tl-desc">The period locks and the P&amp;L assembles from already-synced data.</p>
+                <div className="site-wf-tl-titlewrap">
+                  <div className="site-wf-tl-title">Month closes</div>
+                  <p className="site-wf-tl-desc">The period locks and the P&amp;L assembles from already-synced data.</p>
                 </div>
               </div>
-              <div className="wf-tl-stop">
-                <div className="wf-tl-day">
+              <div className="site-wf-tl-stop">
+                <div className="site-wf-tl-day">
                   <strong>~5th</strong>
                   <span>Review</span>
                 </div>
-                <div className="wf-tl-titlewrap">
-                  <div className="wf-tl-title">Human review</div>
-                  <p className="wf-tl-desc">Exceptions get categorized, anomalies get explained, the statement gets signed off.</p>
+                <div className="site-wf-tl-titlewrap">
+                  <div className="site-wf-tl-title">Human review</div>
+                  <p className="site-wf-tl-desc">Exceptions get categorized, anomalies get explained, the statement gets signed off.</p>
                 </div>
               </div>
-              <div className="wf-tl-stop">
-                <div className="wf-tl-day">
+              <div className="site-wf-tl-stop">
+                <div className="site-wf-tl-day">
                   <strong>~7th</strong>
                   <span>Publish</span>
                 </div>
-                <div className="wf-tl-titlewrap">
-                  <div className="wf-tl-title">P&amp;L published</div>
-                  <p className="wf-tl-desc">The statement goes out in the same format every month, with margin against forecast.</p>
+                <div className="site-wf-tl-titlewrap">
+                  <div className="site-wf-tl-title">P&amp;L published</div>
+                  <p className="site-wf-tl-desc">The statement goes out in the same format every month, with margin against forecast.</p>
                 </div>
               </div>
             </div>
@@ -97,9 +97,9 @@ export default function MonthlyPnlWorkflowPage() {
       </section>
 
       {/* Step detail */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Step by step
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -165,8 +165,8 @@ export default function MonthlyPnlWorkflowPage() {
       <section className="section">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>The standing rules</h3>
               <ul>
                 <li>QuickBooks is the only source of financial truth</li>
@@ -175,7 +175,7 @@ export default function MonthlyPnlWorkflowPage() {
                 <li>The same format ships every month, no redesigns</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why it works</h3>
               <ul>
                 <li>A fast close means decisions are made on last month, not last quarter</li>
