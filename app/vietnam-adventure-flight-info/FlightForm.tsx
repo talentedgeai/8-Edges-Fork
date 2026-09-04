@@ -68,7 +68,7 @@ export default function FlightForm() {
   return (
     <form className="site-contact-form" onSubmit={handleSubmit} noValidate>
 
-      <div className="site-trip-privacy" style={{ marginBottom: 24 }}>
+      <div className="site-trip-privacy u-mb-5">
         <strong>Deadline: {DEADLINE}</strong>
         <p>Please submit by {DEADLINE} so we can arrange airport transfers and coordinate group arrivals.</p>
       </div>
@@ -89,7 +89,7 @@ export default function FlightForm() {
       </div>
 
       {/* ── Arriving in Hanoi ─────────────────────────── */}
-      <p className="site-contact-form-eyebrow" style={{ marginTop: 16 }}>Arriving in Hanoi</p>
+      <p className="site-contact-form-eyebrow u-mt-4">Arriving in Hanoi</p>
       <div className="site-contact-field-row">
         <div className="site-contact-field">
           <label htmlFor="inbound_flight">Airline &amp; Flight #</label>
@@ -109,7 +109,7 @@ export default function FlightForm() {
       </div>
 
       {/* ── Departing from Vietnam ────────────────────── */}
-      <p className="site-contact-form-eyebrow" style={{ marginTop: 16 }}>Departing from Vietnam</p>
+      <p className="site-contact-form-eyebrow u-mt-4">Departing from Vietnam</p>
       <div className="site-contact-field-row">
         <div className="site-contact-field">
           <label htmlFor="outbound_flight">Airline &amp; Flight #</label>
@@ -129,18 +129,18 @@ export default function FlightForm() {
       </div>
 
       {/* ── Comments / Requests ───────────────────────── */}
-      <p className="site-contact-form-eyebrow" style={{ marginTop: 16 }}>Comments or special requests</p>
+      <p className="site-contact-form-eyebrow u-mt-4">Comments or special requests</p>
       <div className="site-contact-field">
         <label htmlFor="notes">Anything you'd like us to know?</label>
         <textarea id="notes" name="notes" rows={4}
           placeholder="e.g. connecting flight, dietary needs, meeting point preference…"
           value={form.notes} onChange={set}
-          style={{ resize: 'vertical' }} />
+          className="site-input--resize-y" />
       </div>
 
       {/* Honeypot */}
       <input type="text" name="website" value={form.website} onChange={set}
-        tabIndex={-1} aria-hidden style={{ display: 'none' }} />
+        tabIndex={-1} aria-hidden className="u-hidden-input" />
 
       {error && <p className="site-apply-error">{error}</p>}
 

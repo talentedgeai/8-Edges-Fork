@@ -3682,3 +3682,14 @@ body .site-retreat-grid { display: grid; grid-template-columns: repeat(auto-fit,
   gap: 6px;
 }
 .site-prop-card:hover .site-prop-card-cta { color: var(--blue); }
+
+/* ─── Marketing-page leftovers (design debt 11) ─────────────────────────── */
+.site-section--white { background: var(--white); }
+.site-section--tight-top { padding-top: 80px; }
+.site-section-sub--centered { margin: 16px auto 32px; }
+.site-container--overflow { overflow: visible; }
+.site-container--narrow { max-width: 680px; }
+.site-img-fluid { width: 100%; height: auto; }
+.site-input--resize-y { resize: vertical; }
+.site-xp-people-more { margin-top: 56px; }
+.site-xp-people-title { font-size: clamp(24px, 3vw, 34px); }

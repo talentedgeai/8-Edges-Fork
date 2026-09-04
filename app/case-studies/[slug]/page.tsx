@@ -101,7 +101,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 <div className="site-cs-detail-block">
                   <p className="site-cs-detail-body">
                     Read the full story and explore our strategies in the complete blog post{' '}
-                    <a href={cs.blogLink} style={{ color: 'var(--blue)' }} target="_blank" rel="noopener noreferrer">here</a>.
+                    <a href={cs.blogLink} className="u-accent" target="_blank" rel="noopener noreferrer">here</a>.
                   </p>
                 </div>
               )}
@@ -125,14 +125,14 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             <div className="site-cs-detail-media">
               {imgs.length === 0 && (
                 <div className="site-cs-detail-img-wrap">
-                  <Image src={cs.image} alt={cs.title} width={640} height={480} style={{ width: '100%', height: 'auto' }} />
+                  <Image src={cs.image} alt={cs.title} width={640} height={480} className="site-img-fluid" />
                 </div>
               )}
 
               {/* Single image */}
               {imgs.length === 1 && (
                 <div className="site-cs-detail-img-wrap">
-                  <Image src={imgs[0]} alt={cs.title} width={640} height={480} style={{ width: '100%', height: 'auto' }} priority />
+                  <Image src={imgs[0]} alt={cs.title} width={640} height={480} className="site-img-fluid" priority />
                 </div>
               )}
 
@@ -140,11 +140,11 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               {imgs.length === 2 && cs.beforeAfter && (
                 <>
                   <div className="site-cs-detail-img-wrap">
-                    <Image src={imgs[0]} alt={`${cs.title} before`} width={640} height={420} style={{ width: '100%', height: 'auto' }} priority />
+                    <Image src={imgs[0]} alt={`${cs.title} before`} width={640} height={420} className="site-img-fluid" priority />
                     <div className="site-cs-slide-label">Before</div>
                   </div>
                   <div className="site-cs-detail-img-wrap">
-                    <Image src={imgs[1]} alt={`${cs.title} after`} width={640} height={420} style={{ width: '100%', height: 'auto' }} />
+                    <Image src={imgs[1]} alt={`${cs.title} after`} width={640} height={420} className="site-img-fluid" />
                     <div className="site-cs-slide-label">After</div>
                   </div>
                 </>
@@ -154,10 +154,10 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               {imgs.length === 2 && !cs.beforeAfter && (
                 <>
                   <div className="site-cs-detail-img-wrap">
-                    <Image src={imgs[0]} alt={`${cs.title} 1`} width={640} height={420} style={{ width: '100%', height: 'auto' }} priority />
+                    <Image src={imgs[0]} alt={`${cs.title} 1`} width={640} height={420} className="site-img-fluid" priority />
                   </div>
                   <div className="site-cs-detail-img-wrap">
-                    <Image src={imgs[1]} alt={`${cs.title} 2`} width={640} height={420} style={{ width: '100%', height: 'auto' }} />
+                    <Image src={imgs[1]} alt={`${cs.title} 2`} width={640} height={420} className="site-img-fluid" />
                   </div>
                 </>
               )}
@@ -165,7 +165,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
               {/* Multiple images (3+): show first 3 */}
               {imgs.length >= 3 && imgs.slice(0, 3).map((src, i) => (
                 <div key={i} className="site-cs-detail-img-wrap">
-                  <Image src={src} alt={`${cs.title} ${i + 1}`} width={640} height={420} style={{ width: '100%', height: 'auto' }} priority={i === 0} />
+                  <Image src={src} alt={`${cs.title} ${i + 1}`} width={640} height={420} className="site-img-fluid" priority={i === 0} />
                 </div>
               ))}
             </div>

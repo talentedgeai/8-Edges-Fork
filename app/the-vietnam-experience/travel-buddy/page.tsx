@@ -21,7 +21,7 @@ export default function TravelBuddyPage() {
       <PlaceholderImage
         label="Photo: Travel Buddy on a phone"
         aspect="16 / 9"
-        style={{ marginTop: 40 }}
+        className="u-mt-7"
       />
 
       <div className="site-xp-blocks">
@@ -64,7 +64,7 @@ export default function TravelBuddyPage() {
         </Block>
       </div>
 
-      <div style={{ marginTop: 48 }}>
+      <div className="u-mt-8">
         <a
           href="https://travelbuddy8.com"
           target="_blank"

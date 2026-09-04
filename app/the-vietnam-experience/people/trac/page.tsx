@@ -20,7 +20,7 @@ export default function TracPage() {
         lead="Trac leads the engineering. He and the team build the AI that runs the apartment, guides you through the city, and arranges your arrival long before you land."
       />
 
-      <PlaceholderImage label="Photo: Trac" aspect="4 / 5" maxWidth="24rem" style={{ marginTop: 40 }} />
+      <PlaceholderImage label="Photo: Trac" aspect="4 / 5" maxWidth="24rem" className="u-mt-7" />
 
       <div className="site-xp-blocks">
         <Block heading="What he builds">

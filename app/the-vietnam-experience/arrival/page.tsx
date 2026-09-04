@@ -21,7 +21,7 @@ export default function ArrivalPage() {
       <PlaceholderImage
         label="Photo: arrivals at Tan Son Nhat"
         aspect="16 / 9"
-        style={{ marginTop: 40 }}
+        className="u-mt-7"
       />
 
       <div className="site-xp-blocks">

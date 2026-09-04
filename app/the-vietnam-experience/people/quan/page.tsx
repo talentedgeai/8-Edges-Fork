@@ -20,7 +20,7 @@ export default function QuanPage() {
         lead="The reason the week feels effortless. Quan is the one who makes sure the car is there, the table is booked, and you never have to think about logistics."
       />
 
-      <PlaceholderImage label="Photo: Quan" aspect="4 / 5" maxWidth="24rem" style={{ marginTop: 40 }} />
+      <PlaceholderImage label="Photo: Quan" aspect="4 / 5" maxWidth="24rem" className="u-mt-7" />
 
       <div className="site-xp-blocks">
         <Block heading="What he does">

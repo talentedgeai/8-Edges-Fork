@@ -123,7 +123,7 @@ export default function Edge8OnboardingCycleWorkflowPage() {
           </div>
           <div className="site-wf-lanes">
             {NODES.map((n) => (
-              <div key={n.num} className={`site-wf-node wf-node-${n.lane}`}>
+              <div key={n.num} className={`site-wf-node site-wf-node-${n.lane}`}>
                 <span className="site-wf-node-badge">{n.num}</span>
                 <div className="u-mb-2">
                   <ActorChip actor={n.actor} label={n.actorLabel} />
@@ -133,7 +133,7 @@ export default function Edge8OnboardingCycleWorkflowPage() {
                 {n.outcomes && (
                   <div className="site-wf-outcomes">
                     {n.outcomes.map((o) => (
-                      <span key={o.label} className={`site-wf-outcome wf-outcome-${o.kind}`}>
+                      <span key={o.label} className={`site-wf-outcome site-wf-outcome-${o.kind}`}>
                         {o.label}
                       </span>
                     ))}

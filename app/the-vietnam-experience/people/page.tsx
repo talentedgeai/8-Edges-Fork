@@ -43,7 +43,7 @@ export default function PeoplePage() {
       <div className="site-xp-people-grid">
         {MAIN.map((p) => (
           <Link key={p.href} href={p.href} className="site-xp-person-card">
-            <PlaceholderImage label={`Photo: ${p.name}`} aspect="4 / 5" style={{ marginBottom: 16 }} />
+            <PlaceholderImage label={`Photo: ${p.name}`} aspect="4 / 5" className="u-mb-4" />
             <div className="site-xp-person-top">
               <h2>{p.name}</h2>
               <span className="ti">{p.title}</span>
@@ -57,10 +57,9 @@ export default function PeoplePage() {
         ))}
       </div>
 
-      <div style={{ marginTop: 56 }}>
+      <div className="site-xp-people-more">
         <h2
-          className="site-h-section"
-          style={{ fontSize: "clamp(24px, 3vw, 34px)", marginBottom: 8 }}
+          className="site-h-section site-xp-people-title u-mb-2"
         >
           And the team
         </h2>

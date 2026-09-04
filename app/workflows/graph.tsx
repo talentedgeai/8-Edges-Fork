@@ -249,7 +249,7 @@ export function WorkflowGraph({ graph, caption }: { graph: WorkflowGraphDef; cap
                     x={labelPos[0]}
                     y={labelPos[1]}
                     textAnchor="middle"
-                    className={`site-wf-g-label wf-g-label--${kind === "fail" ? "fail" : kind === "agent" ? "agent" : "plain"}`}
+                    className={`site-wf-g-label site-wf-g-label--${kind === "fail" ? "fail" : kind === "agent" ? "agent" : "plain"}`}
                   >
                     {e.label}
                   </text>

@@ -19,9 +19,9 @@ export default function SiteError({
 
   return (
     <section className="section">
-      <div className="container" style={{ textAlign: "center" }}>
+      <div className="container u-center-text">
         <h1 className="site-section-title site-section-title--sm">Something went wrong</h1>
-        <p className="site-section-sub" style={{ margin: "16px auto 32px" }}>
+        <p className="site-section-sub site-section-sub--centered">
           This page hit an error while loading. Trying again usually fixes it.
           {error.digest ? ` Reference: ${error.digest}` : ""}
         </p>

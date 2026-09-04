@@ -5,9 +5,9 @@ import Link from "next/link";
 export default function SiteNotFound() {
   return (
     <section className="section">
-      <div className="container" style={{ textAlign: "center" }}>
+      <div className="container u-center-text">
         <h1 className="site-section-title site-section-title--sm">Page not found</h1>
-        <p className="site-section-sub" style={{ margin: "16px auto 32px" }}>
+        <p className="site-section-sub site-section-sub--centered">
           The page you were looking for does not exist or has moved.
         </p>
         <Link href="/" className="btn btn-primary">

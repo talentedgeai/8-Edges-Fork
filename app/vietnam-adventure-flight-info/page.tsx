@@ -9,17 +9,17 @@ export const metadata = {
 export default function FlightInfoPage() {
   return (
     <main>
-      <section className="section" style={{ paddingTop: 80 }}>
-        <div className="container" style={{ maxWidth: 680 }}>
+      <section className="section site-section--tight-top">
+        <div className="container site-container--narrow">
           <span className="site-section-label">Vietnam Adventure</span>
-          <h1 className="site-section-title" style={{ marginTop: 12 }}>
+          <h1 className="site-section-title u-mt-3">
             Flight Details
           </h1>
-          <p className="site-section-sub" style={{ marginTop: 16 }}>
+          <p className="site-section-sub u-mt-4">
             Please share your outbound and return flight information so we can arrange airport
             transfers and coordinate group arrivals. One submission per family.
           </p>
-          <div style={{ marginTop: 40 }}>
+          <div className="u-mt-7">
             <FlightForm />
           </div>
         </div>
