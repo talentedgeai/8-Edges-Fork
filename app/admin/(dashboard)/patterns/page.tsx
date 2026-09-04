@@ -492,6 +492,20 @@ export default function PatternsPage() {
           </div>
         </Section>
 
+        {/* ─── Side-by-side section cards ─────────────────────── */}
+        <Section title="Side-by-side section cards" sub="Revenue cockpit layout: two section cards in an auto-fit grid.">
+          <div className="u-grid-auto-lg u-max-narrow">
+            <div className="admin-card admin-section-card u-self-start">
+              <div className="admin-card-title">Leads to work</div>
+              <p className="admin-page-sub u-m-0">.u-grid-auto-lg + .u-self-start: cards sit side by side and keep their own height.</p>
+            </div>
+            <div className="admin-card admin-section-card admin-section-card--flush u-self-start">
+              <div className="admin-card-title">Inquiries to triage</div>
+              <p className="admin-page-sub u-m-0">.admin-section-card--flush cancels the stacked-sibling margin a second section card would otherwise inherit.</p>
+            </div>
+          </div>
+        </Section>
+
         {/* ─── Empty state ────────────────────────────── */}
         <Section title="Empty state">
           <div className="admin-table-wrap">
