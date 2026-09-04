@@ -3,8 +3,8 @@
    Only brief-specific pieces live here, scoped under .brief-. */
 
 /* Outcome pills on the dark hero */
-.brief-hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-.brief-pill {
+.site-brief-hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.site-brief-pill {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -13,31 +13,31 @@
   color: color-mix(in srgb, var(--color-bg-primary) 82%, transparent);
   border: 1px solid color-mix(in srgb, var(--color-bg-primary) 18%, transparent);
 }
-.brief-pill.is-primary { background: var(--mint); color: var(--dark); border-color: transparent; }
-.brief-pill.is-secondary { background: color-mix(in srgb, var(--color-primary-blue) 90%, transparent); color: var(--color-bg-primary); border-color: transparent; }
+.site-brief-pill.is-primary { background: var(--mint); color: var(--dark); border-color: transparent; }
+.site-brief-pill.is-secondary { background: color-mix(in srgb, var(--color-primary-blue) 90%, transparent); color: var(--color-bg-primary); border-color: transparent; }
 
 /* D-section eyebrow number */
-.brief-d { display: inline-flex; align-items: center; gap: 8px; }
-.brief-d strong { color: var(--dark); font-weight: 600; }
+.site-brief-d { display: inline-flex; align-items: center; gap: 8px; }
+.site-brief-d strong { color: var(--dark); font-weight: 600; }
 
 /* Labeled Define grid reuses .wf-elements; drop the assign chip look */
-.brief-def .wf-element-name { color: var(--color-ok-ink); }
+.site-brief-def .site-wf-element-name { color: var(--color-ok-ink); }
 
 /* FAST goal callout (dark) */
-.brief-fast { background: var(--dark); border-radius: var(--radius); padding: 32px; margin-top: 8px; }
-.brief-fast .lbl { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mint); font-weight: 600; }
-.brief-fast p { color: var(--color-bg-primary); font-size: 18px; line-height: 1.6; margin: 10px 0 0; }
+.site-brief-fast { background: var(--dark); border-radius: var(--radius); padding: 32px; margin-top: 8px; }
+.site-brief-fast .lbl { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mint); font-weight: 600; }
+.site-brief-fast p { color: var(--color-bg-primary); font-size: 18px; line-height: 1.6; margin: 10px 0 0; }
 
 /* ROI stat cards */
-.brief-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
-.brief-stat { background: var(--tint); border-radius: 14px; padding: 24px 24px; }
-.brief-stat .big { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--dark); line-height: 1.15; }
-.brief-stat .cap { font-size: 14px; color: var(--grey-mid); margin-top: 8px; line-height: 1.5; }
+.site-brief-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
+.site-brief-stat { background: var(--tint); border-radius: 14px; padding: 24px 24px; }
+.site-brief-stat .big { font-family: var(--font-display); font-size: 28px; font-weight: 600; color: var(--dark); line-height: 1.15; }
+.site-brief-stat .cap { font-size: 14px; color: var(--grey-mid); margin-top: 8px; line-height: 1.5; }
 
 /* Definition of Done checklist */
-.brief-dod { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
-.brief-dod li { position: relative; padding-left: 40px; font-size: 15px; color: var(--body-text); line-height: 1.55; }
-.brief-dod li::before {
+.site-brief-dod { list-style: none; margin-top: 28px; display: flex; flex-direction: column; gap: 12px; }
+.site-brief-dod li { position: relative; padding-left: 40px; font-size: 15px; color: var(--body-text); line-height: 1.55; }
+.site-brief-dod li::before {
   content: '✓';
   position: absolute;
   left: 0;
@@ -53,12 +53,12 @@
   align-items: center;
   justify-content: center;
 }
-.brief-dod li b { color: var(--dark); font-weight: 600; }
+.site-brief-dod li b { color: var(--dark); font-weight: 600; }
 
 /* Out-of-scope note */
-.brief-scope { margin-top: 8px; font-size: 15px; color: var(--body-text); line-height: 1.7; }
-.brief-scope b { color: var(--dark); font-weight: 600; }
+.site-brief-scope { margin-top: 8px; font-size: 15px; color: var(--body-text); line-height: 1.7; }
+.site-brief-scope b { color: var(--dark); font-weight: 600; }
 
 @media (max-width: 900px) {
-  .brief-stats { grid-template-columns: 1fr; }
+  .site-brief-stats { grid-template-columns: 1fr; }
 }

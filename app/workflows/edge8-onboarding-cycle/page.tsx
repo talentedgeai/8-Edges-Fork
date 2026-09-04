@@ -116,24 +116,24 @@ export default function Edge8OnboardingCycleWorkflowPage() {
             anyone remembers or not.
           </p>
 
-          <div className="wf-lanes-head">
-            <div className="wf-lane-label wf-lane-label-admin">Manager</div>
-            <div className="wf-lane-label wf-lane-label-system">System + AI</div>
-            <div className="wf-lane-label wf-lane-label-contractor">New hire</div>
+          <div className="site-wf-lanes-head">
+            <div className="site-wf-lane-label site-wf-lane-label-admin">Manager</div>
+            <div className="site-wf-lane-label site-wf-lane-label-system">System + AI</div>
+            <div className="site-wf-lane-label site-wf-lane-label-contractor">New hire</div>
           </div>
-          <div className="wf-lanes">
+          <div className="site-wf-lanes">
             {NODES.map((n) => (
-              <div key={n.num} className={`wf-node wf-node-${n.lane}`}>
-                <span className="wf-node-badge">{n.num}</span>
+              <div key={n.num} className={`site-wf-node wf-node-${n.lane}`}>
+                <span className="site-wf-node-badge">{n.num}</span>
                 <div className="u-mb-2">
                   <ActorChip actor={n.actor} label={n.actorLabel} />
                 </div>
-                <div className="wf-node-title">{n.title}</div>
-                <p className="wf-node-desc">{n.desc}</p>
+                <div className="site-wf-node-title">{n.title}</div>
+                <p className="site-wf-node-desc">{n.desc}</p>
                 {n.outcomes && (
-                  <div className="wf-outcomes">
+                  <div className="site-wf-outcomes">
                     {n.outcomes.map((o) => (
-                      <span key={o.label} className={`wf-outcome wf-outcome-${o.kind}`}>
+                      <span key={o.label} className={`site-wf-outcome wf-outcome-${o.kind}`}>
                         {o.label}
                       </span>
                     ))}
@@ -146,9 +146,9 @@ export default function Edge8OnboardingCycleWorkflowPage() {
       </section>
 
       {/* Step detail */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Step by step
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -246,8 +246,8 @@ export default function Edge8OnboardingCycleWorkflowPage() {
       <section className="section">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>The standing rules</h3>
               <ul>
                 <li>Every person gets an onboarding plan, uploaded before Day 1, no exceptions</li>
@@ -256,7 +256,7 @@ export default function Edge8OnboardingCycleWorkflowPage() {
                 <li>Nobody is promoted, extended, or terminated by a machine</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why it works</h3>
               <ul>
                 <li>Daily nags make the plan deadline self-enforcing</li>

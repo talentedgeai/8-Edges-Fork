@@ -123,7 +123,7 @@ export default function SaigonPrivatePage() {
       </section>
 
       {/* ═══ THE REFRAME ═══ */}
-      <section className="section wf-section--white">
+      <section className="section site-wf-section--white">
         <div className="container">
           <div className="reveal u-max-7">
             <span className="site-section-label">Read this first</span>
@@ -161,7 +161,7 @@ export default function SaigonPrivatePage() {
       </section>
 
       {/* ═══ WHO YOU'RE WORKING WITH ═══ */}
-      <section className="section wf-section--white">
+      <section className="section site-wf-section--white">
         <div className="container">
           <div className="reveal u-mb-8 u-max-7">
             <span className="site-section-label">Who you&rsquo;re working with</span>
@@ -367,7 +367,7 @@ export default function SaigonPrivatePage() {
       </section>
 
       {/* ═══ INCLUDED / NOT ═══ */}
-      <section className="section wf-section--white">
+      <section className="section site-wf-section--white">
         <div className="container">
           <div className="reveal u-max-7">
             <span className="site-section-label">What&rsquo;s in the price</span>
@@ -441,7 +441,7 @@ export default function SaigonPrivatePage() {
       </section>
 
       {/* ═══ THE POLISH ═══ */}
-      <section className="section wf-section--white">
+      <section className="section site-wf-section--white">
         <div className="container">
           <div className="reveal u-max-7">
             <span className="site-section-label">After you fly home</span>
@@ -478,7 +478,7 @@ export default function SaigonPrivatePage() {
       </section>
 
       {/* ═══ FAQ ═══ */}
-      <section className="section wf-section--white">
+      <section className="section site-wf-section--white">
         <div className="container">
           <div className="reveal u-max-7">
             <span className="site-section-label">FAQ</span>

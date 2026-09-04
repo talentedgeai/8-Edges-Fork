@@ -273,24 +273,24 @@ export default function NewMemberOnboardingWorkflowPage() {
             so nobody has to remember to follow up.
           </p>
 
-          <div className="wf-lanes-head">
-            <div className="wf-lane-label wf-lane-label-admin">Recruiter</div>
-            <div className="wf-lane-label wf-lane-label-system">System</div>
-            <div className="wf-lane-label wf-lane-label-contractor">New member</div>
+          <div className="site-wf-lanes-head">
+            <div className="site-wf-lane-label site-wf-lane-label-admin">Recruiter</div>
+            <div className="site-wf-lane-label site-wf-lane-label-system">System</div>
+            <div className="site-wf-lane-label site-wf-lane-label-contractor">New member</div>
           </div>
-          <div className="wf-lanes">
+          <div className="site-wf-lanes">
             {NODES.map((n) => (
-              <div key={n.num} className={`wf-node wf-node-${n.lane}`}>
-                <span className="wf-node-badge">{n.num}</span>
+              <div key={n.num} className={`site-wf-node wf-node-${n.lane}`}>
+                <span className="site-wf-node-badge">{n.num}</span>
                 <div className="u-mb-2">
                   <ActorChip actor={n.actor} label={n.actorLabel} />
                 </div>
-                <div className="wf-node-title">{n.title}</div>
-                <p className="wf-node-desc">{n.desc}</p>
+                <div className="site-wf-node-title">{n.title}</div>
+                <p className="site-wf-node-desc">{n.desc}</p>
                 {n.outcomes && (
-                  <div className="wf-outcomes">
+                  <div className="site-wf-outcomes">
                     {n.outcomes.map((o) => (
-                      <span key={o.label} className={`wf-outcome wf-outcome-${o.kind}`}>
+                      <span key={o.label} className={`site-wf-outcome wf-outcome-${o.kind}`}>
                         {o.label}
                       </span>
                     ))}
@@ -299,7 +299,7 @@ export default function NewMemberOnboardingWorkflowPage() {
               </div>
             ))}
           </div>
-          <div className="wf-loop-note">
+          <div className="site-wf-loop-note">
             <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M17 2l4 4-4 4" />
               <path d="M3 11v-1a4 4 0 014-4h14" />
@@ -316,9 +316,9 @@ export default function NewMemberOnboardingWorkflowPage() {
       </section>
 
       {/* The nurture drip */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             The nurture drip
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -367,7 +367,7 @@ export default function NewMemberOnboardingWorkflowPage() {
             Almost everything is automated. What is left is a short list the recruiter owns by hand, in parallel with the
             flow. The drip never waits on it.
           </p>
-          <div className="wf-open">
+          <div className="site-wf-open">
             <h3>Recruiter, by hand</h3>
             <p>Run alongside the automated flow, per new hire.</p>
             <ul>
@@ -379,8 +379,8 @@ export default function NewMemberOnboardingWorkflowPage() {
               <li>On an off-ramp, set the status and deactivate the portal account if the offer was rescinded</li>
             </ul>
           </div>
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>What the humans own</h3>
               <ul>
                 <li>Recruiter: the hire, the Day 0 welcome, the Lark account, and the checklist above</li>
@@ -389,7 +389,7 @@ export default function NewMemberOnboardingWorkflowPage() {
                 <li>Operations: backfilling a direct hire who has no applicant on file</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>What the machine owns</h3>
               <ul>
                 <li>The onboarding email and its single-use form link</li>
@@ -403,9 +403,9 @@ export default function NewMemberOnboardingWorkflowPage() {
       </section>
 
       {/* Status lifecycle */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             The status lifecycle
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -436,30 +436,30 @@ export default function NewMemberOnboardingWorkflowPage() {
             Not every start finishes, and the record has to say so plainly. Three exit statuses close the loop, and none
             of them turns into an alumni record.
           </p>
-          <div className="wf-elements">
-            <div className="wf-element">
-              <div className="wf-element-head">
-                <span className="wf-element-name">Declined Offer</span>
+          <div className="site-wf-elements">
+            <div className="site-wf-element">
+              <div className="site-wf-element-head">
+                <span className="site-wf-element-name">Declined Offer</span>
               </div>
-              <p className="wf-element-desc">
+              <p className="site-wf-element-desc">
                 The hire never accepts and never completes onboarding. The recruiter marks the record Declined Offer and
                 it goes no further.
               </p>
             </div>
-            <div className="wf-element">
-              <div className="wf-element-head">
-                <span className="wf-element-name">Rescinded</span>
+            <div className="site-wf-element">
+              <div className="site-wf-element-head">
+                <span className="site-wf-element-name">Rescinded</span>
               </div>
-              <p className="wf-element-desc">
+              <p className="site-wf-element-desc">
                 They accepted, then changed their mind. The recruiter deactivates the portal account and marks the
                 record Rescinded, so the reversal is on the books.
               </p>
             </div>
-            <div className="wf-element">
-              <div className="wf-element-head">
-                <span className="wf-element-name">Failed Probation</span>
+            <div className="site-wf-element">
+              <div className="site-wf-element-head">
+                <span className="site-wf-element-name">Failed Probation</span>
               </div>
-              <p className="wf-element-desc">
+              <p className="site-wf-element-desc">
                 They started but did not pass the 60-day window. The record is marked Failed Probation rather than moving
                 to full-time.
               </p>
@@ -473,11 +473,11 @@ export default function NewMemberOnboardingWorkflowPage() {
       </section>
 
       {/* Anatomy + rules */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>The standing rules</h3>
               <ul>
                 <li>Only a hired applicant triggers onboarding; the recruiter owns that call</li>
@@ -490,7 +490,7 @@ export default function NewMemberOnboardingWorkflowPage() {
                 <li>Banking and identity data live in the restricted store, out of the general record</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why it works</h3>
               <ul>
                 <li>The gap between accept and Day 1 is where hires ghost; a warm, automated drip closes it</li>

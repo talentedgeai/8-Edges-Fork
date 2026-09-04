@@ -29,15 +29,15 @@ export default function LeadershipCoachProgramPage() {
       />
 
       {/* The guardrail */}
-      <section className="section wf-section--dark-sm">
+      <section className="section site-wf-section--dark-sm">
         <div className="container">
-          <span className="site-section-label wf-chip--on-dark">
+          <span className="site-section-label site-wf-chip--on-dark">
             The rule above the whole plan
           </span>
-          <h2 className="site-section-title wf-title-xl">
+          <h2 className="site-section-title site-wf-title-xl">
             The coach preps and drafts. The human decides.
           </h2>
-          <p className="wf-hero-sub u-mt-3">
+          <p className="site-wf-hero-sub u-mt-3">
             The AI never tells the coach to promote, manage out, rank, or label a person. It surfaces the signal and
             proposes the move. The human coaches the team. Every other design decision in this plan sits under that
             one.
@@ -58,8 +58,8 @@ export default function LeadershipCoachProgramPage() {
             holds the coach to coaching instead of telling). Moving it into the company OS solved two problems the
             prototype could not:
           </p>
-          <div className="wf-info-grid u-mt-6">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid u-mt-6">
+            <div className="site-wf-info-card">
               <h3>Privacy by access control, not discipline</h3>
               <ul>
                 <li>In the prototype, who saw a private coaching read versus a shared recap was a matter of care</li>
@@ -68,7 +68,7 @@ export default function LeadershipCoachProgramPage() {
                 <li>Mixing them is a code bug, not a human slip</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>A system any coach can run</h3>
               <ul>
                 <li>The coaching relationship is explicit in the data model, independent of the reporting line, with
@@ -88,9 +88,9 @@ export default function LeadershipCoachProgramPage() {
       </section>
 
       {/* 2D Discover */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             2D · Discover
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -100,8 +100,8 @@ export default function LeadershipCoachProgramPage() {
             Everything the coach reads lives in the company OS. The coach never invents facts about people: thin reads
             are marked low-confidence, and an unset goal says so.
           </p>
-          <div className="wf-table-wrap">
-            <table className="wf-table">
+          <div className="site-wf-table-wrap">
+            <table className="site-wf-table">
               <thead>
                 <tr>
                   <th>Input</th>
@@ -166,8 +166,8 @@ export default function LeadershipCoachProgramPage() {
           <p className="site-section-sub u-mt-3">
             The concept model first: four things that are never confused with each other.
           </p>
-          <div className="wf-table-wrap">
-            <table className="wf-table">
+          <div className="site-wf-table-wrap">
+            <table className="site-wf-table">
               <thead>
                 <tr>
                   <th>Concept</th>
@@ -212,8 +212,8 @@ export default function LeadershipCoachProgramPage() {
             </table>
           </div>
 
-          <div className="wf-info-grid u-mt-7">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid u-mt-7">
+            <div className="site-wf-info-card">
               <h3>The OCEAN profile</h3>
               <ul>
                 <li>Structured: five dimensions, each with a rating and behavioral evidence, plus a personality
@@ -224,7 +224,7 @@ export default function LeadershipCoachProgramPage() {
                 <li>A standing 1-1 topic, not a comment thread</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Two audiences, never mixed</h3>
               <ul>
                 <li>Private coach layer: the roster dashboard (last and next 1-1, mode split, top priority, retention
@@ -236,7 +236,7 @@ export default function LeadershipCoachProgramPage() {
             </div>
           </div>
 
-          <h3 className="wf-lead--lg u-m-0 u-mt-8">The biweekly cycle</h3>
+          <h3 className="site-wf-lead--lg u-m-0 u-mt-8">The biweekly cycle</h3>
           <p className="site-section-sub u-mt-3">
             The heart of the design is a two-week loop with one human step:
           </p>
@@ -258,16 +258,16 @@ export default function LeadershipCoachProgramPage() {
       </section>
 
       {/* 4D Determine */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             4D · Determine
           </span>
           <h2 className="site-section-title site-section-title--sm">
             Determine the ROI
           </h2>
-          <div className="wf-info-grid u-mt-6">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid u-mt-6">
+            <div className="site-wf-info-card">
               <h3>What the program returns</h3>
               <ul>
                 <li>Leverage: roughly an hour of prep and recap per person per cycle handed back to the coach, on the
@@ -278,7 +278,7 @@ export default function LeadershipCoachProgramPage() {
                 <li>Development that ladders: coaching that moves FAST goals visibly moves company key results</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>What the move to production added</h3>
               <ul>
                 <li>The coach&apos;s own growth, measured: the coach / mentor / direct split is logged per 1-1 and
@@ -305,8 +305,8 @@ export default function LeadershipCoachProgramPage() {
             07:45 cron as the scheduler, and Claude for prep, recaps, and trends, with every call failing soft so an
             AI error never blocks a meeting.
           </p>
-          <div className="wf-table-wrap">
-            <table className="wf-table">
+          <div className="site-wf-table-wrap">
+            <table className="site-wf-table">
               <thead>
                 <tr>
                   <th>Tool</th>
@@ -348,8 +348,8 @@ export default function LeadershipCoachProgramPage() {
               </tbody>
             </table>
           </div>
-          <div className="wf-info-grid u-mt-7">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid u-mt-7">
+            <div className="site-wf-info-card">
               <h3>Guardrails, always on</h3>
               <ul>
                 <li>The coach preps and drafts; the human decides. Never a promote, manage-out, rank, or label
@@ -359,7 +359,7 @@ export default function LeadershipCoachProgramPage() {
                 <li>Every claim points to a behavior in the data; thin reads say low-confidence; nothing is fabricated</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Migration and retirement</h3>
               <ul>
                 <li>The prototype&apos;s history imported in full: sessions, recaps, commitments, profiles</li>

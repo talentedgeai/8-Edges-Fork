@@ -63,9 +63,9 @@ export default function CertificationWorkflowPage() {
       </section>
 
       {/* Step detail */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Step by step
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -144,8 +144,8 @@ export default function CertificationWorkflowPage() {
       <section className="section">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>The standing rules</h3>
               <ul>
                 <li>Every challenge is worked on the learner&apos;s real team workflows</li>
@@ -154,7 +154,7 @@ export default function CertificationWorkflowPage() {
                 <li>The final mission ships to production, not to a slide deck</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why it works</h3>
               <ul>
                 <li>Artifacts compound: each mission builds on the last one&apos;s output</li>
@@ -164,7 +164,7 @@ export default function CertificationWorkflowPage() {
               </ul>
             </div>
           </div>
-          <p className="wf-lead u-mt-6">
+          <p className="site-wf-lead u-mt-6">
             This is the same method documented across this whole section.{' '}
             <Link href="/training-and-certification" className="u-accent">
               Explore the Training &amp; Certification program →

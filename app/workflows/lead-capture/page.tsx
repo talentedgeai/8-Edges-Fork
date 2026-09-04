@@ -58,7 +58,7 @@ export default function LeadCaptureWorkflowPage() {
               { num: '06', title: 'Won = Customer', cadence: 'Deal closes', actor: 'human' },
             ]}
           />
-          <div className="wf-loop-note">
+          <div className="site-wf-loop-note">
             <svg viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
               <polyline points="22 4 12 14.01 9 11.01" />
@@ -72,9 +72,9 @@ export default function LeadCaptureWorkflowPage() {
       </section>
 
       {/* Step detail */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Step by step
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -104,9 +104,9 @@ export default function LeadCaptureWorkflowPage() {
                       Before anything touches the CRM, an automatic gate evaluates the submission. Real inquiries pass
                       through untouched. Junk is archived with a reason attached.
                     </p>
-                    <div className="wf-outcomes">
-                      <span className="wf-outcome wf-outcome-approve">Pass → CRM</span>
-                      <span className="wf-outcome wf-outcome-reject">Spam → Archived</span>
+                    <div className="site-wf-outcomes">
+                      <span className="site-wf-outcome site-wf-outcome-approve">Pass → CRM</span>
+                      <span className="site-wf-outcome site-wf-outcome-reject">Spam → Archived</span>
                     </div>
                   </>
                 ),
@@ -164,8 +164,8 @@ export default function LeadCaptureWorkflowPage() {
       <section className="section">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>The standing rules</h3>
               <ul>
                 <li>One form, one pipeline, no side doors</li>
@@ -174,7 +174,7 @@ export default function LeadCaptureWorkflowPage() {
                 <li>Customer status comes from won deals, not from a checkbox</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why it works</h3>
               <ul>
                 <li>Humans only ever see real inquiries, so response time stays fast</li>

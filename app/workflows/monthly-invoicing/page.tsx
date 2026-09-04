@@ -48,46 +48,46 @@ export default function MonthlyInvoicingWorkflowPage() {
           <p className="site-section-sub u-mt-3">
             The whole workflow hangs on a fixed calendar. Same dates every month, no judgment calls.
           </p>
-          <div className="wf-timeline">
-            <div className="wf-tl-track">
-              <div className="wf-tl-stop">
-                <div className="wf-tl-day">
+          <div className="site-wf-timeline">
+            <div className="site-wf-tl-track">
+              <div className="site-wf-tl-stop">
+                <div className="site-wf-tl-day">
                   <strong>31st</strong>
                   <span>Create</span>
                 </div>
-                <div className="wf-tl-titlewrap">
-                  <div className="wf-tl-title">Invoices created</div>
-                  <p className="wf-tl-desc">All client invoices built in QuickBooks on the last day of the month.</p>
+                <div className="site-wf-tl-titlewrap">
+                  <div className="site-wf-tl-title">Invoices created</div>
+                  <p className="site-wf-tl-desc">All client invoices built in QuickBooks on the last day of the month.</p>
                 </div>
               </div>
-              <div className="wf-tl-stop">
-                <div className="wf-tl-day">
+              <div className="site-wf-tl-stop">
+                <div className="site-wf-tl-day">
                   <strong>1st</strong>
                   <span>Dated</span>
                 </div>
-                <div className="wf-tl-titlewrap">
-                  <div className="wf-tl-title">Dated forward &amp; sent</div>
-                  <p className="wf-tl-desc">Invoice date is set to the 1st of the new month and sent the same day.</p>
+                <div className="site-wf-tl-titlewrap">
+                  <div className="site-wf-tl-title">Dated forward &amp; sent</div>
+                  <p className="site-wf-tl-desc">Invoice date is set to the 1st of the new month and sent the same day.</p>
                 </div>
               </div>
-              <div className="wf-tl-stop">
-                <div className="wf-tl-day">
+              <div className="site-wf-tl-stop">
+                <div className="site-wf-tl-day">
                   <strong>20th</strong>
                   <span>Due</span>
                 </div>
-                <div className="wf-tl-titlewrap">
-                  <div className="wf-tl-title">Payment due</div>
-                  <p className="wf-tl-desc">QuickBooks reminds clients automatically as the date approaches.</p>
+                <div className="site-wf-tl-titlewrap">
+                  <div className="site-wf-tl-title">Payment due</div>
+                  <p className="site-wf-tl-desc">QuickBooks reminds clients automatically as the date approaches.</p>
                 </div>
               </div>
-              <div className="wf-tl-stop">
-                <div className="wf-tl-day wf-tl-day-danger">
+              <div className="site-wf-tl-stop">
+                <div className="site-wf-tl-day site-wf-tl-day-danger">
                   <strong>21st</strong>
                   <span>Escalate</span>
                 </div>
-                <div className="wf-tl-titlewrap">
-                  <div className="wf-tl-title">Escalation</div>
-                  <p className="wf-tl-desc">Anything unpaid past the 20th gets escalated. No waiting, no assuming.</p>
+                <div className="site-wf-tl-titlewrap">
+                  <div className="site-wf-tl-title">Escalation</div>
+                  <p className="site-wf-tl-desc">Anything unpaid past the 20th gets escalated. No waiting, no assuming.</p>
                 </div>
               </div>
             </div>
@@ -96,9 +96,9 @@ export default function MonthlyInvoicingWorkflowPage() {
       </section>
 
       {/* Step detail */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Step by step
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -178,8 +178,8 @@ export default function MonthlyInvoicingWorkflowPage() {
       <section className="section">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>The standing rules</h3>
               <ul>
                 <li>Create on the 31st, date to the 1st, due on the 20th</li>
@@ -188,7 +188,7 @@ export default function MonthlyInvoicingWorkflowPage() {
                 <li>Past the 20th means escalate, not wait</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why the dates are fixed</h3>
               <ul>
                 <li>Forward-dating keeps every invoice aligned to a clean calendar month</li>

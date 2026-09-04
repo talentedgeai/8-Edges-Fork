@@ -91,9 +91,9 @@ export default function InfiniteLeverageRetreatsWorkflowPage() {
       </section>
 
       {/* Step detail */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             Step by step
           </span>
           <h2 className="site-section-title site-section-title--sm">
@@ -198,8 +198,8 @@ export default function InfiniteLeverageRetreatsWorkflowPage() {
       <section className="section">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>Where the human stays in control</h3>
               <ul>
                 <li>Selling the retreat and owning the founder relationship</li>
@@ -208,7 +208,7 @@ export default function InfiniteLeverageRetreatsWorkflowPage() {
                 <li>The judgment calls a spreadsheet can never make</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>Why it works</h3>
               <ul>
                 <li>The retreat is a record, not a workbook, so each new one runs on the same rails instead of a fresh spreadsheet</li>

@@ -77,9 +77,9 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
       </section>
 
       {/* Agent 1, real flow */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             The reality &middot; agent 1
           </span>
           <h2 className="site-section-title site-section-title--sm">Booking to lead, every branch</h2>
@@ -132,9 +132,9 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
       </section>
 
       {/* State machine */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             The state machine
           </span>
           <h2 className="site-section-title site-section-title--sm">What the agents may do to a lead</h2>
@@ -165,8 +165,8 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
             An automation is defined by what happens off the happy path. Each row here is a real condition the agents
             hit, what they do about it, and where a human hears about it. Silence is only ever by design.
           </p>
-          <div className="wf-table-wrap">
-            <table className="wf-table">
+          <div className="site-wf-table-wrap">
+            <table className="site-wf-table">
               <thead>
                 <tr>
                   <th>Condition</th>
@@ -189,14 +189,14 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
       </section>
 
       {/* Contract + timing + instrumentation */}
-      <section className="section wf-section--tint">
+      <section className="section site-wf-section--tint">
         <div className="container">
-          <span className="site-section-label wf-section--white">
+          <span className="site-section-label site-wf-section--white">
             The contract
           </span>
           <h2 className="site-section-title site-section-title--sm">Data, timing, and how we know it works</h2>
-          <div className="wf-info-grid">
-            <div className="wf-info-card">
+          <div className="site-wf-info-grid">
+            <div className="site-wf-info-card">
               <h3>Reads and writes</h3>
               <ul>
                 <li>Reads: 14 days of calendar events; the day&rsquo;s recordings and transcripts; existing people and leads</li>
@@ -205,7 +205,7 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
                 <li>Re-running any day is a no-op: every write checks its key first</li>
               </ul>
             </div>
-            <div className="wf-info-card">
+            <div className="site-wf-info-card">
               <h3>Timing model</h3>
               <ul>
                 <li>6am: before the first call of the day, so every caller is already a lead</li>
@@ -215,7 +215,7 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
                 <li>Runs live on a workstation schedule: a missed run executes at next wake, keys make that safe</li>
               </ul>
             </div>
-            <div className="wf-info-card wf-info-card-mint">
+            <div className="site-wf-info-card site-wf-info-card-mint">
               <h3>How we know it works</h3>
               <ul>
                 <li>Days with no external activity are silent, so every message means something</li>
@@ -232,7 +232,7 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
       <section className="section">
         <div className="container">
           <SevenElements elements={ELEMENTS} />
-          <p className="wf-lead u-mt-6">
+          <p className="site-wf-lead u-mt-6">
             This workflow replaced our earlier Sales Call Intelligence pipeline: same philosophy, now running end to end
             on scheduled agents, and documented at the level a developer could rebuild it from. It feeds the same
             pipeline as{' '}
