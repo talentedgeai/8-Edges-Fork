@@ -345,7 +345,7 @@ function PanelSeatRow({
       <div className="u-row u-wrap">
         <span
           aria-hidden
-          className={`admin-tag-xs${seat.isAi ? " admin-tag-xs--accent" : ""}`}
+          className={`admin-tag-pill admin-tag-pill--bold${seat.isAi ? " admin-tag-pill--accent" : ""}`}
         >
           {seat.isAi ? "AI" : seat.role === "lead" ? "LEAD" : seat.role.toUpperCase()}
         </span>
@@ -461,7 +461,7 @@ function PanelSeatRow({
 function DisagreeTag() {
   return (
     <span
-      className="admin-tag-xs admin-tag-xs--warn"
+      className="admin-tag-pill admin-tag-pill--bold admin-tag-pill--warn"
     >
       GAP
     </span>

@@ -87,25 +87,6 @@
 }
 .admin-iconbtn:hover { background: var(--admin-on-dark-active); }
 .admin-iconbtn[aria-disabled="true"] { opacity: 0.45; cursor: not-allowed; }
-.admin-avatarbtn {
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  background: var(--admin-accent);
-  color: var(--color-bg-primary);
-  border: 0;
-  font-family: var(--font-display);
-  font-weight: 700; font-size: 11px; letter-spacing: 0.3px;
-  display: grid; place-items: center;
-  cursor: pointer;
-}
-.admin-avatarbtn:hover { filter: brightness(1.1); }
-.admin-avatarbtn--lg { width: 34px; height: 34px; font-size: 13px; }
-.admin-avatarbtn img {
-  width: 100%; height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-}
 .admin-brandbtn {
   margin: 0 12px 10px;
   padding: 8px 10px;
@@ -2059,8 +2040,6 @@ a.admin-campaign-asset-title:hover { color: var(--admin-accent); }
 .admin-campaign-section-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
 .admin-campaign-chip-row { display: flex; gap: 6px; flex-wrap: wrap; }
 .admin-campaign-progress { display: flex; align-items: center; gap: 8px; }
-.admin-campaign-progress-track { flex: 1; height: 8px; border-radius: 20px; background: var(--admin-line-soft); overflow: hidden; }
-.admin-campaign-progress-fill { height: 100%; }
 .admin-campaign-progress-num { font-size: 12px; min-width: 62px; text-align: right; }
 /* List view: a small square thumbnail in the image column. */
 .admin-campaign-asset-thumb {
@@ -4888,9 +4867,6 @@ a.admin-list-row { text-decoration: none; color: inherit; }
 .admin-star-btn { font-size: 22px; }
 .admin-star-btn--sm { font-size: 16px; }
 .admin-badge-inverse { font-size: var(--admin-text-xs); font-weight: 700; color: var(--admin-bg); background: var(--admin-ink); border-radius: var(--admin-radius-xs); padding: 1px 6px; }
-.admin-tag-xs { font-size: 11px; font-weight: 700; letter-spacing: .04em; padding: 2px 6px; border-radius: var(--admin-radius-pill); background: var(--admin-muted-bg); color: var(--admin-muted-ink); }
-.admin-tag-xs--accent { background: var(--admin-accent-soft); color: var(--admin-accent); }
-.admin-tag-xs--warn { background: var(--admin-warn-bg); color: var(--admin-warn-ink); }
 .admin-score-btn { width: 28px; height: 28px; border-radius: var(--admin-radius-xs); border: 1px solid var(--admin-line-strong); background: transparent; color: var(--admin-ink); cursor: pointer; font-size: var(--admin-text-base); font-weight: 600; }
 
 .admin-scroll-xs { max-height: 160px; overflow: auto; }
@@ -5127,3 +5103,15 @@ a.admin-avatar:hover { box-shadow: 0 0 0 3px var(--admin-accent-soft), 0 0 0 1.5
 /* Card footer pushed to the bottom of a u-stack card so sibling cards' buttons line up. */
 .admin-card-foot { margin-top: auto; padding-top: var(--admin-space-4); }
 .admin-backlog .admin-backlog-pill--static { cursor: default; }
+
+/* ─── Consolidation (design debt 12): one meter, one avatar, one tag ────── */
+/* A meter sitting inline in a flex row (campaign build progress): no top margin, takes the free width. */
+.admin-meter--inline { margin-top: 0; flex: 1; }
+/* The sidebar account button is an avatar that happens to be a button. */
+.admin-avatar--btn { background: var(--admin-accent); color: var(--color-bg-primary); border: 0; padding: 0; cursor: pointer; font-weight: 700; }
+.admin-avatar--btn:hover { filter: brightness(1.1); }
+.admin-avatar--ml { width: 34px; height: 34px; font-size: 13px; }
+/* Bold tag variant (interview seats) on the shared tag pill, with the two tones it used. */
+.admin-tag-pill--bold { font-size: 11px; font-weight: 700; letter-spacing: .04em; padding: 2px 6px; background: var(--admin-muted-bg); color: var(--admin-muted-ink); }
+.admin-tag-pill--accent { background: var(--admin-accent-soft); color: var(--admin-accent); }
+.admin-tag-pill--warn { background: var(--admin-warn-bg); color: var(--admin-warn-ink); }
