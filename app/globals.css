@@ -3212,6 +3212,7 @@ footer {
   background: var(--tint);
 }
 .xp-track { display: flex; }
+.xp-cover { object-fit: cover; }
 .xp-slide { min-width: 100%; }
 .xp-slide-inner {
   display: grid; grid-template-columns: 1fr 1fr; gap: 48px;

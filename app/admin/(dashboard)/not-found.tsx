@@ -13,7 +13,7 @@ export default function AdminDashboardNotFound() {
           <p className="admin-page-sub">That record does not exist or is no longer available.</p>
         </div>
       </div>
-      <div className="admin-card" style={{ padding: "16px 18px" }}>
+      <div className="admin-card u-p-4">
         <Link href="/admin" className="admin-btn">
           Back to the admin home
         </Link>

@@ -193,9 +193,8 @@ export function PrivateSessionReserve() {
         <div className="form-submit">
           <button
             type="submit"
-            className="btn btn-primary"
+            className={`btn btn-primary u-w-full${state.status === "submitting" ? " u-dim" : ""}`}
             disabled={state.status === "submitting"}
-            style={{ width: "100%", opacity: state.status === "submitting" ? 0.5 : 1 }}
           >
             {state.status === "submitting" ? "Processing…" : `Reserve · ${formatUsd(total)} →`}
           </button>
@@ -204,7 +203,7 @@ export function PrivateSessionReserve() {
           </p>
           <p className="rt-reserve-fine">
             Not ready to commit?{" "}
-            <a href="mailto:quan@edge8.ai" className="text-link" style={{ display: "inline" }}>Email quan@edge8.ai</a>
+            <a href="mailto:quan@edge8.ai" className="text-link u-inline">Email quan@edge8.ai</a>
           </p>
         </div>
       </form>
