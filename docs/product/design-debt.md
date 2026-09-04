@@ -178,7 +178,7 @@ One PR per item, into `ds/debt-base2`. The PR column fills in as they merge.
 | 4 | Page-prefixed selectors on the public site | `globals.css` | 125 prefixes, 1253 rules, 319 ratcheted | Rename every class by exact name to `site-<component>-*`, update consumers, ratchet to 0 | #20 |
 | 5 | Private stylesheets with their own prefixes | `workflows.css`, `eight-edges-app.css`, `plans.css` | `wf-` 219, `app-` 34, `plib-` 10, `rnw-` 1, `e8a-` 78, `brief-` 20 | Rename by exact class name to `site-wf-*`, `site-app-*`, `site-plib-*`, `site-rnw-*`, `site-e8a-*`, `site-brief-*` | #21 |
 | 6 | Inline styles: core record pages | contacts, team member, application, deal, event, sales call, campaign, boards | 22 unmarked | Converters, then component classes on `admin.css` + patterns | #22 |
-| 7 | Inline styles: admin core and shared components | login, skeletons, not-found, patterns, `components/*` | 19 unmarked | Converters, then hand-finish; layouts load `utilities.css` where missing | |
+| 7 | Inline styles: admin core and shared components | login, skeletons, not-found, patterns, `components/*` | 19 unmarked | Converters, then hand-finish; layouts load `utilities.css` where missing | #23 |
 | 8 | Inline styles: revenue | cockpit, deals board, marketing | 6 unmarked | Converters, then `admin-section-card--flush` | |
 | 9 | Inline styles: talent, operations, edges | applications, surveys, analytics, client roadmaps | 5 unmarked | Converters, then a `--tag` variable on the role tag (fixes an invalid `var()1f` background) | |
 | 10 | Inline styles: team intranet and client portal | `app/team`, `app/portal` | 35 unmarked | Converters, then `admin-card-foot`, `admin-overview-text`, `admin-details-summary` | |
