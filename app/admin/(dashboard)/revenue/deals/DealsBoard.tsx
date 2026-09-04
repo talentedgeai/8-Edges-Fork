@@ -1061,7 +1061,7 @@ export function DealDetail({
             onBlur={(e) => dealCommit("title", e.target.value)}
           />
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 10 }}>
+        <div className="u-grid-2-1">
           <div className="admin-field">
             <label className="admin-label">Amount</label>
             <input
