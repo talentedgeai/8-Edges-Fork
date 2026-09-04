@@ -1,0 +1,681 @@
+<title>Jumpstart the Hub in a Day</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+  :root {
+    --bg: #E9ECF2;
+    --surface: #FFFFFF;
+    --surface-2: #F5F7FB;
+    --ink: #0E1526;
+    --muted: #59616F;
+    --faint: #8B93A1;
+    --line: #DBE0E9;
+    --line-strong: #C6CDD9;
+    --accent: #B4791C;
+    --doc: #A66C15;
+    --doc-soft: #F6ECDA;
+    --doc-line: #E4CFA6;
+    --comp: #16736A;
+    --comp-soft: #DFF0ED;
+    --comp-line: #A9D6CF;
+    --ok: #2F7D53;
+    --warn: #B4791C;
+    --stop: #B23B3B;
+    --shadow: 0 1px 2px rgba(14,21,38,.05), 0 8px 24px rgba(14,21,38,.06);
+  }
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #0A0F1D;
+      --surface: #121A2B;
+      --surface-2: #0F1626;
+      --ink: #E9EDF4;
+      --muted: #9AA6B6;
+      --faint: #6C7787;
+      --line: #232F49;
+      --line-strong: #30405E;
+      --accent: #E7A94B;
+      --doc: #E7A94B;
+      --doc-soft: #24200F;
+      --doc-line: #4A3E1E;
+      --comp: #46B7A9;
+      --comp-soft: #0E2320;
+      --comp-line: #1E4A44;
+      --ok: #5FBF88;
+      --warn: #E7A94B;
+      --stop: #E07A7A;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0A0F1D;
+    --surface: #121A2B;
+    --surface-2: #0F1626;
+    --ink: #E9EDF4;
+    --muted: #9AA6B6;
+    --faint: #6C7787;
+    --line: #232F49;
+    --line-strong: #30405E;
+    --accent: #E7A94B;
+    --doc: #E7A94B;
+    --doc-soft: #24200F;
+    --doc-line: #4A3E1E;
+    --comp: #46B7A9;
+    --comp-soft: #0E2320;
+    --comp-line: #1E4A44;
+    --ok: #5FBF88;
+    --warn: #E7A94B;
+    --stop: #E07A7A;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 10px 30px rgba(0,0,0,.35);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 56px) clamp(18px, 4vw, 40px) 80px;
+  }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    font-size: clamp(34px, 6vw, 58px);
+    line-height: 1.02;
+    letter-spacing: -.02em;
+    text-wrap: balance;
+    margin: 14px 0 0;
+  }
+  .lede {
+    font-size: clamp(17px, 2.1vw, 20px);
+    color: var(--muted);
+    max-width: 62ch;
+    margin: 18px 0 0;
+  }
+  .lede strong { color: var(--ink); font-weight: 600; }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 26px;
+  }
+  .chip {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    letter-spacing: .02em;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 7px 14px;
+  }
+  .chip b { color: var(--accent); font-weight: 600; }
+
+  section { margin-top: clamp(40px, 6vw, 68px); }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    border-bottom: 1px solid var(--line-strong);
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+  }
+  .sec-num {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--faint);
+  }
+  h2 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: clamp(21px, 3vw, 27px);
+    letter-spacing: -.01em;
+    margin: 0;
+  }
+  .sec-note { margin-left: auto; color: var(--muted); font-size: 14px; text-align: right; }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  .muted { color: var(--muted); }
+
+  /* start-state strip */
+  .state {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .state-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .state-card .who {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .state-card .what {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.15;
+  }
+  .bar { height: 7px; border-radius: 4px; background: var(--surface-2); overflow: hidden; border: 1px solid var(--line); }
+  .bar > span { display: block; height: 100%; }
+  .pct { font-family: "IBM Plex Mono", monospace; font-weight: 600; font-size: 14px; font-variant-numeric: tabular-nums; }
+  .state-card .desc { font-size: 13.5px; color: var(--muted); }
+  .tag {
+    align-self: flex-start;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid var(--line-strong);
+    color: var(--muted);
+  }
+  .tag.done { color: var(--ok); border-color: color-mix(in oklab, var(--ok) 45%, var(--line)); }
+  .tag.stop { color: var(--stop); border-color: color-mix(in oklab, var(--stop) 45%, var(--line)); }
+  .tag.warn { color: var(--warn); border-color: color-mix(in oklab, var(--warn) 45%, var(--line)); }
+
+  /* primer */
+  .primer { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .rule {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .rule .n {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px; font-weight: 600;
+    color: var(--accent);
+    flex-shrink: 0;
+    width: 26px; height: 26px;
+    border: 1px solid var(--doc-line);
+    background: var(--doc-soft);
+    border-radius: 7px;
+    display: grid; place-items: center;
+  }
+  .rule .t { font-size: 14px; line-height: 1.5; }
+  .rule .t b { font-weight: 600; }
+  .rule .t span { color: var(--muted); }
+
+  /* prep / callout box */
+  .box {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 12px;
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    margin-top: 18px;
+  }
+  .box .lbl2 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px; letter-spacing: .07em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 12px;
+  }
+  ul.check { list-style: none; padding: 0; margin: 0; display: grid; gap: 11px; }
+  ul.check li { position: relative; padding-left: 30px; font-size: 14.5px; }
+  ul.check li::before {
+    content: "";
+    position: absolute; left: 0; top: 3px;
+    width: 17px; height: 17px;
+    border: 1.5px solid var(--line-strong);
+    border-radius: 5px;
+    background: var(--surface-2);
+  }
+  code, .mono-inline {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 1px 6px;
+  }
+
+  /* timeline */
+  .timeline { display: grid; gap: 2px; }
+  .slot {
+    display: grid;
+    grid-template-columns: 116px 1fr;
+    gap: 20px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    align-items: start;
+  }
+  .slot:first-child { border-top: none; }
+  .slot .time {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+  .slot .time small { display: block; color: var(--faint); font-weight: 400; font-size: 11px; margin-top: 2px; }
+  .slot .body h3 {
+    font-family: "Archivo", sans-serif;
+    font-size: 16.5px;
+    font-weight: 700;
+    margin: 0 0 4px;
+  }
+  .slot .body p { margin: 0; font-size: 14px; color: var(--muted); max-width: 72ch; }
+  .slot.build { background: var(--surface); border-radius: 10px; padding: 14px 16px; border-top: none; margin: 2px 0; box-shadow: var(--shadow); }
+  .slot.build + .slot { border-top: none; }
+  .kind {
+    display: inline-block;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid var(--doc-line);
+    background: var(--surface-2);
+    border-radius: 5px;
+    padding: 2px 7px;
+    margin-bottom: 7px;
+  }
+
+  /* tracks */
+  .tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+  .track {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--tc);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: var(--shadow);
+    display: flex; flex-direction: column;
+  }
+  .track.doc { --tc: var(--doc); --tc-soft: var(--doc-soft); --tc-line: var(--doc-line); }
+  .track.comp { --tc: var(--comp); --tc-soft: var(--comp-soft); --tc-line: var(--comp-line); }
+  .track .code {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--tc);
+    font-weight: 600;
+  }
+  .track h3 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -.01em;
+    margin: 6px 0 2px;
+  }
+  .track .person { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+  .track .skill {
+    background: var(--tc-soft);
+    border: 1px solid var(--tc-line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 13.5px;
+    margin-bottom: 6px;
+  }
+  .track .skill b { color: var(--tc); }
+
+  .step { margin-top: 18px; }
+  .step-head { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
+  .step-head .sn {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px; font-weight: 600;
+    color: var(--tc);
+    background: var(--tc-soft);
+    border: 1px solid var(--tc-line);
+    border-radius: 6px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+  .step-head .st { font-family: "Archivo", sans-serif; font-weight: 700; font-size: 15px; }
+  .step-head .opt { margin-left: auto; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase; color: var(--faint); }
+
+  .prompt {
+    position: relative;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--tc);
+    border-radius: 8px;
+    padding: 13px 15px 13px;
+    margin-bottom: 8px;
+  }
+  .prompt .plabel {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--faint); display: block; margin-bottom: 7px;
+  }
+  .prompt .ptext {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 12.5px; line-height: 1.55;
+    color: var(--ink);
+    white-space: pre-wrap;
+    margin: 0;
+  }
+  .copy {
+    position: absolute; top: 10px; right: 10px;
+    font-family: "IBM Plex Mono", monospace; font-size: 10.5px;
+    color: var(--muted);
+    background: var(--surface); border: 1px solid var(--line-strong);
+    border-radius: 6px; padding: 3px 8px; cursor: pointer;
+  }
+  .copy:hover { color: var(--tc); border-color: var(--tc); }
+  .copy:focus-visible { outline: 2px solid var(--tc); outline-offset: 2px; }
+  .see {
+    font-size: 13px; color: var(--muted);
+    display: flex; gap: 8px; align-items: baseline;
+    padding-left: 2px;
+  }
+  .see b { color: var(--ok); font-weight: 600; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; flex-shrink: 0; }
+
+  /* stuck / guardrails */
+  .rails { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 28px; }
+  .rail { display: flex; gap: 12px; font-size: 14.5px; align-items: baseline; }
+  .rail .mk { font-family: "IBM Plex Mono", monospace; color: var(--stop); font-weight: 600; flex-shrink: 0; }
+  .rail.go .mk { color: var(--ok); }
+
+  /* success bar */
+  .success {
+    background: var(--ink);
+    color: #DCE2EC;
+    border-radius: 16px;
+    padding: clamp(22px, 4vw, 34px);
+  }
+  :root[data-theme="dark"] .success { background: var(--surface); border: 1px solid var(--line-strong); color: var(--ink); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .success { background: var(--surface); border: 1px solid var(--line-strong); color: var(--ink); } }
+  .success h2 { color: #FFFFFF; }
+  :root[data-theme="dark"] .success h2 { color: var(--ink); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .success h2 { color: var(--ink); } }
+  .success .eyebrow { color: var(--doc); }
+  .success ul { margin: 16px 0 0; padding-left: 20px; display: grid; gap: 9px; }
+  .success li { font-size: 15px; }
+  .success li b { font-weight: 600; color: #FFFFFF; }
+  :root[data-theme="dark"] .success li b { color: var(--ink); }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .success li b { color: var(--ink); } }
+
+  footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    font-size: 12.5px;
+    color: var(--faint);
+    font-family: "IBM Plex Mono", monospace;
+  }
+
+  @media (max-width: 780px) {
+    .state, .tracks, .rails, .primer { grid-template-columns: 1fr; }
+    .slot { grid-template-columns: 88px 1fr; gap: 14px; }
+    .sec-note { display: none; }
+  }
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">One-day build retreat · Consulting Hub</div>
+    <h1>Jumpstart the Hub in a Day</h1>
+    <p class="lede">We're not finishing the Hub today — we're getting <strong>one real, visible slice</strong> of each new tool working. <strong>Elo</strong> and <strong>Bj</strong> are new to building with Claude, so this is a script: paste the prompt, check what you see, commit, move on. Dave's finished pipeline is the pattern Claude copies from.</p>
+    <div class="meta">
+      <span class="chip"><b>2</b> builders — Elo &amp; Bj</span>
+      <span class="chip"><b>~8h</b> · 09:00–17:00</span>
+      <span class="chip">You drive <b>Claude Code</b>, not the keyboard</span>
+      <span class="chip">Bar — <b>one slice visibly working</b></span>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">01</span><h2>Where the three tools stand today</h2><span class="sec-note">The starting line</span></div>
+    <div class="state">
+      <div class="state-card">
+        <div class="who">Dave — the pattern</div>
+        <div class="what">Questionnaire → AI draft report</div>
+        <div class="bar"><span style="width:80%;background:var(--ok)"></span></div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="pct" style="color:var(--ok)">Built</span><span class="tag done">Copy this, don't touch it</span></div>
+        <div class="desc">Already works in the repo. Not on today's menu — it's the finished example Claude will imitate for the other two.</div>
+      </div>
+      <div class="state-card">
+        <div class="who">Elo — track E</div>
+        <div class="what">Document Generator (SOW)</div>
+        <div class="bar"><span style="width:2%;background:var(--doc)"></span></div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="pct" style="color:var(--doc)">Empty</span><span class="tag stop">Nothing built yet</span></div>
+        <div class="desc">No document generator exists at all. Today: a form → AI → a draft Statement of Work on screen.</div>
+      </div>
+      <div class="state-card">
+        <div class="who">Bj — track B</div>
+        <div class="what">Compliance check</div>
+        <div class="bar"><span style="width:10%;background:var(--comp)"></span></div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><span class="pct" style="color:var(--comp)">Fake data</span><span class="tag warn">Numbers are hard-coded</span></div>
+        <div class="desc">The compliance figures on screen are made-up placeholders. Today: one real number, calculated from a real spreadsheet.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">02</span><h2>How to drive Claude — read this first</h2><span class="sec-note">The whole skill in seven rules</span></div>
+    <div class="primer">
+      <div class="rule"><span class="n">1</span><span class="t"><b>One prompt, one change.</b> <span>Do the steps in order. Don't paste the next prompt until the current one works.</span></span></div>
+      <div class="rule"><span class="n">2</span><span class="t"><b>Look, then say what you see.</b> <span>After each step, open the app in the browser. Tell Claude what actually happened — "the page is blank," "I see the form."</span></span></div>
+      <div class="rule"><span class="n">3</span><span class="t"><b>Commit every win.</b> <span>When something works, tell Claude: <em>"commit this with a short message."</em> That's your save point to go back to.</span></span></div>
+      <div class="rule"><span class="n">4</span><span class="t"><b>Errors are normal — paste them back.</b> <span>Copy the red error text and send it: <em>"this errored, please fix it."</em> Don't try to fix code yourself.</span></span></div>
+      <div class="rule"><span class="n">5</span><span class="t"><b>Ask it to explain.</b> <span>Unsure what happened? <em>"explain what you just changed in plain English."</em> Understanding beats guessing.</span></span></div>
+      <div class="rule"><span class="n">6</span><span class="t"><b>Stay in your folder.</b> <span>Each of you works in your own <code>lab/</code> area on your own branch. If Claude offers to change something else, say no.</span></span></div>
+      <div class="rule"><span class="n">7</span><span class="t"><b>Stuck for 15 min? Move the goalposts.</b> <span>Ask Claude to <em>"make it work with fake data for now"</em> and carry on. A visible slice beats a perfect one.</span></span></div>
+    </div>
+
+    <div class="box">
+      <p class="lbl2">Before 09:30 — setup (do it with a helper if you can)</p>
+      <ul class="check">
+        <li>Claude Code open, inside the <code>payroll-consulting</code> repo, with the app running (<code>pnpm dev</code> in <code>website/</code>).</li>
+        <li>The Anthropic API key is in <code>website/.env.local</code> — ask your helper to confirm this; the AI steps need it.</li>
+        <li>Your own branch made. Prompt to paste: <em>"make a new git branch called lab-elo"</em> (or <em>lab-bj</em>).</li>
+        <li><b>Bj only:</b> have your sample payroll spreadsheet ready (8 rows: employee id, classification, ordinary hours, Saturday hours, hourly rate, gross paid).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">03</span><h2>Run of the day</h2><span class="sec-note">Same rhythm for both of you</span></div>
+    <div class="timeline">
+      <div class="slot">
+        <div class="time">09:00<small>30 min</small></div>
+        <div class="body"><h3>Kickoff</h3><p>Read section 02 together out loud. Everyone confirms the app runs and they're on their own branch.</p></div>
+      </div>
+      <div class="slot">
+        <div class="time">09:30<small>45 min</small></div>
+        <div class="body"><h3>Watch the pattern work</h3><p>Ask Claude: <em>"show me how the existing report generator turns questionnaire answers into a document — walk me through it simply."</em> You're seeing the shape you'll copy.</p></div>
+      </div>
+      <div class="slot build">
+        <div class="time">10:15<small>90 min</small></div>
+        <div class="body"><span class="kind">Step 1</span><h3>Get a page on screen</h3><p>Paste Prompt&nbsp;1 for your track. Goal: something visible in the browser — Elo's form, or Bj's spreadsheet as a table. Commit it.</p></div>
+      </div>
+      <div class="slot">
+        <div class="time">11:45<small>15 min</small></div>
+        <div class="body"><h3>Checkpoint — show each other</h3><p>Two minutes each. If your page isn't showing, this is when you get help — not at 4pm.</p></div>
+      </div>
+      <div class="slot">
+        <div class="time">12:00<small>45 min</small></div>
+        <div class="body"><h3>Lunch</h3><p>Screens off.</p></div>
+      </div>
+      <div class="slot build">
+        <div class="time">12:45<small>105 min</small></div>
+        <div class="body"><span class="kind">Step 2</span><h3>Make it do the real work</h3><p>Paste Prompt&nbsp;2. Elo: Claude writes the SOW. Bj: the numbers get calculated for real. Commit when it works.</p></div>
+      </div>
+      <div class="slot">
+        <div class="time">14:30<small>15 min</small></div>
+        <div class="body"><h3>Checkpoint</h3><p>Real output showing? If not, use Rule&nbsp;7 — fall back to fake data and keep the slice alive.</p></div>
+      </div>
+      <div class="slot build">
+        <div class="time">14:45<small>90 min</small></div>
+        <div class="body"><span class="kind">Step 3 — optional</span><h3>The nice-to-have</h3><p>Only if Steps 1–2 are solid and committed. Elo: download as Word. Bj: AI writes a finding for each problem. Skipping this is completely fine.</p></div>
+      </div>
+      <div class="slot">
+        <div class="time">16:15<small>45 min</small></div>
+        <div class="body"><h3>Tidy up</h3><p>Ask Claude: <em>"commit everything and tell me if the app still builds."</em> Write one sentence on what your tool does.</p></div>
+      </div>
+      <div class="slot">
+        <div class="time">17:00<small>45 min</small></div>
+        <div class="body"><h3>Show &amp; tell</h3><p>Each person demos their slice live and says the one new thing they learned to do with Claude.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">04</span><h2>Your prompts — paste these in order</h2><span class="sec-note">Copy exactly · check after each</span></div>
+    <div class="tracks">
+
+      <div class="track doc">
+        <div class="code">Track E · Elo</div>
+        <h3>Document Generator</h3>
+        <div class="person">Skill: turn a filled-in form into a finished document</div>
+        <div class="skill"><b>What you'll have by 5pm:</b> a page where you type in the scope of a job and Claude writes you a draft Statement of Work.</div>
+
+        <div class="step">
+          <div class="step-head"><span class="sn">Prompt 1</span><span class="st">A form on screen</span></div>
+          <div class="prompt">
+            <button class="copy" type="button">Copy</button>
+            <span class="plabel">Paste into Claude Code</span>
+            <p class="ptext">Create a new page in this app at the route /lab/sow. It's a simple form for drafting a Statement of Work. Match the styling and structure of the existing pages. Fields: client name, engagement type, background, services (a list), deliverables (a list), timeline, fee, and exclusions. Don't use a database — just hold the values on the page. Add a "Generate draft" button that for now just shows the values I typed below the form. Then start the dev server so I can open it in the browser.</p>
+          </div>
+          <p class="see"><b>You should see</b> a form at <code>/lab/sow</code>; filling it and clicking the button lists your answers back. Then commit.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="sn">Prompt 2</span><span class="st">Claude writes the document</span></div>
+          <div class="prompt">
+            <button class="copy" type="button">Copy</button>
+            <span class="plabel">Paste into Claude Code</span>
+            <p class="ptext">Now make the "Generate draft" button use AI to write the Statement of Work. Reuse the same Anthropic setup and prompt style as src/lib/reports/generate.ts and src/lib/reports/prompt.ts. The system prompt should say it's an experienced Australian payroll consultant writing a Statement of Work in formal Australian English, using my form inputs and inventing nothing. Show the finished draft as nicely formatted text under the form.</p>
+          </div>
+          <p class="see"><b>You should see</b> a real, multi-section SOW draft appear after clicking Generate. Commit.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="sn">Prompt 3</span><span class="st">Download as Word</span><span class="opt">optional</span></div>
+          <div class="prompt">
+            <button class="copy" type="button">Copy</button>
+            <span class="plabel">Paste into Claude Code</span>
+            <p class="ptext">Add a "Download as Word" button that turns the generated draft into a .docx file, reusing src/lib/reports/render-docx.ts and src/lib/reports/parse-md.ts the same way the existing report download route does it.</p>
+          </div>
+          <p class="see"><b>You should see</b> a Word file download and open with real formatting. Commit.</p>
+        </div>
+      </div>
+
+      <div class="track comp">
+        <div class="code">Track B · Bj</div>
+        <h3>Compliance check</h3>
+        <div class="person">Skill: turn a spreadsheet into a checked, calculated result</div>
+        <div class="skill"><b>What you'll have by 5pm:</b> a page that reads a payroll spreadsheet and shows who was underpaid and by how much — one real number, not a placeholder.</div>
+
+        <div class="step">
+          <div class="step-head"><span class="sn">Prompt 1</span><span class="st">Spreadsheet on screen</span></div>
+          <div class="prompt">
+            <button class="copy" type="button">Copy</button>
+            <span class="plabel">Paste into Claude Code</span>
+            <p class="ptext">Create a new page at the route /lab/compliance. I have a small payroll spreadsheet with these columns: employee_id, classification, ordinary_hours, saturday_hours, hourly_rate, gross_paid. Save a sample CSV with about 8 made-up rows into a sample-data folder in the repo, then build the page so it reads that file and shows the rows in a clean table. Match the app's existing styling. Start the dev server so I can see it.</p>
+          </div>
+          <p class="see"><b>You should see</b> a table of 8 employees at <code>/lab/compliance</code>. Commit.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="sn">Prompt 2</span><span class="st">Calculate the underpayment</span></div>
+          <div class="prompt">
+            <button class="copy" type="button">Copy</button>
+            <span class="plabel">Paste into Claude Code</span>
+            <p class="ptext">Now add a small award rate table in code: one classification with an ordinary hourly rate, and a Saturday penalty of 1.5× that rate. For each employee, calculate what they should have been paid (ordinary_hours × rate, plus saturday_hours × rate × 1.5), compare it to gross_paid, and add a "variance" column showing the difference. Highlight rows where the person was underpaid, and show a total back-pay figure at the bottom.</p>
+          </div>
+          <p class="see"><b>You should see</b> a variance column, red underpaid rows, and a real total at the bottom. Commit.</p>
+        </div>
+
+        <div class="step">
+          <div class="step-head"><span class="sn">Prompt 3</span><span class="st">AI explains each finding</span><span class="opt">optional</span></div>
+          <div class="prompt">
+            <button class="copy" type="button">Copy</button>
+            <span class="plabel">Paste into Claude Code</span>
+            <p class="ptext">For each underpaid employee, use AI to write one short plain-English finding and recommendation, following the finding style in src/lib/reports/prompt.ts and reusing the Anthropic setup from src/lib/reports/generate.ts. Show each finding under the table.</p>
+          </div>
+          <p class="see"><b>You should see</b> a short written finding under each flagged employee. Commit.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="sec-num">05</span><h2>If it breaks · staying out of each other's way</h2><span class="sec-note">Read before you panic</span></div>
+    <div class="rails">
+      <div class="rail go"><span class="mk">DO</span><span>Paste the exact error text back to Claude and ask it to fix it. This is the normal loop.</span></div>
+      <div class="rail"><span class="mk">DON'T</span><span>Edit code files by hand. If you opened one, close it without saving.</span></div>
+      <div class="rail go"><span class="mk">DO</span><span>Fall back to fake data (Rule&nbsp;7) if the AI or file-reading step won't behave. Keep the slice visible.</span></div>
+      <div class="rail"><span class="mk">DON'T</span><span>Let Claude change the questionnaire, reports, or database. Say: <em>"only work inside my lab folder."</em></span></div>
+      <div class="rail go"><span class="mk">DO</span><span>Go back to your last commit if things get messy: <em>"undo my uncommitted changes."</em></span></div>
+      <div class="rail"><span class="mk">DON'T</span><span>Try Prompt 3. It's optional. A finished Step 2 is a full, successful day.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="success">
+      <div class="eyebrow">End of day</div>
+      <h2>What a win looks like at 17:00</h2>
+      <ul>
+        <li><b>Elo</b> — fills in a form, clicks a button, and a written Statement of Work appears. That's the whole win.</li>
+        <li><b>Bj</b> — opens a page and sees who was underpaid and a real total, calculated from the spreadsheet.</li>
+        <li>Each of you drove Claude through it, committed your work, and can point at something on screen you made today.</li>
+        <li>Anything beyond that — Word download, AI findings, a second document type — is a bonus, not the bar.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>Consulting Hub · jumpstart retreat · the pattern to copy: Dave's questionnaire → report pipeline</footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var block = btn.closest('.prompt');
+      var t = block ? block.querySelector('.ptext').innerText : '';
+      var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1400); };
+      try {
+        navigator.clipboard.writeText(t).then(done, function () { selectText(block); });
+      } catch (e) { selectText(block); }
+    });
+  });
+  function selectText(block) {
+    if (!block) return;
+    var node = block.querySelector('.ptext');
+    var range = document.createRange();
+    range.selectNodeContents(node);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+</script>

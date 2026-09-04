@@ -1,0 +1,9 @@
+{
+  "_why": "Per-rule ceiling on ESLint warnings. scripts/check-lint-warnings.mjs fails when a count rises and refuses to raise one. Lower an entry with --write-baseline; when a rule hits zero, flip it to error in .eslintrc.json and delete it here (AR-37).",
+  "warnings": {
+    "react/no-unescaped-entities": 37,
+    "react-hooks/exhaustive-deps": 5,
+    "@next/next/no-img-element": 4,
+    "import/no-cycle": 2
+  }
+}

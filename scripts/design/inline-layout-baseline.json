@@ -1,0 +1,17 @@
+{
+  "app/about/page.tsx": 17,
+  "app/admin/(dashboard)/boards/BoardsIndex.tsx": 2,
+  "app/admin/(dashboard)/boards/[slug]/sprints/[sprintId]/SprintView.tsx": 1,
+  "app/admin/(dashboard)/revenue/deals/DealsBoard.tsx": 1,
+  "app/admin/(dashboard)/revenue/events/[id]/page.tsx": 2,
+  "app/admin/(dashboard)/revenue/page.tsx": 1,
+  "app/portal/(dashboard)/company/CompanyForm.tsx": 1,
+  "app/portal/(dashboard)/roadmap/ProposeAssist.tsx": 1,
+  "app/saigon-private/page.tsx": 4,
+  "app/team/(dashboard)/clients/[companyId]/(hub)/roadmap/AddItemForm.tsx": 1,
+  "app/team/(dashboard)/hiring/page.tsx": 1,
+  "app/training-and-certification/page.tsx": 1,
+  "app/your-first-ai-hire/page.tsx": 8,
+  "components/PrivateSessionReserve.tsx": 1,
+  "components/hub/MeetingsPanel.tsx": 1
+}

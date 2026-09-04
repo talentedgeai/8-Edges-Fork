@@ -1,0 +1,18 @@
+{
+  "_why": "Prefixes that already collide in production. Renaming them would break the supabase migration ledger (2026-09-02 review, deferred). This list only shrinks: scripts/check-migrations.mjs fails if an entry stops colliding, and refuses any new collision.",
+  "grandfathered": [
+    "20260707130000",
+    "20260708090000",
+    "20260711120000",
+    "20260717120000",
+    "20260719110000",
+    "20260720160000",
+    "20260805120000",
+    "20260811130000",
+    "20260813120000",
+    "20260813130000",
+    "20260825140000",
+    "20260828120000",
+    "20260901120000"
+  ]
+}
