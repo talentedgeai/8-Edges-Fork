@@ -552,6 +552,27 @@ export default function PatternsPage() {
           </div>
         </Section>
 
+        {/* ─── Consolidated pieces ─────────────────────── */}
+        <Section title="Consolidated pieces" sub="One meter, one avatar, one tag: the modifiers that replaced admin-campaign-progress-track, admin-avatarbtn and admin-tag-xs.">
+          <div className="u-stack u-gap-4">
+            <div className="admin-campaign-progress u-max-sm">
+              <div className="admin-meter admin-meter--inline"><div className="admin-meter-fill u-w-120" /></div>
+              <span className="admin-cell-mono admin-campaign-progress-num">7/12 built</span>
+            </div>
+            <div className="u-row u-gap-3">
+              <button type="button" className="admin-avatar admin-avatar--md admin-avatar--display admin-avatar--btn">DH</button>
+              <span className="admin-avatar admin-avatar--ml admin-avatar--display admin-avatar--btn">DH</span>
+              <span className="u-sm u-muted">.admin-avatar--btn (+ --md / --ml): the sidebar account button is an avatar</span>
+            </div>
+            <div className="u-row u-wrap">
+              <span className="admin-tag-pill admin-tag-pill--bold">Interviewer</span>
+              <span className="admin-tag-pill admin-tag-pill--bold admin-tag-pill--accent">AI seat</span>
+              <span className="admin-tag-pill admin-tag-pill--bold admin-tag-pill--warn">Unfilled</span>
+              <span className="u-sm u-muted">.admin-tag-pill--bold with --accent / --warn replaces admin-tag-xs</span>
+            </div>
+          </div>
+        </Section>
+
         {/* ─── Empty state ────────────────────────────── */}
         <Section title="Empty state">
           <div className="admin-table-wrap">

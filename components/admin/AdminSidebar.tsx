@@ -397,7 +397,7 @@ export function AdminSidebar({
             </button>
             <button
               type="button"
-              className="admin-avatarbtn"
+              className="admin-avatar admin-avatar--md admin-avatar--display admin-avatar--btn"
               aria-haspopup="menu"
               aria-expanded={profileMenuOpen}
               aria-label="Profile and views"
@@ -421,7 +421,7 @@ export function AdminSidebar({
         {profileMenuOpen && (
           <div className="admin-profilemenu" role="menu" aria-label="Profile and views">
             <div className="admin-profilemenu-head">
-              <span className="admin-avatarbtn admin-avatarbtn--lg" aria-hidden>
+              <span className="admin-avatar admin-avatar--ml admin-avatar--display admin-avatar--btn" aria-hidden>
                 {avatarUrl ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={avatarUrl} alt="" />

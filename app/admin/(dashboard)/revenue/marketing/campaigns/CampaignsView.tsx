@@ -177,9 +177,9 @@ export function CampaignsView({
                       </td>
                       <td className="u-min-2">
                         <div className="admin-campaign-progress">
-                          <div className="admin-campaign-progress-track">
+                          <div className="admin-meter admin-meter--inline">
                             <div
-                              className={`admin-campaign-progress-fill${pct === 100 ? " is-done" : ""}`}
+                              className={`admin-meter-fill${pct === 100 ? " is-done" : ""}`}
                               style={{ width: `${pct}%` }} /* layout-ok: data-driven width */
                             />
                           </div>

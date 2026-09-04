@@ -156,7 +156,7 @@ export function PortalSidebar({
           <span className="admin-brand-actions">
             <button
               type="button"
-              className="admin-avatarbtn"
+              className="admin-avatar admin-avatar--md admin-avatar--display admin-avatar--btn"
               aria-haspopup="menu"
               aria-expanded={profileMenuOpen}
               aria-label="Your account"
@@ -173,7 +173,7 @@ export function PortalSidebar({
         {profileMenuOpen && (
           <div className="admin-profilemenu" role="menu" aria-label="Your account">
             <div className="admin-profilemenu-head">
-              <span className="admin-avatarbtn admin-avatarbtn--lg" aria-hidden>
+              <span className="admin-avatar admin-avatar--ml admin-avatar--display admin-avatar--btn" aria-hidden>
                 {initials(name)}
               </span>
               {/* Name only: the company already sits under the brand as the
