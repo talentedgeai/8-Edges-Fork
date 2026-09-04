@@ -1,0 +1,21 @@
+<svg width="680" height="380" viewBox="0 0 680 380" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>Infinite leverage: four times the output per hour</title>
+<desc>The old way took 100 hours, 20 to plan and 80 to execute. With AI it takes 25 hours, 20 to plan and 5 to execute. Four times the output per hour.</desc>
+<style>.ff{font-family:'Inter',system-ui,-apple-system,sans-serif}.eb{letter-spacing:3px}</style>
+<rect width="680" height="380" rx="20" fill="#04102D"/>
+<text class="ff eb" x="56" y="54" fill="#6FF2C1" font-size="12" font-weight="500">INFINITE LEVERAGE · HUMAN TOKENS</text>
+<text class="ff" x="56" y="92" fill="#FFFFFF" font-size="26" font-weight="600">Same plan. A quarter of the time</text>
+<text class="ff" x="56" y="142" fill="rgba(255,255,255,0.6)" font-size="13">The old way · 100 hours</text>
+<rect x="56" y="154" width="76" height="46" rx="6" fill="#287BE8"/>
+<rect x="136" y="154" width="300" height="46" rx="6" fill="#6FF2C1"/>
+<text class="ff" x="94" y="182" text-anchor="middle" fill="#042C53" font-size="13" font-weight="600">Plan 20h</text>
+<text class="ff" x="286" y="182" text-anchor="middle" fill="#04402F" font-size="13" font-weight="600">Execute 80h</text>
+<text class="ff" x="56" y="242" fill="rgba(255,255,255,0.6)" font-size="13">With AI · 25 hours</text>
+<rect x="56" y="254" width="76" height="46" rx="6" fill="#287BE8"/>
+<rect x="136" y="254" width="20" height="46" rx="5" fill="#FF6B35"/>
+<text class="ff" x="94" y="282" text-anchor="middle" fill="#042C53" font-size="13" font-weight="600">Plan 20h</text>
+<text class="ff" x="168" y="282" fill="rgba(255,255,255,0.72)" font-size="13">Execute 5h, AI does it</text>
+<text class="ff" x="548" y="232" text-anchor="middle" fill="#6FF2C1" font-size="64" font-weight="700">4×</text>
+<text class="ff" x="548" y="258" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="12.5">output per hour</text>
+<text class="ff" x="56" y="348" fill="rgba(255,255,255,0.65)" font-size="14">The plan is the human token. It stays. AI collapses the execution.</text>
+</svg>

@@ -1,0 +1,24 @@
+-- Migration: ats_fold_phase4_public_postings (applied to company_os 2026-07-07)
+--
+-- Phase 4 of the ATS fold: job_requisitions becomes the source of truth for
+-- /careers. The two live Markdown roles (content/jobs/*.md, now deleted) were
+-- migrated into their linked reqs, and slug uniqueness is enforced.
+--
+-- What it did:
+-- - AI Engineer (cdfb56a0) + Marketing Assistant (7d44b015): slug set to the
+--   public URL slug, full_jd = the MD body, location/remote_policy set,
+--   metadata gains department/excerpt/featured, is_public = true. The
+--   marketing req title was also cleaned ('Marketing Assistant (edge8.ai)' →
+--   'Marketing Assistant') since titles now render publicly.
+-- - Slug dedupe: 5 duplicate groups; public reqs win their slug, losers get a
+--   short-id suffix (slug || '-' || left(id, 8)). A first attempt with -2/-3
+--   counters collided with pre-existing title-derived slugs (ai-engineer-2
+--   from "AI Engineer (2)"); the id suffix can't collide.
+-- - Unique index job_requisitions_slug_uniq on (slug).
+--
+-- A role is live on /careers iff status = 'open' AND is_public. Publishing is
+-- managed from the admin job req page (JobPostingEditor).
+--
+-- Full statement list lives in the applied migration
+-- ats_fold_phase4_public_postings (supabase migration history); the JD bodies
+-- are not duplicated here.

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting AI Agents Off Your Laptop</title>
+<meta name="description" content="AI agents shouldn't be chained to a computer that has to stay awake. A plain-English look at moving your agents into the cloud, and the two simplest ways to do it.">
+<style>
+  :root{
+    --navy:#04102D;
+    --mist:#EAEEF2;
+    --white:#FFFFFF;
+    --blue:#287BE8;
+    --pink:#D1458B;
+    --mint:#6FF2C1;
+    --amber:#E9A23B;
+    --ink:#1a2340;
+    --muted:#5a6480;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--mist);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:820px;margin:0 auto;background:var(--white);}
+  header{background:var(--navy);color:var(--white);padding:64px 60px 56px;}
+  .eyebrow{font-size:13px;letter-spacing:.18em;color:var(--mint);font-weight:600;margin-bottom:18px;}
+  header h1{font-size:40px;line-height:1.12;font-weight:700;margin-bottom:16px;}
+  header p.sub{font-size:19px;color:var(--mist);max-width:680px;}
+  section{padding:46px 60px;}
+  section + section{border-top:1px solid var(--mist);}
+  h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:8px;}
+  h3{font-size:27px;font-weight:700;margin-bottom:18px;color:var(--navy);}
+  p{margin-bottom:15px;font-size:16.5px;}
+  p:last-child{margin-bottom:0;}
+  strong{font-weight:650;color:var(--navy);}
+  ul{margin:0 0 16px 0;padding-left:0;list-style:none;}
+  ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:16.5px;}
+  ul li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;background:var(--mint);border-radius:50%;}
+  .lead{font-size:18px;color:var(--ink);}
+  .optionCard{border:1px solid var(--mist);border-radius:16px;padding:28px 30px;margin:22px 0;}
+  .optionCard .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;background:var(--navy);color:var(--mint);border-radius:50%;font-weight:800;font-size:16px;margin-bottom:14px;}
+  .optionCard h4{font-size:21px;font-weight:700;color:var(--navy);margin-bottom:10px;}
+  .optionCard .tag{display:inline-block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--blue);margin-bottom:14px;}
+  .pros{display:flex;gap:26px;flex-wrap:wrap;margin-top:12px;}
+  .pros div{flex:1;min-width:200px;}
+  .pros .label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:8px;}
+  .pros .good{color:#1a9e74;}
+  .pros .watch{color:var(--amber);}
+  table{width:100%;border-collapse:collapse;margin:8px 0 4px;font-size:15px;}
+  th{background:var(--navy);color:var(--white);text-align:left;padding:11px 14px;font-weight:650;font-size:13.5px;}
+  td{padding:11px 14px;border-bottom:1px solid var(--mist);vertical-align:top;}
+  tr:nth-child(even) td{background:#F7F9FC;}
+  .callout{background:#F0F7FF;border-left:4px solid var(--blue);padding:18px 22px;border-radius:0 8px 8px 0;margin:20px 0;}
+  .callout.mint{background:#EFFCF7;border-left-color:var(--mint);}
+  .callout p{font-size:15.5px;margin-bottom:0;}
+  .flowRow{display:flex;align-items:center;gap:10px;margin:24px 0;flex-wrap:wrap;}
+  .chip{border:1px solid var(--mist);border-radius:12px;padding:14px 18px;text-align:center;flex:1;min-width:130px;}
+  .chip b{display:block;color:var(--navy);font-size:15px;margin-bottom:3px;}
+  .chip span{font-size:12.5px;color:var(--muted);}
+  .arrow{color:var(--blue);font-weight:800;font-size:20px;}
+  footer{background:var(--navy);color:var(--mist);padding:36px 60px;font-size:14px;}
+  footer .b{color:var(--mint);font-weight:700;}
+  footer a{color:var(--mint);text-decoration:none;}
+  @media (max-width:720px){
+    header,section,footer{padding-left:24px;padding-right:24px;}
+    header h1{font-size:32px;}
+    .arrow{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="eyebrow">A FIELD NOTE</div>
+  <h1>Getting AI Agents Off Your Laptop</h1>
+  <p class="sub">An AI agent that only works when your computer is awake is not really working for you. Here is the plain-English case for moving agents into the cloud, and the two simplest ways to do it.</p>
+</header>
+
+<section>
+  <h2>The problem</h2>
+  <h3>Your best worker is trapped inside your laptop</h3>
+  <p class="lead">An AI agent is software that does a job on its own: it drafts the newsletter, checks the code, answers the message. The catch is where it lives.</p>
+  <p>Most people run their agents on their own machine. That means the agent can only work when three things are true at once: the computer is on, it is awake, and the AI app is open. Close the lid and everything stops.</p>
+  <p>It gets more fragile from there:</p>
+  <ul>
+    <li><strong>One machine, one point of failure.</strong> If your laptop restarts, updates, or dies, your agents go quiet and you might not notice for a day.</li>
+    <li><strong>One thing at a time.</strong> A single computer can really only babysit one agent at a time, so work queues up instead of running in parallel.</li>
+    <li><strong>You are the operator.</strong> The agents run because you are sitting there. That is not automation. That is a person clicking start.</li>
+  </ul>
+  <p>Moving your agents to a laptop that stays on, or even a second computer in the office, does not fix this. It just moves the same fragile setup onto a different desk.</p>
+</section>
+
+<section>
+  <h2>The shift</h2>
+  <h3>Move the agent to the cloud, not to another desk</h3>
+  <p>The cloud is just someone else's always-on computer, sitting in a data center that never sleeps. When an agent lives there instead of on your machine, the whole picture changes.</p>
+  <div class="flowRow">
+    <div class="chip"><b>On your laptop</b><span>Runs only while you are there</span></div>
+    <div class="arrow">&rarr;</div>
+    <div class="chip"><b>In the cloud</b><span>Runs on its own, around the clock</span></div>
+  </div>
+  <p>A cloud agent runs on a schedule or a trigger. It wakes up at 8am, does the job, and files the result, whether you are asleep, on a plane, or on holiday. Nothing to keep awake. Nothing to babysit. It simply runs.</p>
+  <div class="callout mint">
+    <p><strong>The mental model:</strong> stop thinking of an agent as an app you open. Start thinking of it as a teammate who works whether or not you are in the building.</p>
+  </div>
+</section>
+
+<section>
+  <h2>How to do it</h2>
+  <h3>Two simple ways to get there</h3>
+  <p>You do not need a data center or a big engineering project. There are two paths most teams take, and the right one depends on how much you want to manage yourself.</p>
+
+  <div class="optionCard">
+    <div class="num">1</div>
+    <div class="tag">Least effort</div>
+    <h4>Let your AI provider host the agent</h4>
+    <p>The company that makes your AI also offers to run your agents for you. You describe the job and set the schedule, and their cloud does the rest. There is no server to buy and nothing to keep running.</p>
+    <div class="pros">
+      <div>
+        <div class="label good">Good for</div>
+        <ul>
+          <li>Getting started fast, with no hardware</li>
+          <li>Agents that run on a schedule (daily, weekly)</li>
+          <li>Teams that want to manage as little as possible</li>
+        </ul>
+      </div>
+      <div>
+        <div class="label watch">Watch for</div>
+        <ul>
+          <li>You work within the provider's limits and settings</li>
+          <li>These offerings are newer and still maturing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="optionCard">
+    <div class="num">2</div>
+    <div class="tag">More control</div>
+    <h4>Run your own always-on server in the cloud</h4>
+    <p>You rent a small computer in the cloud that stays on all the time, and your agents live there. It costs a little each month and takes some setup, but it is yours: you decide what runs, how often, and where the data sits.</p>
+    <div class="pros">
+      <div>
+        <div class="label good">Good for</div>
+        <ul>
+          <li>Running several agents at once</li>
+          <li>Teams that want control over the setup</li>
+          <li>Keeping the whole system under your own roof</li>
+        </ul>
+      </div>
+      <div>
+        <div class="label watch">Watch for</div>
+        <ul>
+          <li>Someone has to set it up and keep an eye on it</li>
+          <li>A small, steady monthly cost</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>A quiet third path, once you are ready:</strong> bake the agent straight into the software you already run in the cloud. Then producing the work is just a feature of your product, and there is no separate agent to manage at all.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Choosing</h2>
+  <h3>Which one is right for you</h3>
+  <table>
+    <thead>
+      <tr><th>If you want to</th><th>Start with</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Get one agent running this week with no hardware</td><td><strong>Option 1</strong>: provider-hosted</td></tr>
+      <tr><td>Run a handful of agents and control the whole setup</td><td><strong>Option 2</strong>: your own cloud server</td></tr>
+      <tr><td>Prove it out before committing</td><td>Pilot <strong>one</strong> agent, either way, then expand</td></tr>
+    </tbody>
+  </table>
+  <p>Whichever you choose, the win is the same: your agents stop depending on you being at your desk, and start running like a team that never clocks out.</p>
+</section>
+
+<footer>
+  <p><span class="b">Edge8</span> helps founders turn AI into real capability, not a folder of prompts. If you are ready to get your agents off your laptop and running in the cloud, <a href="https://www.edge8.ai/contact">let's talk</a>.</p>
+</footer>
+
+</div>
+</body>
+</html>

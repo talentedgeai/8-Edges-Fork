@@ -1,0 +1,12 @@
+{
+  "app/admin/(dashboard)/boards/BoardsIndex.tsx": 2,
+  "app/admin/(dashboard)/boards/[slug]/sprints/[sprintId]/SprintView.tsx": 1,
+  "app/admin/(dashboard)/revenue/deals/DealsBoard.tsx": 1,
+  "app/admin/(dashboard)/revenue/events/[id]/page.tsx": 2,
+  "app/admin/(dashboard)/revenue/page.tsx": 1,
+  "app/portal/(dashboard)/company/CompanyForm.tsx": 1,
+  "app/portal/(dashboard)/roadmap/ProposeAssist.tsx": 1,
+  "app/team/(dashboard)/hiring/page.tsx": 1,
+  "components/PrivateSessionReserve.tsx": 1,
+  "components/hub/MeetingsPanel.tsx": 1
+}
