@@ -56,9 +56,9 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
       {/* Orientation */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">The shape, in ten seconds</span>
-          <h2 className="section-title section-title--sm">Two agents, bracketing the call</h2>
-          <p className="section-sub u-mt-3">
+          <span className="site-section-label">The shape, in ten seconds</span>
+          <h2 className="site-section-title site-section-title--sm">Two agents, bracketing the call</h2>
+          <p className="site-section-sub u-mt-3">
             This rail is the orientation, not the workflow. Real life branches, fails, and loops; the diagrams below
             are the truth, drawn branch by branch.
           </p>
@@ -79,11 +79,11 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
       {/* Agent 1, real flow */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             The reality &middot; agent 1
           </span>
-          <h2 className="section-title section-title--sm">Booking to lead, every branch</h2>
-          <p className="section-sub u-mt-3">
+          <h2 className="site-section-title site-section-title--sm">Booking to lead, every branch</h2>
+          <p className="site-section-sub u-mt-3">
             Seven boxes in the rail; four decisions, three write paths, and two quiet endings in reality. The
             interesting work is in the branches: recognising who is already known, refusing to demote anyone, and
             ending in silence when there is nothing to say.
@@ -108,9 +108,9 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
       {/* Agent 2, real flow */}
       <section className="section">
         <div className="container">
-          <span className="section-label">The reality &middot; agent 2</span>
-          <h2 className="section-title section-title--sm">Call to CRM, every branch</h2>
-          <p className="section-sub u-mt-3">
+          <span className="site-section-label">The reality &middot; agent 2</span>
+          <h2 className="site-section-title site-section-title--sm">Call to CRM, every branch</h2>
+          <p className="site-section-sub u-mt-3">
             The evening agent runs four gates before it writes anything: external, unseen, transcribed, matched. Only
             then does the transcript become CRM records, and only a priced opportunity becomes a deal. The follow-up is
             drafted, never sent; the day ends in one message to the owner.
@@ -134,11 +134,11 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
       {/* State machine */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             The state machine
           </span>
-          <h2 className="section-title section-title--sm">What the agents may do to a lead</h2>
-          <p className="section-sub u-mt-3">
+          <h2 className="site-section-title site-section-title--sm">What the agents may do to a lead</h2>
+          <p className="site-section-sub u-mt-3">
             Underneath both agents sits one entity with rules: the lead. The agents may create a lead at meeting
             booked, step it to connected after a held call, and open it into a deal. Everything else, outreach,
             nurture, disqualification, is a human move. The forbidden move matters most: nothing ever goes backwards.
@@ -159,9 +159,9 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
       {/* Exceptions */}
       <section className="section">
         <div className="container">
-          <span className="section-label">When it goes sideways</span>
-          <h2 className="section-title section-title--sm">Every exception has an owner</h2>
-          <p className="section-sub u-mt-3">
+          <span className="site-section-label">When it goes sideways</span>
+          <h2 className="site-section-title site-section-title--sm">Every exception has an owner</h2>
+          <p className="site-section-sub u-mt-3">
             An automation is defined by what happens off the happy path. Each row here is a real condition the agents
             hit, what they do about it, and where a human hears about it. Silence is only ever by design.
           </p>
@@ -191,10 +191,10 @@ export default function LarkSchedulerToCrmUpdatesWorkflowPage() {
       {/* Contract + timing + instrumentation */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             The contract
           </span>
-          <h2 className="section-title section-title--sm">Data, timing, and how we know it works</h2>
+          <h2 className="site-section-title site-section-title--sm">Data, timing, and how we know it works</h2>
           <div className="wf-info-grid">
             <div className="wf-info-card">
               <h3>Reads and writes</h3>

@@ -11,19 +11,19 @@ export const metadata = {
 
 export default function VietnamAdventureInfoFormPage() {
   return (
-    <main className="apply-page">
-      <section className="apply-hero">
+    <main className="site-apply-page">
+      <section className="site-apply-hero">
         <div className="container">
-          <p className="apply-eyebrow brand-label">Edge8 Vietnam Adventure</p>
-          <h1 className="apply-title">Travel info form</h1>
-          <div className="apply-meta">
+          <p className="site-apply-eyebrow site-brand-label">Edge8 Vietnam Adventure</p>
+          <h1 className="site-apply-title">Travel info form</h1>
+          <div className="site-apply-meta">
             <span>Tell us about your family, t-shirt sizes, and passports</span>
           </div>
         </div>
       </section>
 
-      <section className="apply-form-section">
-        <div className="container apply-form-wrap">
+      <section className="site-apply-form-section">
+        <div className="container site-apply-form-wrap">
           <TripForm />
         </div>
       </section>

@@ -11,7 +11,7 @@ import type { SaveResult } from "../actions";
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <button type="submit" className="btn btn-secondary u-p-1 u-sm" disabled={pending}>
+    <button type="submit" className="btn site-btn-secondary u-p-1 u-sm" disabled={pending}>
       {pending ? "Saving…" : "Save"}
     </button>
   );

@@ -72,11 +72,6 @@
     "app/vietnam-adventure-flight-info/page.tsx": 5,
     "app/vietnam-adventure-info-form/TripForm.tsx": 2,
     "app/workflows/graph.tsx": 6,
-    "app/workflows/private/PrivateUnlockForm.tsx": 13,
-    "app/workflows/private/ai-officer-institute/ui-redesign-plan/page.tsx": 1,
-    "app/workflows/private/e8/ai-retreat-austpayroll/page.tsx": 1,
-    "app/workflows/private/e8/ai-retreat-work-healthy/page.tsx": 1,
-    "app/workflows/private/e8/team-onboarding/TeamOnboardingDeck.tsx": 1,
     "app/workflows/recruitment/page.tsx": 1,
     "components/Footer.tsx": 1,
     "components/Nav.tsx": 1,
@@ -99,5 +94,5 @@
     "kernel/ui/PageHead.tsx": 1,
     "kernel/ui/PasswordInput.tsx": 3
   },
-  "pagePrefixedSelectors": 319
+  "pagePrefixedSelectors": 44
 }

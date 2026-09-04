@@ -26,7 +26,7 @@ export function PlaceholderImage({
   className?: string;
   style?: React.CSSProperties;
 }) {
-  const cls = [src ? "xp-ph xp-ph--photo" : "xp-ph", className].filter(Boolean).join(" ");
+  const cls = [src ? "site-xp-ph site-xp-ph--photo" : "site-xp-ph", className].filter(Boolean).join(" ");
   return (
     <div className={cls} style={{ aspectRatio: aspect, maxWidth, ...style }}>
       {src ? (

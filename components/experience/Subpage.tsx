@@ -21,20 +21,20 @@ export function SubpageFrame({
   next?: LinkRef;
 }) {
   return (
-    <div className="xp-page">
-      <article className="xp-article">
-        <Link href={back.href} className="xp-backlink">
+    <div className="site-xp-page">
+      <article className="site-xp-article">
+        <Link href={back.href} className="site-xp-backlink">
           ← {back.label}
         </Link>
 
         {children}
 
-        <nav className="xp-onward">
-          <Link href={back.href} className="xp-backlink">
+        <nav className="site-xp-onward">
+          <Link href={back.href} className="site-xp-backlink">
             ← Back to {back.label}
           </Link>
           {next && (
-            <Link href={next.href} className="xp-next">
+            <Link href={next.href} className="site-xp-next">
               Next: {next.label}
               <span className="ar" aria-hidden>→</span>
             </Link>
@@ -55,10 +55,10 @@ export function PageHeader({
   lead: string;
 }) {
   return (
-    <header className="xp-article-head">
+    <header className="site-xp-article-head">
       <p className="eyebrow">{eyebrow}</p>
       <h1>{title}</h1>
-      <p className="xp-lead">{lead}</p>
+      <p className="site-xp-lead">{lead}</p>
     </header>
   );
 }
@@ -71,9 +71,9 @@ export function Block({
   children: React.ReactNode;
 }) {
   return (
-    <section className="xp-block">
+    <section className="site-xp-block">
       <h2>{heading}</h2>
-      <div className="xp-body">{children}</div>
+      <div className="site-xp-body">{children}</div>
     </section>
   );
 }

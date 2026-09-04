@@ -81,7 +81,7 @@ export default function ApplyForm({ jobId, jobTitle, jobSlug, questions }: Props
 
   if (status === 'sent') {
     return (
-      <div className="apply-success">
+      <div className="site-apply-success">
         <h2>Application received</h2>
         <p>
           Thanks for applying for <strong>{jobTitle}</strong>. We&apos;ll review your
@@ -92,9 +92,9 @@ export default function ApplyForm({ jobId, jobTitle, jobSlug, questions }: Props
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} noValidate>
-      <div className="contact-field-row">
-        <div className="contact-field">
+    <form className="site-contact-form" onSubmit={handleSubmit} noValidate>
+      <div className="site-contact-field-row">
+        <div className="site-contact-field">
           <label htmlFor="full_name">Full name *</label>
           <input
             id="full_name"
@@ -106,7 +106,7 @@ export default function ApplyForm({ jobId, jobTitle, jobSlug, questions }: Props
             onChange={handleChange}
           />
         </div>
-        <div className="contact-field">
+        <div className="site-contact-field">
           <label htmlFor="email">Email *</label>
           <input
             id="email"
@@ -120,8 +120,8 @@ export default function ApplyForm({ jobId, jobTitle, jobSlug, questions }: Props
         </div>
       </div>
 
-      <div className="contact-field-row">
-        <div className="contact-field">
+      <div className="site-contact-field-row">
+        <div className="site-contact-field">
           <label htmlFor="phone">Phone</label>
           <input
             id="phone"
@@ -132,7 +132,7 @@ export default function ApplyForm({ jobId, jobTitle, jobSlug, questions }: Props
             onChange={handleChange}
           />
         </div>
-        <div className="contact-field">
+        <div className="site-contact-field">
           <label htmlFor="linkedin">LinkedIn URL</label>
           <input
             id="linkedin"
@@ -145,7 +145,7 @@ export default function ApplyForm({ jobId, jobTitle, jobSlug, questions }: Props
         </div>
       </div>
 
-      <div className="contact-field">
+      <div className="site-contact-field">
         <label htmlFor="cover_letter">Cover letter</label>
         <textarea
           id="cover_letter"
@@ -158,7 +158,7 @@ export default function ApplyForm({ jobId, jobTitle, jobSlug, questions }: Props
       </div>
 
       {questions.map((q, i) => (
-        <div className="contact-field" key={i}>
+        <div className="site-contact-field" key={i}>
           <label htmlFor={`answer_${i}`}>{q} *</label>
           <textarea
             id={`answer_${i}`}
@@ -173,7 +173,7 @@ export default function ApplyForm({ jobId, jobTitle, jobSlug, questions }: Props
         </div>
       ))}
 
-      <div className="contact-field">
+      <div className="site-contact-field">
         <label htmlFor="resume">Resume * (PDF or Word, max {MAX_RESUME_MB} MB)</label>
         <input
           id="resume"
@@ -184,7 +184,7 @@ export default function ApplyForm({ jobId, jobTitle, jobSlug, questions }: Props
           onChange={handleFile}
         />
         {resume && (
-          <p className="apply-file-name">
+          <p className="site-apply-file-name">
             Selected: {resume.name} ({Math.round(resume.size / 1024)} KB)
           </p>
         )}
@@ -201,17 +201,17 @@ export default function ApplyForm({ jobId, jobTitle, jobSlug, questions }: Props
         style={{ display: "none" }} /* layout-ok: hidden honeypot field */
       />
 
-      {error && <p className="apply-error">{error}</p>}
+      {error && <p className="site-apply-error">{error}</p>}
 
       <button
         type="submit"
-        className="btn btn-primary contact-submit"
+        className="btn btn-primary site-contact-submit"
         disabled={status === 'sending'}
       >
         {status === 'sending' ? 'Submitting…' : 'Submit application'}
       </button>
 
-      <p className="contact-form-note">We&apos;ll only use your details to evaluate this application.</p>
+      <p className="site-contact-form-note">We&apos;ll only use your details to evaluate this application.</p>
     </form>
   )
 }

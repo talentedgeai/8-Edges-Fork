@@ -79,59 +79,59 @@ export default async function PostPage({ params }: { params: { slug: string } })
         />
       )}
       {/* ═══ POST HERO — dark section, cover image only ══════════ */}
-      <section className="post-hero">
-        <div className="post-cover-wrap">
+      <section className="site-post-hero">
+        <div className="site-post-cover-wrap">
           <Image
             src={post.image}
             alt={post.title}
             width={1600}
             height={520}
-            className="post-cover"
+            className="site-post-cover"
             priority
           />
         </div>
       </section>
 
       {/* ═══ POST CONTENT ════════════════════════════════════════ */}
-      <section className="post-section">
+      <section className="site-post-section">
         <div className="container">
-          <div className="post-layout">
+          <div className="site-post-layout">
             {/* Main article */}
             <article>
-              <div className="post-meta">
-                <Link href={`/blog#${post.categorySlug}`} className="post-category-tag">
+              <div className="site-post-meta">
+                <Link href={`/blog#${post.categorySlug}`} className="site-post-category-tag">
                   {post.category}
                 </Link>
-                <span className="post-date">
+                <span className="site-post-date">
                   {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
                 </span>
-                <span className="post-read-time">{post.readTime}</span>
+                <span className="site-post-read-time">{post.readTime}</span>
               </div>
-              <h1 className="post-title">{post.title}</h1>
+              <h1 className="site-post-title">{post.title}</h1>
               <div
                 className="post-body"
                 dangerouslySetInnerHTML={{ __html: post.contentHtml }}
               />
-              <div className="post-all-posts">
-                <Link href="/blog" className="btn btn-secondary">← All Posts</Link>
+              <div className="site-post-all-posts">
+                <Link href="/blog" className="btn site-btn-secondary">← All Posts</Link>
               </div>
             </article>
 
             {/* Sidebar */}
-            <aside className="post-sidebar">
-              <div className="sidebar-title">More in {post.category}</div>
+            <aside className="site-post-sidebar">
+              <div className="site-sidebar-title">More in {post.category}</div>
               {relatedPosts.map((p) => (
-                <Link key={p.slug} href={`/post/${p.slug}`} className="sidebar-post">
+                <Link key={p.slug} href={`/post/${p.slug}`} className="site-sidebar-post">
                   <Image
                     src={p.image}
                     alt={p.title}
                     width={64}
                     height={64}
-                    className="sidebar-post-img"
+                    className="site-sidebar-post-img"
                   />
-                  <div className="sidebar-post-text">
-                    <div className="sidebar-post-title">{p.title}</div>
-                    <div className="sidebar-post-date">
+                  <div className="site-sidebar-post-text">
+                    <div className="site-sidebar-post-title">{p.title}</div>
+                    <div className="site-sidebar-post-date">
                       {new Date(p.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
                     </div>
                   </div>

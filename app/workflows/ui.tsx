@@ -37,7 +37,7 @@ export function WorkflowHero({
             <span>/</span>
             <span>{category}</span>
           </div>
-          <h1 className="section-title">{title}</h1>
+          <h1 className="site-section-title">{title}</h1>
           <p className="wf-hero-sub">{tldr}</p>
           {meta && meta.length > 0 && (
             <div className="wf-hero-meta">
@@ -148,11 +148,11 @@ export function ElementsGrid({ elements }: { elements: WorkflowElement[] }) {
 export function SevenElements({ elements }: { elements: WorkflowElement[] }) {
   return (
     <>
-      <span className="section-label">Workflow anatomy</span>
-      <h2 className="section-title section-title--sm">
+      <span className="site-section-label">Workflow anatomy</span>
+      <h2 className="site-section-title site-section-title--sm">
         The seven elements
       </h2>
-      <p className="section-sub u-mt-3">
+      <p className="site-section-sub u-mt-3">
         Every workflow we document has the same anatomy: seven elements, each assigned to a human, a machine, or both.
         This is the Centaur Map from <Link href="/workflows/method">our workflow design method</Link>.
       </p>
@@ -170,7 +170,7 @@ export function DetailFooter() {
       <Link href="/workflows/method" className="wf-back">
         How we design workflows →
       </Link>
-      <Link href="/contact" className="btn btn-secondary">
+      <Link href="/contact" className="btn site-btn-secondary">
         Build this with Edge8 →
       </Link>
     </div>

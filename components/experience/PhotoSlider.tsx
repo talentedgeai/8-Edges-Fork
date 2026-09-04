@@ -60,7 +60,7 @@ export function PhotoSlider({ photos, ratio = "4 / 3" }: { photos: Photo[]; rati
 
   return (
     <div
-      className="xp-gallery"
+      className="site-xp-gallery"
       ref={rootRef}
       tabIndex={0}
       role="group"
@@ -68,20 +68,20 @@ export function PhotoSlider({ photos, ratio = "4 / 3" }: { photos: Photo[]; rati
       aria-label="The AIO Pad"
     >
       <div
-        className="xp-gallery-viewport"
+        className="site-xp-gallery-viewport"
         style={{ aspectRatio: ratio }}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
         <div
-          className="xp-gallery-track"
+          className="site-xp-gallery-track"
           style={{
             transform: `translateX(-${index * 100}%)`,
             transition: reduced ? "none" : "transform 500ms cubic-bezier(0.4, 0, 0.2, 1)",
           }}
         >
           {photos.map((p, i) => (
-            <div className="xp-gallery-slide" key={i} aria-hidden={i !== index}>
+            <div className="site-xp-gallery-slide" key={i} aria-hidden={i !== index}>
               <Image
                 src={p.src}
                 alt={p.alt}
@@ -89,20 +89,20 @@ export function PhotoSlider({ photos, ratio = "4 / 3" }: { photos: Photo[]; rati
                 sizes="(max-width: 800px) 100vw, 720px"
                 style={{ objectFit: "cover" }}
               />
-              {p.caption && <span className="xp-gallery-cap">{p.caption}</span>}
+              {p.caption && <span className="site-xp-gallery-cap">{p.caption}</span>}
             </div>
           ))}
         </div>
 
-        <button type="button" onClick={prev} aria-label="Previous photo" className="xp-arrow prev">
+        <button type="button" onClick={prev} aria-label="Previous photo" className="site-xp-arrow prev">
           <span aria-hidden>←</span>
         </button>
-        <button type="button" onClick={next} aria-label="Next photo" className="xp-arrow next">
+        <button type="button" onClick={next} aria-label="Next photo" className="site-xp-arrow next">
           <span aria-hidden>→</span>
         </button>
       </div>
 
-      <div className="xp-gallery-dots">
+      <div className="site-xp-gallery-dots">
         {photos.map((p, i) => (
           <button
             key={i}
@@ -110,9 +110,9 @@ export function PhotoSlider({ photos, ratio = "4 / 3" }: { photos: Photo[]; rati
             onClick={() => go(i)}
             aria-label={`Show photo ${i + 1}`}
             aria-current={i === index}
-            className="xp-dot-hit"
+            className="site-xp-dot-hit"
           >
-            <span className={i === index ? "xp-dot is-active" : "xp-dot"} />
+            <span className={i === index ? "site-xp-dot is-active" : "site-xp-dot"} />
           </button>
         ))}
       </div>

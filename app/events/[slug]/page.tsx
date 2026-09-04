@@ -87,7 +87,7 @@ export default async function PublicEventPage({ params }: { params: { slug: stri
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       )}
       <div className={styles.card}>
-        <div className={`${styles.eyebrow} brand-label`}>Edge8 event</div>
+        <div className={`${styles.eyebrow} site-brand-label`}>Edge8 event</div>
         <h1 className={styles.title}>{event.title}</h1>
         <p className={styles.meta}>
           {dateLabel}

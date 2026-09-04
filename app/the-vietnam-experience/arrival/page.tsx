@@ -24,7 +24,7 @@ export default function ArrivalPage() {
         style={{ marginTop: 40 }}
       />
 
-      <div className="xp-blocks">
+      <div className="site-xp-blocks">
         <Block heading="Someone is waiting with your name.">
           <p>
             An immigration representative meets you right at the entrance to
@@ -56,7 +56,7 @@ export default function ArrivalPage() {
             for Dave for years, and within a day he will know your name, your coffee
             order, and the fastest way to wherever you need to be.
           </p>
-          <p className="xp-aside">
+          <p className="site-xp-aside">
             Vu&rsquo;s full story, in his own words, is being recorded for this page.
           </p>
           <PlaceholderImage label="Photo: Vu" aspect="4 / 5" maxWidth="24rem" />

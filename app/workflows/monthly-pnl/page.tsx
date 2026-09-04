@@ -41,11 +41,11 @@ export default function MonthlyPnlWorkflowPage() {
       {/* The cycle */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">The cycle</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The cycle</span>
+          <h2 className="site-section-title site-section-title--sm">
             One month, four beats
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             The P&amp;L is not an event, it is the last step of a pipeline that runs all month. By the time the month
             closes, most of the work is already done.
           </p>
@@ -99,10 +99,10 @@ export default function MonthlyPnlWorkflowPage() {
       {/* Step detail */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             Step by step
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             How the close works
           </h2>
           <StepCards

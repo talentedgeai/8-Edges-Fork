@@ -169,11 +169,11 @@ export default function OneOnOneCoachingWorkflowPage() {
       {/* The problem */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">The problem</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The problem</span>
+          <h2 className="site-section-title site-section-title--sm">
             1-1s fail quietly, in five ways
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Most leaders do not skip 1-1s. They run them without a system, and the same five things slip:
           </p>
           <div className="wf-problems">
@@ -194,13 +194,13 @@ export default function OneOnOneCoachingWorkflowPage() {
       {/* The shape */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             The shape
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             A loop with a gate, not a line
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             One person&apos;s two-week cycle. Solid lines are the working loop; dashed lines are the private layer&apos;s
             memory and the trend feedback. The recap has a review-then-publish branch, and nothing crosses from the
             private tier to the member without the coach opening the gate.
@@ -212,8 +212,8 @@ export default function OneOnOneCoachingWorkflowPage() {
       {/* Step detail */}
       <section className="section">
         <div className="container">
-          <span className="section-label">Step by step</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">Step by step</span>
+          <h2 className="site-section-title site-section-title--sm">
             How each step works
           </h2>
           <StepCards
@@ -317,13 +317,13 @@ export default function OneOnOneCoachingWorkflowPage() {
       {/* The scoreboard */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             The scoreboard
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Goals, priorities, KPIs, commitments
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Four concepts, four horizons, and they are never confused with each other:
           </p>
           <div className="wf-table-wrap">
@@ -404,11 +404,11 @@ export default function OneOnOneCoachingWorkflowPage() {
       {/* The person model */}
       <section className="section">
         <div className="container">
-          <span className="section-label">The person model</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The person model</span>
+          <h2 className="site-section-title site-section-title--sm">
             What the coach knows, and who gets to see it
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Two standing reads per person keep the coaching grounded, and both live behind explicit rules:
           </p>
           <div className="wf-info-grid u-mt-6">
@@ -440,13 +440,13 @@ export default function OneOnOneCoachingWorkflowPage() {
       {/* Privacy */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             Two tiers, never mixed
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Privacy by access control, not discipline
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             The private coach layer and the person-facing layer are separate columns with separate query scopes.
             Mixing them is a code bug, not a human slip. The full access matrix:
           </p>
@@ -514,7 +514,7 @@ export default function OneOnOneCoachingWorkflowPage() {
               </tbody>
             </table>
           </div>
-          <p className="section-sub u-mt-5">
+          <p className="site-section-sub u-mt-5">
             The assistant lockout is total: none of the coaching tables are readable by the company&apos;s internal AI
             assistants, the same treatment as sensitive HR data. Private coaching data never transits an assistant.
           </p>
@@ -524,8 +524,8 @@ export default function OneOnOneCoachingWorkflowPage() {
       {/* Tooling */}
       <section className="section">
         <div className="container">
-          <span className="section-label">The tooling</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The tooling</span>
+          <h2 className="site-section-title site-section-title--sm">
             What runs it
           </h2>
           <div className="wf-table-wrap">
@@ -581,10 +581,10 @@ export default function OneOnOneCoachingWorkflowPage() {
       {/* The guardrail */}
       <section className="section wf-section--dark">
         <div className="container">
-          <span className="section-label wf-chip--on-dark">
+          <span className="site-section-label wf-chip--on-dark">
             The guardrail
           </span>
-          <h2 className="section-title wf-title-xl">
+          <h2 className="site-section-title wf-title-xl">
             The AI preps and drafts. The human decides.
           </h2>
           <p className="wf-hero-sub u-mt-3">
@@ -624,7 +624,7 @@ export default function OneOnOneCoachingWorkflowPage() {
               </ul>
             </div>
           </div>
-          <p className="section-sub u-mt-7">
+          <p className="site-section-sub u-mt-7">
             This cycle is the operational half of a larger build. The program plan behind it, from problem statement
             to deployment, is published as{' '}
             <Link href="/workflows/leadership-coach-program">The Leadership Coach: AI Program Plan</Link>.

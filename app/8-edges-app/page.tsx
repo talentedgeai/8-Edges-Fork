@@ -23,19 +23,19 @@ export default function EightEdgesAppPage() {
   return (
     <main>
       {/* ═══ 01 HERO ═════════════════════════════════════ */}
-      <section className="page-hero">
+      <section className="site-page-hero">
         <div className="container">
-          <div className="page-hero-inner">
-            <span className="section-label">The 8 Edges Operating System</span>
-            <h1 className="section-title">AI Doesn&apos;t Work When Your Data Lives in 10 Different Apps</h1>
-            <p className="page-hero-sub">
+          <div className="site-page-hero-inner">
+            <span className="site-section-label">The 8 Edges Operating System</span>
+            <h1 className="site-section-title">AI Doesn&apos;t Work When Your Data Lives in 10 Different Apps</h1>
+            <p className="site-page-hero-sub">
               Your most precious resource is your data, and it is scattered: CRM in one app, HR in spreadsheets,
               goals in slides, finances behind another login. That is why every AI tool you have tried gives generic
               answers. 8 Edges puts your whole company in one database, so AI finally has something to work with.
             </p>
             <div className="e8a-btn-row">
               <a href={DEMO_URL} className="btn btn-primary" target="_blank" rel="noopener noreferrer">See the Live Demo</a>
-              <a href="#offer" className="btn btn-secondary">Get It Installed for You</a>
+              <a href="#offer" className="btn site-btn-secondary">Get It Installed for You</a>
             </div>
             <p className="u-mt-5 u-lg">
               <a href={REPO_URL} target="_blank" rel="noopener noreferrer" className="site-link-muted">
@@ -47,11 +47,11 @@ export default function EightEdgesAppPage() {
       </section>
 
       {/* ═══ 02 PAIN ═════════════════════════════════════ */}
-      <section className="section section--tint">
+      <section className="section site-section--tint">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">Sound Familiar?</span>
-            <h2 className="section-title">You Don&apos;t Have an AI Problem. You Have a Data Problem.</h2>
+            <span className="site-section-label">Sound Familiar?</span>
+            <h2 className="site-section-title">You Don&apos;t Have an AI Problem. You Have a Data Problem.</h2>
           </div>
           <div className="e8a-grid e8a-grid--3">
             <div className="e8a-card reveal">
@@ -76,7 +76,7 @@ export default function EightEdgesAppPage() {
               </p>
             </div>
           </div>
-          <p className="section-sub reveal u-mt-7">
+          <p className="site-section-sub reveal u-mt-7">
             The fix isn&apos;t a better model. It&apos;s a home for your data.
           </p>
         </div>
@@ -86,8 +86,8 @@ export default function EightEdgesAppPage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">Meet 8 Edges</span>
-            <h2 className="section-title">Every Person, Deal, Goal, and Dollar. One Database.</h2>
+            <span className="site-section-label">Meet 8 Edges</span>
+            <h2 className="site-section-title">Every Person, Deal, Goal, and Dollar. One Database.</h2>
           </div>
           <div className="e8a-definition reveal">
             <div>
@@ -122,11 +122,11 @@ export default function EightEdgesAppPage() {
       </section>
 
       {/* ═══ 04 PORTALS ══════════════════════════════════ */}
-      <section className="section section--tint">
+      <section className="section site-section--tint">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">One Database, Three Front Doors</span>
-            <h2 className="section-title">Everyone Sees Exactly What They Should. Nothing More, Nothing Less.</h2>
+            <span className="site-section-label">One Database, Three Front Doors</span>
+            <h2 className="site-section-title">Everyone Sees Exactly What They Should. Nothing More, Nothing Less.</h2>
           </div>
           <div className="e8a-grid e8a-grid--3">
             <div className="e8a-card reveal">
@@ -169,9 +169,9 @@ export default function EightEdgesAppPage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">This Is the Part Nobody Else Has</span>
-            <h2 className="section-title">When Your Data Lives in One Place, AI Stops Chatting and Starts Working</h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">This Is the Part Nobody Else Has</span>
+            <h2 className="site-section-title">When Your Data Lives in One Place, AI Stops Chatting and Starts Working</h2>
+            <p className="site-section-sub u-mt-4">
               Agents can only run a company they can see. Everything below ships in the codebase today.
             </p>
           </div>
@@ -210,12 +210,12 @@ export default function EightEdgesAppPage() {
       </section>
 
       {/* ═══ 06 WORKFLOWS ════════════════════════════════ */}
-      <section className="section section--tint">
+      <section className="section site-section--tint">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">You Don&apos;t Start From Zero</span>
-            <h2 className="section-title">100 Core Business Workflows, Already Built In</h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">You Don&apos;t Start From Zero</span>
+            <h2 className="site-section-title">100 Core Business Workflows, Already Built In</h2>
+            <p className="site-section-sub u-mt-4">
               The repeatable operations of a real company, wired to the database and organized around the four
               offices: Revenue, Talent, Operations, Innovation. Here is a sample.
             </p>
@@ -238,9 +238,9 @@ export default function EightEdgesAppPage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">Boring Technology, On Purpose</span>
-            <h2 className="section-title">Next.js + Supabase + Vercel. That&apos;s the Whole Stack.</h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">Boring Technology, On Purpose</span>
+            <h2 className="site-section-title">Next.js + Supabase + Vercel. That&apos;s the Whole Stack.</h2>
+            <p className="site-section-sub u-mt-4">
               Standard open tools, free tiers to start, and any developer (or AI coding agent) can extend it.
             </p>
           </div>
@@ -284,18 +284,18 @@ export default function EightEdgesAppPage() {
           <div className="e8a-btn-row reveal u-mt-8">
             <a href={ATLAS_URL} className="btn btn-primary">Explore the Data Atlas</a>
           </div>
-          <p className="section-sub reveal u-mt-4 u-ml-auto u-mr-auto u-center-text">
+          <p className="site-section-sub reveal u-mt-4 u-ml-auto u-mr-auto u-center-text">
             The interactive map of the whole database: every table, every column, every domain.
           </p>
         </div>
       </section>
 
       {/* ═══ 08 OWNERSHIP ════════════════════════════════ */}
-      <section className="section section--tint">
+      <section className="section site-section--tint">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">No Rent, No Lock-In</span>
-            <h2 className="section-title">You Own the Source Code. Customize It However You Want.</h2>
+            <span className="site-section-label">No Rent, No Lock-In</span>
+            <h2 className="site-section-title">You Own the Source Code. Customize It However You Want.</h2>
           </div>
           <div className="e8a-grid e8a-grid--3">
             <div className="e8a-card reveal">
@@ -311,7 +311,7 @@ export default function EightEdgesAppPage() {
               <p>Claude Code and other coding agents handle this codebase well. Describe the feature you want, and your OS grows.</p>
             </div>
           </div>
-          <p className="section-sub reveal u-mt-7">
+          <p className="site-section-sub reveal u-mt-7">
             Every SaaS you use is someone else&apos;s database that you pay to visit.
           </p>
         </div>
@@ -321,8 +321,8 @@ export default function EightEdgesAppPage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">From Fork to Live in an Afternoon</span>
-            <h2 className="section-title">Here&apos;s Exactly How to Install It</h2>
+            <span className="site-section-label">From Fork to Live in an Afternoon</span>
+            <h2 className="site-section-title">Here&apos;s Exactly How to Install It</h2>
           </div>
           <div className="e8a-steps reveal">
             <div className="e8a-step">
@@ -368,11 +368,11 @@ export default function EightEdgesAppPage() {
       </section>
 
       {/* ═══ 10 CONFIG ═══════════════════════════════════ */}
-      <section className="section section--tint">
+      <section className="section site-section--tint">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">Every Key, Explained</span>
-            <h2 className="section-title">9 Required Keys. Everything Else Is Optional.</h2>
+            <span className="site-section-label">Every Key, Explained</span>
+            <h2 className="site-section-title">9 Required Keys. Everything Else Is Optional.</h2>
           </div>
           <div className="e8a-table-wrap reveal">
             <table className="e8a-table">
@@ -390,7 +390,7 @@ export default function EightEdgesAppPage() {
               </tbody>
             </table>
           </div>
-          <p className="section-sub reveal u-mt-6">
+          <p className="site-section-sub reveal u-mt-6">
             Optional integrations, each one a key away: Resend for email, Stripe for payments, Lark, QuickBooks,
             Telegram, GitHub sync. Unset keys just switch features off. The app degrades gracefully.
           </p>
@@ -401,8 +401,8 @@ export default function EightEdgesAppPage() {
       <section className="section" id="offer">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">Pick Your Path</span>
-            <h2 className="section-title">Free If You Build. $99 If You Want Company. $15,000 If You Want It Done.</h2>
+            <span className="site-section-label">Pick Your Path</span>
+            <h2 className="site-section-title">Free If You Build. $99 If You Want Company. $15,000 If You Want It Done.</h2>
           </div>
           <div className="e8a-tiers">
             <div className="e8a-tier reveal">
@@ -439,19 +439,19 @@ export default function EightEdgesAppPage() {
                 <li>Your data migrated in</li>
                 <li>Team walkthrough and handover</li>
               </ul>
-              <Link href="/contact/" className="btn btn-secondary">Schedule a Consultation</Link>
+              <Link href="/contact/" className="btn site-btn-secondary">Schedule a Consultation</Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* ═══ 12 PROOF ════════════════════════════════════ */}
-      <section className="section section--tint">
+      <section className="section site-section--tint">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">Already Running in the Wild</span>
-            <h2 className="section-title">We Run Edge8 on It. Every Deal, Hire, Goal, and Invoice.</h2>
-            <p className="section-sub u-mt-4">
+            <span className="site-section-label">Already Running in the Wild</span>
+            <h2 className="site-section-title">We Run Edge8 on It. Every Deal, Hire, Goal, and Invoice.</h2>
+            <p className="site-section-sub u-mt-4">
               8 Edges isn&apos;t a product we built to sell. It is the system we built to run our own company, from the
               sales pipeline to payroll to the weekly goal check-ins, and then opened up. The 13 agents you read about
               above ran today.
@@ -464,8 +464,8 @@ export default function EightEdgesAppPage() {
       <section className="section">
         <div className="container">
           <div className="reveal">
-            <span className="section-label">Questions People Actually Ask</span>
-            <h2 className="section-title">FAQ</h2>
+            <span className="site-section-label">Questions People Actually Ask</span>
+            <h2 className="site-section-title">FAQ</h2>
           </div>
           <div className="e8a-faq reveal">
             <details>
@@ -493,14 +493,14 @@ export default function EightEdgesAppPage() {
       </section>
 
       {/* ═══ 14 CLOSE ════════════════════════════════════ */}
-      <section className="contact-blue section">
+      <section className="site-contact-blue section">
         <div className="container">
-          <div className="contact-blue-inner">
+          <div className="site-contact-blue-inner">
             <div className="reveal">
-              <h2 className="section-title u-mb-4">Stop Renting Your Company&apos;s Brain</h2>
-              <p className="section-sub">One database. Three portals. 13 agents. Yours.</p>
+              <h2 className="site-section-title u-mb-4">Stop Renting Your Company&apos;s Brain</h2>
+              <p className="site-section-sub">One database. Three portals. 13 agents. Yours.</p>
             </div>
-            <div className="contact-blue-cta e8a-btn-row reveal">
+            <div className="site-contact-blue-cta e8a-btn-row reveal">
               <a href={DEMO_URL} className="btn btn-primary" target="_blank" rel="noopener noreferrer">See the Live Demo</a>
               <Link href="/contact/" className="btn e8a-btn-white">Schedule a Consultation</Link>
             </div>

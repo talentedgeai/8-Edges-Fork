@@ -30,24 +30,24 @@ export default async function ApplyPage({ params }: { params: { slug: string } }
     : []
 
   return (
-    <main className="apply-page">
-      <section className="apply-hero">
+    <main className="site-apply-page">
+      <section className="site-apply-hero">
         <div className="container">
-          <Link href="/careers/" className="apply-back">← Back to careers</Link>
-          <p className="apply-eyebrow">Apply for this role</p>
-          <h1 className="apply-title">{job.title}</h1>
-          <div className="apply-meta">
+          <Link href="/careers/" className="site-apply-back">← Back to careers</Link>
+          <p className="site-apply-eyebrow">Apply for this role</p>
+          <h1 className="site-apply-title">{job.title}</h1>
+          <div className="site-apply-meta">
             <span>{job.department}</span>
-            <span className="apply-meta-sep">·</span>
+            <span className="site-apply-meta-sep">·</span>
             <span>{job.location}</span>
-            <span className="apply-meta-sep">·</span>
+            <span className="site-apply-meta-sep">·</span>
             <span>{job.type}</span>
           </div>
         </div>
       </section>
 
-      <section className="apply-form-section">
-        <div className="container apply-form-wrap">
+      <section className="site-apply-form-section">
+        <div className="container site-apply-form-wrap">
           <ApplyForm
             jobId={job.supabaseJobId}
             jobTitle={job.title}

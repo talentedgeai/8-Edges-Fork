@@ -263,11 +263,11 @@ export default function NewMemberOnboardingWorkflowPage() {
       {/* Swimlane flow */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">The flow</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The flow</span>
+          <h2 className="site-section-title site-section-title--sm">
             Three lanes, two tracks
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Work passes between the recruiter, the system, and the new member. It is not a single line: the hire starts
             a transactional track and a nurture track at once, and both land at Day 1. The system carries every handoff,
             so nobody has to remember to follow up.
@@ -318,13 +318,13 @@ export default function NewMemberOnboardingWorkflowPage() {
       {/* The nurture drip */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             The nurture drip
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Seven touches over thirty days
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             The drip runs in English, to the new member&rsquo;s personal email, fully automated. It is warm on purpose
             and light on purpose: someone still working a notice period does not need a daily barrage, only enough to
             feel they made the right call and to walk in already knowing us. Two touches are human by rule; the numbered
@@ -359,11 +359,11 @@ export default function NewMemberOnboardingWorkflowPage() {
       {/* The recruiter checklist */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">Who does what</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">Who does what</span>
+          <h2 className="site-section-title site-section-title--sm">
             The recruiter checklist
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Almost everything is automated. What is left is a short list the recruiter owns by hand, in parallel with the
             flow. The drip never waits on it.
           </p>
@@ -405,13 +405,13 @@ export default function NewMemberOnboardingWorkflowPage() {
       {/* Status lifecycle */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             The status lifecycle
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             Pre-boarding, probation, then permanent
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Completing the form does not make someone a full employee on the spot. It moves them into pre-boarding, and
             their status advances on a clock everyone can see.
           </p>
@@ -428,11 +428,11 @@ export default function NewMemberOnboardingWorkflowPage() {
       {/* Off-ramps */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">When it does not work out</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">When it does not work out</span>
+          <h2 className="site-section-title site-section-title--sm">
             The off-ramps
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Not every start finishes, and the record has to say so plainly. Three exit statuses close the loop, and none
             of them turns into an alumni record.
           </p>
@@ -465,7 +465,7 @@ export default function NewMemberOnboardingWorkflowPage() {
               </p>
             </div>
           </div>
-          <p className="section-sub u-mt-5">
+          <p className="site-section-sub u-mt-5">
             None of these become alumni. Alumni is reserved for people who genuinely worked here and moved on, not offers
             that fell through or probations that did not pass.
           </p>

@@ -47,11 +47,11 @@ export default function PerformanceWorkflowPage() {
       {/* The problem */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">The problem</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">The problem</span>
+          <h2 className="site-section-title site-section-title--sm">
             Speed work goes wrong before it starts
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Performance is the easiest thing to work on and the easiest to work on badly:
           </p>
           <div className="wf-problems">
@@ -72,10 +72,10 @@ export default function PerformanceWorkflowPage() {
       {/* The flow */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             The flow
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             From a hunch to a proven win
           </h2>
           <FlowRail
@@ -96,8 +96,8 @@ export default function PerformanceWorkflowPage() {
       {/* Step detail */}
       <section className="section">
         <div className="container">
-          <span className="section-label">Step by step</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">Step by step</span>
+          <h2 className="site-section-title site-section-title--sm">
             How each step works
           </h2>
           <StepCards

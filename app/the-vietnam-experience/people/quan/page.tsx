@@ -22,7 +22,7 @@ export default function QuanPage() {
 
       <PlaceholderImage label="Photo: Quan" aspect="4 / 5" maxWidth="24rem" style={{ marginTop: 40 }} />
 
-      <div className="xp-blocks">
+      <div className="site-xp-blocks">
         <Block heading="What he does">
           <p>
             Quan runs the week on the ground so that you can be fully present for it. The
@@ -33,7 +33,7 @@ export default function QuanPage() {
             He is also the warmth of the week. By day two he feels less like a host and
             more like a friend who happens to know the whole city.
           </p>
-          <p className="xp-aside">
+          <p className="site-xp-aside">
             A fuller profile, in his own words, is being written for this page.
           </p>
         </Block>

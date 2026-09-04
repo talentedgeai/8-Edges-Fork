@@ -62,35 +62,35 @@ export default async function JobPage({ params }: { params: { slug: string } }) 
   }
 
   return (
-    <main className="apply-page">
+    <main className="site-apply-page">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="apply-hero">
+      <section className="site-apply-hero">
         <div className="container">
-          <Link href="/careers/" className="apply-back">← Back to careers</Link>
-          <p className="apply-eyebrow">{job.department}</p>
-          <h1 className="apply-title">{job.title}</h1>
-          <div className="apply-meta">
+          <Link href="/careers/" className="site-apply-back">← Back to careers</Link>
+          <p className="site-apply-eyebrow">{job.department}</p>
+          <h1 className="site-apply-title">{job.title}</h1>
+          <div className="site-apply-meta">
             <span>{job.location}</span>
-            <span className="apply-meta-sep">·</span>
+            <span className="site-apply-meta-sep">·</span>
             <span>{job.type}</span>
           </div>
-          <div className="jd-hero-actions">
+          <div className="site-jd-hero-actions">
             {/* btn-secondary, not btn-primary: primary is var(--dark) and
                 vanishes against this hero. Matches the careers hero CTA. */}
-            <a href={applyHref} className="btn btn-secondary">Apply Now →</a>
+            <a href={applyHref} className="btn site-btn-secondary">Apply Now →</a>
           </div>
         </div>
       </section>
 
-      <section className="jd-body-section">
-        <div className="container jd-body-wrap">
-          {job.excerpt && <p className="jd-lede">{job.excerpt}</p>}
-          <div className="job-body" dangerouslySetInnerHTML={{ __html: job.contentHtml }} />
-          <div className="jd-footer-cta">
+      <section className="site-jd-body-section">
+        <div className="container site-jd-body-wrap">
+          {job.excerpt && <p className="site-jd-lede">{job.excerpt}</p>}
+          <div className="site-job-body" dangerouslySetInnerHTML={{ __html: job.contentHtml }} />
+          <div className="site-jd-footer-cta">
             <h2>Interested?</h2>
             <p>Tell us why you&rsquo;re a fit. We read every application.</p>
             <a href={applyHref} className="btn btn-primary">Apply for {job.title} →</a>

@@ -50,12 +50,12 @@ export default function Nav() {
         className={scrolled ? 'is-scrolled' : undefined}
       >
         <div className="container">
-          <div className="nav-inner">
-            <Link href="/" className="nav-logo">
+          <div className="site-nav-inner">
+            <Link href="/" className="site-nav-logo">
               <Image src="/logo.png" alt="Edge8" width={120} height={36} style={{ width: 'auto', height: '36px' }} priority />
             </Link>
 
-            <ul className="nav-links">
+            <ul className="site-nav-links">
               <li
                 className={servicesOpen ? 'open' : ''}
                 onMouseEnter={() => setServicesOpen(true)}
@@ -69,7 +69,7 @@ export default function Nav() {
                     setServicesOpen((v) => !v)
                   }}
                 >
-                  Services <span className="dropdown-icon">▾</span>
+                  Services <span className="site-dropdown-icon">▾</span>
                 </button>
                 <div className="dropdown">
                   <Link href="/your-first-ai-hire">Your First AI Hire</Link>
@@ -94,7 +94,7 @@ export default function Nav() {
                     setResourcesOpen((v) => !v)
                   }}
                 >
-                  Resources <span className="dropdown-icon">▾</span>
+                  Resources <span className="site-dropdown-icon">▾</span>
                 </button>
                 <div className="dropdown">
                   <Link href="/8-edges-app">8 Edges Operating System</Link>
@@ -106,12 +106,12 @@ export default function Nav() {
               <li><Link href="/careers">Careers</Link></li>
             </ul>
 
-            <Link href={ctaHref} className="btn btn-primary nav-cta">
+            <Link href={ctaHref} className="btn btn-primary site-nav-cta">
               {ctaLabel}
             </Link>
 
             <button
-              className="nav-hamburger"
+              className="site-nav-hamburger"
               id="hamburger"
               aria-label="Menu"
               onClick={toggleMenu}
@@ -125,7 +125,7 @@ export default function Nav() {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu${menuOpen ? ' open' : ''}`} id="mobileMenu">
+      <div className={`site-mobile-menu${menuOpen ? ' open' : ''}`} id="mobileMenu">
         <MobileAccordion label="Services" id="mobileServicesAccordion">
           <Link href="/your-first-ai-hire" onClick={() => setMenuOpen(false)}>Your First AI Hire</Link>
           <Link href="/caio-leadership" onClick={() => setMenuOpen(false)}>CAIO Leadership</Link>
@@ -161,14 +161,14 @@ function MobileAccordion({
 }) {
   const [open, setOpen] = useState(false)
   return (
-    <div className={`mobile-accordion${open ? ' open' : ''}`} id={id}>
+    <div className={`site-mobile-accordion${open ? ' open' : ''}`} id={id}>
       <button
-        className="mobile-accordion-toggle"
+        className="site-mobile-accordion-toggle"
         onClick={() => setOpen((v) => !v)}
       >
-        {label} <span className="mobile-accordion-icon">▾</span>
+        {label} <span className="site-mobile-accordion-icon">▾</span>
       </button>
-      <div className="mobile-accordion-panel">{children}</div>
+      <div className="site-mobile-accordion-panel">{children}</div>
     </div>
   )
 }

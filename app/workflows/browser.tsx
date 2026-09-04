@@ -189,13 +189,13 @@ export default function WorkflowsBrowser({ workflows }: { workflows: Workflow[] 
             className={`section wf-band${i % 2 === 1 ? " wf-band--tint" : ""}`}
           >
             <div className="container">
-              <span className="section-label" style={i % 2 === 1 ? { background: 'var(--white)' } : undefined}>
+              <span className="site-section-label" style={i % 2 === 1 ? { background: 'var(--white)' } : undefined}>
                 {office} office
               </span>
-              <h2 className="section-title wf-title-lg u-mb-2">
+              <h2 className="site-section-title wf-title-lg u-mb-2">
                 {office}
               </h2>
-              <p className="section-sub u-mb-6">
+              <p className="site-section-sub u-mb-6">
                 {OFFICE_TAGLINES[office]}
               </p>
               <WorkflowSet workflows={officeWorkflows} layout={layout} />

@@ -56,7 +56,7 @@ export default function MethodPage() {
               <span>/</span>
               <span>Method</span>
             </div>
-            <h1 className="section-title">How We Design Workflows</h1>
+            <h1 className="site-section-title">How We Design Workflows</h1>
             <p className="wf-hero-sub">
               We ground every workflow in validated business and academic frameworks, not prompt tricks. From that
               foundation, one method carries each page in this section: plan the program with the 5Ds, document the
@@ -78,11 +78,11 @@ export default function MethodPage() {
       {/* The invisibility problem */}
       <section className="section u-pb-8">
         <div className="container">
-          <span className="section-label">Why document at all</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">Why document at all</span>
+          <h2 className="site-section-title site-section-title--sm">
             The invisibility problem
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             Every organization runs on workflows nobody has written down. They live in the heads of the people who run
             them, which means they stall when that person is out, they cannot be improved because they cannot be seen,
             and they can never be handed to AI. The work your team relies on most is usually the work that is least
@@ -94,13 +94,13 @@ export default function MethodPage() {
       {/* 5D */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             Step 1: Plan
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             The 5D Program Brief
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             No workflow gets built without a one-page brief covering five Ds. It keeps the program honest: a real
             problem, real data, a documented flow, a determined return, and a deployment plan.
           </p>
@@ -111,11 +111,11 @@ export default function MethodPage() {
       {/* Seven elements */}
       <section className="section">
         <div className="container">
-          <span className="section-label">Step 2: Document</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">Step 2: Document</span>
+          <h2 className="site-section-title site-section-title--sm">
             Seven elements, every time
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             A workflow is not a paragraph, it is a structure. We break every one into the same seven elements. The
             assignment chips below show the typical split; every workflow page in this section carries its own map.
           </p>
@@ -126,10 +126,10 @@ export default function MethodPage() {
       {/* Centaur + New hire test */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             Step 3: Assign and test
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             The Centaur Map and the New Hire Test
           </h2>
           <div className="wf-info-grid">
@@ -158,11 +158,11 @@ export default function MethodPage() {
       {/* Stage gates */}
       <section className="section">
         <div className="container">
-          <span className="section-label">Step 4: Ship</span>
-          <h2 className="section-title section-title--sm">
+          <span className="site-section-label">Step 4: Ship</span>
+          <h2 className="site-section-title site-section-title--sm">
             Three stage gates
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             A documented workflow earns its way into production. It does not get declared into it.
           </p>
           <div className="wf-stages">
@@ -187,13 +187,13 @@ export default function MethodPage() {
       {/* Frameworks library */}
       <section className="section wf-section--tint">
         <div className="container">
-          <span className="section-label wf-section--white">
+          <span className="site-section-label wf-section--white">
             The library
           </span>
-          <h2 className="section-title section-title--sm">
+          <h2 className="site-section-title site-section-title--sm">
             The frameworks behind the workflows
           </h2>
-          <p className="section-sub u-mt-3">
+          <p className="site-section-sub u-mt-3">
             The workflows in this section do not float free. They draw on a library of business frameworks we teach in
             our leadership and AI Officer programs, each one producing a dataset that AI can work from.
           </p>
@@ -212,7 +212,7 @@ export default function MethodPage() {
               <h3>Prompt frameworks are dead</h3>
               <p>Learn to apply real, tested academic and business frameworks to the problems you are trying to solve.</p>
             </div>
-            <a href="https://www.ai-officer.com/100-business-frameworks" target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+            <a href="https://www.ai-officer.com/100-business-frameworks" target="_blank" rel="noopener noreferrer" className="btn site-btn-secondary">
               Explore 100 Business Frameworks →
             </a>
           </div>
@@ -222,18 +222,18 @@ export default function MethodPage() {
       {/* CTA */}
       <section className="section">
         <div className="container u-center-text">
-          <h2 className="section-title wf-title-lg u-mb-3">
+          <h2 className="site-section-title wf-title-lg u-mb-3">
             This method is teachable. And buildable.
           </h2>
-          <p className="section-sub u-mx-auto u-mb-6">
+          <p className="site-section-sub u-mx-auto u-mb-6">
             We certify leaders in this method through the AI Officer program, and we build these workflows directly for
             clients. Either way, your invisible processes become systems.
           </p>
           <div className="u-row u-gap-3 u-center u-wrap">
-            <Link href="/training-and-certification" className="btn btn-ghost-light">
+            <Link href="/training-and-certification" className="btn site-btn-ghost-light">
               Explore certification
             </Link>
-            <Link href="/contact" className="btn btn-secondary">
+            <Link href="/contact" className="btn site-btn-secondary">
               Talk to Edge8 →
             </Link>
           </div>

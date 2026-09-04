@@ -58,7 +58,7 @@ export default function FlightForm() {
 
   if (status === 'sent') {
     return (
-      <div className="apply-success">
+      <div className="site-apply-success">
         <h2>Got it — thank you!</h2>
         <p>We&apos;ve received your flight details. We&apos;ll be in touch if we need anything else.</p>
       </div>
@@ -66,22 +66,22 @@ export default function FlightForm() {
   }
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit} noValidate>
+    <form className="site-contact-form" onSubmit={handleSubmit} noValidate>
 
-      <div className="trip-privacy" style={{ marginBottom: 24 }}>
+      <div className="site-trip-privacy" style={{ marginBottom: 24 }}>
         <strong>Deadline: {DEADLINE}</strong>
         <p>Please submit by {DEADLINE} so we can arrange airport transfers and coordinate group arrivals.</p>
       </div>
 
       {/* ── Family ────────────────────────────────────── */}
-      <p className="contact-form-eyebrow">Your family</p>
-      <div className="contact-field-row">
-        <div className="contact-field">
+      <p className="site-contact-form-eyebrow">Your family</p>
+      <div className="site-contact-field-row">
+        <div className="site-contact-field">
           <label htmlFor="family_name">Family name *</label>
           <input id="family_name" name="family_name" type="text" required
             placeholder="e.g. Pyka" value={form.family_name} onChange={set} />
         </div>
-        <div className="contact-field">
+        <div className="site-contact-field">
           <label htmlFor="contact_email">Your email *</label>
           <input id="contact_email" name="contact_email" type="email" required
             autoComplete="email" value={form.contact_email} onChange={set} />
@@ -89,19 +89,19 @@ export default function FlightForm() {
       </div>
 
       {/* ── Arriving in Hanoi ─────────────────────────── */}
-      <p className="contact-form-eyebrow" style={{ marginTop: 16 }}>Arriving in Hanoi</p>
-      <div className="contact-field-row">
-        <div className="contact-field">
+      <p className="site-contact-form-eyebrow" style={{ marginTop: 16 }}>Arriving in Hanoi</p>
+      <div className="site-contact-field-row">
+        <div className="site-contact-field">
           <label htmlFor="inbound_flight">Airline &amp; Flight #</label>
           <input id="inbound_flight" name="inbound_flight" type="text"
             placeholder="e.g. VN415" value={form.inbound_flight} onChange={set} />
         </div>
-        <div className="contact-field">
+        <div className="site-contact-field">
           <label htmlFor="inbound_arr_date">Arrival date</label>
           <input id="inbound_arr_date" name="inbound_arr_date" type="date"
             value={form.inbound_arr_date} onChange={set} />
         </div>
-        <div className="contact-field">
+        <div className="site-contact-field">
           <label htmlFor="inbound_arr_time">Arrival time</label>
           <input id="inbound_arr_time" name="inbound_arr_time" type="time"
             value={form.inbound_arr_time} onChange={set} />
@@ -109,19 +109,19 @@ export default function FlightForm() {
       </div>
 
       {/* ── Departing from Vietnam ────────────────────── */}
-      <p className="contact-form-eyebrow" style={{ marginTop: 16 }}>Departing from Vietnam</p>
-      <div className="contact-field-row">
-        <div className="contact-field">
+      <p className="site-contact-form-eyebrow" style={{ marginTop: 16 }}>Departing from Vietnam</p>
+      <div className="site-contact-field-row">
+        <div className="site-contact-field">
           <label htmlFor="outbound_flight">Airline &amp; Flight #</label>
           <input id="outbound_flight" name="outbound_flight" type="text"
             placeholder="e.g. VN408" value={form.outbound_flight} onChange={set} />
         </div>
-        <div className="contact-field">
+        <div className="site-contact-field">
           <label htmlFor="outbound_dep_date">Departure date</label>
           <input id="outbound_dep_date" name="outbound_dep_date" type="date"
             value={form.outbound_dep_date} onChange={set} />
         </div>
-        <div className="contact-field">
+        <div className="site-contact-field">
           <label htmlFor="outbound_dep_time">Departure time</label>
           <input id="outbound_dep_time" name="outbound_dep_time" type="time"
             value={form.outbound_dep_time} onChange={set} />
@@ -129,8 +129,8 @@ export default function FlightForm() {
       </div>
 
       {/* ── Comments / Requests ───────────────────────── */}
-      <p className="contact-form-eyebrow" style={{ marginTop: 16 }}>Comments or special requests</p>
-      <div className="contact-field">
+      <p className="site-contact-form-eyebrow" style={{ marginTop: 16 }}>Comments or special requests</p>
+      <div className="site-contact-field">
         <label htmlFor="notes">Anything you'd like us to know?</label>
         <textarea id="notes" name="notes" rows={4}
           placeholder="e.g. connecting flight, dietary needs, meeting point preference…"
@@ -142,13 +142,13 @@ export default function FlightForm() {
       <input type="text" name="website" value={form.website} onChange={set}
         tabIndex={-1} aria-hidden style={{ display: 'none' }} />
 
-      {error && <p className="apply-error">{error}</p>}
+      {error && <p className="site-apply-error">{error}</p>}
 
-      <button type="submit" className="btn btn-primary contact-submit" disabled={status === 'sending'}>
+      <button type="submit" className="btn btn-primary site-contact-submit" disabled={status === 'sending'}>
         {status === 'sending' ? 'Submitting…' : 'Submit Flight Details'}
       </button>
 
-      <p className="contact-form-note">Deadline: {DEADLINE} · One submission per family</p>
+      <p className="site-contact-form-note">Deadline: {DEADLINE} · One submission per family</p>
     </form>
   )
 }

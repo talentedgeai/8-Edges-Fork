@@ -27,7 +27,7 @@ export default function InfiniteLeveragePage() {
         style={{ marginTop: 40 }}
       />
 
-      <div className="xp-blocks">
+      <div className="site-xp-blocks">
         <Block heading="Using AI, or leading it">
           <p>
             Most people are learning to use AI. You came to lead it: to build systems

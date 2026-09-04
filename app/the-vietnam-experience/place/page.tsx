@@ -36,7 +36,7 @@ export default function PlacePage() {
         style={{ marginTop: 40 }}
       />
 
-      <div className="xp-blocks">
+      <div className="site-xp-blocks">
         <Block heading="Thao Dien">
           <p>
             Thao Dien is the green, walkable corner of the city, a short ride from the
@@ -102,17 +102,17 @@ export default function PlacePage() {
       </div>
 
       {/* The home base: the AIO Pad apartment */}
-      <section className="xp-aiopad">
+      <section className="site-xp-aiopad">
         <p className="eyebrow">Where you stay</p>
         <h2>The AIO Pad</h2>
-        <p className="xp-aiopad-lead">
+        <p className="site-xp-aiopad-lead">
           Your home base for the week: a high-floor apartment in Thao Dien with the Saigon
           river below, set up so you can land and start working the same hour.
         </p>
 
         <PhotoSlider photos={AIO_PAD_PHOTOS} ratio="3 / 2" />
 
-        <ul className="xp-aiopad-features">
+        <ul className="site-xp-aiopad-features">
           <li>
             <span>
               <strong>No early check-in or late checkout limits.</strong> The apartment is
@@ -133,7 +133,7 @@ export default function PlacePage() {
           </li>
         </ul>
 
-        <div className="xp-aiopad-cta">
+        <div className="site-xp-aiopad-cta">
           <a href={AIO_PAD_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             Book the AIO Pad <span className="arrow" aria-hidden>↗</span>
           </a>
