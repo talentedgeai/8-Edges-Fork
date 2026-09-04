@@ -1,0 +1,437 @@
+[
+  {
+    "file": "app/admin/(dashboard)/boards/[slug]/actions.ts",
+    "table": "coaching_commitments",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/contacts/actions.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/edges/client-roadmaps/actions.ts",
+    "table": "client_roadmap_overview",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/operations/contractor-requests/actions.ts",
+    "table": "contractor_work_requests",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/operations/surveys/actions.ts",
+    "table": "survey_fields",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/operations/surveys/actions.ts",
+    "table": "surveys",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/operations/time-off/policies/actions.ts",
+    "table": "leave_policies",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/operations/time-off/requests/actions.ts",
+    "table": "time_off",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/revenue/affiliates/actions.ts",
+    "table": "affiliate_commissions",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/revenue/affiliates/actions.ts",
+    "table": "affiliates",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/revenue/affiliates/actions.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/revenue/affiliates/actions.ts",
+    "table": "portal_members",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/revenue/companies/portal-actions.ts",
+    "table": "portal_members",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/revenue/deals/actions.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/revenue/events/[id]/actions.ts",
+    "table": "event_registrations",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/revenue/events/[id]/actions.ts",
+    "table": "orders",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/revenue/events/actions.ts",
+    "table": "events",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/revenue/events/actions.ts",
+    "table": "products",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/settings/admins/actions.ts",
+    "table": "admins",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/settings/assume/actions.ts",
+    "table": "portal_assume_sessions",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/talent/applications/actions.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/talent/applications/new/actions.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/talent/onboarding/actions.ts",
+    "table": "onboarding_tasks",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/talent/onboarding/actions.ts",
+    "table": "team_members",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/talent/team/actions.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/admin/(dashboard)/talent/team/actions.ts",
+    "table": "team_members",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/api/careers/apply/route.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/api/contact/route.ts",
+    "table": "inquiries",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/api/ingest/session/route.ts",
+    "table": "sync_runs",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/api/stripe/webhook/fulfilment.ts",
+    "table": "event_registrations",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/api/stripe/webhook/fulfilment.ts",
+    "table": "inquiries",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/api/unsubscribe/route.ts",
+    "table": "interactions",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/api/unsubscribe/route.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/events/[slug]/actions.ts",
+    "table": "orders",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/portal/(dashboard)/actions.ts",
+    "table": "portal_assume_sessions",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/portal/(dashboard)/tokens/actions.ts",
+    "table": "orders",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/portal/(dashboard)/tokens/actions.ts",
+    "table": "token_purchases",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/team/(dashboard)/actions.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "app/team/(dashboard)/clients/[companyId]/(hub)/meetings/actions.ts",
+    "table": "meetings",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "kernel/data/company-os.ts",
+    "table": "applications",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "kernel/data/company-os.ts",
+    "table": "bookings",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "kernel/data/company-os.ts",
+    "table": "documents",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "kernel/data/company-os.ts",
+    "table": "orders",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "kernel/messaging/email.ts",
+    "table": "interactions",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/admin/contractor-payments.ts",
+    "table": "contractor_work_requests",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/admin/portal-invite.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/admin/portal-invite.ts",
+    "table": "portal_members",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/admin/work-billing.ts",
+    "table": "contractor_work_events",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/admin/work-billing.ts",
+    "table": "contractor_work_requests",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/ai-journey.ts",
+    "table": "companies",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/ai/meeting-summary.ts",
+    "table": "meetings",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/avatars.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/coaching/data.ts",
+    "table": "tasks",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/coaching/transcript.ts",
+    "table": "call_transcripts",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/coaching/transcript.ts",
+    "table": "meetings",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/dayoff/import.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/dayoff/import.ts",
+    "table": "team_members",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/family-screen.ts",
+    "table": "applications",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/htt/registrations.ts",
+    "table": "ai_programs",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/htt/registrations.ts",
+    "table": "companies",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/htt/registrations.ts",
+    "table": "person_git_emails",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/id-documents.ts",
+    "table": "people_sensitive",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/interview-panelist.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/lifecycle.ts",
+    "table": "companies",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/lifecycle.ts",
+    "table": "lead",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/lifecycle.ts",
+    "table": "lifecycle_transitions",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/marketing-email.ts",
+    "table": "interactions",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/onboarding-cycle.ts",
+    "table": "team_members",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/onboarding.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/onboarding.ts",
+    "table": "people_sensitive",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/onboarding.ts",
+    "table": "team_members",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/portal/ai-programs.ts",
+    "table": "ai_programs",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/portal/hire-requests.ts",
+    "table": "deals",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/portal/profile.ts",
+    "table": "companies",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/portal/profile.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/portal/profile.ts",
+    "table": "person_companies",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/portal/referrals.ts",
+    "table": "affiliate_commissions",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/portal/time-off.ts",
+    "table": "time_off",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/portal/users.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/portal/users.ts",
+    "table": "person_companies",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/portal/users.ts",
+    "table": "portal_members",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/portal/work-requests.ts",
+    "table": "inquiries",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/reviews/transcript.ts",
+    "table": "call_transcripts",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/reviews/transcript.ts",
+    "table": "meetings",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/signups.ts",
+    "table": "inquiries",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/team/data.ts",
+    "table": "people",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  },
+  {
+    "file": "lib/team/interview-kit.ts",
+    "table": "interview_interviewers",
+    "reason": "pre-existing at ME-02; move behind the owner's index or an RPC"
+  }
+]

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--
+  Edge8 proposal template. Copy to public/proposals/<client-slug>-proposal.html and
+  replace every {{TOKEN}}. Guidance lives in comments above each section; delete the
+  comments in the shipped file. Rules: "Edge8" never all caps (the eyebrow style here
+  deliberately has no text-transform); no em dashes anywhere; keep robots noindex.
+  Reference pricing (confirm against the call): foundation A$15,000 fixed with the
+  money-back roadmap gate; human tokens A$3,000 per 40-token pack ($6,000 for 80);
+  dedicated engineer $4,000 to $6,000/month; running costs ~$70/month; AI Officer
+  cert $99/seat/month list ($24.75 for EO members); private retreat from A$10,500.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>{{KIND}} &middot; {{CLIENT}} | Edge8</title>
+<meta name="description" content="{{ONE_LINE_SUMMARY}}">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Edge8 AI">
+<meta property="og:title" content="Edge8 AI &times; {{CLIENT}}: {{KIND}}">
+<meta property="og:description" content="{{ONE_LINE_SUMMARY}}">
+<meta property="og:image" content="https://www.edge8.ai/social.jpg">
+<meta property="og:url" content="https://www.edge8.ai/proposals/{{SLUG}}-proposal.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Edge8 AI &times; {{CLIENT}}: {{KIND}}">
+<meta name="twitter:description" content="{{ONE_LINE_SUMMARY}}">
+<meta name="twitter:image" content="https://www.edge8.ai/social.jpg">
+<style>
+  :root{
+    --navy:#04102D;
+    --mist:#EAEEF2;
+    --white:#FFFFFF;
+    --blue:#287BE8;
+    --pink:#D1458B;
+    --mint:#6FF2C1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--navy);
+    background:var(--mist);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:840px;margin:0 auto;background:var(--white);}
+  header{background:var(--navy);color:var(--white);padding:56px 56px 48px;}
+  .eyebrow{
+    font-size:13px;
+    letter-spacing:.18em;
+    color:var(--mint);
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  header h1{font-size:34px;line-height:1.2;font-weight:700;margin-bottom:14px;}
+  header p.sub{font-size:17px;color:var(--mist);max-width:640px;}
+  .meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:28px;font-size:13px;color:var(--mist);}
+  .meta div span{
+    display:block;color:var(--mint);font-size:11px;letter-spacing:.12em;
+    text-transform:uppercase;margin-bottom:3px;
+  }
+  section{padding:44px 56px;}
+  section + section{border-top:1px solid var(--mist);}
+  h2{
+    font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--blue);font-weight:700;margin-bottom:8px;
+  }
+  h3{font-size:24px;font-weight:700;margin-bottom:18px;color:var(--navy);}
+  p{margin-bottom:16px;font-size:16px;}
+  p:last-child{margin-bottom:0;}
+  strong{font-weight:650;}
+  ul{margin:0 0 16px 0;padding-left:0;list-style:none;}
+  ul li{position:relative;padding-left:24px;margin-bottom:10px;font-size:16px;}
+  ul li::before{
+    content:"";position:absolute;left:0;top:11px;
+    width:8px;height:8px;background:var(--mint);border-radius:50%;
+  }
+  .cost-table{width:100%;border-collapse:collapse;margin:8px 0 4px;font-size:15px;}
+  .cost-table th{
+    text-align:left;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--blue);padding:0 0 12px;border-bottom:2px solid var(--mist);
+  }
+  .cost-table th.num,.cost-table td.num{text-align:right;}
+  .cost-table td{padding:14px 0;border-bottom:1px solid var(--mist);vertical-align:top;}
+  .cost-table td .label{font-weight:600;}
+  .cost-table td .note{display:block;font-size:13px;color:#5a6478;margin-top:2px;}
+  .callout{background:var(--navy);color:var(--white);padding:34px 36px;border-radius:10px;margin:6px 0;}
+  .callout .q{font-size:22px;font-weight:600;line-height:1.4;}
+  .callout .q .hl{color:var(--mint);}
+  .callout .tag{
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--mint);font-weight:600;margin-bottom:14px;display:block;
+  }
+  .guarantee{
+    display:flex;gap:20px;align-items:flex-start;background:var(--mint);color:var(--navy);
+    padding:28px 32px;border-radius:10px;margin:6px 0;
+  }
+  .guarantee .badge{
+    flex:0 0 auto;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:700;background:var(--navy);color:var(--mint);
+    padding:6px 12px;border-radius:20px;white-space:nowrap;margin-top:2px;
+  }
+  .guarantee p{margin:0;font-size:16px;font-weight:500;}
+  .guarantee strong{font-weight:700;}
+  .leverage{
+    display:flex;align-items:center;gap:20px;background:var(--mist);
+    border-left:4px solid var(--blue);border-radius:8px;padding:16px 22px;margin:14px 0 0;
+  }
+  .leverage .mult{
+    flex:0 0 auto;font-size:38px;font-weight:800;color:var(--blue);
+    line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.02em;
+  }
+  .leverage p{margin:0;font-size:15px;}
+  .phase{display:flex;gap:22px;padding:24px 0;border-bottom:1px solid var(--mist);}
+  .phase:last-child{border-bottom:none;}
+  .phase .num{
+    flex:0 0 52px;height:52px;background:var(--mist);color:var(--navy);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;
+  }
+  .phase .body h4{font-size:19px;font-weight:700;margin-bottom:6px;}
+  .phase .body .role{
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--pink);font-weight:700;margin-bottom:8px;
+  }
+  .phase .body p{margin-bottom:0;font-size:15px;}
+  .mitigation{
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--blue);font-weight:700;margin:10px 0 4px;
+  }
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px;}
+  .box{border:1px solid var(--mist);border-radius:10px;padding:24px;}
+  .box.emph{border-color:var(--blue);border-width:2px;}
+  .box h4{font-size:17px;font-weight:700;margin-bottom:6px;}
+  .box .tag8020{
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    font-weight:700;margin-bottom:10px;display:inline-block;
+    padding:3px 9px;border-radius:20px;
+  }
+  .box .tag8020.eighty{background:var(--mint);color:var(--navy);}
+  .box .tag8020.twenty{background:var(--pink);color:var(--white);}
+  .box p{font-size:14px;margin-bottom:12px;}
+  .box ul li{font-size:14px;margin-bottom:8px;}
+  .next-step{background:var(--mint);color:var(--navy);padding:30px 36px;border-radius:10px;}
+  .next-step h3{margin-bottom:8px;}
+  .next-step p{margin-bottom:0;font-size:16px;}
+  footer{background:var(--navy);color:var(--mist);padding:30px 56px;font-size:13px;}
+  footer strong{color:var(--white);}
+  .disclaimer{font-size:13px;color:#5a6478;margin-top:10px;}
+  a.more{
+    color:var(--blue);font-weight:650;text-decoration:none;
+    border-bottom:1px solid rgba(40,123,232,.35);white-space:nowrap;
+  }
+  a.more:hover{border-bottom-color:var(--blue);}
+  .retreat{background:var(--navy);color:var(--white);padding:34px 36px;border-radius:10px;}
+  .retreat h4{font-size:20px;font-weight:700;margin-bottom:10px;color:var(--white);}
+  .retreat p{font-size:15px;color:var(--mist);}
+  .retreat ul li{font-size:15px;color:var(--mist);}
+  .retreat ul li::before{background:var(--mint);}
+  .retreat .price{font-size:22px;font-weight:700;color:var(--mint);margin:4px 0 10px;}
+  .retreat .price small{font-size:14px;color:var(--mist);font-weight:500;}
+  .retreat a.more{color:var(--mint);border-bottom-color:rgba(111,242,193,.4);}
+  .retreat a.more:hover{border-bottom-color:var(--mint);}
+  @media (max-width:620px){
+    header,section,footer{padding-left:28px;padding-right:28px;}
+    .split{grid-template-columns:1fr;}
+    .guarantee{flex-direction:column;gap:12px;}
+    header h1{font-size:27px;}
+  }
+  @media print{
+    body{background:var(--white);}
+    .page{max-width:100%;}
+    .callout,.guarantee,.next-step,.box,.retreat,.phase .num{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="eyebrow">Edge8 &nbsp;&middot;&nbsp; Proposal</div>
+    <h1>{{H1_OUTCOME_HEADLINE}}</h1>
+    <p class="sub">{{SUB_ONE_SENTENCE_PLAN}}</p>
+    <div class="meta">
+      <div><span>Prepared for</span>{{CONTACT_NAME}}, {{CLIENT}}</div>
+      <div><span>Prepared by</span>Dave Hajdu &amp; Quan Chau, Edge8</div>
+      <div><span>Date</span>{{DATE_LONG}}</div>
+      <div><span>Status</span>{{STATUS_For_discussion_or_For_confirmation}}</div>
+    </div>
+  </header>
+
+  <!-- Mirror the client's own words from the call: company size, volume numbers,
+       current stack, and 3 to 5 bulleted pains. Close with the cost of the status quo. -->
+  <section>
+    <h2>What we heard</h2>
+    <h3>Where you are today</h3>
+    <p>{{CONTEXT_PARAGRAPH}}</p>
+    <ul>
+      <li><strong>{{PAIN_1_BOLD}}.</strong> {{PAIN_1_DETAIL}}</li>
+      <li><strong>{{PAIN_2_BOLD}}.</strong> {{PAIN_2_DETAIL}}</li>
+      <li><strong>{{PAIN_3_BOLD}}.</strong> {{PAIN_3_DETAIL}}</li>
+    </ul>
+    <p>{{STATUS_QUO_COST_PARAGRAPH}}</p>
+  </section>
+
+  <!-- The ownership pitch, tailored: why their specific goal needs a central
+       database first, and how Company OS gives a head start (HubSpot-shaped tables,
+       consolidate at their pace, no big-bang). -->
+  <section>
+    <h2>The idea</h2>
+    <h3>{{IDEA_HEADLINE}}</h3>
+    <p>{{IDEA_PARAGRAPH_1}}</p>
+    <p>{{IDEA_PARAGRAPH_2_COMPANY_OS}}</p>
+  </section>
+
+  <section>
+    <h2>The opportunity</h2>
+    <div class="callout">
+      <span class="tag">The question worth answering</span>
+      <p class="q">{{WHAT_IF_QUESTION with 2 <span class="hl">highlighted</span> phrases}}</p>
+    </div>
+    <p style="margin-top:24px;">{{WHY_NOW_PARAGRAPH}}</p>
+  </section>
+
+  <!-- Phases: foundation first (with the gate), the bespoke build second, ongoing
+       tokens/engineer third. Keep the 4x leverage box in the last phase. -->
+  <section>
+    <h2>The plan</h2>
+    <h3>{{PLAN_HEADLINE}}</h3>
+
+    <div class="guarantee">
+      <span class="badge">Money-back gate</span>
+      <p>The foundation opens with a 2 to 4 week systems map and roadmap sprint, and we move through it as fast as we can to get to building. <strong>If the roadmap we hand you isn't worth building, you don't pay for it.</strong> You only continue into the build once the plan convinces you.</p>
+    </div>
+
+    <div class="phase" style="margin-top:20px;">
+      <div class="num">1</div>
+      <div class="body">
+        <div class="role">Phase one &nbsp;&middot;&nbsp; the foundation &nbsp;&middot;&nbsp; money-back gate</div>
+        <h4>{{PHASE_1_TITLE}}</h4>
+        <p>{{PHASE_1_BODY}}</p>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="num">2</div>
+      <div class="body">
+        <div class="role">Phase two &nbsp;&middot;&nbsp; {{PHASE_2_LABEL}} &nbsp;&middot;&nbsp; metered build</div>
+        <h4>{{PHASE_2_TITLE}}</h4>
+        <p>{{PHASE_2_BODY}}</p>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="num">3</div>
+      <div class="body">
+        <div class="role">Phase three &nbsp;&middot;&nbsp; ongoing &nbsp;&middot;&nbsp; tokens or a dedicated engineer</div>
+        <h4>{{PHASE_3_TITLE}}</h4>
+        <p>{{PHASE_3_BODY}} <a class="more" href="https://infiniteleverage-8.com/human-tokens" target="_blank" rel="noopener">More on human tokens &rarr;</a></p>
+        <div class="leverage">
+          <span class="mult">4x</span>
+          <p><strong>Human tokens are leveraged with AI.</strong> An expert hour paired with Claude routinely produces around four times the output of unaided work, so every token goes further than a billed hour ever could.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>What's in the box</h2>
+    <h3>The 80%, and where the 20% begins</h3>
+    <div class="split">
+      <div class="box emph">
+        <span class="tag8020 eighty">The foundation &middot; fixed scope</span>
+        <h4>Phase one, standard</h4>
+        <ul>
+          <li>{{FIXED_SCOPE_ITEM_1}}</li>
+          <li>{{FIXED_SCOPE_ITEM_2}}</li>
+          <li>{{FIXED_SCOPE_ITEM_3}}</li>
+          <li>The first 2 to 4 automations, from your own pain list</li>
+          <li>One training day: your team running it with Claude</li>
+        </ul>
+      </div>
+      <div class="box">
+        <span class="tag8020 twenty">The 20% &middot; metered</span>
+        <h4>Everything bespoke to {{CLIENT}}</h4>
+        <ul>
+          <li>{{METERED_ITEM_1}}</li>
+          <li>{{METERED_ITEM_2}}</li>
+          <li>{{METERED_ITEM_3}}</li>
+          <li>Automations beyond the first 2 to 4</li>
+        </ul>
+        <p style="margin-top:6px;color:#5a6478;">Bought in human tokens ($3,000 AUD per 40-token pack), on demand, once the foundation is live. Sized and quoted from the roadmap before it starts. You always see it coming.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The investment</h2>
+    <h3>Reference pricing, to confirm together</h3>
+    <table class="cost-table">
+      <thead>
+        <tr><th>Piece</th><th class="num">Price (AUD)</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="label">The foundation</span><span class="note">8 week consulting engagement with Dave. Includes AI Engineer and Database Design Specialist. {{FOUNDATION_SCOPE_NOTE}} Money back if the roadmap doesn't convince you.</span></td>
+          <td class="num"><strong>$15,000</strong><span class="note">fixed, incl. money-back gate</span></td>
+        </tr>
+        <tr>
+          <td><span class="label">{{PHASE_2_TITLE_SHORT}}</span><span class="note">Metered build after go-live, sized in the roadmap. For scale: a recent client shipped a complete training platform, payments, assessments and chatbot included, in roughly a 40-token week.</span></td>
+          <td class="num">$3,000 / 40 tokens<span class="note">$6,000 for a starting block of 80</span></td>
+        </tr>
+        <tr>
+          <td><span class="label">AI Officer Certification (optional)</span><span class="note">For the people you nominate, delivered on AIOlabz (AI Officer Institute). One live kickoff, then challenge-based and self-paced, with a leader dashboard.</span></td>
+          <td class="num"><strong>$24.75</strong> / seat / month<span class="note">75% off the $99 list, as fellow EO</span></td>
+        </tr>
+        <tr>
+          <td><span class="label">Dedicated AI engineer (optional, later)</span><span class="note">Vietnam-based, part of your team, once the roadmap is set. Fractional or full-time.</span></td>
+          <td class="num">$4,000 to $6,000 / month</td>
+        </tr>
+        <tr>
+          <td><span class="label">Running costs</span><span class="note">Your Supabase database and Vercel hosting. The system is yours; this is all it costs to keep on.</span></td>
+          <td class="num">~$70 / month</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="disclaimer">These are the reference figures to confirm together. {{DISCLAIMER_SPECIFICS}} A pack is 40 human tokens ($3,000 AUD); no monthly fees, no expiry. Claude usage is billed to your own account, usage-based.</p>
+  </section>
+
+  <section>
+    <h2>Roles &amp; responsibilities</h2>
+    <h3>Who does what</h3>
+    <div class="split">
+      <div class="box emph">
+        <h4>Edge8</h4>
+        <ul>
+          <li>Run the systems map and deliver your database design and prioritised roadmap</li>
+          <li>Honour the money-back gate: no charge for the roadmap if it doesn't convince you</li>
+          <li>{{EDGE8_ROLE_3}}</li>
+          <li>{{EDGE8_ROLE_4}}</li>
+          <li>Run the training day, and keep building only when and if you choose</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h4>{{CLIENT}}</h4>
+        <ul>
+          <li>{{CLIENT_ROLE_1}}</li>
+          <li>{{CLIENT_ROLE_2}}</li>
+          <li>Give the "go" on the roadmap, or take the refund at the gate</li>
+          <li>Own the accounts outright: the Supabase database, Vercel hosting, Claude usage, and their running costs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Exactly three risks, each with a mitigation. Use the client's own fears from
+       the call (past migration pain, mid-flight cutover, messy data, adoption). -->
+  <section>
+    <h2>Risks &amp; assumptions</h2>
+    <h3>The three that matter</h3>
+
+    <div class="phase">
+      <div class="num">1</div>
+      <div class="body">
+        <h4>{{RISK_1_IF_STATEMENT}}</h4>
+        <p>{{RISK_1_WHY_IT_MATTERS}}</p>
+        <div class="mitigation">How we handle it</div>
+        <p>{{RISK_1_MITIGATION}}</p>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="num">2</div>
+      <div class="body">
+        <h4>{{RISK_2_IF_STATEMENT}}</h4>
+        <p>{{RISK_2_WHY_IT_MATTERS}}</p>
+        <div class="mitigation">How we handle it</div>
+        <p>{{RISK_2_MITIGATION}}</p>
+      </div>
+    </div>
+
+    <div class="phase">
+      <div class="num">3</div>
+      <div class="body">
+        <h4>{{RISK_3_IF_STATEMENT}}</h4>
+        <p>{{RISK_3_WHY_IT_MATTERS}}</p>
+        <div class="mitigation">How we handle it</div>
+        <p>{{RISK_3_MITIGATION}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Build it with us</h2>
+    <h3>An optional private Infinite Leverage retreat</h3>
+    <p>{{RETREAT_INTRO_PERSONALIZED}} Optional, and never required to start.</p>
+    <div class="retreat">
+      <h4>What you walk out with</h4>
+      <div class="price">From $10,500<small> AUD &middot; 3-day private retreat, first person</small></div>
+      <ul>
+        <li>2 to 3 working applications, shipped to production on your real data</li>
+        <li>The 18 Protocols installed, the operating system for building on your own</li>
+        <li>In Saigon: VIP immigration, airport pickup, a private car and driver, daily lunch, and a room at the AIO Pad</li>
+      </ul>
+      <p style="margin-bottom:0;">Add $1,500 per extra day, and $1,500 per additional person per day. Or we run it on-site at {{CLIENT}}, quoted per trip. <a class="more" href="https://infiniteleverage-8.com/saigon-private" target="_blank" rel="noopener">More on private retreats &rarr;</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="next-step">
+      <h3>Next step</h3>
+      <p>{{NEXT_STEP_CONCRETE_WITH_DATES}}</p>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>A note on EO.</strong> {{EO_NOTE_OR_DELETE_THIS_P}}</p>
+    <p style="margin-top:14px;"><strong>Edge8</strong> &nbsp;&middot;&nbsp; AI consulting &amp; staffing &nbsp;&middot;&nbsp; David Hajdu &amp; Quan Chau</p>
+  </footer>
+
+</div>
+</body>
+</html>

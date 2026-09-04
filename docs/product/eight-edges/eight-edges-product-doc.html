@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Eight Edges: Product Doc</title>
+<style>
+  :root{
+    --navy:#04102D;
+    --mist:#EAEEF2;
+    --white:#FFFFFF;
+    --blue:#287BE8;
+    --pink:#D1458B;
+    --mint:#6FF2C1;
+    --ink:#1a2340;
+    --muted:#5a6480;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--mist);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:880px;margin:0 auto;background:var(--white);}
+  header{background:var(--navy);color:var(--white);padding:60px 60px 52px;}
+  .eyebrow{font-size:13px;letter-spacing:.18em;color:var(--mint);font-weight:600;margin-bottom:18px;}
+  header h1{font-size:38px;line-height:1.15;font-weight:700;margin-bottom:14px;}
+  header p.sub{font-size:18px;color:var(--mist);max-width:660px;}
+  .meta{margin-top:32px;display:flex;flex-wrap:wrap;gap:30px;font-size:13px;color:var(--mist);}
+  .meta div span{display:block;color:var(--mint);font-size:11px;letter-spacing:.12em;margin-bottom:3px;}
+  section{padding:46px 60px;}
+  section + section{border-top:1px solid var(--mist);}
+  h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:8px;}
+  h3{font-size:25px;font-weight:700;margin-bottom:18px;color:var(--navy);}
+  h4{font-size:17px;font-weight:700;margin:26px 0 8px;color:var(--navy);}
+  p{margin-bottom:15px;font-size:16px;}
+  p:last-child{margin-bottom:0;}
+  strong{font-weight:650;}
+  ul,ol{margin:0 0 16px 0;padding-left:0;list-style:none;}
+  ul li,ol li{position:relative;padding-left:24px;margin-bottom:10px;font-size:16px;}
+  ul li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;background:var(--mint);border-radius:50%;}
+  ol{counter-reset:num;}
+  ol li{counter-increment:num;padding-left:32px;}
+  ol li::before{content:counter(num);position:absolute;left:0;top:1px;width:22px;height:22px;background:var(--navy);color:var(--mint);border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14.5px;}
+  th{background:var(--navy);color:var(--white);text-align:left;padding:10px 12px;font-weight:650;font-size:13px;}
+  td{padding:10px 12px;border-bottom:1px solid var(--mist);vertical-align:top;}
+  tr:nth-child(even) td{background:#F7F9FC;}
+  .callout{background:#F0F7FF;border-left:4px solid var(--blue);padding:18px 22px;border-radius:0 8px 8px 0;margin:20px 0;}
+  .callout.mint{background:#EFFCF7;border-left-color:var(--mint);}
+  .callout.pink{background:#FDF2F8;border-left-color:var(--pink);}
+  .callout p{font-size:15px;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;padding:3px 10px;border-radius:999px;vertical-align:middle;}
+  .tag.human{background:#FDE7F2;color:var(--pink);}
+  .tag.ai{background:#E3FBF1;color:#0B7A55;}
+  .tag.blend{background:#E7F1FE;color:var(--blue);}
+  .layerCard{border:1px solid var(--mist);border-radius:12px;padding:22px 24px;margin-bottom:16px;}
+  .layerCard .layerHead{display:flex;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap;}
+  .layerCard .num{font-size:13px;font-weight:800;color:var(--white);background:var(--navy);border-radius:8px;padding:2px 9px;}
+  .layerCard h4{margin:0;font-size:19px;}
+  .layerCard .cadence{font-size:12px;color:var(--muted);letter-spacing:.06em;font-weight:600;}
+  .halves{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px;}
+  .half{border-radius:10px;padding:14px 16px;font-size:14.5px;}
+  .half.h{background:#FDF2F8;}
+  .half.a{background:#EFFCF7;}
+  .half .hl{font-size:11px;font-weight:800;letter-spacing:.1em;margin-bottom:6px;display:block;}
+  .half.h .hl{color:var(--pink);}
+  .half.a .hl{color:#0B7A55;}
+  .cascade{background:var(--navy);border-radius:14px;padding:28px 30px;color:var(--mist);font-size:14.5px;margin:20px 0;}
+  .cascade .lvl{margin-bottom:16px;}
+  .cascade .lvl:last-child{margin-bottom:0;}
+  .cascade .lname{color:var(--mint);font-weight:800;font-size:12px;letter-spacing:.12em;display:block;margin-bottom:4px;}
+  .cascade .link{color:var(--pink);font-weight:700;}
+  footer{background:var(--navy);color:var(--mist);padding:34px 60px;font-size:13px;}
+  footer .b{color:var(--mint);font-weight:700;}
+  @media (max-width:720px){
+    header,section,footer{padding-left:24px;padding-right:24px;}
+    .halves{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="eyebrow">Edge8 AI &middot; Product Doc &middot; Internal</div>
+  <h1>Eight Edges</h1>
+  <p class="sub">The path from strategy to execution, which is now 50% human and 50% AI. Eight layers, each with a human half and an AI half, cascading from company strategy down to every executor: person or agent.</p>
+  <div class="meta">
+    <div><span>Status</span>Draft v1 for review</div>
+    <div><span>Owner</span>Dave Hajdu</div>
+    <div><span>Date</span>9 August 2026</div>
+    <div><span>Home</span>Edge8 OS &middot; company_os</div>
+  </div>
+</header>
+
+<section>
+  <h2>01 &middot; Why</h2>
+  <h3>Strategy dies between the conference room and the calendar</h3>
+  <p>Every operating system for small companies exists to solve one problem: direction set at the top fades as it moves through the organization. Teams fill the gap with whatever is urgent and measurable in front of them. The gap between what leadership intended and what actually happens widens week by week. This is not a motivation problem. It is a translation and rhythm problem.</p>
+  <p>EOS (Traction), Bloom Growth, and Ninety solve it with a trademarked vocabulary: Rocks, Scorecards, Level 10 Meetings. Underneath the branding, they are repackaging published research: OKRs, goal-setting theory, leading indicators, and meeting cadence. Eight Edges skips the middleman and builds directly on the sources. That is our own doctrine applied to ourselves: <strong>frameworks, not prompts. It was never the AI, it was the thinking.</strong></p>
+  <p>And there is one thing none of those systems can do, because they were designed for all-human companies: they have no answer for the question that now defines leadership. <strong>What should AI do, and what should humans do?</strong> Eight Edges is built around that question. Every existing tool treats AI as a feature. Eight Edges treats it as half the workforce.</p>
+  <div class="callout">
+    <p><strong>One line:</strong> Eight Edges is the operating system that keeps a company of people and agents pointed at the same goals, with the propagation, the rhythm, and the casting decisions enforced by software instead of memory.</p>
+  </div>
+</section>
+
+<section>
+  <h2>02 &middot; The name</h2>
+  <h3>Why "Eight Edges"</h3>
+  <p>An edge is where two faces meet. Our edge is formed where the human plane and the AI plane converge; the sharper the alignment between them, the sharper the edge. The figure 8 is two loops joined at a crossover point: one loop human, one loop AI, meeting at the goals. Tip the 8 sideways and it is the infinity symbol: infinite leverage.</p>
+  <p>The arithmetic makes it structural: <strong>Four Offices &times; two halves (human + AI) = eight edges.</strong> The system's job is keeping all eight sharp and pointed at the same strategy. And the framework itself has eight layers. The company name stops being a name and becomes the architecture.</p>
+</section>
+
+<section>
+  <h2>03 &middot; The eight layers</h2>
+  <h3>Each layer is half human, half AI</h3>
+  <p>No layer is fully specified until both halves are defined. The human half owns judgment and commitment; the AI half owns collection, propagation, and vigilance. This two-sided definition is the structural difference between Eight Edges and every predecessor.</p>
+
+  <div class="layerCard">
+    <div class="layerHead"><span class="num">1</span><h4>Strategy</h4><span class="cadence">ANNUAL &middot; ONE PAGE</span></div>
+    <p style="font-size:14.5px;">Diagnosis, guiding policy, coherent actions (Rumelt's kernel). Where we play, how we win, what we will not do. One page, reviewed quarterly, rewritten annually.</p>
+    <div class="halves">
+      <div class="half h"><span class="hl">HUMAN HALF</span>Set direction. Make the bets. Decide what not to build.</div>
+      <div class="half a"><span class="hl">AI HALF</span>Strategy becomes standing context, injected into every agent's instructions. Agents cannot drift from a strategy they are required to read.</div>
+    </div>
+  </div>
+
+  <div class="layerCard">
+    <div class="layerHead"><span class="num">2</span><h4>Goals</h4><span class="cadence">QUARTERLY &middot; COMPANY GOALS</span></div>
+    <p style="font-size:14.5px;">Objectives (qualitative direction) and Key Results (measurable outcomes, never activities), cascading Company &rarr; Office &rarr; Executor. Cascading is translation, not duplication: each level asks what it must deliver for the level above to succeed. A parent KR becomes a child Objective; the link is a foreign key, so no orphan goals can exist.</p>
+    <div class="halves">
+      <div class="half h"><span class="hl">HUMAN HALF</span>Choose the objectives. Commit to targets. Own the tradeoffs.</div>
+      <div class="half a"><span class="hl">AI HALF</span>Lint every new company goal (outcome vs activity, cascade link intact, target vs baseline sanity). Inject current KRs into every plan, briefing, and standup.</div>
+    </div>
+  </div>
+
+  <div class="layerCard">
+    <div class="layerHead"><span class="num">3</span><h4>Casting</h4><span class="cadence">QUARTERLY &middot; PER KEY RESULT <span class="tag blend">THE 50/50 LAYER</span></span></div>
+    <p style="font-size:14.5px;">The layer no predecessor has. For every Key Result, an explicit delivery-mix decision: human-led, AI-led, or blended. Casting is a leadership act: you have always cast the best performer for the work; AI is another performer, evaluated on output. Recast at review time when the evidence says so.</p>
+    <div class="halves">
+      <div class="half h"><span class="hl">HUMAN HALF</span>Make the casting call. Every KR keeps one accountable human, even when agents execute.</div>
+      <div class="half a"><span class="hl">AI HALF</span>Report own capacity and fit. Flag KRs where automation could raise leverage, or where an AI-led KR is underperforming and should recast.</div>
+    </div>
+  </div>
+
+  <div class="layerCard">
+    <div class="layerHead"><span class="num">4</span><h4>Metrics</h4><span class="cadence">WEEKLY &middot; LEADING INDICATORS</span></div>
+    <p style="font-size:14.5px;">A short list of numbers per Office. Every metric has a formula, an owner, a target, and a direction (is up good or down good). Leading indicators over lagging wherever possible.</p>
+    <div class="halves">
+      <div class="half h"><span class="hl">HUMAN HALF</span>Decide what to measure and what good looks like.</div>
+      <div class="half a"><span class="hl">AI HALF</span>Pull the numbers from source systems (Stripe, QuickBooks, CRM, analytics). No self-reporting, no stale dashboards, ever.</div>
+    </div>
+  </div>
+
+  <div class="layerCard">
+    <div class="layerHead"><span class="num">5</span><h4>Sync</h4><span class="cadence">WEEKLY &middot; SAME AGENDA</span></div>
+    <p style="font-size:14.5px;">The weekly heartbeat: metrics review, KR check, solve Issues. Goals show up in every sync because the cadence of conversation is what keeps goals alive.</p>
+    <div class="halves">
+      <div class="half h"><span class="hl">HUMAN HALF</span>Discuss, decide, commit. The meeting is where judgment happens.</div>
+      <div class="half a"><span class="hl">AI HALF</span>Prepare the packet before the meeting: numbers, KR deltas, pre-diagnosed misses, proposed agenda. Humans walk in at the decision point, not the data-gathering point.</div>
+    </div>
+  </div>
+
+  <div class="layerCard">
+    <div class="layerHead"><span class="num">6</span><h4>Issues</h4><span class="cadence">ROLLING</span></div>
+    <p style="font-size:14.5px;">The pressure valve. Anything blocking a KR or breaking a metric goes on the list, gets diagnosed (goal problem, system problem, or execution problem), and gets solved in Sync, oldest-impact-first.</p>
+    <div class="halves">
+      <div class="half h"><span class="hl">HUMAN HALF</span>Solve. Choose the fix, own the follow-through.</div>
+      <div class="half a"><span class="hl">AI HALF</span>Detect and file: a metric misses target two weeks running, an agent opens the Issue with a first-pass diagnosis attached.</div>
+    </div>
+  </div>
+
+  <div class="layerCard">
+    <div class="layerHead"><span class="num">7</span><h4>Reviews</h4><span class="cadence">QUARTERLY &middot; PER EXECUTOR</span></div>
+    <p style="font-size:14.5px;">Three questions per executor: what progress did we make, what did we learn, what do we adjust. Misses are data: diagnose whether the goal was wrong, the system was constrained, or execution slipped, before drawing conclusions about anyone. Agents get reviewed too; sometimes the adjustment is a better prompt, sometimes it is recasting the work to a human.</p>
+    <div class="halves">
+      <div class="half h"><span class="hl">HUMAN HALF</span>Coach and judge. GROW-structured conversations, informed by coaching profiles.</div>
+      <div class="half a"><span class="hl">AI HALF</span>Compile the evidence packet: KR trajectory, patterns since last review, prepared coaching questions. Accurate information instead of general impressions.</div>
+    </div>
+  </div>
+
+  <div class="layerCard">
+    <div class="layerHead"><span class="num">8</span><h4>Playbooks</h4><span class="cadence">EVERGREEN</span></div>
+    <p style="font-size:14.5px;">Documented ways of working. A playbook is not done until it exists in both forms: human-readable (the doc) and agent-executable (the skill/workflow). One way of working, two runtimes.</p>
+    <div class="halves">
+      <div class="half h"><span class="hl">HUMAN HALF</span>Author the way of working; decide what deserves to be a playbook.</div>
+      <div class="half a"><span class="hl">AI HALF</span>Execute the playbook as a skill. Flag drift when reality stops matching the doc.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>04 &middot; The cascade</h2>
+  <h3>Company &rarr; Office &rarr; Executor</h3>
+  <p>Three levels, and the third is the change: the cascade ends at <strong>Executors</strong>, not persons. An executor is a person, an agent, or a pair. Strategy translates downward until it reaches something that can do work, and half of those somethings are now AI.</p>
+  <p>Propagation is enforced by three mechanisms:</p>
+  <ol>
+    <li><strong>Structural.</strong> Every child Objective links to a parent Key Result (a literal foreign key). Walking the chain from any individual goal reaches a company goal. Orphan goals are rejected at write time.</li>
+    <li><strong>Rhythmic.</strong> Goals appear in every weekly Sync, every 1-on-1 prep, every agent briefing, automatically. The FAST insight: frequently discussed goals drive behavior, filed goals do not.</li>
+    <li><strong>Contextual.</strong> Humans get alignment through conversation; agents get it through context injection. Same tree, two propagation channels. This is the 50/50 path from strategy to execution.</li>
+  </ol>
+  <h4>Worked example (Edge8 AI, Q3 2026, illustrative numbers)</h4>
+  <div class="cascade">
+    <div class="lvl">
+      <span class="lname">COMPANY &middot; STAFFING LINE</span>
+      <strong style="color:#fff;">O: Own the renewal base.</strong><br>
+      KR1: Renew 4 of 4 staffing contracts (Unlock, On Target, EO, Wareease). &nbsp;KR2: Add 2 new staffing clients. &nbsp;<span class="link">KR3: Every renewal proposal live within 48h of trigger date.</span>
+    </div>
+    <div class="lvl">
+      <span class="lname">OFFICE OF REVENUE &nbsp;&larr; translates company KR3 into its objective</span>
+      <strong style="color:#fff;">O: Make renewals a system, not a scramble.</strong><br>
+      KR1: Renewal workflow runs end-to-end for all 4 anniversaries. &nbsp;<span class="link">KR2: Time from call transcript to live proposal under 10 minutes.</span>
+    </div>
+    <div class="lvl">
+      <span class="lname">EXECUTOR &nbsp;&larr; office KR2 becomes the executor's objective</span>
+      <strong style="color:#fff;">Dave (human, accountable) + developer agent (AI, executing)</strong><br>
+      O: Proposal generation fully agent-run. &nbsp;KR1: crm-call-to-proposal playbook executes in under 10 min, 100% of runs. &nbsp;KR2: Zero manual CRM writes for renewals this quarter. <span class="tag ai">AI-LED</span>
+    </div>
+  </div>
+  <p>Notice the mechanics: the company KR became the office Objective; the office KR became the executor Objective. Each level did real translation, and the chain is traceable in the database.</p>
+</section>
+
+<section>
+  <h2>05 &middot; Foundations</h2>
+  <h3>Built on published research, not folklore</h3>
+  <table>
+    <tr><th>Layer</th><th>Framework</th><th>Source</th></tr>
+    <tr><td>Strategy</td><td>The strategy kernel: diagnosis, guiding policy, coherent actions</td><td>Rumelt, <em>Good Strategy Bad Strategy</em> (2011)</td></tr>
+    <tr><td>Goals</td><td>Company goals: objectives + measurable key results</td><td>Grove, <em>High Output Management</em> (1983); Doerr, <em>Measure What Matters</em> (2018)</td></tr>
+    <tr><td>Goals</td><td>Goal-setting theory: specific + ambitious beats "do your best"</td><td>Locke &amp; Latham (1990; 2002)</td></tr>
+    <tr><td>Goal discipline</td><td>FAST: Frequently discussed, Ambitious, Specific, Transparent</td><td>Sull &amp; Sull, <em>MIT Sloan Management Review</em> (2018)</td></tr>
+    <tr><td>Metrics</td><td>Leading vs lagging indicators; balanced measurement</td><td>Kaplan &amp; Norton, <em>HBR</em> (1992)</td></tr>
+    <tr><td>Reviews</td><td>Misses are data; safe-to-report climate</td><td>Edmondson, psychological safety (1999)</td></tr>
+    <tr><td>Reviews</td><td>GROW coaching model</td><td>Whitmore, <em>Coaching for Performance</em> (1992)</td></tr>
+    <tr><td>Casting + halves</td><td>The 50/50 thesis: leadership is 50% human, 50% AI</td><td>The Other 50% (Holtom; Hajdu contributing)</td></tr>
+    <tr><td>Rollout</td><td>ADKAR change model</td><td>Hiatt, Prosci (2003)</td></tr>
+  </table>
+  <p>Eight Edges is also the reference implementation of our own curriculum: Lessons 6-10 of <em>Leadership in the AI Era</em> (coaching, strategy-to-execution, engagement, data as infrastructure, workflow design) describe exactly this system. Edge8 runs on what we teach, and students can see it live.</p>
+</section>
+
+<section>
+  <h2>06 &middot; Boundaries</h2>
+  <h3>What Eight Edges is not</h3>
+  <ul>
+    <li><strong>It is not Human Tokens.</strong> Human Tokens track building and client delivery (hours of skilled, leveraged work; AI Token Ratio). Eight Edges tracks company goals down to individuals and agents. Two separate ledgers; an executor goal may reference delivery outcomes, but the systems do not merge.</li>
+    <li><strong>It is not a project manager.</strong> Tasks, tickets, and delivery live where they live. Eight Edges holds direction, numbers, and rhythm, and points everything else at them.</li>
+    <li><strong>It is not EOS.</strong> No licensed vocabulary, no rocks. Plain words: Strategy, Goals, Casting, Metrics, Sync, Issues, Reviews, Playbooks.</li>
+    <li><strong>Governance default:</strong> every Key Result has exactly one accountable human, even when AI-led. Agents execute and co-own; accountability never delegates to software.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>07 &middot; Product surfaces</h2>
+  <h3>Where it lives in Edge8 OS</h3>
+  <table>
+    <tr><th>Surface</th><th>What it shows</th></tr>
+    <tr><td><strong>/admin/edges</strong> (home)</td><td>The cascade tree: Company &rarr; Office &rarr; Executor, with per-KR progress, casting chips, and FAST health. The line of sight, live.</td></tr>
+    <tr><td><strong>Metrics rail</strong></td><td>This week's numbers per Office: value, target, delta, direction, source (agent-pulled vs manual).</td></tr>
+    <tr><td><strong>Sync view</strong></td><td>Agent-prepared weekly packet: metric deltas, KRs at risk, open Issues with diagnoses, proposed agenda.</td></tr>
+    <tr><td><strong>Issues</strong></td><td>Rolling list, each tagged goal/system/execution, linked to the KR it blocks.</td></tr>
+    <tr><td><strong>Reviews</strong></td><td>Quarterly packets per executor (human and agent), three-question structure, recast recommendations.</td></tr>
+    <tr><td><strong>Agent context feed</strong></td><td>Read API used by every agent: current strategy, live KRs by owner, casting decisions. The tree as context document.</td></tr>
+  </table>
+  <div class="callout mint">
+    <p><strong>Two business lines, one tree.</strong> Company objectives are tagged by line (Staffing, AI Programs) or company-wide. The Offices translate line goals into functional goals; the tree keeps both lines visible on one screen so tradeoffs between them are explicit.</p>
+  </div>
+</section>
+
+<section>
+  <h2>08 &middot; Rollout</h2>
+  <h3>Eat it first, then teach it, then sell it</h3>
+  <ol>
+    <li><strong>Dogfood (Q3 2026).</strong> Edge8 runs Q4 planning in Eight Edges: real strategy page, real company goals for both lines, casting on every KR, weekly Sync on the agent-prepared packet.</li>
+    <li><strong>Instrument (Q4 2026).</strong> Metrics agents pull weekly numbers; Issues auto-file; the 7am plan derives from KRs. FAST becomes ambient.</li>
+    <li><strong>Teach (2027).</strong> Eight Edges becomes the worked example inside Leadership in the AI Era and the AI Officer curriculum; the ADKAR rollout playbook ships with it.</li>
+    <li><strong>Sell (when proven).</strong> Client-facing Eight Edges: the operating system for companies that are half human, half AI, with our own numbers as the case study.</li>
+  </ol>
+  <div class="callout pink">
+    <p><strong>Decisions taken in this draft</strong> (flag to revisit): Casting is a full layer, not a field. Every KR keeps one accountable human. Playbooks require both human-readable and agent-executable forms. Engagement pulse (Gallup Q12) deferred to a later phase.</p>
+  </div>
+</section>
+
+<footer>
+  <span class="b">Eight Edges</span> &middot; Edge8 AI internal product doc &middot; draft v1 &middot; 9 August 2026<br>
+  Sibling frameworks: The Other 50% &middot; Four Offices of the Future &middot; Human Tokens &amp; Infinite Leverage
+</footer>
+
+</div>
+</body>
+</html>
