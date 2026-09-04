@@ -5158,3 +5158,7 @@ a.admin-list-row { text-decoration: none; color: inherit; }
 .admin-meter-fill--muted { background: var(--admin-muted); }
 .admin-transcript-seg { font-size: var(--admin-text-base); white-space: pre-wrap; word-break: break-word; }
 .admin-pill--wide { flex: 1 1 320px; }
+
+/* ─── Revenue leftovers (8-Edges-Fork surface pass 3) ───────────────────── */
+/* A section card that sits beside another in a grid, not below it: cancels the stacked-sibling margin. */
+.admin-section-card + .admin-section-card.admin-section-card--flush { margin-top: 0; }

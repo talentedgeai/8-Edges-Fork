@@ -264,14 +264,7 @@ export default async function MarketingPage({ searchParams }: { searchParams: Se
                       <div
                         className="u-mt-2 admin-meter"
                       >
-                        <div
-                          style={{
-                            width: `${pct}%`,
-                            height: "100%",
-                            borderRadius: 20,
-                            background: "var(--admin-accent)",
-                          }}
-                        />
+                        <div className="admin-meter-fill" style={{ width: `${pct}%` }} /* layout-ok: data-driven progress width */ />
                       </div>
                       {c.channels.length > 0 && (
                         <div className="u-row u-wrap u-mt-2">
@@ -352,14 +345,7 @@ export default async function MarketingPage({ searchParams }: { searchParams: Se
                 <div
                   className="u-mt-2 admin-meter admin-meter--thick"
                 >
-                  <div
-                    style={{
-                      width: `${pct}%`,
-                      height: "100%",
-                      borderRadius: 20,
-                      background: "var(--admin-accent)",
-                    }}
-                  />
+                  <div className="admin-meter-fill" style={{ width: `${pct}%` }} /* layout-ok: data-driven progress width */ />
                 </div>
               </div>
             );
