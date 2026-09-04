@@ -510,8 +510,8 @@ export default function PatternsPage() {
         <Section title="Talent and operations pieces" sub="Role tag colour variable, wide select, truncated labels, pulled hints.">
           <div className="u-stack u-gap-4">
             <div className="u-row u-wrap">
-              <span className="admin-kanban-role-tag" style={{ "--tag": "var(--admin-chart-3)" } as React.CSSProperties} /* layout-ok: demo of the runtime role colour variable */>Strategist</span>
-              <span className="admin-kanban-role-tag" style={{ "--tag": "var(--admin-warn-strong)" } as React.CSSProperties} /* layout-ok: demo of the runtime role colour variable */>Builder</span>
+              <span className="admin-kanban-role-tag admin-pat-tag-a">Strategist</span>
+              <span className="admin-kanban-role-tag admin-pat-tag-b">Builder</span>
               <span className="u-sm u-muted">.admin-kanban-role-tag reads its colour from --tag, set inline from the chart ramp</span>
             </div>
             <div className="u-row u-wrap">
