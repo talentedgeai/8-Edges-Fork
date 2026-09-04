@@ -4,15 +4,16 @@ This repo is a filtered mirror of `edge8-web`, and it inherited that repo's
 design-system migration (upstream PRs #1004 to #1014, summarised at the end
 of this page). This page records what the 8 Edges design system looked like
 in **this** repo when it was cloned on 4 Sep 2026, what was still open, and
-the numbers after each PR here. The sequence follows the reference repo
-(`pr-hub-company-os`, PRs #21 to #32) and `docs/product/design-system.md`.
+the numbers after the close-out PR here. The sequence follows the reference
+repo (`pr-hub-company-os`, PRs #21 to #32) and `docs/product/design-system.md`.
 
 **Mirror warning.** `main` here is replaced by a fresh single-commit snapshot
 every time `edge8-web` pushes to its `main`
 (`.github/workflows/mirror-to-8-edges-fork.yml` upstream, `git push --force`).
-Anything merged here is overwritten at the next sync unless it also lands
-upstream. The PR branches for this migration are kept, not deleted, so the
-diffs survive a resync and can be replayed.
+Anything merged into `main` is overwritten at the next sync. The migration
+PRs below therefore merge into `ds/base`, an integration branch pinned to
+snapshot `825817a9`, and every PR branch is kept so the diffs survive and can
+be replayed onto `main` or upstream.
 
 ## How to measure
 
@@ -30,39 +31,45 @@ npm run check:tokens
 npm run check:design
 ```
 
-## Baseline in this repo (snapshot `825817a9`, 4 Sep 2026)
+## Before and after in this repo (snapshot `825817a9`, 4 Sep 2026)
 
-| Measure | As cloned |
-|---|---|
-| `style={{` blocks in `app/`, `components/`, `lib/` | 438 (109 files) |
-| of which set colour / border / font / radius / shadow ("styled inline") | 103 (guardrail ceiling was 119) |
-| of which layout-only (flex, gap, margin, width) | 313 |
-| Class prefixes in `app/admin/admin.css` | 1 (`admin-`); the 118 `.u-*` utilities live in `app/styles/utilities.css` |
-| Distinct selectors in `app/admin/admin.css` | 1007 |
-| Raw hex colours in `app/admin/admin.css` / `app/globals.css` | 0 / 0 |
-| `rgba()` in `admin.css` / `globals.css` | 0 / 0 |
-| Raw hex colours in `.tsx` / `.ts` | 68 lines in 14 files, all exempted by the guardrail on purpose (OG images, icons, email HTML) |
-| Lines with a raw colour outside a token file (check-tokens scan) | 0 |
-| Per-feature prefixes hiding in embedded `<style>` strings | 3: `cbe-` (27 classes, admin client-roadmaps editor), `cbp-` (24, portal roadmap), `tcr-` (13, team roadmap) |
-| Inline-layout ratchet baseline | stale: 6 files already below their allowance |
-
-Inline styles by surface as cloned, and how many of those lack a
-`layout-ok` marker:
-
-| Surface | `style={{` | unmarked |
+| Measure | As cloned | After close-out |
 |---|---|---|
-| `app/admin` | 65 | 44 |
-| `app/team` | 30 | 14 |
-| `app/portal` | 25 | 23 |
-| `components/` | 21 | 13 |
-| `app/workflows` (public workflow library) | 7 | converted upstream between snapshots |
-| other public pages | 290 | outside the OS surfaces |
+| `style={{` blocks in `app/`, `components/`, `lib/` | 438 (109 files) | 358 (76 files) |
+| of which set colour / border / font / radius / shadow ("styled inline") | 103 (ceiling 119) | 103 (ceiling 103); none on an OS surface |
+| of which layout-only (flex, gap, margin, width) | 313 | 231 |
+| Inline styles on the OS surfaces (admin, team, portal, components) | 141, 94 without a `layout-ok` marker | 61, every one data-driven and marked `layout-ok` |
+| Class prefixes in `app/admin/admin.css` | 1 (`admin-`) | 1 (`admin-`); `utilities.css` carries only `u-` |
+| Per-feature prefixes hiding in embedded `<style>` strings | 3 (`cbe-`, `cbp-`, `tcr-`, 67 classes) | 0 |
+| Distinct selectors in `app/admin/admin.css` | 1007 | 1023 |
+| Raw hex colours in `admin.css` / `globals.css` | 0 / 0 | 0 / 0 |
+| Lines with a raw colour outside a token file (check-tokens scan) | 0 | 0 |
+| Inline-layout ratchet baseline | stale (6 files below allowance) | 4 files, 30 occurrences, exact |
 
-So the foundation (tokens, palette, utilities, guardrail, pattern library)
-and the stylesheet rename were already in place. What was still open in this
-repo: the three embedded per-feature stylesheets, 94 unmarked inline styles
-across the OS surfaces, a stale ratchet baseline, and a styled ceiling 16
-above the real count.
+Inline styles by surface, before → after (unmarked → unmarked):
+
+| Surface | Before | After |
+|---|---|---|
+| `app/admin` | 65 (44 unmarked) | 30 (0) |
+| `app/team` | 30 (14) | 16 (0) |
+| `app/portal` | 25 (23) | 2 (0) |
+| `components/` | 21 (13) | 13 (0) |
+| `app/workflows` (public workflow library) | 7 | 7, converted upstream |
+| other public pages | 290 | 290, outside the OS surfaces |
+
+## PRs in this repo
+
+| PR | Step |
+|---|---|
+| #6 | Measure: baseline numbers, Vercel region check, mirror warning |
+| — | Foundation: nothing to change. Tokens, palette, `check:tokens` as `prebuild`, utilities, pattern library and docs were already present and match the reference (plus `--color-violet` for the workflow library). |
+| #7 | Rename: the three embedded stylesheets folded into `admin.css`, 67 classes renamed by exact name to `admin-backlog-editor-*`, `admin-backlog-portal-*`, `admin-roadmap-*` |
+| #8 | Surface 1: core record pages (contacts, team member, application, deal, event, sales call, campaign, boards) |
+| #9 | Surface 2: admin core (login, skeletons, not-found, pattern library) and `components/*` |
+| #10 | Surface 3: revenue cockpit, deals board, marketing dashboard |
+| #11 | Surface 4: applications board, survey results, analytics, client roadmaps (also fixes the role-tag background, which appended a hex alpha to a `var()`) |
+| #12 | Surface 5: team intranet and client portal |
+| #13 | Close out: this page and the status in `design-system.md` |
 
 ## Vercel region
 
@@ -73,34 +80,29 @@ happens, `regions` must match the Supabase region (`ap-southeast-1` is
 `sin1`; `ap-south-1` is `bom1`; `ap-northeast-1` is `hnd1`; `us-west-2` is
 `pdx1`). Crons and redirects stay as they are.
 
-## Sequence in this repo
-
-1. Measure (this document) and the region check.
-2. Foundation: already present and identical to the reference except for one
-   extra brand primitive (`--color-violet`, used by the public workflow
-   library) mirrored in `lib/design/palette.ts`, and the utilities split into
-   their own file. No change needed.
-3. Rename: fold the three embedded stylesheets into `admin.css` as
-   `admin-<component>-*` by exact class name, so the stylesheet is the only
-   place a class is defined.
-4. Per surface: run `inline-to-classes.pl` then `smart-inline.pl`, fix any
-   duplicate `className` (TS17001), hand-finish leftovers as component
-   classes. Data-driven values stay inline with a `/* layout-ok */` comment.
-5. After each surface: refresh the inline-layout baseline, lower the styled
-   ceiling, build, merge.
-6. Close out: the stylesheet has only `.admin-*` (and `utilities.css` only
-   `.u-*`); the after numbers land on this page.
-
 ## What stays inline, and why
 
-Only values the component cannot know at build time: progress-bar widths,
-stage / epic / series / channel colours (already token variables chosen at
-runtime), avatar sizes from props, the pattern library's type-ramp demo, and
+Only values the component cannot know at build time: progress-bar and
+speaker-share widths, the role-tag colour (a `--admin-chart-*` token chosen
+at runtime and passed as `--tag`), slider offsets, prop-driven aspect ratios,
+avatar sizes, the pattern library's type-ramp demo and swatch chips, and
 hidden file inputs. Each carries a `/* layout-ok: reason */` comment. The
-public workflow library under `app/workflows` and the other marketing pages
-were outside the five OS surfaces upstream and keep their layout-only inline
-styles; they contain no raw colour. Upstream tracks them in
-`docs/product/design-debt.md`.
+public workflow library and the other marketing pages were outside the five
+OS surfaces upstream and keep their inline styles (the 103 styled ones are
+all there); upstream tracks them in `docs/product/design-debt.md`. The
+`check:tokens` ceiling (103) and the ratchet baseline are set to today's
+counts, so they can only go down.
+
+## Classes added while hand-finishing
+
+All appended to the end of `admin.css` under a per-surface section and
+rendered on `/admin/patterns`: `admin-board-tile`, `admin-sprint-ht`,
+`admin-stat-value`, `admin-access-code`, `admin-meter-fill--muted`,
+`admin-transcript-seg`, `admin-pill--wide`, `admin-section-card--flush`,
+`admin-input--min-md`, `admin-hint--pull`, `admin-overview-text`,
+`admin-details-summary`, `admin-card-foot`,
+`admin-backlog-portal-pill--static`, and `.admin-kanban-role-tag` now reads
+`--tag`. One public-site class, `.xp-cover`, joined `globals.css`.
 
 ## Inherited from edge8-web
 

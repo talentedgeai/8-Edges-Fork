@@ -50,13 +50,17 @@ definitions themselves.
   genuinely new component is needed, add it to `admin.css` under the
   Components section and to `/admin/patterns` in the same PR.
 
-## Migration status: complete (4 Sep 2026)
+## Migration status: complete in this repo (4 Sep 2026)
 
-Every OS surface now runs on the one system. `app/admin/admin.css` carries two
-namespaces only: `.admin-*` (components) and `.u-*` (layout utilities). The 34
-per-feature prefixes are gone; each was renamed by exact class name into
-`.admin-<component>-*` and its consumers updated. Before and after numbers,
-and the measuring commands, are in `docs/product/design-system-migration.md`.
+Every OS surface runs on the one system. `app/admin/admin.css` carries the
+`.admin-*` namespace only and `app/styles/utilities.css` the `.u-*` layout
+utilities. No component defines its own `<style>` block any more: the last
+three embedded stylesheets (`cbe-`, `cbp-`, `tcr-`) were folded into
+`admin.css` by exact class name, and every inline style left on an OS
+surface is data-driven and marked `layout-ok`. Before and after numbers, the
+measuring commands and the PR list for this repo (#6 to #13, merged into
+`ds/base` because `main` is a force-pushed mirror of edge8-web) are in
+`docs/product/design-system-migration.md`. The upstream history follows.
 
 | PR | Surface |
 |---|---|
