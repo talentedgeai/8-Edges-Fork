@@ -132,7 +132,7 @@ export default async function TeamProgramDetailPage({
           {overview && (
             <section className="admin-card admin-section-card u-mb-4">
               <h2 className="admin-card-title u-mb-2">Overview</h2>
-              <div style={{ fontSize: 14, lineHeight: 1.65 }}>
+              <div className="admin-overview-text">
                 <BotText text={overview} />
               </div>
             </section>
@@ -141,7 +141,7 @@ export default async function TeamProgramDetailPage({
           <AddItemForm companyId={company.id} groups={addableGroups} programId={detail.id} />
 
           {detail.roadmapItems.length === 0 ? (
-            <div className="admin-card admin-section-card" style={{ padding: 22 }}>
+            <div className="admin-card admin-section-card">
               <p className="admin-page-sub u-m-0">No roadmap items on this program yet.</p>
             </div>
           ) : (

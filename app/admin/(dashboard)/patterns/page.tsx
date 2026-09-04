@@ -525,6 +525,33 @@ export default function PatternsPage() {
           </div>
         </Section>
 
+        {/* ─── Team and portal pieces ─────────────────────── */}
+        <Section title="Team and portal pieces" sub="Level cards with pushed footers, overview prose, disclosure summaries, read-only priority pills.">
+          <div className="u-stack u-gap-4">
+            <div className="admin-kpi-grid admin-kpi-grid--2up u-rows-equal u-max-narrow">
+              <div className="admin-card admin-section-card u-stack">
+                <h3 className="admin-card-title u-mb-2">Create a plan</h3>
+                <p className="admin-page-sub u-m-0 u-minh-40">.u-rows-equal + .u-minh-40 keep sibling cards level.</p>
+                <div className="admin-card-foot"><span className="admin-btn admin-btn--primary">.admin-card-foot</span></div>
+              </div>
+              <div className="admin-card admin-section-card u-stack">
+                <h3 className="admin-card-title u-mb-2">Upload documents</h3>
+                <p className="admin-page-sub u-m-0 u-minh-40">The footer is pushed to the bottom so both buttons line up.</p>
+                <div className="admin-card-foot"><span className="admin-btn">Upload</span></div>
+              </div>
+            </div>
+            <div className="admin-overview-text u-max-prose">.admin-overview-text: 14px body at 1.65 line height for assistant-written overviews and plan bullet lists.</div>
+            <details className="admin-card admin-section-card">
+              <summary className="admin-details-summary"><span className="admin-card-title u-inline">.admin-details-summary</span> <span className="u-sm u-muted">keeps the disclosure marker and a pointer cursor</span></summary>
+              <p className="admin-page-sub u-m-0 u-mt-2">Closed roles would list here.</p>
+            </details>
+            <div className="admin-backlog">
+              <span className="admin-backlog-pills"><span className="admin-backlog-pill admin-backlog-pill--static on-now">Now</span><span className="admin-backlog-pill admin-backlog-pill--static on-later">Later</span></span>
+              <span className="u-sm u-muted u-ml-2">.admin-backlog-pill--static · read-only priority pill</span>
+            </div>
+          </div>
+        </Section>
+
         {/* ─── Empty state ────────────────────────────── */}
         <Section title="Empty state">
           <div className="admin-table-wrap">
