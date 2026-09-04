@@ -172,7 +172,7 @@ One PR per item, into `ds/debt-base2`. The PR column fills in as they merge.
 
 | # | What | Where | Count | Fix | PR |
 |---|---|---|---|---|---|
-| 1 | Guardrails run only locally; styled ceiling 11 above the count | no `.github/`, `check-tokens.mjs` | ceiling 26, count 15 | `design-guardrails.yml` (check-tokens, check-assets, ratchet, crons); Actions enabled; ceiling 15 | |
+| 1 | Guardrails run only locally; styled ceiling 11 above the count | no `.github/`, `check-tokens.mjs` | ceiling 26, count 15 | `design-guardrails.yml` (check-tokens, check-assets, ratchet, crons); Actions enabled; ceiling 15 | #17 |
 | 2 | API email routes carry their own hex | 6 routes under `app/api` | 31 | Read `lib/design/palette`; drop the `^app/api/` exemption | |
 | 3 | Type and spacing values off the scales | `admin.css` (folded backlog rules), `workflows.css` | 1 + 41 | Snap to the nearest step | |
 | 4 | Page-prefixed selectors on the public site | `globals.css` | 125 prefixes, 1253 rules, 319 ratcheted | Rename every class by exact name to `site-<component>-*`, update consumers, ratchet to 0 | |
