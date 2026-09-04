@@ -506,6 +506,25 @@ export default function PatternsPage() {
           </div>
         </Section>
 
+        {/* ─── Talent and operations pieces ─────────────────────── */}
+        <Section title="Talent and operations pieces" sub="Role tag colour variable, wide select, truncated labels, pulled hints.">
+          <div className="u-stack u-gap-4">
+            <div className="u-row u-wrap">
+              <span className="admin-kanban-role-tag admin-pat-tag-a">Strategist</span>
+              <span className="admin-kanban-role-tag admin-pat-tag-b">Builder</span>
+              <span className="u-sm u-muted">.admin-kanban-role-tag reads its colour from --tag, set inline from the chart ramp</span>
+            </div>
+            <div className="u-row u-wrap">
+              <select className="admin-input admin-input--min-md" defaultValue="a" aria-label="Client"><option value="a">.admin-input--min-md · 220px minimum</option></select>
+            </div>
+            <div className="u-row">
+              <span className="u-truncate u-min-1">.u-truncate + .u-min-1: a long survey option label that will be cut with an ellipsis</span>
+              <span className="u-sm u-muted u-shrink-0">42%</span>
+            </div>
+            <p className="admin-hint admin-hint--pull">.admin-hint--pull tucks a hint 4px closer to the control above it.</p>
+          </div>
+        </Section>
+
         {/* ─── Empty state ────────────────────────────── */}
         <Section title="Empty state">
           <div className="admin-table-wrap">

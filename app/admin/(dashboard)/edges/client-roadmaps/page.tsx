@@ -181,7 +181,7 @@ export default async function ClientBacklogPage({ searchParams }: { searchParams
             })}
             {clients.length === 0 && (
               <tr>
-                <td colSpan={3} className="admin-cell-muted" style={{ padding: 18 }}>
+                <td colSpan={3} className="admin-cell-muted u-p-4">
                   No client companies found.
                 </td>
               </tr>

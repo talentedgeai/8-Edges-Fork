@@ -62,7 +62,7 @@ function DistRow({ label, count, total }: { label: string; count: number; total:
   const pct = total > 0 ? (count / total) * 100 : 0;
   return (
     <div className="u-row">
-      <span style={{ minWidth: 140, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+      <span className="u-truncate u-min-1">
         {label}
       </span>
       <Bar pct={pct} />
