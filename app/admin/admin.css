@@ -5162,3 +5162,9 @@ a.admin-list-row { text-decoration: none; color: inherit; }
 /* ─── Revenue leftovers (8-Edges-Fork surface pass 3) ───────────────────── */
 /* A section card that sits beside another in a grid, not below it: cancels the stacked-sibling margin. */
 .admin-section-card + .admin-section-card.admin-section-card--flush { margin-top: 0; }
+
+/* ─── Talent / Operations / Edges leftovers (8-Edges-Fork surface pass 4) ── */
+/* Role tag on the applications board: the colour arrives as --tag (a token variable chosen at runtime). */
+.admin-kanban-role-tag { color: var(--tag, inherit); background: color-mix(in srgb, var(--tag, currentColor) 12%, transparent); }
+.admin-input--min-md { min-width: 220px; }
+.admin-hint--pull { margin-top: -4px; }
