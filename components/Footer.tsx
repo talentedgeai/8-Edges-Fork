@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="footer-top">
           <div>
             <div className="footer-logo">
-              <Image src="/logo-white.png" alt="Edge8" width={100} height={32} style={{ width: 'auto', height: '32px' }} />
+              <Image src="/logo-white.png" alt="Edge8" width={100} height={32} />
             </div>
             <p className="footer-desc">
               AI Leadership, Automation &amp; Global Talent Solutions. Helping organizations become Tech-Forward and achieve 8x efficiency.

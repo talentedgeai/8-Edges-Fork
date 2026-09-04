@@ -22,7 +22,7 @@ export function PersonSelectDemo() {
   const [grouped, setGrouped] = useState("");
 
   return (
-    <div className="admin-form" style={{ maxWidth: 420 }}>
+    <div className="admin-form u-max-sm">
       <div className="admin-field">
         <label className="admin-label">Owner</label>
         <PersonSelect value={owner} onChange={setOwner} options={SAMPLE} emptyLabel="Unassigned" />
@@ -51,7 +51,7 @@ export function PersonSelectDemo() {
           onChange={setOwner}
           options={SAMPLE}
           emptyLabel="Unassigned"
-          style={{ maxWidth: 180 }}
+          className="u-max-160"
         />
       </div>
     </div>

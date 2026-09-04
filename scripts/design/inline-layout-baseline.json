@@ -8,7 +8,5 @@
   "app/team/(dashboard)/clients/[companyId]/(hub)/roadmap/AddItemForm.tsx": 1,
   "app/team/(dashboard)/hiring/page.tsx": 1,
   "app/training-and-certification/page.tsx": 1,
-  "app/your-first-ai-hire/page.tsx": 8,
-  "components/PrivateSessionReserve.tsx": 1,
-  "components/hub/MeetingsPanel.tsx": 1
+  "app/your-first-ai-hire/page.tsx": 8
 }

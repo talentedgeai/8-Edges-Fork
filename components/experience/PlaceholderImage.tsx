@@ -28,14 +28,14 @@ export function PlaceholderImage({
 }) {
   const cls = [src ? "xp-ph xp-ph--photo" : "xp-ph", className].filter(Boolean).join(" ");
   return (
-    <div className={cls} style={{ aspectRatio: aspect, maxWidth, ...style }}>
+    <div className={cls} style={{ aspectRatio: aspect, maxWidth, ...style }} /* layout-ok: aspect, width and style arrive as props */>
       {src ? (
         <Image
           src={src}
           alt={alt ?? label.replace(/^Photo:\s*/i, "")}
           fill
           sizes="(max-width: 800px) 100vw, 720px"
-          style={{ objectFit: "cover" }}
+          className="xp-cover"
         />
       ) : (
         <span>{label}</span>
