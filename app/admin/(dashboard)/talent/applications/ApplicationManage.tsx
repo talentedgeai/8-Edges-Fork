@@ -745,7 +745,7 @@ function CoverLetterCard({ extras }: { extras: ApplicationExtras }) {
     <section className="admin-card admin-section-card">
       <div className="admin-section-label u-mb-2">Application</div>
       {extras.coverLetter && (
-        <details open style={{ marginBottom: extras.answers.length ? 12 : 0 }}>
+        <details open className={extras.answers.length ? "u-mb-3" : undefined}>
           <summary className="u-mb-2 u-strong u-pointer">Cover letter</summary>
           <div className="u-pl-3 admin-quote u-ink-2 u-prewrap u-max-prose">
             {extras.coverLetter}
@@ -1033,7 +1033,7 @@ function ResumeField({ applicationId, resumeDocumentId }: { applicationId: strin
         ref={inputRef}
         type="file"
         accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-        style={{ display: "none" }}
+        className="u-hidden-input"
         onChange={onFile}
       />
       {err && <span className="u-err">{err}</span>}

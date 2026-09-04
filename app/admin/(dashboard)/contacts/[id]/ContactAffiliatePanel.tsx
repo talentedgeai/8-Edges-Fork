@@ -26,7 +26,7 @@ export function ContactAffiliatePanel({ affiliate }: { affiliate: Affiliate360 }
         </span>
       </div>
 
-      <div className="admin-kpi-grid" style={{ marginBottom: affiliate.referredDeals.length || affiliate.commissions.length ? 16 : 0 }}>
+      <div className={`admin-kpi-grid ${affiliate.referredDeals.length || affiliate.commissions.length ? "u-mb-4" : "u-mb-0"}`}>
         <MetricCard label="Pipeline" value={formatCents(pipelineCents, "usd")} sub="open referrals" />
         <MetricCard label="Converted" value={formatCents(affiliate.accruedGrossCents, "usd")} sub="referred revenue paid" />
         <MetricCard

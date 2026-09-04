@@ -253,14 +253,14 @@ export default async function EventDetailPage({ params }: { params: { id: string
       </div>
 
       {(accessCode || feedback.length > 0) && (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 16, marginBottom: 20 }}>
+        <div className="u-grid-auto-md u-mb-5">
           {accessCode && (
             <div className="admin-card admin-section-card">
               <div className="admin-card-title">My Retreat access</div>
               <div className="u-stack u-mt-3">
                 <div>
                   <div className="admin-cell-muted u-sm">Access code</div>
-                  <code className="admin-cell-mono" style={{ fontSize: 20, fontWeight: 700 }}>{accessCode}</code>
+                  <code className="admin-cell-mono admin-access-code">{accessCode}</code>
                 </div>
                 <div>
                   <div className="admin-cell-muted u-sm">Guest link</div>
@@ -297,7 +297,7 @@ export default async function EventDetailPage({ params }: { params: { id: string
         </div>
       )}
 
-      <div style={{ display: "grid", gridTemplateColumns: feedbackQr ? "1fr 1fr" : "1fr", gap: 20 }}>
+      <div className={feedbackQr ? "u-grid-2 u-gap-5" : "u-stack u-gap-5"}>
         <QrBlock title="Signup link" url={signupUrl} png={signupQr} downloadName={`${event.slug}-signup-qr.png`} />
         {feedbackQr && <QrBlock title="Feedback survey" url={feedbackQr.url} png={feedbackQr.png} downloadName={`${event.slug}-feedback-qr.png`} />}
       </div>
