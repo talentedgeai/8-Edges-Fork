@@ -5168,3 +5168,10 @@ a.admin-list-row { text-decoration: none; color: inherit; }
 .admin-kanban-role-tag { color: var(--tag, inherit); background: color-mix(in srgb, var(--tag, currentColor) 12%, transparent); }
 .admin-input--min-md { min-width: 220px; }
 .admin-hint--pull { margin-top: -4px; }
+
+/* ─── Team / portal leftovers (8-Edges-Fork surface pass 5) ─────────────── */
+.admin-overview-text { font-size: var(--admin-text-md); line-height: 1.65; }
+.admin-details-summary { cursor: pointer; list-style: revert; }
+/* Card footer pushed to the bottom of a u-stack card so sibling cards' buttons line up. */
+.admin-card-foot { margin-top: auto; padding-top: var(--admin-space-4); }
+.admin-backlog-portal .admin-backlog-portal-pill--static { cursor: default; }

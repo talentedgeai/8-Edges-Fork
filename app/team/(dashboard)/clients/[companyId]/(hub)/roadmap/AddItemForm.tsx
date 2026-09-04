@@ -67,7 +67,7 @@ export function AddItemForm({
   return (
     <section className="admin-card admin-section-card u-mb-4">
       <h2 className="admin-card-title u-mb-3">Add roadmap item</h2>
-      <div style={{ display: "grid", gap: 10, maxWidth: 560 }}>
+      <div className="u-stack u-gap-3 u-max-form">
         <label className="admin-label">
           Section
           <select className="admin-select" value={groupKey} onChange={(e) => setGroupKey(e.target.value)}>

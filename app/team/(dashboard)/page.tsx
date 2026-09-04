@@ -334,7 +334,7 @@ export default async function TeamHome() {
             work through the challenge-based program.
           </p>
         </div>
-        <span className="admin-btn admin-btn--primary" style={{ flex: "none", pointerEvents: "none" }}>
+        <span className="admin-btn admin-btn--primary u-shrink-0 u-no-events">
           Start on AIOlabz →
         </span>
       </a>

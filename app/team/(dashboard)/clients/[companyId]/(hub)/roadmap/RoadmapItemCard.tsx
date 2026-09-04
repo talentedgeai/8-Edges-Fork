@@ -74,8 +74,7 @@ export function RoadmapItemCard({ item, companyId }: { item: BacklogItem; compan
         {item.ref && <span className="admin-roadmap-ref">{item.ref}</span>}
         {editing ? (
           <input
-            className="admin-input"
-            style={{ flex: "1 1 220px", fontSize: 14 }}
+            className="admin-input u-flex-1"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             aria-label="Title"
@@ -85,8 +84,7 @@ export function RoadmapItemCard({ item, companyId }: { item: BacklogItem; compan
         )}
         <span className={`admin-roadmap-pri ${eff}`}>{PRIORITY_LABEL[eff]}</span>
         <select
-          className="admin-select"
-          style={{ width: "auto", fontSize: 12, flex: "none" }}
+          className="admin-select u-w-auto u-sm u-shrink-0"
           value={item.status}
           disabled={busy}
           onChange={(e) => setStatus(e.target.value as BacklogStatus)}

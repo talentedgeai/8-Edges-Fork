@@ -147,7 +147,7 @@ export function BacklogPortalView({
                       </button>
                     ))
                   ) : (
-                    <span className={`admin-backlog-portal-pill on-${eff}`} style={{ cursor: "default" }}>{PRIORITY_LABEL[eff]}</span>
+                    <span className={`admin-backlog-portal-pill admin-backlog-portal-pill--static on-${eff}`}>{PRIORITY_LABEL[eff]}</span>
                   )}
                 </span>
               </div>

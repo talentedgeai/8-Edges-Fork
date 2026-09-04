@@ -157,7 +157,7 @@ export default async function AiProgramDetailPage({
                       <div className="admin-cell-muted u-mb-1 u-sm u-strong">
                         Week {w.isoWeek.slice(5).replace("W", "")} ({w.isoWeek.slice(0, 4)})
                       </div>
-                      <ul style={{ margin: 0, paddingLeft: 18, fontSize: 14, lineHeight: 1.7 }}>
+                      <ul className="u-list admin-overview-text">
                         {w.titles.map((t, i) => (
                           <li key={`${w.isoWeek}-${i}`}>{t}</li>
                         ))}
@@ -169,7 +169,7 @@ export default async function AiProgramDetailPage({
             )}
           </section>
           {program.plans.length > 0 && (
-            <section className="admin-card admin-section-card" style={{ maxWidth: 900, marginTop: 16 }}>
+            <section className="admin-card admin-section-card u-max-narrow u-mt-4">
               <h2 className="admin-card-title u-mb-3">Plan</h2>
               <div className="u-stack u-gap-4">
                 {program.plans.map((pl) => (
