@@ -174,7 +174,7 @@ One PR per item, into `ds/debt-base2`. The PR column fills in as they merge.
 |---|---|---|---|---|---|
 | 1 | Guardrails run only locally; styled ceiling 11 above the count | no `.github/`, `check-tokens.mjs` | ceiling 26, count 15 | `design-guardrails.yml` (check-tokens, check-assets, ratchet, crons); Actions enabled; ceiling 15 | #17 |
 | 2 | API email routes carry their own hex | 6 routes under `app/api` | 31 | Read `lib/design/palette`; drop the `^app/api/` exemption | #18 |
-| 3 | Type and spacing values off the scales | `admin.css` (folded backlog rules), `workflows.css` | 1 + 41 | Snap to the nearest step | |
+| 3 | Type and spacing values off the scales | `admin.css` (folded backlog rules), `workflows.css` | 1 + 41 | Snap to the nearest step | #19 |
 | 4 | Page-prefixed selectors on the public site | `globals.css` | 125 prefixes, 1253 rules, 319 ratcheted | Rename every class by exact name to `site-<component>-*`, update consumers, ratchet to 0 | |
 | 5 | Private stylesheets with their own prefixes | `workflows.css`, `eight-edges-app.css`, `plans.css` | `wf-` 219, `app-` 34, `plib-` 10, `rnw-` 1, `e8a-` 78, `brief-` 20 | Rename by exact class name to `site-wf-*`, `site-app-*`, `site-plib-*`, `site-rnw-*`, `site-e8a-*`, `site-brief-*` | |
 | 6 | Inline styles: core record pages | contacts, team member, application, deal, event, sales call, campaign, boards | 22 unmarked | Converters, then component classes on `admin.css` + patterns | |
