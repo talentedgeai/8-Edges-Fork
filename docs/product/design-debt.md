@@ -184,7 +184,7 @@ One PR per item, into `ds/debt-base2`. The PR column fills in as they merge.
 | 10 | Inline styles: team intranet and client portal | `app/team`, `app/portal` | 35 unmarked | Converters, then `admin-card-foot`, `admin-overview-text`, `admin-details-summary` | #26 |
 | 11 | Inline styles: public pages | home, case studies, Vietnam experience, flight info, error pages | 51 unmarked (2 styled) | `site-inline.pl`, then `site-*` classes in `globals.css` | #27 |
 | 12 | Overlapping component classes | `admin.css` | 3 pairs, 11 rules, 5 consumers | Campaign progress on `admin-meter`; avatar button on `admin-avatar`; `admin-tag-xs` on `admin-tag-pill` | #28 |
-| 13 | Colour columns in the database | `company_os.tags.color`, `company_os.epics.color` | no rows to inspect | Writers verified on token lists; recorded here; nothing to migrate in this fork | |
+| 13 | Colour columns in the database | `company_os.tags.color`, `company_os.epics.color` | no rows to inspect | Writers verified on token lists; recorded here; nothing to migrate in this fork | #29 |
 
 ## After (close-out, 4 Sep 2026)
 
