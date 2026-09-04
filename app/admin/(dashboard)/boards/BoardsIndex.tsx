@@ -117,8 +117,7 @@ export function BoardsIndex({
               <Link
                 key={b.id}
                 href={`/admin/boards/${b.slug}`}
-                className="admin-card admin-section-card is-clickable"
-                style={{ display: "flex", flexDirection: "column", gap: 0, textDecoration: "none" }}
+                className="admin-card admin-section-card is-clickable admin-board-tile"
               >
                 <div className="u-row u-between">
                   <span className="admin-cell-strong u-lg">
@@ -139,7 +138,7 @@ export function BoardsIndex({
                     {total > 0 && <span>{pct}% done</span>}
                   </div>
                   <div className="admin-meter admin-meter--hairline">
-                    <div className="admin-meter-fill" style={{ width: `${pct}%` }} />
+                    <div className="admin-meter-fill" style={{ width: `${pct}%` }} /* layout-ok: data-driven progress width */ />
                   </div>
                 </div>
                 <div className="u-row u-between u-mt-3">
@@ -230,7 +229,7 @@ export function BoardsIndex({
                         ) : (
                           <span className="u-row">
                             <span className="admin-meter admin-meter--hairline u-inline-block u-w-90">
-                              <span className="admin-meter-fill" style={{ width: `${pct}%`, display: "block" }} />
+                              <span className="admin-meter-fill u-block" style={{ width: `${pct}%` }} /* layout-ok: data-driven progress width */ />
                             </span>
                             <span className="admin-cell-mono">{pct}%</span>
                           </span>

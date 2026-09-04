@@ -287,7 +287,7 @@ export function CampaignHub({
 
         {!editing ? (
           <div className="admin-summary-pills u-mt-4">
-            <span className="admin-pill admin-pill--text" style={{ flex: "1 1 320px" }}>
+            <span className="admin-pill admin-pill--text admin-pill--wide">
               <span className="admin-pill-label">Goal</span>
               <span className="admin-pill-val">{objective || "—"}</span>
             </span>
@@ -646,7 +646,7 @@ function AssetsByChannel({
                   <span className="admin-cell-muted">{lane.length}</span>
                 </div>
                 {lane.length === 0 ? (
-                  <div className="admin-cell-muted" style={{ fontSize: 12, padding: "6px 2px" }}>—</div>
+                  <div className="admin-cell-muted u-sm u-py-1">—</div>
                 ) : (
                   lane.map((a) => (
                     <Link
@@ -806,7 +806,7 @@ function ReportPanel({ report }: { report: CampaignReport }) {
                 .filter((c) => c.channel !== "email")
                 .map((c) => (
                   <div key={c.channel} className="admin-campaign-report-row">
-                    <span style={{ flex: 1, fontSize: 13, textTransform: "capitalize" }}>{c.channel}</span>
+                    <span className="u-grow u-caps">{c.channel}</span>
                     <span className="admin-cell-mono u-sm">
                       {c.published} / {c.total} published
                     </span>

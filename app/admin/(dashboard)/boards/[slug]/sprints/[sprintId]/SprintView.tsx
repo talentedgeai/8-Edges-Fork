@@ -164,7 +164,7 @@ export function SprintView({
           {initials(c.assignee_name)}
         </span>
       )}
-      <span className="admin-cell-muted" style={{ fontSize: 12, width: 52, textAlign: "right" }}>
+      <span className="admin-cell-muted u-sm u-right admin-sprint-ht">
         {c.human_tokens != null ? `${c.human_tokens} HT` : "–"}
       </span>
     </div>
@@ -290,10 +290,10 @@ export function SprintView({
 
       <section className="admin-card u-p-4">
         <h2 className="u-m-0 u-mb-3 u-lg">Plan vs actual</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
+        <div className="u-grid-auto-sm u-gap-4">
           <div>
             <div className="admin-label">Cards</div>
-            <div style={{ fontSize: 22, fontWeight: 700 }}>
+            <div className="admin-stat-value">
               {done.length}
               <span className="admin-cell-muted u-lg u-strong"> / {cards.length} done</span>
             </div>
@@ -301,7 +301,7 @@ export function SprintView({
           </div>
           <div>
             <div className="admin-label">Human Tokens</div>
-            <div style={{ fontSize: 22, fontWeight: 700 }}>
+            <div className="admin-stat-value">
               {doneHT}
               <span className="admin-cell-muted u-lg u-strong"> / {plannedHT} delivered</span>
             </div>

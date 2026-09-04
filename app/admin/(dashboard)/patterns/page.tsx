@@ -454,6 +454,44 @@ export default function PatternsPage() {
           </div>
         </Section>
 
+        {/* ─── Record page pieces ─────────────────────── */}
+        <Section title="Record page pieces" sub="Classes added while moving the last inline styles off the record pages. Compose them; do not add new ones for the same job.">
+          <div className="u-stack u-gap-4">
+            <div>
+              <div className="admin-money-lg">$12,400</div>
+              <div className="admin-cell-muted u-sm u-mt-1 u-tabular">.admin-money-lg · deal value</div>
+            </div>
+            <div className="u-grid-auto-sm u-gap-4">
+              <div>
+                <div className="admin-label">Cards</div>
+                <div className="admin-stat-value">7<span className="admin-cell-muted u-lg u-strong"> / 12 done</span></div>
+              </div>
+              <div>
+                <div className="admin-label">Access code</div>
+                <code className="admin-cell-mono admin-access-code">RTR-2026</code>
+              </div>
+            </div>
+            <div className="u-row u-gap-3">
+              <div className="u-w-160">Host</div>
+              <div className="admin-meter u-grow"><div className="admin-meter-fill u-w-120" /></div>
+              <div className="u-w-160">Guest</div>
+              <div className="admin-meter u-grow"><div className="admin-meter-fill admin-meter-fill--muted u-w-90" /></div>
+            </div>
+            <div className="admin-transcript-seg">.admin-transcript-seg keeps line breaks and wraps long words in transcripts.</div>
+            <div className="admin-summary-pills">
+              <span className="admin-pill admin-pill--text admin-pill--wide"><span className="admin-pill-label">Goal</span><span className="admin-pill-val">.admin-pill--wide grows to fill the row</span></span>
+            </div>
+            <div className="u-row u-gap-3">
+              <span className="admin-cell-muted u-sm u-right admin-sprint-ht">12 HT</span>
+              <span className="u-sm u-muted">.admin-sprint-ht · fixed 52px token column</span>
+            </div>
+            <a href="#" className="admin-card admin-section-card is-clickable admin-board-tile u-max-sm">
+              <span className="admin-cell-strong u-lg">.admin-board-tile</span>
+              <span className="u-sm u-muted">A card that is a link: column flow, no underline.</span>
+            </a>
+          </div>
+        </Section>
+
         {/* ─── Empty state ────────────────────────────── */}
         <Section title="Empty state">
           <div className="admin-table-wrap">

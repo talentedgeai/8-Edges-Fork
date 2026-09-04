@@ -5098,3 +5098,12 @@ a.admin-avatar:hover { box-shadow: 0 0 0 3px var(--admin-accent-soft), 0 0 0 1.5
 .admin-roadmap .admin-roadmap-chip { font-size:11px; font-weight:600; color:var(--color-text-body); border:1px solid var(--color-bg-secondary); border-radius:99px; padding:2px 8px; }
 .admin-roadmap .admin-roadmap-chip.tok { color:var(--color-primary-blue); border-color:color-mix(in srgb, var(--color-primary-blue) 15%, transparent); background:color-mix(in srgb, var(--color-primary-blue) 8%, transparent); }
 .admin-roadmap .admin-roadmap-chip.client { color:var(--color-ok-ink); border-color:color-mix(in srgb, var(--color-ok-ink) 25%, transparent); background:color-mix(in srgb, var(--color-ok-ink) 10%, transparent); }
+
+/* ─── Core record leftovers (8-Edges-Fork surface pass 1) ───────────────── */
+.admin-board-tile { display: flex; flex-direction: column; gap: 0; text-decoration: none; }
+.admin-sprint-ht { width: 52px; }
+.admin-stat-value { font-size: var(--admin-text-title); font-weight: 700; }
+.admin-access-code { font-size: 20px; font-weight: 700; }
+.admin-meter-fill--muted { background: var(--admin-muted); }
+.admin-transcript-seg { font-size: var(--admin-text-base); white-space: pre-wrap; word-break: break-word; }
+.admin-pill--wide { flex: 1 1 320px; }
