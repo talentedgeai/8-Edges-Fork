@@ -48,22 +48,22 @@ export default async function PortalRequestsPage() {
 
       {canCreate && (<>
       <h2 className="admin-section-label u-mt-0">Start a request</h2>
-      <div className="admin-kpi-grid admin-kpi-grid--2up" style={{ marginBottom: 20, gridAutoRows: "1fr" }}>
+      <div className="admin-kpi-grid admin-kpi-grid--2up u-mb-5 u-rows-equal">
         <div className="admin-card admin-section-card u-stack">
           <h2 className="admin-card-title u-mb-2">General request</h2>
-          <p className="admin-page-sub" style={{ margin: 0, minHeight: 40 }}>
+          <p className="admin-page-sub u-m-0 u-minh-40">
             Not sure who you need? Describe it and the Edge8 team will pick it up.
           </p>
-          <div style={{ marginTop: "auto", paddingTop: 16 }}>
+          <div className="admin-card-foot">
             <GeneralRequest />
           </div>
         </div>
         <div className="admin-card admin-section-card u-stack">
           <h2 className="admin-card-title u-mb-2">Project for a contractor</h2>
-          <p className="admin-page-sub" style={{ margin: 0, minHeight: 40 }}>
+          <p className="admin-page-sub u-m-0 u-minh-40">
             Brief a contractor directly. They estimate the hours, you approve, work starts.
           </p>
-          <div style={{ marginTop: "auto", paddingTop: 16 }}>
+          <div className="admin-card-foot">
             <Link href="/portal/requests/new" className="admin-btn admin-btn--primary">
               New project request
             </Link>
@@ -71,12 +71,12 @@ export default async function PortalRequestsPage() {
         </div>
         <div className="admin-card admin-section-card u-stack">
           <h2 className="admin-card-title u-mb-2">Human tokens</h2>
-          <p className="admin-page-sub" style={{ margin: 0, minHeight: 40 }}>
+          <p className="admin-page-sub u-m-0 u-minh-40">
             {tokens.balanceTokens > 0
               ? `You have ${tokens.balanceTokens} tokens (1 token = 1 hour of skilled work).`
               : "Pre-buy packs of skilled hours: 40 tokens per pack, $2,000."}
           </p>
-          <div style={{ marginTop: "auto", paddingTop: 16 }}>
+          <div className="admin-card-foot">
             <Link href="/portal/tokens" className="admin-btn admin-btn--primary">
               {tokens.balanceTokens > 0 ? "View & buy tokens" : "Buy token packs"}
             </Link>
@@ -84,10 +84,10 @@ export default async function PortalRequestsPage() {
         </div>
         <div className="admin-card admin-section-card u-stack">
           <h2 className="admin-card-title u-mb-2">Build Your Team</h2>
-          <p className="admin-page-sub" style={{ margin: 0, minHeight: 40 }}>
+          <p className="admin-page-sub u-m-0 u-minh-40">
             Hire dedicated full-time team members in Vietnam. 10% off for teams of 3 or more.
           </p>
-          <div style={{ marginTop: "auto", paddingTop: 16 }}>
+          <div className="admin-card-foot">
             <Link href="/portal/requests/hire" className="admin-btn admin-btn--primary">
               Build your team
             </Link>
@@ -95,10 +95,10 @@ export default async function PortalRequestsPage() {
         </div>
         <div className="admin-card admin-section-card u-stack">
           <h2 className="admin-card-title u-mb-2">Add AI Program Plan</h2>
-          <p className="admin-page-sub" style={{ margin: 0, minHeight: 40 }}>
+          <p className="admin-page-sub u-m-0 u-minh-40">
             Plan an AI program: upload your documents, or build a 5Ds AI Program Brief with our guided assistant.
           </p>
-          <div style={{ marginTop: "auto", paddingTop: 16 }}>
+          <div className="admin-card-foot">
             <Link href="/portal/programs/add" className="admin-btn admin-btn--primary">
               Add AI Program Plan
             </Link>

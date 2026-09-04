@@ -84,7 +84,7 @@ export function ProposeAssist({ onDraft }: { onDraft: (draft: RoadmapDraft) => v
         </p>
       )}
       {messages.length > 0 && (
-        <div ref={scrollRef} style={{ maxHeight: 180, overflowY: "auto", display: "grid", gap: 6, marginBottom: 8 }}>
+        <div ref={scrollRef} className="admin-scroll-sm u-stack u-gap-2 u-mb-2">
           {messages.map((m, i) => (
             <div
               key={i}

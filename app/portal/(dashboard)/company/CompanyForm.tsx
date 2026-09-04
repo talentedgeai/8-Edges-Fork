@@ -65,7 +65,7 @@ export function CompanyForm({ initial }: { initial: CompanyProfileView }) {
           </p>
         )}
 
-        <div style={{ display: "grid", gap: 12, gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))" }}>
+        <div className="u-grid-auto-sm">
           <Field label="Company name">
             <input className="admin-input" value={v.name} onChange={set("name")} disabled={pending} />
           </Field>
