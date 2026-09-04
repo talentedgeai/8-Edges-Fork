@@ -1,0 +1,154 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import {
+  BACKLOG_STATUSES,
+  PRIORITY_LABEL,
+  effectivePriority,
+  tokenLabel,
+  type BacklogItem,
+  type BacklogStatus,
+} from "@/lib/client-backlog";
+import { teamUpdateRoadmapItem } from "./actions";
+
+// One roadmap item on the hub's Roadmap tab: the same read view the client
+// sees, plus team-only controls — a status select and an inline editor for
+// title / who / today / build description. The server action re-checks the
+// actor's assignment and whitelists fields; this is presentation only.
+
+const STATUS_LABEL: Record<BacklogStatus, string> = {
+  proposed: "Proposed",
+  accepted: "Accepted",
+  active: "Active",
+  shipped: "Shipped",
+  parked: "Parked",
+};
+
+export function RoadmapItemCard({ item, companyId }: { item: BacklogItem; companyId: string }) {
+  const router = useRouter();
+  const [editing, setEditing] = useState(false);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [title, setTitle] = useState(item.title);
+  const [who, setWho] = useState(item.who ?? "");
+  const [todayState, setTodayState] = useState(item.today_state ?? "");
+  const [buildDesc, setBuildDesc] = useState(item.build_desc ?? "");
+
+  const eff = effectivePriority(item);
+  const tok = tokenLabel(item.token_low, item.token_high);
+
+  async function setStatus(status: BacklogStatus) {
+    setError(null);
+    setBusy(true);
+    const r = await teamUpdateRoadmapItem(companyId, item.id, { status });
+    setBusy(false);
+    if (!r.ok) {
+      setError(r.error);
+      return;
+    }
+    router.refresh();
+  }
+
+  async function save() {
+    setError(null);
+    setBusy(true);
+    const r = await teamUpdateRoadmapItem(companyId, item.id, {
+      title,
+      who,
+      today_state: todayState,
+      build_desc: buildDesc,
+    });
+    setBusy(false);
+    if (!r.ok) {
+      setError(r.error);
+      return;
+    }
+    setEditing(false);
+    router.refresh();
+  }
+
+  return (
+    <div className="tcr-item">
+      <div className="tcr-item-top">
+        {item.ref && <span className="tcr-ref">{item.ref}</span>}
+        {editing ? (
+          <input
+            className="admin-input"
+            style={{ flex: "1 1 220px", fontSize: 14 }}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            aria-label="Title"
+          />
+        ) : (
+          <span className="tcr-title">{item.title}</span>
+        )}
+        <span className={`tcr-pri ${eff}`}>{PRIORITY_LABEL[eff]}</span>
+        <select
+          className="admin-select"
+          style={{ width: "auto", fontSize: 12, flex: "none" }}
+          value={item.status}
+          disabled={busy}
+          onChange={(e) => setStatus(e.target.value as BacklogStatus)}
+          aria-label="Status"
+        >
+          {BACKLOG_STATUSES.map((s) => (
+            <option key={s} value={s}>{STATUS_LABEL[s]}</option>
+          ))}
+        </select>
+        <button
+          type="button"
+          className="admin-btn admin-btn--sm"
+          disabled={busy}
+          onClick={() => {
+            if (editing) {
+              setTitle(item.title);
+              setWho(item.who ?? "");
+              setTodayState(item.today_state ?? "");
+              setBuildDesc(item.build_desc ?? "");
+            }
+            setEditing(!editing);
+          }}
+        >
+          {editing ? "Cancel" : "Edit"}
+        </button>
+      </div>
+      {editing ? (
+        <div className="tcr-body u-stack">
+          <label className="admin-label">
+            Who
+            <input className="admin-input" value={who} onChange={(e) => setWho(e.target.value)} />
+          </label>
+          <label className="admin-label">
+            Today
+            <textarea className="admin-input" rows={2} value={todayState} onChange={(e) => setTodayState(e.target.value)} />
+          </label>
+          <label className="admin-label">
+            What we&apos;d build
+            <textarea className="admin-input" rows={3} value={buildDesc} onChange={(e) => setBuildDesc(e.target.value)} />
+          </label>
+          <div>
+            <button type="button" className="admin-btn admin-btn--primary admin-btn--sm" disabled={busy} onClick={save}>
+              {busy ? "Saving…" : "Save"}
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="tcr-body">
+          {item.who && <div><span className="k">Who: </span>{item.who}</div>}
+          {item.today_state && <div><span className="k">Today: </span>{item.today_state}</div>}
+          {item.build_desc && <div><span className="k">What we&apos;d build: </span>{item.build_desc}</div>}
+          <div className="tcr-chips">
+            {(item.needs ?? []).map((n) => <span key={n} className="tcr-chip">{n}</span>)}
+            {tok && <span className="tcr-chip tok">est. {tok} Human Tokens</span>}
+            {item.source === "client" && <span className="tcr-chip client">client proposed</span>}
+            {item.client_priority && item.client_priority !== item.edge8_priority && (
+              <span className="tcr-chip client">client set: {PRIORITY_LABEL[item.client_priority]}</span>
+            )}
+          </div>
+        </div>
+      )}
+      {error && <div className="admin-alert admin-alert--err u-mt-2">{error}</div>}
+    </div>
+  );
+}

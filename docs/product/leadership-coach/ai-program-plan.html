@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Program Plan v2 — The Leadership Coach in the Company OS</title>
+<style>
+  :root {
+    --navy: #10243e;
+    --navy-soft: #33455f;
+    --ink: #1c2b3a;
+    --muted: #5b6b7d;
+    --line: #dde4ec;
+    --bg: #f7f9fb;
+    --card: #ffffff;
+    --accent: #0e7490;
+    --amber: #b45309;
+    --green: #15803d;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 40px 20px;
+    font-family: "DM Sans", -apple-system, "Segoe UI", sans-serif;
+    background: var(--bg); color: var(--ink);
+    font-size: 15px; line-height: 1.6;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; }
+  header.doc { border-bottom: 3px solid var(--navy); padding-bottom: 18px; margin-bottom: 28px; }
+  h1 { font-size: 26px; color: var(--navy); margin: 0 0 6px; line-height: 1.25; }
+  .meta { color: var(--muted); font-size: 13.5px; }
+  .meta strong { color: var(--ink); }
+  h2 {
+    font-size: 19px; color: var(--navy); margin: 36px 0 12px;
+    padding-top: 8px; border-top: 1px solid var(--line);
+  }
+  h2 .d { display: inline-block; background: var(--navy); color: #fff; border-radius: 6px;
+    font-size: 12px; padding: 2px 8px; margin-right: 8px; vertical-align: 2px; letter-spacing: .04em; }
+  h3 { font-size: 15.5px; color: var(--navy-soft); margin: 22px 0 8px; }
+  p { margin: 10px 0; }
+  ul { margin: 8px 0 12px; padding-left: 22px; }
+  li { margin: 4px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 14px 0 18px; font-size: 13.5px; background: var(--card); }
+  th { background: var(--navy); color: #fff; text-align: left; padding: 8px 10px; font-weight: 600; }
+  td { border: 1px solid var(--line); padding: 7px 10px; vertical-align: top; }
+  tr:nth-child(even) td { background: #fbfcfe; }
+  .tablewrap { overflow-x: auto; }
+  code { font-family: "JetBrains Mono", ui-monospace, monospace; font-size: 12.5px;
+    background: #eef2f7; border-radius: 4px; padding: 1px 5px; color: var(--navy); }
+  .callout {
+    background: var(--card); border-left: 4px solid var(--accent); border-radius: 6px;
+    padding: 12px 16px; margin: 16px 0; box-shadow: 0 1px 3px rgba(16,36,62,.06);
+  }
+  .callout.rule { border-left-color: var(--amber); }
+  .pill { display: inline-block; font-size: 11.5px; font-weight: 600; border-radius: 999px;
+    padding: 1px 9px; margin-left: 4px; vertical-align: 1px; }
+  .pill.live { background: #dcfce7; color: var(--green); }
+  .pill.build { background: #fef3c7; color: var(--amber); }
+  .pill.you { background: #e0e7ff; color: #4338ca; }
+  .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+  .tier { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
+  .tier h4 { margin: 0 0 8px; font-size: 14px; color: var(--navy); }
+  .tier ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
+  @media (max-width: 640px) { .tiers { grid-template-columns: 1fr; } }
+  footer { margin-top: 40px; padding-top: 14px; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 12.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="doc">
+  <h1>AI Program Plan v2 — The Leadership Coach in the Company OS</h1>
+  <div class="meta">
+    <strong>Owner:</strong> Dave Hajdu &nbsp;·&nbsp; <strong>Date:</strong> 2026-08-10 &nbsp;·&nbsp;
+    <strong>Framework:</strong> the 5 Ds of AI program planning (A01: Define, Discover, Design, Determine, Deploy)<br>
+    <strong>Status:</strong> design approved, build starting &nbsp;·&nbsp;
+    <strong>Replaces:</strong> v1 (Lark as system of record + local routines). Lark stays as the
+    messaging channel and transcript source; it retires as the system of record
+  </div>
+</header>
+
+<p>The Leadership Coach v1 proved the workflow: AI preps every biweekly 1-1 to my method, logs every
+commitment, reads retention risk, and holds me to coaching instead of telling. v2 moves the whole
+system into the company OS: <strong>Supabase is the system of record, the Team portal is the
+interface</strong>, and the two-tier privacy model is enforced by code instead of discipline.</p>
+
+<div class="callout rule">
+<strong>The rule above the whole plan, unchanged from v1:</strong> the coach preps and drafts, I decide.
+It never tells me to promote, manage out, rank, or label a person. It surfaces the signal and proposes
+the move. I coach the team.</div>
+
+<h2><span class="d">1D</span>Define the problem</h2>
+<p>The v1 problem stands: I lead five people, and my 1-1s are only as good as my prep and my memory.
+v2 adds two problems v1 could not solve:</p>
+<ul>
+  <li><strong>Privacy by access control, not discipline.</strong> In Lark, who sees a private coaching
+  read vs. a shared recap was a matter of care. In the company OS, the private coach layer and the
+  person-facing layer are separate columns with separate query scopes. Mixing them is a code bug, not
+  a human slip.</li>
+  <li><strong>A system any coach can run.</strong> The coaching relationship is explicit
+  (<code>coach_id</code>, independent of <code>manager_id</code>, dotted lines supported). Today the
+  roster is mine; the model already works for Mai coaching her team next.</li>
+</ul>
+<p><strong>Success looks like:</strong> every report has current FAST goals laddered to a company OKR
+or KPI; every 1-1 is prepped, held, and logged in the portal; retention risk is named early; my
+coach / mentor / direct split moves toward 80 / 15 / 5; Lark and the laptop routines are fully
+retired.</p>
+
+<h2><span class="d">2D</span>Discover the data</h2>
+<p>Everything the coach reads now lives in <code>company_os</code> on Supabase. The coach never
+invents facts about people; thin reads are marked low-confidence, and an unset goal says so.</p>
+
+<div class="tablewrap"><table>
+<tr><th>Input</th><th>Where it lives</th><th>Status</th></tr>
+<tr><td>Foundation docs (leadership brand, EQ guide, communication style, operating system, company context)</td>
+    <td><code>coaching_context</code></td><td>Seeded (6 docs) <span class="pill live">live</span></td></tr>
+<tr><td>2026 Company OKRs (O1 thought leader, O2 high-performing team, O3 client ROI)</td>
+    <td><code>objectives</code> → <code>key_results</code> → <code>metrics</code></td>
+    <td>Scaffolding exists, seeding from the Lark dashboard <span class="pill build">build</span></td></tr>
+<tr><td>OCEAN profiles (5 dimensions, evidence, snapshot, growth guidance)</td>
+    <td>New structured table (see Design)</td><td>Migrating from markdown <span class="pill build">build</span></td></tr>
+<tr><td>FAST goals, priorities, KPIs per person</td>
+    <td>New <code>coaching_goals</code> + <code>coaching_priorities</code>; KPIs are <code>metrics</code> rows owned by the person</td>
+    <td><span class="pill build">build</span></td></tr>
+<tr><td>1-1 history: preps, transcripts, private summaries, shared recaps</td>
+    <td><code>coaching_one_on_ones</code></td><td>7 meetings imported; last 2 weeks importing from <code>lark-backup/</code> <span class="pill build">build</span></td></tr>
+<tr><td>Commitments log</td><td><code>coaching_commitments</code></td>
+    <td>Importing from the Lark accountability tables <span class="pill build">build</span></td></tr>
+<tr><td>Retention read (loose engagement root: fit / links / sacrifice)</td>
+    <td>New field on <code>coaching_profiles</code></td><td><span class="pill build">build</span></td></tr>
+<tr><td>Transcripts source</td><td>Lark Minutes, auto-detected: the cron polls for new Minutes and matches
+    them to scheduled 1-1s by date + participants, then pulls the transcript via the Lark API.
+    Fallback: paste a Minutes link or raw text on the Log 1-1 form</td>
+    <td><span class="pill build">build</span></td></tr>
+</table></div>
+
+<h2><span class="d">3D</span>Design the workflow</h2>
+
+<h3>The concept model: goals vs. priorities vs. KPIs</h3>
+<div class="tablewrap"><table>
+<tr><th>Concept</th><th>Horizon</th><th>What it is</th><th>Who sees it</th></tr>
+<tr><td><strong>FAST Goals</strong> (1 or more)</td><td>Quarter</td>
+    <td>What the person is driving this quarter. Frequent, Ambitious, Specific, Transparent. Each goal
+    optionally ladders to an objective, a key result, or a KPI metric — at whichever altitude fits.</td>
+    <td><strong>The whole team.</strong> Transparent is the T in FAST.</td></tr>
+<tr><td><strong>Priorities</strong></td><td>Week to week</td>
+    <td>Standing focus items we look at in every 1-1 (P1, P2...). The working agenda between goals
+    and the day-to-day.</td>
+    <td>Coach + member.</td></tr>
+<tr><td><strong>KPIs</strong></td><td>Continuous</td>
+    <td>Numbers the person owns (days-to-hire ≤ 20, monthly forecast accuracy). A <code>metrics</code>
+    row with target, direction, and readings over time — so a goal or priority linked to one shows
+    live progress automatically.</td>
+    <td>Coach + member (rollups visible where the metric is used).</td></tr>
+<tr><td><strong>Commitments</strong></td><td>Cycle to cycle</td>
+    <td>What was agreed in the 1-1, who owns it, by when. Always "commitments," never tasks.</td>
+    <td>Coach + member; member updates status + note.</td></tr>
+</table></div>
+
+<h3>The OCEAN profile</h3>
+<ul>
+  <li>Structured: five dimensions, each with a rating and behavioral evidence, plus a personality
+  snapshot and growth guidance.</li>
+  <li><strong>Coach-authored, member-readable.</strong> Each person sees their own full profile,
+  including the guidance, rewritten in second person so it reads as growth coaching. No comments in
+  the app; the profile is a standing 1-1 topic.</li>
+  <li>Reviewed by me before any profile goes member-visible.</li>
+</ul>
+
+<h3>The biweekly cycle (unchanged from v1, now run by the portal)</h3>
+<div class="tablewrap"><table>
+<tr><th>#</th><th>Step</th><th>When</th><th>Actor</th></tr>
+<tr><td>01</td><td>AI prep: GROW openers led by the goal question, mode to use, one thing to listen
+  for, retention check, one question to avoid</td><td>Days before the 1-1</td><td>AI (cron)</td></tr>
+<tr><td>02</td><td>The 1-1 (GROW, mode chosen deliberately: coach / mentor / direct, target 80/15/5)</td>
+  <td>Anchor day</td><td><strong>Human — the only human step</strong></td></tr>
+<tr><td>03</td><td>Recap: transcript auto-pulled from Lark Minutes → private summary + shared recap +
+  extracted commitments + mode split estimate. I review and edit both tiers; the shared tier
+  publishes only when I save it.</td>
+  <td>Right after</td><td>AI + my review</td></tr>
+<tr><td>04</td><td>Mid-cycle check-in: warm nudge on each open commitment, emailed with a portal link</td>
+  <td>Off-week</td><td>System</td></tr>
+<tr><td>05</td><td>Trend analysis: growth trajectory, recurring themes, follow-through, coaching
+  opportunities, flags</td><td>Monthly</td><td>AI (cron)</td></tr>
+</table></div>
+
+<h3>Two audiences, never mixed</h3>
+<div class="tiers">
+  <div class="tier">
+    <h4>Private coach layer — /team/coaching</h4>
+    <ul>
+      <li>Roster dashboard: last → next 1-1, mode split, top priority, retention root, attention flags</li>
+      <li>Per person: prep, transcript, private summary, retention read, trend reports</li>
+      <li>Log a 1-1, generate prep, run trends on demand</li>
+    </ul>
+  </div>
+  <div class="tier">
+    <h4>Person-facing layer — /team/my-coaching</h4>
+    <ul>
+      <li>Their FAST goals, priorities, KPIs, and OCEAN profile (read-only)</li>
+      <li>Open commitments — they update status and notes</li>
+      <li>Shared recaps and check-in history</li>
+    </ul>
+  </div>
+</div>
+
+<div class="tablewrap"><table>
+<tr><th>Data</th><th>Coach</th><th>Member</th><th>Whole team</th><th>AI assistants</th></tr>
+<tr><td>FAST goals (title, status, ladder)</td><td>RW</td><td>R</td><td><strong>R</strong></td><td>—</td></tr>
+<tr><td>Priorities, KPIs, cadence</td><td>RW</td><td>R</td><td>—</td><td>—</td></tr>
+<tr><td>OCEAN profile</td><td>RW</td><td>R (own)</td><td>—</td><td>—</td></tr>
+<tr><td>Commitments</td><td>RW</td><td>RW (status + note)</td><td>—</td><td>—</td></tr>
+<tr><td>Shared recaps, check-ins</td><td>RW</td><td>R</td><td>—</td><td>—</td></tr>
+<tr><td>Prep, transcript, private summary, mode split</td><td>RW</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Retention read, trend reports</td><td>RW</td><td>—</td><td>—</td><td>—</td></tr>
+</table></div>
+
+<p><strong>Assistant lockout:</strong> none of the coaching tables are readable by the admin NL→SQL
+assistant or the team chat bot — the same treatment as <code>people_sensitive</code>. Private coaching
+data never transits an assistant.</p>
+
+<h2><span class="d">4D</span>Determine the ROI</h2>
+<ul>
+  <li><strong>Leverage.</strong> Roughly an hour of prep + recap per person per cycle, about 5 hours
+  a cycle, ~130 hours a year handed back, against a small per-cycle token cost.</li>
+  <li><strong>Retention.</strong> The coach reads the three embeddedness roots (fit, links,
+  sacrifice) and names the thinnest one early. Keeping one senior person who would otherwise drift
+  out pays for the build many times over.</li>
+  <li><strong>Development that ladders.</strong> Every FAST goal ties to a 2026 KR or KPI. Coaching
+  that moves FAST goals moves company KRs — and O2-KR1 ("100% of the team has a FAST goal, reviewed
+  each cycle") is met by this system existing.</li>
+  <li><strong>My own growth, measured.</strong> Mode split per 1-1, logged in the database: baseline
+  15/45/40 → last Lark cycle 60/20/20 → target 80/15/5. Now trendable in SQL.</li>
+  <li><strong>New in v2:</strong> zero laptop dependency (cron runs in the cloud whether or not my
+  Mac is open), enforced privacy, and a coaching system the next coach inherits for free.</li>
+</ul>
+
+<h2><span class="d">5D</span>Deploy to production</h2>
+
+<h3>Runtime</h3>
+<ul>
+  <li><strong>System of record:</strong> Supabase <code>company_os</code> (six coaching tables live,
+  three additions in this build).</li>
+  <li><strong>Interface:</strong> the Team portal. Coach at <code>/team/coaching</code>, member at
+  <code>/team/my-coaching</code>, goals transparent on team profiles.</li>
+  <li><strong>Scheduler:</strong> daily Vercel cron at 07:45 Saigon — prep nudges, overdue-1-1 flags,
+  mid-cycle check-ins, monthly trends, Minutes auto-detection. Every nudge goes out as a Lark DM
+  and a Resend email.</li>
+  <li><strong>AI:</strong> Claude Opus for prep, recap, and trends (coaching nuance justifies the
+  tier). Every call fail-soft; errors land on the row, never block the workflow.</li>
+</ul>
+
+<h3>Tools and integrations</h3>
+<div class="tablewrap"><table>
+<tr><th>Tool</th><th>Role in the system</th><th>Wiring</th></tr>
+<tr><td><strong>Lark — messaging</strong></td>
+    <td>All nudges go as Lark DMs: prep-ready to the coach, mid-cycle check-in to the member,
+    overdue-1-1 flags. Same message also sent by email so nothing is missed. Links land on the portal.</td>
+    <td>Lark bot (app credentials) called from the cron; <code>LARK_APP_ID</code> /
+    <code>LARK_APP_SECRET</code> in Vercel env</td></tr>
+<tr><td><strong>Lark — Minutes</strong></td>
+    <td>Transcript source. The cron auto-detects new Minutes, matches them to scheduled 1-1s by
+    date + participants, pulls the transcript, and drafts the recap for my review. Fallback: paste a
+    Minutes link or raw text on the Log 1-1 form.</td>
+    <td>Lark Minutes API via the same app credentials</td></tr>
+<tr><td><strong>Resend — email</strong></td>
+    <td>Email twin of every Lark nudge, via the existing transactional sender
+    (<code>logMeta.source: "coaching-cycle"</code>).</td>
+    <td>Already live in the app</td></tr>
+<tr><td><strong>Eight Edges</strong></td>
+    <td>The goal tree FAST goals ladder into. A coaching goal's "Ladders to O1-KR1" is a real FK to
+    <code>objectives</code> / <code>key_results</code> / <code>metrics</code>; metric-linked goals show
+    live weekly readings in the 1-1 view; and the FAST health chips on
+    <code>/admin/edges/goals</code> read <code>coaching_goals</code> directly, so O2-KR1
+    ("100% of the team has a FAST goal") is measured, not asserted. Personal KPIs are Edges
+    metrics owned by the person.</td>
+    <td>Shipped last week (PRs #486–#496); FKs + one chip query</td></tr>
+<tr><td><strong>Claude API</strong></td>
+    <td>Prep, recap, trends. Opus tier; fail-soft on every call.</td>
+    <td><code>ANTHROPIC_API_KEY</code> in Vercel (verify), optional <code>COACHING_CLAUDE_MODEL</code></td></tr>
+</table></div>
+
+<h3>Guardrails, always on</h3>
+<ul>
+  <li>The coach preps and drafts; I decide. Never a promote / manage-out / rank / label recommendation.</li>
+  <li>Private and person-facing never mix; the shared recap publishes only after my review.</li>
+  <li>No permanent people decisions during an emotional spike.</li>
+  <li>Every claim points to a behavior in the data. Thin reads say low-confidence. TBD is never fabricated.</li>
+</ul>
+
+<h3>Migration and retirement</h3>
+<div class="tablewrap"><table>
+<tr><th>Step</th><th>What</th><th>Who</th></tr>
+<tr><td>1</td><td>Resume the existing build (branch <code>my-team-1-1-coach</code>), merge main, verify against the live schema</td><td>Claude</td></tr>
+<tr><td>2</td><td>Schema additions: <code>coaching_goals</code>, <code>coaching_priorities</code>, structured OCEAN, mode split, retention root; seed OKRs → KRs → metrics</td><td>Claude</td></tr>
+<tr><td>3</td><td>Import <code>lark-backup/</code>: sessions, recaps, commitments, OCEAN reads, dashboard state.
+  Roster: <strong>Mai, Khoa, Quan, My Pham</strong> active; Ginny (now a contractor, no 1-1s) and Trac
+  (departed) deactivated with history retained</td><td>Claude</td></tr>
+<tr><td>4</td><td>UI + AI updates; verify with <code>tsc</code> + <code>next build</code>; batch PR</td><td>Claude</td></tr>
+<tr><td>5</td><td>Review OCEAN rewrites + merge the PR <span class="pill you">Dave</span></td><td>Dave</td></tr>
+<tr><td>6</td><td>Kill the local scheduled routines (biweekly prep, recap sweep)</td><td>Dave + Claude</td></tr>
+<tr><td>7</td><td>Retire the Lark coaching wiki + Base as system of record (archive, stop writes).
+  Lark itself stays for DMs and Minutes</td><td>Dave</td></tr>
+</table></div>
+
+<footer>
+AI Program Plan v2 · The Leadership Coach · Edge8 company OS · 2026-08-10 ·
+Framed on the A01 5 Ds: Define, Discover, Design, Determine, Deploy.
+</footer>
+
+</div>
+</body>
+</html>

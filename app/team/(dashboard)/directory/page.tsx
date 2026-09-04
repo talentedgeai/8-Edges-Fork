@@ -1,0 +1,31 @@
+import { requireTeamMember } from "@/lib/team-auth";
+import { getDirectory } from "@/lib/team/data";
+import { PageHead } from "@/components/admin/PageHead";
+import { DirectoryTable } from "@/components/team/DirectoryTable";
+
+export const dynamic = "force-dynamic";
+
+export const metadata = {
+  title: "Directory",
+  description: "Who's who at Edge8: roles, departments, and reporting lines.",
+};
+
+// /team/directory — read-only, company-visible roster. getDirectory() returns a
+// FIXED safe column list (names/roles only — no contact details, and never the
+// team_directory view, which carries leave balances). Search, sort, and the
+// department/manager filters all run client-side over this small set.
+export default async function TeamDirectoryPage() {
+  await requireTeamMember();
+  const entries = await getDirectory();
+
+  return (
+    <>
+      <PageHead eyebrow="Me" title="Directory" sub="Who's who at Edge8" />
+      {entries.length === 0 ? (
+        <div className="admin-empty">No team members found.</div>
+      ) : (
+        <DirectoryTable entries={entries} />
+      )}
+    </>
+  );
+}

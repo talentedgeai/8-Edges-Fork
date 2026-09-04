@@ -1,0 +1,24 @@
+{
+  "name": "edge8-video-rig",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Recording rig for the 8 Edges demo video series: Playwright capture, ElevenLabs voiceover, ffmpeg assembly.",
+  "scripts": {
+    "install:browser": "playwright install chromium",
+    "voices": "node scripts/voice.mjs list",
+    "audition": "node scripts/voice.mjs audition",
+    "vo": "node scripts/voice.mjs render",
+    "capture": "playwright test specs/episode.spec.ts",
+    "cards": "playwright test specs/cards.spec.ts",
+    "captions": "node scripts/captions.mjs",
+    "qc": "node scripts/qc.mjs",
+    "assemble": "node scripts/assemble.mjs",
+    "render": "node scripts/render.mjs",
+    "shots": "playwright test specs/shots.spec.ts",
+    "previz": "node scripts/previz.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "regions": [
+    "sin1"
+  ],
+  "crons": [
+    {
+      "path": "/api/trip-passport-cleanup/",
+      "schedule": "0 3 * * *"
+    },
+    {
+      "path": "/api/cron/contractor-payments/",
+      "schedule": "0 6 1 * *"
+    },
+    {
+      "path": "/api/cron/probation-reviews/",
+      "schedule": "0 7 * * *"
+    },
+    {
+      "path": "/api/cron/performance-reviews/",
+      "schedule": "0 8 * * *"
+    },
+    {
+      "path": "/api/cron/onboarding-cycle/",
+      "schedule": "30 7 * * *"
+    },
+    {
+      "path": "/api/cron/coaching-cycle/",
+      "schedule": "45 0 * * *"
+    },
+    {
+      "path": "/api/cron/coaching-recaps/",
+      "schedule": "25 * * * *"
+    },
+    {
+      "path": "/api/cron/qbo-refresh/",
+      "schedule": "0 5 * * 1"
+    },
+    {
+      "path": "/api/cron/qbo-invoice-sync/",
+      "schedule": "30 5 * * 1"
+    },
+    {
+      "path": "/api/cron/ideas-digest/",
+      "schedule": "0 1 * * *"
+    },
+    {
+      "path": "/api/cron/board-digest/",
+      "schedule": "15 1 * * *"
+    },
+    {
+      "path": "/api/cron/email-campaign-send/",
+      "schedule": "*/15 * * * *"
+    },
+    {
+      "path": "/api/cron/marketing-digest/",
+      "schedule": "0 2 * * *"
+    },
+    {
+      "path": "/api/cron/blog-publish/",
+      "schedule": "0 4 * * *"
+    },
+    {
+      "path": "/api/cron/idea-trends/",
+      "schedule": "0 3 * * 1"
+    },
+    {
+      "path": "/api/cron/htt-sync-prs/",
+      "schedule": "10 2 * * *"
+    },
+    {
+      "path": "/api/cron/htt-ingest-effort-logs/",
+      "schedule": "10 3 * * *"
+    },
+    {
+      "path": "/api/cron/htt-refresh-summaries/",
+      "schedule": "10 4 * * *"
+    }
+  ],
+  "git": {
+    "deploymentEnabled": {
+      "telemetry": false
+    }
+  },
+  "redirects": [
+    {
+      "source": "/workflows/one-on-one",
+      "destination": "/workflows/one-on-one-coaching",
+      "permanent": true
+    },
+    {
+      "source": "/workflows/one-on-one/",
+      "destination": "/workflows/one-on-one-coaching/",
+      "permanent": true
+    },
+    {
+      "source": "/workflows/onboarding-plans",
+      "destination": "/workflows/edge8-onboarding-cycle",
+      "permanent": true
+    },
+    {
+      "source": "/workflows/onboarding-plans/",
+      "destination": "/workflows/edge8-onboarding-cycle/",
+      "permanent": true
+    },
+    {
+      "source": "/ai-capabilities-audit",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/ai-capabilities-audit/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/proposals/shopify-engine-research.html",
+      "destination": "/proposals/arca-wellness-proposal-2026-06-26.html",
+      "permanent": true
+    },
+    {
+      "source": "/proposals/rentwest-how-it-works.html",
+      "destination": "/proposals/national-housing-how-it-works.html",
+      "permanent": true
+    }
+  ]
+}

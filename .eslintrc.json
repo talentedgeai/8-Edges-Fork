@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "extends": ["next/core-web-vitals", "./.eslintrc.entities.json"],
+  "plugins": ["import"],
+  "rules": {
+    // Layering zones (`import/no-restricted-paths`) live in .eslintrc.entities.json,
+    // GENERATED from entities.manifest.json by scripts/gen-entity-zones.mjs and
+    // extended above. Edit the manifest, run `npm run gen:entity-zones`, commit both.
+    "react-hooks/rules-of-hooks": "error",
+    // kernel/ai/client.ts is the one place an Anthropic client is built (shared timeout
+    // and retry policy). Nineteen call sites used to construct their own; this keeps
+    // the count at one (AR-13). The override below exempts the factory itself.
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "NewExpression[callee.name='Anthropic']",
+        "message": "Construct the Anthropic client only in kernel/ai/client.ts; import anthropic() from there."
+      }
+    ],
+    // Existing debt, tracked but not fixed in E8-13. Counts at merge are in the E8-13
+    // report; ratchet each to "error" once its count reaches zero.
+    "import/no-cycle": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "@next/next/no-img-element": "warn",
+    // next/core-web-vitals ships this at error; 37 pre-existing hits in JSX copy text.
+    // Downgraded so the gate can turn on; the fix is mechanical (&apos; / &quot;).
+    "react/no-unescaped-entities": "warn"
+  },
+  "overrides": [
+    { "files": ["kernel/ai/client.ts"], "rules": { "no-restricted-syntax": "off" } }
+  ],
+  "ignorePatterns": ["video/", "supabase/functions/", ".next/", "node_modules/"]
+}

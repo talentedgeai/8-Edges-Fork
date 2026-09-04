@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>8 Edges: The Operating Manual</title>
+<meta name="description" content="The open operating manual for 8 Edges: the operating model, the system map, the data model, and how to install it yourself, or have Edge8 install it for you.">
+<style>
+  :root{
+    --navy:#04102D;
+    --mist:#EAEEF2;
+    --white:#FFFFFF;
+    --blue:#287BE8;
+    --pink:#D1458B;
+    --mint:#6FF2C1;
+    --amber:#E9A23B;
+    --ink:#1a2340;
+    --muted:#5a6480;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--mist);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:880px;margin:0 auto;background:var(--white);}
+  header{background:var(--navy);color:var(--white);padding:64px 60px 56px;}
+  .eyebrow{font-size:13px;letter-spacing:.18em;color:var(--mint);font-weight:600;margin-bottom:18px;}
+  header h1{font-size:40px;line-height:1.12;font-weight:700;margin-bottom:14px;}
+  header p.sub{font-size:18px;color:var(--mist);max-width:700px;}
+  .meta{margin-top:32px;display:flex;flex-wrap:wrap;gap:30px;font-size:13px;color:var(--mist);}
+  .meta div span{display:block;color:var(--mint);font-size:11px;letter-spacing:.12em;margin-bottom:3px;}
+  nav.toc{background:#F7F9FC;padding:26px 60px;border-bottom:1px solid var(--mist);font-size:14px;}
+  nav.toc a{color:var(--blue);text-decoration:none;margin-right:18px;white-space:nowrap;line-height:2;}
+  nav.toc a:hover{text-decoration:underline;}
+  section{padding:46px 60px;}
+  section + section{border-top:1px solid var(--mist);}
+  h2{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700;margin-bottom:8px;}
+  h3{font-size:26px;font-weight:700;margin-bottom:18px;color:var(--navy);}
+  h4{font-size:17px;font-weight:700;margin:26px 0 8px;color:var(--navy);}
+  p{margin-bottom:15px;font-size:16px;}
+  p:last-child{margin-bottom:0;}
+  strong{font-weight:650;}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:#F1F4F9;padding:1px 6px;border-radius:5px;color:var(--navy);}
+  ul,ol{margin:0 0 16px 0;padding-left:0;list-style:none;}
+  ul li,ol li{position:relative;padding-left:24px;margin-bottom:10px;font-size:16px;}
+  ul li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:8px;background:var(--mint);border-radius:50%;}
+  ol{counter-reset:num;}
+  ol li{counter-increment:num;padding-left:32px;}
+  ol li::before{content:counter(num);position:absolute;left:0;top:1px;width:22px;height:22px;background:var(--navy);color:var(--mint);border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  table{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:14.5px;}
+  th{background:var(--navy);color:var(--white);text-align:left;padding:10px 12px;font-weight:650;font-size:13px;}
+  td{padding:10px 12px;border-bottom:1px solid var(--mist);vertical-align:top;}
+  tr:nth-child(even) td{background:#F7F9FC;}
+  td code{white-space:nowrap;}
+  .callout{background:#F0F7FF;border-left:4px solid var(--blue);padding:18px 22px;border-radius:0 8px 8px 0;margin:20px 0;}
+  .callout.mint{background:#EFFCF7;border-left-color:var(--mint);}
+  .callout.amber{background:#FDF6EC;border-left-color:var(--amber);}
+  .callout.pink{background:#FDF1F7;border-left-color:var(--pink);}
+  .callout p{font-size:15px;}
+  .flowRow{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;}
+  .flowBox{flex:1;min-width:150px;border:1px solid var(--mist);border-radius:12px;padding:16px 18px;}
+  .flowBox .fTitle{font-weight:700;font-size:15px;color:var(--navy);margin-bottom:4px;}
+  .flowBox .fSub{font-size:13px;color:var(--muted);}
+  .sysmap{background:var(--navy);border-radius:14px;padding:26px;margin:22px 0;color:var(--mist);font-size:14px;}
+  .sysmap .row{display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap;}
+  .sysmap .cell{flex:1;min-width:130px;border:1px solid #2a3a63;border-radius:10px;padding:12px 14px;text-align:center;}
+  .sysmap .cell b{display:block;color:var(--white);font-size:14px;margin-bottom:2px;}
+  .sysmap .cell span{font-size:12px;color:#8fa0c9;}
+  .sysmap .wide{flex-basis:100%;}
+  .sysmap .mintline b{color:var(--mint);}
+  .price{background:var(--navy);color:var(--white);border-radius:16px;padding:34px 36px;margin:24px 0;}
+  .price .amount{font-size:44px;font-weight:800;color:var(--mint);line-height:1;margin-bottom:6px;}
+  .price .per{font-size:14px;color:#8fa0c9;margin-bottom:20px;}
+  .price ul li{color:var(--mist);font-size:15px;}
+  .price ul li::before{background:var(--mint);}
+  .price .cta{display:inline-block;margin-top:14px;background:var(--mint);color:var(--navy);font-weight:800;padding:12px 26px;border-radius:10px;text-decoration:none;font-size:15px;}
+  footer{background:var(--navy);color:var(--mist);padding:34px 60px;font-size:13px;}
+  footer .b{color:var(--mint);font-weight:700;}
+  @media (max-width:720px){
+    header,section,footer,nav.toc{padding-left:24px;padding-right:24px;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="eyebrow">8 EDGES · THE OPERATING MANUAL</div>
+  <h1>Run your company on 8 Edges</h1>
+  <p class="sub">The open manual for the operating system we run Edge8 on: the weekly rhythm, the system map, the data model, and how to stand it up yourself. Fork the code, grab the tables, or have us install it.</p>
+  <div class="meta">
+    <div><span>PUBLISHED</span>Aug 2026</div>
+    <div><span>MAINTAINED BY</span>Edge8</div>
+    <div><span>LICENSE</span>Open source (see repo)</div>
+    <div><span>DONE FOR YOU</span>$15,000 flat</div>
+  </div>
+</header>
+
+<nav class="toc">
+  <a href="#why">01 Why this exists</a>
+  <a href="#model">02 The operating model</a>
+  <a href="#map">03 The system map</a>
+  <a href="#data">04 The data model</a>
+  <a href="#install">05 Install it yourself</a>
+  <a href="#agents">06 The agent layer</a>
+  <a href="#dfy">07 Have us install it</a>
+  <a href="#license">08 License</a>
+</nav>
+
+<section id="why">
+  <h2>01 · Why this exists</h2>
+  <h3>Strategy decays into tools</h3>
+  <p>Every company we work with has the same architecture: a strategy that lives in a deck, and execution that lives in fifteen disconnected tools. The deck is opened twice a year. The tools never agree with each other. In between sits the actual company, running on memory and Slack.</p>
+  <p>8 Edges is our answer. It is one system where strategy cascades into goals, goals are proven by metrics, metrics are reviewed in a weekly rhythm, problems become owned issues, and the day-to-day work (sales, hiring, coaching, delivery) happens on the same data spine. AI agents work inside it as team members: they file cards, update records, and draft documents, while humans make the decisions.</p>
+  <p>We believe leadership is now 50% human and 50% AI, and that the second half needs a home with structure. This is that home.</p>
+
+  <h4>Why "8 Edges"</h4>
+  <p>The name is the math. A company runs on four offices: <strong>Revenue, Talent, Operations, Innovation</strong>. Each office is run by two forces working the same tables: a <strong>human edge</strong> that decides, and an <strong>AI edge</strong> that executes and files. Four offices, two edges each: 8 edges.</p>
+  <div class="flowRow">
+    <div class="flowBox"><div class="fTitle">Revenue</div><div class="fSub">Human edge · AI edge</div></div>
+    <div class="flowBox"><div class="fTitle">Talent</div><div class="fSub">Human edge · AI edge</div></div>
+    <div class="flowBox"><div class="fTitle">Operations</div><div class="fSub">Human edge · AI edge</div></div>
+    <div class="flowBox"><div class="fTitle">Innovation</div><div class="fSub">Human edge · AI edge</div></div>
+  </div>
+  <p>The system exists to keep all eight sharp: the human edges get the rhythm (goals, metrics, syncs, issues), the AI edges get the substrate (one schema, attributed writes, human gates). A company with dull edges anywhere, an office nobody owns or an office AI never touches, is leaving half its leverage on the table.</p>
+  <p>We are open sourcing it because the operating model is more valuable shared than hoarded. Fork the code, take the tables, run it yourself. And if you would rather have it installed, migrated, and taught to your team, that is a service we sell. Both paths are in this manual.</p>
+</section>
+
+<section id="model">
+  <h2>02 · The operating model</h2>
+  <h3>The rhythm the software enforces</h3>
+  <p>The software is the easy part. What makes 8 Edges work is a small set of operating disciplines. Adopt these even if you never install the code.</p>
+
+  <h4>The weekly sync</h4>
+  <p>One meeting, thirty minutes, same agenda every week: review the scorecard, review the goals, surface issues. Metrics are live on screen, so there is no status theater. Anything off track becomes an issue before the meeting ends, with one owner and one date.</p>
+
+  <h4>Goals, priorities, commitments: three different things</h4>
+  <ul>
+    <li><strong>Goals</strong> are what a person is measured on. They cascade from the company goal and are wired to metrics.</li>
+    <li><strong>Priorities</strong> are what a person is growing. They live in coaching, separate from this quarter's numbers, so development never gets crowded out.</li>
+    <li><strong>Commitments</strong> are what a person promised between this one-on-one and the next. Kept ones build a track record, missed ones return to the top of the next session.</li>
+  </ul>
+  <p>Most tools blur these three into one "goals" feature. Keeping them distinct is half of why the coaching layer works.</p>
+
+  <h4>Issues discipline</h4>
+  <p>Every problem gets exactly one owner and a date, and it stays visible until it is actually resolved. Shared ownership is how problems survive for months; the system does not allow it.</p>
+
+  <h4>The Four Offices</h4>
+  <p>Day-to-day work is organized into four offices on one shared people spine: <strong>Revenue</strong> (CRM, deals, proposals), <strong>Talent</strong> (hiring, interviews, coaching, reviews), <strong>Operations</strong> (equipment, time off, onboarding, finance sync), and <strong>Innovation</strong> (programs and ideas). One person is one record everywhere: candidate, team member, interviewer, coach, and account contact are the same row wearing different lenses.</p>
+
+  <h4>Where agents sit</h4>
+  <p>Agents are staff, not features. A scheduled agent reads the sales call transcript and updates the CRM. Another drafts the proposal. Another grades the laptop fleet quarterly. Their work is attributed to them, lands on the same boards the humans use, and is reviewed like any other work. Humans decide; agents execute and file.</p>
+
+  <div class="callout mint">
+    <p><strong>The test of adoption</strong> is not logins. It is: does the weekly sync run out of the system, and does every problem raised in it leave with an owner and a date? Get that habit and the rest follows.</p>
+  </div>
+</section>
+
+<section id="map">
+  <h2>03 · The system map</h2>
+  <h3>Three surfaces, one database, agents around it</h3>
+  <div class="sysmap">
+    <div class="row">
+      <div class="cell"><b>Admin</b><span>leadership and office views</span></div>
+      <div class="cell"><b>Team Portal</b><span>every team member, magic link</span></div>
+      <div class="cell"><b>Client Portal</b><span>each client's engagement</span></div>
+    </div>
+    <div class="row">
+      <div class="cell wide mintline"><b>One shared shell and design system</b><span>the three surfaces are one Next.js app with one component system</span></div>
+    </div>
+    <div class="row">
+      <div class="cell wide mintline"><b>Company OS database</b><span>one Postgres schema (Supabase): the people spine plus every office's tables</span></div>
+    </div>
+    <div class="row">
+      <div class="cell"><b>Scheduled agents</b><span>crons: call to CRM, lead intake, finance sync, fleet grading</span></div>
+      <div class="cell"><b>Interactive agents</b><span>chat and workflows that read and write the same tables</span></div>
+      <div class="cell"><b>Integrations</b><span>email, calendar, meetings, accounting</span></div>
+    </div>
+  </div>
+  <p>The core is deliberately boring: <strong>Next.js on Vercel, Postgres on Supabase, Claude for the agents</strong>. Static marketing pages and proposals are plain HTML in the same repo. Everything deploys through git push and CI. There is no queue, no microservices, no Kubernetes. A two-person team can operate it.</p>
+  <h4>The full stack</h4>
+  <table>
+    <tr><th>Layer</th><th>Service</th><th>Role</th></tr>
+    <tr><td>App</td><td>Next.js on Vercel</td><td>All three surfaces, the crons, and analytics. Deploys on git push through GitHub CI.</td></tr>
+    <tr><td>Data</td><td>Supabase (Postgres)</td><td>The Company OS schema, auth, and file storage.</td></tr>
+    <tr><td>AI</td><td>Claude (Anthropic API)</td><td>Every agent: CRM updates, proposals, extraction, chat assistants, resume screening.</td></tr>
+    <tr><td>Email</td><td>Resend + Brevo</td><td>Resend sends transactional mail (invites, sign-in links, notifications); Brevo runs marketing and nurture.</td></tr>
+    <tr><td>Messaging</td><td>Lark + Telegram</td><td>Lark is the team's home: chat webhooks for ops and coaching alerts, calendar, docs, and meeting transcripts that feed the CRM agents. Telegram carries a notification bot.</td></tr>
+    <tr><td>Money</td><td>Stripe + QuickBooks</td><td>Stripe takes payments; QuickBooks invoices sync in weekly so revenue metrics are never hand-typed.</td></tr>
+    <tr><td>Media</td><td>Gemini + ElevenLabs</td><td>Image generation for content, and voiceover for the demo video pipeline.</td></tr>
+  </table>
+  <p>Every integration is optional except the first three rows. Unconfigured ones degrade to "the humans do it manually," never to a broken page.</p>
+</section>
+
+<section id="data">
+  <h2>04 · The data model</h2>
+  <h3>The tables, by office</h3>
+  <p>This is the map, not the reference: table purposes, key relationships, and the conventions you cannot read from the DDL. The schema itself (columns, types, constraints) lives in the repo and is the source of truth.</p>
+
+  <h4>The people spine</h4>
+  <table>
+    <tr><th>Table</th><th>What it is</th></tr>
+    <tr><td><code>people</code></td><td>Every human the company touches: team, candidates, client contacts, leads. One row per person, forever. Everything else points here.</td></tr>
+    <tr><td><code>companies</code></td><td>Every organization: clients, prospects, vendors, partners.</td></tr>
+    <tr><td><code>person_companies</code></td><td>Who belongs to which company, with role. People move; history stays.</td></tr>
+    <tr><td><code>team_members</code></td><td>The employment lens on a person: status, start date, department, the link to their portal login.</td></tr>
+    <tr><td><code>people_sensitive</code>, <code>compensation</code></td><td>Restricted personal and pay data, split out so access can be scoped tightly.</td></tr>
+    <tr><td><code>departments</code>, <code>positions</code></td><td>Org structure.</td></tr>
+  </table>
+  <div class="callout">
+    <p><strong>Convention:</strong> never create a second record for a person who already exists in another role. The candidate you hire becomes the team member; the client contact who churns stays as history. The spine is the whole point.</p>
+  </div>
+
+  <h4>The edges (strategy and rhythm)</h4>
+  <table>
+    <tr><th>Table</th><th>What it is</th></tr>
+    <tr><td><code>core_values</code>, <code>strategies</code></td><td>The top of the cascade: what the company stands for and its strategic bets.</td></tr>
+    <tr><td><code>objectives</code>, <code>key_results</code></td><td>The goal tree: company to team to person, each objective owned and checked in.</td></tr>
+    <tr><td><code>metrics</code>, <code>metric_readings</code></td><td>The scorecard: each metric has one owner and a target; readings are the history, one row per period.</td></tr>
+    <tr><td><code>issues</code></td><td>Problems with one owner and a date, visible until resolved.</td></tr>
+    <tr><td><code>sync_packets</code></td><td>The weekly sync: the agenda snapshot and what was decided, one packet per session.</td></tr>
+    <tr><td><code>client_roadmap_groups</code>, <code>client_roadmap_overview</code>, <code>client_backlog_items</code></td><td>Per-client living roadmaps. Groups are per-company rows, so each engagement gets its own section structure, not a template.</td></tr>
+  </table>
+
+  <h4>Revenue</h4>
+  <table>
+    <tr><th>Table</th><th>What it is</th></tr>
+    <tr><td><code>lead</code>, <code>inquiries</code></td><td>Inbound interest before it is qualified.</td></tr>
+    <tr><td><code>deals</code></td><td>Money in motion: type (new, renewal, expansion), value split by category, and a renewal chain linking each year's contract to the next.</td></tr>
+    <tr><td><code>interactions</code></td><td>The relationship timeline: calls, emails, meetings, attached to people and companies. Agents write most of these.</td></tr>
+    <tr><td><code>call_transcripts</code>, <code>meetings</code>, <code>meeting_participants</code>, <code>meeting_notes</code></td><td>Raw conversation records that agents mine into CRM updates and proposals.</td></tr>
+    <tr><td><code>invoices</code>, <code>products</code>, <code>orders</code>, <code>qbo_connection</code>, <code>fx_rates</code></td><td>The finance mirror: invoices sync from accounting on a weekly cron, never hand-entered.</td></tr>
+  </table>
+  <div class="callout pink">
+    <p><strong>Convention: leads are not deals.</strong> A deal exists only when a real transaction is forming. Auto-creating one deal per lead is how pipelines become fiction.</p>
+  </div>
+
+  <h4>Talent: hiring</h4>
+  <table>
+    <tr><th>Table</th><th>What it is</th></tr>
+    <tr><td><code>job_requisitions</code></td><td>Open roles.</td></tr>
+    <tr><td><code>applications</code>, <code>application_stages</code>, <code>application_stage_log</code></td><td>Candidates per role, the stage pipeline, and a log of every stage move: the log is what powers days-in-stage.</td></tr>
+    <tr><td><code>resumes</code>, <code>candidate_profile</code></td><td>Documents and extracted candidate data.</td></tr>
+    <tr><td><code>interviews</code>, <code>interview_interviewers</code></td><td>The loop: rounds, and who sits on each round (pointing back at <code>people</code>).</td></tr>
+    <tr><td><code>interview_scorecards</code>, <code>scorecard_scores</code></td><td>Structured feedback per interviewer per round, with per-dimension scores.</td></tr>
+    <tr><td><code>requisition_loop_steps</code>, <code>requisition_loop_interviewers</code></td><td>The interview loop template per role.</td></tr>
+  </table>
+  <div class="callout">
+    <p><strong>Convention: blind-first feedback.</strong> An interviewer cannot read anyone else's scorecard until their own is submitted. Enforce it server-side, not in the UI.</p>
+  </div>
+
+  <h4>Talent: coaching and reviews</h4>
+  <table>
+    <tr><th>Table</th><th>What it is</th></tr>
+    <tr><td><code>coaching_profiles</code>, <code>coaching_one_on_ones</code></td><td>The coaching relationship and every session in it: the thread that never resets.</td></tr>
+    <tr><td><code>coaching_goals</code>, <code>coaching_priorities</code>, <code>coaching_commitments</code></td><td>The three concepts, kept as three tables on purpose (measured on, growing, promised).</td></tr>
+    <tr><td><code>coaching_checkins</code>, <code>coaching_trends</code>, <code>coaching_ocean_profiles</code></td><td>Pulse signals and personality context that inform sessions.</td></tr>
+    <tr><td><code>performance_reviews</code></td><td>Formal review cycles, built on the same spine.</td></tr>
+  </table>
+
+  <h4>Execution: boards</h4>
+  <table>
+    <tr><th>Table</th><th>What it is</th></tr>
+    <tr><td><code>boards</code>, <code>board_columns</code>, <code>board_members</code></td><td>Trello-shaped boards with scoped membership: admins, team members, clients, and agents can all sit on a board.</td></tr>
+    <tr><td><code>tasks</code>, <code>task_stage_log</code>, <code>sprints</code></td><td>Cards, every column move logged (time-in-column for free), and sprint groupings.</td></tr>
+  </table>
+  <div class="callout">
+    <p><strong>Convention: one write gate.</strong> Every card write resolves the actor first (human or agent) and stamps attribution. Agent-filed cards are first-class and reviewable, never anonymous system rows.</p>
+  </div>
+
+  <h4>Operations</h4>
+  <table>
+    <tr><th>Table</th><th>What it is</th></tr>
+    <tr><td><code>equipment</code>, <code>equipment_assignments</code>, <code>equipment_requests</code></td><td>The hardware fleet, who holds what, and requests. Feeds the quarterly fitness grading.</td></tr>
+    <tr><td><code>time_off</code>, <code>leave_policies</code>, <code>leave_adjustments</code>, <code>dayoff_snapshot</code></td><td>Leave: requests, policy, balances.</td></tr>
+    <tr><td><code>onboarding_plans</code>, <code>onboarding_tasks</code>, <code>lifecycle_transitions</code></td><td>Joining, changing roles, leaving, as tracked flows.</td></tr>
+    <tr><td><code>surveys</code>, <code>survey_fields</code>, <code>survey_responses</code>, <code>survey_answers</code></td><td>A generic survey engine. Reuse it for any structured intake before you build a bespoke form.</td></tr>
+    <tr><td><code>documents</code>, <code>team_directory</code>, <code>team_knowledge</code></td><td>Files and internal reference.</td></tr>
+  </table>
+
+  <h4>Access and audit</h4>
+  <table>
+    <tr><th>Table</th><th>What it is</th></tr>
+    <tr><td><code>admins</code></td><td>Who can use the admin surface.</td></tr>
+    <tr><td><code>portal_members</code>, <code>portal_assume_sessions</code></td><td>Client portal access, and support impersonation with a trail.</td></tr>
+    <tr><td><code>audit_log</code></td><td>Who did what, including agents.</td></tr>
+  </table>
+  <div class="callout amber">
+    <p><strong>Convention: the app role cannot delete.</strong> Application credentials get insert, select, and update, but no delete on core tables. Corrections are upserts; removal is a human running SQL. This single grant decision has saved us from every "the agent wiped the table" failure mode.</p>
+  </div>
+</section>
+
+<section id="install">
+  <h2>05 · Install it yourself</h2>
+  <h3>Fork to first weekly sync</h3>
+  <ol>
+    <li><strong>Fork the repo</strong> and clone it. The app is a single Next.js project; static pages and proposals ride along in <code>public/</code>.</li>
+    <li><strong>Create a Supabase project</strong> and apply the schema. Set the grants as shipped, including the no-delete rule for the app role.</li>
+    <li><strong>Set environment variables.</strong> The repo carries a <code>.env.local</code> template listing every required and optional var with a one-line comment each: Supabase keys, Resend, AI keys, integrations.</li>
+    <li><strong>Deploy to Vercel</strong> via git push. CI runs the design and asset checks; there is no manual deploy path, on purpose.</li>
+    <li><strong>Seed the spine first.</strong> People, companies, team members. Every office builds on it, so get it right before touching deals or goals.</li>
+    <li><strong>Wire auth.</strong> Admin logins for leadership, magic links for the team portal (each team member's login maps to their <code>people</code> row), scoped invites for client portals.</li>
+    <li><strong>Turn on the crons</strong> you need (finance sync, agent routines), then <strong>run your first weekly sync in the system</strong>: enter your metrics, set the first goals, file your first issues. The rhythm is the install's finish line.</li>
+  </ol>
+  <h4>Honest notes on effort</h4>
+  <ul>
+    <li>A developer comfortable with Next.js and Postgres can have it deployed in a day. The real work is data migration and adoption.</li>
+    <li>The auth linkage (which login maps to which person row) is the most common source of confusion. Do it deliberately.</li>
+    <li>Agent routines assume an LLM API key and per-integration credentials; each one degrades gracefully to "the humans do it manually" if unconfigured.</li>
+    <li>You do not need every office on day one. Spine, edges, weekly sync first. Add Revenue and Talent when the rhythm holds.</li>
+  </ul>
+</section>
+
+<section id="agents">
+  <h2>06 · The agent layer</h2>
+  <h3>The routines that make it feel alive</h3>
+  <p>These are the agents we run in production. Each is a scheduled or triggered Claude session with access to the same tables and a narrow job. Rebuild them on your stack with any agent framework; the pattern matters more than the code.</p>
+  <table>
+    <tr><th>Agent</th><th>Trigger</th><th>What it does</th></tr>
+    <tr><td>Call to CRM</td><td>Daily, evening</td><td>Reads the day's sales call transcripts, updates companies, contacts, deals, and files interaction records.</td></tr>
+    <tr><td>Call to proposal</td><td>On demand</td><td>Drafts a styled, live proposal page from a call transcript. A human reviews and sends. Minutes, not days.</td></tr>
+    <tr><td>Booking to lead</td><td>Daily, morning</td><td>Turns yesterday's meeting bookings into lead records with context.</td></tr>
+    <tr><td>Finance sync</td><td>Weekly cron</td><td>Mirrors accounting invoices into the OS so revenue metrics are never hand-typed.</td></tr>
+    <tr><td>Fleet fitness</td><td>Quarterly</td><td>Grades every team laptop against a hardware floor and reports the failures, ranked.</td></tr>
+    <tr><td>Weekly rhythm</td><td>Weekly crons</td><td>Prepares the sync packet, chases stale metrics, and nudges issue owners before the meeting.</td></tr>
+  </table>
+  <p>Design rules we hold agents to: every write is attributed, every routine has a human gate before anything outward-facing (email, proposal, payment), and every routine fails toward silence plus a log, never toward destructive cleanup.</p>
+</section>
+
+<section id="dfy">
+  <h2>07 · Have us install it</h2>
+  <h3>Done for you, in weeks</h3>
+  <p>If you would rather run the company than the migration, we install 8 Edges for you. Fixed price, fixed scope:</p>
+  <div class="price">
+    <div class="amount">$15,000</div>
+    <div class="per">flat, one engagement</div>
+    <ul>
+      <li><strong>Installed and live:</strong> your own deployment (your Supabase, your Vercel, your domain), configured, branded, with auth and portals working.</li>
+      <li><strong>Your data migrated:</strong> up to five data sources brought into the OS (your CRM, your ATS or hiring spreadsheets, your task tool, your accounting system, your people records), deduplicated onto one spine.</li>
+      <li><strong>Training: how to code it yourself.</strong> A working session with your team on the codebase, the schema, and the agent patterns, so you can extend the system without us. You leave owning it, not renting it.</li>
+    </ul>
+    <a class="cta" href="https://www.edge8.ai/contact">Talk to Edge8</a>
+  </div>
+  <p>The goal of the engagement is independence. Everything we install is the same open source code in this manual; there is no proprietary lock-in and no subscription. If you outgrow us, you keep everything.</p>
+</section>
+
+<section id="license">
+  <h2>08 · License and scope</h2>
+  <h3>What's included, what isn't</h3>
+  <ul>
+    <li>The application code and schema are open source; the license file in the repo is authoritative.</li>
+    <li>Not included: our data, our clients' data, and the Edge8 brand assets. Ship it under your own name.</li>
+    <li>The manual you are reading is maintained alongside the code. If the code and this page disagree, the code is right, and we would appreciate the issue report.</li>
+  </ul>
+</section>
+
+<footer>
+  <span class="b">8 Edges · The Operating Manual</span> · Maintained by Edge8 · <a href="https://www.edge8.ai" style="color:var(--mint);">edge8.ai</a>
+</footer>
+
+</div>
+</body>
+</html>
