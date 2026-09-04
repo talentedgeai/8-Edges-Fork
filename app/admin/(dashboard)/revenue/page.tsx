@@ -485,9 +485,9 @@ export default async function SalesCockpitPage() {
         />
       </div>
 
-      <div style={{ display: "grid", gap: 16, gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", alignItems: "start" }}>
+      <div className="u-grid-auto-lg">
         {/* ── Leads to work ── */}
-        <div className="admin-card admin-section-card" style={{ alignSelf: "start" }}>
+        <div className="admin-card admin-section-card u-self-start">
           <h2 className="admin-card-title">Leads to work</h2>
           {leads.length === 0 ? (
             <div className="admin-empty">No current leads in the queue.</div>
@@ -527,7 +527,7 @@ export default async function SalesCockpitPage() {
         {/* marginTop:0 cancels the `.admin-section-card + .admin-section-card` stacking
             margin, which the grid's adjacent siblings otherwise inherit and which would
             push this card 16px below the Leads card. */}
-        <div className="admin-card admin-section-card" style={{ alignSelf: "start", marginTop: 0 }}>
+        <div className="admin-card admin-section-card admin-section-card--flush u-self-start">
           <h2 className="admin-card-title">Inquiries to triage</h2>
           {inquiries.length === 0 ? (
             <div className="admin-empty">No new contact-us inquiries. Inbox zero.</div>
