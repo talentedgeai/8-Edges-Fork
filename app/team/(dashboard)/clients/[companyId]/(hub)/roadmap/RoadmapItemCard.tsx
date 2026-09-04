@@ -69,9 +69,9 @@ export function RoadmapItemCard({ item, companyId }: { item: BacklogItem; compan
   }
 
   return (
-    <div className="tcr-item">
-      <div className="tcr-item-top">
-        {item.ref && <span className="tcr-ref">{item.ref}</span>}
+    <div className="admin-roadmap-item">
+      <div className="admin-roadmap-item-top">
+        {item.ref && <span className="admin-roadmap-ref">{item.ref}</span>}
         {editing ? (
           <input
             className="admin-input"
@@ -81,9 +81,9 @@ export function RoadmapItemCard({ item, companyId }: { item: BacklogItem; compan
             aria-label="Title"
           />
         ) : (
-          <span className="tcr-title">{item.title}</span>
+          <span className="admin-roadmap-title">{item.title}</span>
         )}
-        <span className={`tcr-pri ${eff}`}>{PRIORITY_LABEL[eff]}</span>
+        <span className={`admin-roadmap-pri ${eff}`}>{PRIORITY_LABEL[eff]}</span>
         <select
           className="admin-select"
           style={{ width: "auto", fontSize: 12, flex: "none" }}
@@ -114,7 +114,7 @@ export function RoadmapItemCard({ item, companyId }: { item: BacklogItem; compan
         </button>
       </div>
       {editing ? (
-        <div className="tcr-body u-stack">
+        <div className="admin-roadmap-body u-stack">
           <label className="admin-label">
             Who
             <input className="admin-input" value={who} onChange={(e) => setWho(e.target.value)} />
@@ -134,16 +134,16 @@ export function RoadmapItemCard({ item, companyId }: { item: BacklogItem; compan
           </div>
         </div>
       ) : (
-        <div className="tcr-body">
+        <div className="admin-roadmap-body">
           {item.who && <div><span className="k">Who: </span>{item.who}</div>}
           {item.today_state && <div><span className="k">Today: </span>{item.today_state}</div>}
           {item.build_desc && <div><span className="k">What we&apos;d build: </span>{item.build_desc}</div>}
-          <div className="tcr-chips">
-            {(item.needs ?? []).map((n) => <span key={n} className="tcr-chip">{n}</span>)}
-            {tok && <span className="tcr-chip tok">est. {tok} Human Tokens</span>}
-            {item.source === "client" && <span className="tcr-chip client">client proposed</span>}
+          <div className="admin-roadmap-chips">
+            {(item.needs ?? []).map((n) => <span key={n} className="admin-roadmap-chip">{n}</span>)}
+            {tok && <span className="admin-roadmap-chip tok">est. {tok} Human Tokens</span>}
+            {item.source === "client" && <span className="admin-roadmap-chip client">client proposed</span>}
             {item.client_priority && item.client_priority !== item.edge8_priority && (
-              <span className="tcr-chip client">client set: {PRIORITY_LABEL[item.client_priority]}</span>
+              <span className="admin-roadmap-chip client">client set: {PRIORITY_LABEL[item.client_priority]}</span>
             )}
           </div>
         </div>

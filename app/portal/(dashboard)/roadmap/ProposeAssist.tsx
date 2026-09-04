@@ -60,7 +60,7 @@ export function ProposeAssist({ onDraft }: { onDraft: (draft: RoadmapDraft) => v
     return (
       <button
         type="button"
-        className="cbp-link u-mb-2"
+        className="admin-backlog-portal-link u-mb-2"
         onClick={() => {
           setOpen(true);
           setMessages([]);
@@ -76,7 +76,7 @@ export function ProposeAssist({ onDraft }: { onDraft: (draft: RoadmapDraft) => v
     <div className="admin-assist">
       <div className="u-row u-mb-2">
         <strong className="u-sm u-grow">Draft assistant</strong>
-        <button type="button" className="cbp-link" onClick={() => setOpen(false)}>Close</button>
+        <button type="button" className="admin-backlog-portal-link" onClick={() => setOpen(false)}>Close</button>
       </div>
       {messages.length === 0 && (
         <p className="u-sm u-ink-2 u-m-0 u-mb-2">
@@ -110,11 +110,11 @@ export function ProposeAssist({ onDraft }: { onDraft: (draft: RoadmapDraft) => v
             }
           }}
         />
-        <button type="button" className="cbp-btn" disabled={busy || !input.trim()} onClick={() => void send()}>
+        <button type="button" className="admin-backlog-portal-btn" disabled={busy || !input.trim()} onClick={() => void send()}>
           Send
         </button>
       </div>
-      {error && <div className="cbp-err">{error}</div>}
+      {error && <div className="admin-backlog-portal-err">{error}</div>}
     </div>
   );
 }

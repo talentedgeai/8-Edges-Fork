@@ -24,7 +24,6 @@ import { firstParam, type SearchParamsObj } from "@/lib/admin/url";
 import { ClientDocumentsList } from "../../(hub)/ClientDocumentsList";
 import { AddItemForm } from "../../(hub)/roadmap/AddItemForm";
 import { RoadmapItemCard } from "../../(hub)/roadmap/RoadmapItemCard";
-import { ROADMAP_STYLES } from "../../(hub)/roadmap/styles";
 import { publishMeeting, setMeetingProgram } from "../../(hub)/meetings/actions";
 
 export const dynamic = "force-dynamic";
@@ -128,8 +127,7 @@ export default async function TeamProgramDetailPage({
       label: "Roadmap",
       count: detail.roadmapItems.length,
       content: (
-        <div className="tcr">
-          <style dangerouslySetInnerHTML={{ __html: ROADMAP_STYLES }} />
+        <div className="admin-roadmap">
 
           {overview && (
             <section className="admin-card admin-section-card u-mb-4">
@@ -151,12 +149,12 @@ export default async function TeamProgramDetailPage({
               const groupItems = detail.roadmapItems.filter((i) => i.group_key === g.key);
               if (groupItems.length === 0) return null;
               return (
-                <div key={g.key} className="tcr-group">
-                  <div className="tcr-group-head">
-                    {g.step_label && <span className="tcr-step">{g.step_label}</span>}
-                    <span className="tcr-group-title">{g.title}</span>
+                <div key={g.key} className="admin-roadmap-group">
+                  <div className="admin-roadmap-group-head">
+                    {g.step_label && <span className="admin-roadmap-step">{g.step_label}</span>}
+                    <span className="admin-roadmap-group-title">{g.title}</span>
                   </div>
-                  {g.intro && <div className="tcr-group-intro">{g.intro}</div>}
+                  {g.intro && <div className="admin-roadmap-group-intro">{g.intro}</div>}
                   {groupItems.map((it) => (
                     <RoadmapItemCard key={it.id} item={it} companyId={company.id} />
                   ))}

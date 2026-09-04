@@ -4,7 +4,6 @@ import { getClientRoadmapForActor, companyHasPrograms } from "@/lib/team/clients
 import { BotText } from "@/components/assistant/BotText";
 import { RoadmapItemCard } from "./RoadmapItemCard";
 import { AddItemForm } from "./AddItemForm";
-import { ROADMAP_STYLES } from "./styles";
 
 export const dynamic = "force-dynamic";
 
@@ -36,8 +35,7 @@ export default async function TeamClientRoadmapTab({ params }: { params: { compa
     : roadmap.groups;
 
   return (
-    <div className="tcr">
-      <style dangerouslySetInnerHTML={{ __html: ROADMAP_STYLES }} />
+    <div className="admin-roadmap">
 
       {overview && (
         <section className="admin-card admin-section-card u-mb-4">
@@ -59,12 +57,12 @@ export default async function TeamClientRoadmapTab({ params }: { params: { compa
           const groupItems = items.filter((i) => i.group_key === g.key);
           if (groupItems.length === 0) return null;
           return (
-            <div key={g.key} className="tcr-group">
-              <div className="tcr-group-head">
-                {g.step_label && <span className="tcr-step">{g.step_label}</span>}
-                <span className="tcr-group-title">{g.title}</span>
+            <div key={g.key} className="admin-roadmap-group">
+              <div className="admin-roadmap-group-head">
+                {g.step_label && <span className="admin-roadmap-step">{g.step_label}</span>}
+                <span className="admin-roadmap-group-title">{g.title}</span>
               </div>
-              {g.intro && <div className="tcr-group-intro">{g.intro}</div>}
+              {g.intro && <div className="admin-roadmap-group-intro">{g.intro}</div>}
               {groupItems.map((it) => (
                 <RoadmapItemCard key={it.id} item={it} companyId={params.companyId} />
               ))}
