@@ -26,10 +26,9 @@ export function CompanyPicker({
   return (
     <div className="u-row">
       <select
-        className="admin-input"
+        className="admin-input admin-input--min-md"
         value={selectedId}
         onChange={(e) => go(e.target.value, showArchived)}
-        style={{ minWidth: 220 }}
         aria-label="Client"
       >
         <option value="">Select client…</option>

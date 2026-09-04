@@ -132,7 +132,7 @@ export default async function AnalyticsPage({ searchParams }: { searchParams: Se
           </div>
 
           {isInternal && (
-            <p className="admin-hint" style={{ marginTop: -4 }}>
+            <p className="admin-hint admin-hint--pull">
               Vercel counts browsers, not verified logins: the same person on a phone and a laptop,
               or across a long window, can count more than once. Read these as usage of each screen
               rather than a headcount.

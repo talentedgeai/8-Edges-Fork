@@ -124,7 +124,7 @@ export function ApplicationsBoard({
                 <div className="admin-kanban-card-title">{c.row.candidateName || "(unknown)"}</div>
                 <div className="admin-kanban-card-sub">{c.row.headline || c.row.currentTitle || "—"}</div>
                 <div className="admin-kanban-card-meta">
-                  <span className="admin-kanban-role-tag" style={{ color, background: `${color}1f` }}>
+                  <span className="admin-kanban-role-tag" style={{ "--tag": color } as React.CSSProperties} /* layout-ok: runtime role colour from the chart ramp, read by the class */>
                     {c.row.jobReqTitle || "—"}
                   </span>
                 </div>
