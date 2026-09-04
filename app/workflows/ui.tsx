@@ -10,11 +10,11 @@ const ACTOR_LABELS: Record<Actor, string> = {
 }
 
 export function ActorChip({ actor, label }: { actor: Actor; label?: string }) {
-  return <span className={`site-wf-actor wf-actor-${actor}`}>{label ?? ACTOR_LABELS[actor]}</span>
+  return <span className={`site-wf-actor site-wf-actor-${actor}`}>{label ?? ACTOR_LABELS[actor]}</span>
 }
 
 export function CategoryChip({ category }: { category: string }) {
-  return <span className={`site-wf-cat wf-cat-${category.toLowerCase()}`}>{category}</span>
+  return <span className={`site-wf-cat site-wf-cat-${category.toLowerCase()}`}>{category}</span>
 }
 
 export function WorkflowHero({
@@ -68,7 +68,7 @@ export function FlowRail({ steps, repeatNote }: { steps: RailStep[]; repeatNote?
       <div className="site-wf-rail">
         {steps.map((s) => (
           <div key={s.num} className="site-wf-rail-step">
-            <span className={`site-wf-rail-num wf-rail-num-${s.actor}`}>{s.num}</span>
+            <span className={`site-wf-rail-num site-wf-rail-num-${s.actor}`}>{s.num}</span>
             <span className="site-wf-rail-cadence">{s.cadence}</span>
             <div className="site-wf-rail-title">{s.title}</div>
             <ActorChip actor={s.actor} label={s.actorLabel} />
@@ -136,7 +136,7 @@ export function ElementsGrid({ elements }: { elements: WorkflowElement[] }) {
             <span className="site-wf-element-name">
               {String(i + 1).padStart(2, '0')} {el.name}
             </span>
-            <span className={`site-wf-assign wf-assign-${el.assignment}`}>{ASSIGN_LABELS[el.assignment]}</span>
+            <span className={`site-wf-assign site-wf-assign-${el.assignment}`}>{ASSIGN_LABELS[el.assignment]}</span>
           </div>
           <p className="site-wf-element-desc">{el.desc}</p>
         </div>

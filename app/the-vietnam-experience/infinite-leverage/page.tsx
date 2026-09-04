@@ -24,7 +24,7 @@ export default function InfiniteLeveragePage() {
         src="/experience/session-whiteboard-method.jpg"
         alt="A working session, the method on the whiteboard behind: context, skills, workflow, routines"
         aspect="16 / 9"
-        style={{ marginTop: 40 }}
+        className="u-mt-7"
       />
 
       <div className="site-xp-blocks">
@@ -80,7 +80,7 @@ export default function InfiniteLeveragePage() {
         </Block>
       </div>
 
-      <div style={{ marginTop: 48 }}>
+      <div className="u-mt-8">
         <Link href="/saigon" className="btn btn-primary">
           Explore the retreat <span className="arrow" aria-hidden>→</span>
         </Link>

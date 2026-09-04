@@ -23,7 +23,7 @@ export default function TheWeekPage() {
         src="/experience/session-saigon-window.jpg"
         alt="A working session at a riverside table, the Saigon skyline through the window"
         aspect="16 / 9"
-        style={{ marginTop: 40 }}
+        className="u-mt-7"
       />
 
       <div className="site-xp-blocks">

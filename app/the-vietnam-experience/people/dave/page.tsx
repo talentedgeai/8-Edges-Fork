@@ -20,7 +20,7 @@ export default function DavePage() {
         lead="Your host, and the reason the week exists. He spent years learning to lead AI rather than chase it, and built this retreat to hand that to other people."
       />
 
-      <PlaceholderImage label="Photo: Dave" aspect="4 / 5" maxWidth="24rem" style={{ marginTop: 40 }} />
+      <PlaceholderImage label="Photo: Dave" aspect="4 / 5" maxWidth="24rem" className="u-mt-7" />
 
       <div className="site-xp-blocks">
         <Block heading="Why he built this">

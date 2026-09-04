@@ -41,7 +41,7 @@ export default function VietnamExperiencePage() {
       </section>
 
       {/* The slider */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section u-pt-0">
         <div className="container">
           <div className="site-xp-stage reveal">
             <ExperienceSlider />
@@ -50,12 +50,12 @@ export default function VietnamExperiencePage() {
       </section>
 
       {/* Explore the chapters → sub-pages */}
-      <section className="section" style={{ background: "var(--white)" }}>
+      <section className="section site-section--white">
         <div className="container">
-          <div className="reveal" style={{ maxWidth: 760 }}>
+          <div className="reveal u-max-7">
             <span className="site-section-label">The chapters</span>
             <h2 className="site-section-title">Explore the <span className="accent">experience.</span></h2>
-            <p className="site-section-sub" style={{ marginTop: 16 }}>Step into any part of the week.</p>
+            <p className="site-section-sub u-mt-4">Step into any part of the week.</p>
           </div>
 
           <div className="site-xp-chapters reveal">
@@ -70,7 +70,7 @@ export default function VietnamExperiencePage() {
             ))}
           </div>
 
-          <div className="reveal" style={{ marginTop: 48 }}>
+          <div className="reveal u-mt-8">
             <Link href="/saigon-private" className="btn btn-primary">
               Explore the retreat <span className="arrow" aria-hidden>→</span>
             </Link>

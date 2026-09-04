@@ -215,7 +215,7 @@ export default function HomePage() {
           <div className="site-shift-header reveal">
             <span className="site-section-label">What Changes</span>
             <h2 className="site-section-title">What Happens When AI Agents Start Joining Your Team</h2>
-            <p className="site-section-sub" style={{ marginTop: 16 }}>
+            <p className="site-section-sub u-mt-4">
               Adding ChatGPT to your tools is not the change. Hiring an AI agent that does a real job, every day, sitting next to your people, is the change. Here is what we have seen happen inside every company that crosses that line.
             </p>
           </div>
@@ -260,7 +260,7 @@ export default function HomePage() {
             </div>
             <div className="site-why-right reveal">
               <p><strong>Ad-hoc usage of AI is limiting you to minimal gains.</strong></p>
-              <p style={{ marginTop: 16 }}>Lack of focus traps your business in mediocrity, keeping you stuck in repetitive tasks, wasted resources, and missed opportunities. Without a structured AI Program, competitors will outpace you, innovation stalls, costs balloon, and growth suffers.</p>
+              <p className="u-mt-4">Lack of focus traps your business in mediocrity, keeping you stuck in repetitive tasks, wasted resources, and missed opportunities. Without a structured AI Program, competitors will outpace you, innovation stalls, costs balloon, and growth suffers.</p>
             </div>
           </div>
         </div>
@@ -286,7 +286,7 @@ export default function HomePage() {
             <h2 className="site-section-title">Trusted by Leaders Worldwide</h2>
           </div>
         </div>
-        <div className="container" style={{ overflow: 'visible' }}>
+        <div className="container site-container--overflow">
           <div className="site-testimonials-viewport" ref={viewportRef}>
             <div className="site-testimonials-track" ref={trackRef}>
               {extTestimonials.map((t, i) => (
@@ -373,7 +373,7 @@ export default function HomePage() {
           <div className="site-solutions-header reveal">
             <span className="site-section-label">Core Solutions</span>
             <h2 className="site-section-title">We Empower Founders to <span className="accent">Lead AI</span></h2>
-            <p className="site-section-sub" style={{ marginTop: 16 }}>Empowering Organizations to use AI effectively through clear leadership, thoughtful implementation and strong global talent.</p>
+            <p className="site-section-sub u-mt-4">Empowering Organizations to use AI effectively through clear leadership, thoughtful implementation and strong global talent.</p>
           </div>
           <div className="site-solutions-rows">
             {/* Row 1: image left, text right */}
@@ -452,7 +452,7 @@ export default function HomePage() {
               </div>
             </Link>
           </div>
-          <div style={{ textAlign: 'center', marginTop: 48 }} className="reveal">
+          <div className="reveal u-mt-8 u-center-text">
             <Link href="/ai-programs" className="btn btn-primary">View Our Success Case Studies</Link>
           </div>
         </div>
@@ -538,7 +538,7 @@ export default function HomePage() {
           <div className="site-engage-header reveal">
             <span className="site-section-label">Engagement</span>
             <h2 className="site-section-title">How to Engage With Us</h2>
-            <p className="site-section-sub" style={{ marginTop: 16 }}>Three ways to work with us. One pricing model. Transparent reporting every Friday.</p>
+            <p className="site-section-sub u-mt-4">Three ways to work with us. One pricing model. Transparent reporting every Friday.</p>
           </div>
           <div className="site-engage-grid">
             <div className="site-engage-card reveal">
@@ -598,7 +598,7 @@ export default function HomePage() {
           <div className="site-claude-header reveal">
             <span className="site-section-label">We Chose One</span>
             <h2 className="site-section-title">Stop Chasing Tools. We Did.</h2>
-            <p className="site-section-sub" style={{ marginTop: 16 }}>You can spend all your time chasing models, framing it as research, and stay stuck on the hamster wheel. Just like you probably are right now. We chose Claude. We built our entire ecosystem around it. We have not looked back. Same stack on every client engagement. Same transparency every week: Claude tokens, human tokens, and every pull request tracked in GitHub.</p>
+            <p className="site-section-sub u-mt-4">You can spend all your time chasing models, framing it as research, and stay stuck on the hamster wheel. Just like you probably are right now. We chose Claude. We built our entire ecosystem around it. We have not looked back. Same stack on every client engagement. Same transparency every week: Claude tokens, human tokens, and every pull request tracked in GitHub.</p>
           </div>
 
           <div className="site-claude-stack reveal">
@@ -634,7 +634,7 @@ export default function HomePage() {
         <div className="container">
           <div className="site-contact-blue-inner">
             <div className="reveal">
-              <h2 className="site-section-title" style={{ marginBottom: 16 }}>Let&apos;s Lead AI Together</h2>
+              <h2 className="site-section-title u-mb-4">Let&apos;s Lead AI Together</h2>
               <p className="site-section-sub">Book a 30-minute call. We will talk through your business and email you your first AI Program plan within 88 minutes. Free, no pitch.</p>
             </div>
             <div className="site-contact-blue-cta reveal">

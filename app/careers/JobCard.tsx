@@ -26,7 +26,7 @@ export default function JobCard({ job }: { job: Job }) {
   return (
     <div className={`site-job-card reveal${job.featured ? ' featured' : ''}`}>
       <div className="site-job-card-tags">
-        <span className={`site-job-dept dept-${deptSlug}`}>{job.department}</span>
+        <span className={`site-job-dept site-dept-${deptSlug}`}>{job.department}</span>
         {job.featured && <span className="site-job-badge-featured">Featured</span>}
       </div>
 

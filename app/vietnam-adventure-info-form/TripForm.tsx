@@ -133,7 +133,7 @@ export default function TripForm() {
         </div>
       </div>
 
-      <p className="site-contact-form-eyebrow" style={{ marginTop: 12 }}>
+      <p className="site-contact-form-eyebrow u-mt-3">
         Family members &amp; t-shirt sizes
       </p>
 
@@ -227,7 +227,7 @@ export default function TripForm() {
         onChange={handleFamily}
         tabIndex={-1}
         aria-hidden
-        style={{ display: 'none' }}
+        className="u-hidden-input"
       />
 
       {error && <p className="site-apply-error">{error}</p>}

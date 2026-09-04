@@ -33,7 +33,7 @@ export default function PlacePage() {
         src="/experience/place-river-golden.jpg"
         alt="The Saigon river bending gold past Thao Dien at golden hour"
         aspect="16 / 9"
-        style={{ marginTop: 40 }}
+        className="u-mt-7"
       />
 
       <div className="site-xp-blocks">
