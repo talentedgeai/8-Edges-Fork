@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { PALETTE } from "@/lib/design/palette"
 import { companyOs } from "@/lib/supabase";
 import { sendTransactionalEmail } from "@/lib/email";
 import { getSiteOrigin } from "@/lib/site-origin";
@@ -39,9 +40,9 @@ function verificationEmailHtml(retreatTitle: string, link: string): string {
   const title = escapeHtml(retreatTitle);
   const href = escapeHtml(link);
   return `
-    <div style="font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#111">
+    <div style="font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:${PALETTE.dark}">
       <p>Confirm your email to open <strong>${title}</strong>.</p>
-      <p><a href="${href}" style="display:inline-block;padding:12px 18px;border-radius:10px;background:#111;color:#fff;text-decoration:none">Open My Retreat</a></p>
+      <p><a href="${href}" style="display:inline-block;padding:12px 18px;border-radius:10px;background:${PALETTE.dark};color:${PALETTE.white};text-decoration:none">Open My Retreat</a></p>
       <p style="opacity:0.7;font-size:13px">This link expires in 15 minutes. If you didn't ask for it, you can ignore this email.</p>
     </div>
   `;

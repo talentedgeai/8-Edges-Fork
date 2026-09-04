@@ -1,4 +1,5 @@
 import { Resend } from 'resend'
+import { PALETTE } from '@/lib/design/palette'
 import { createClient } from '@supabase/supabase-js'
 import { requireEnv } from '@/lib/env'
 import { NextRequest, NextResponse } from 'next/server'
@@ -70,20 +71,20 @@ export async function POST(req: NextRequest) {
           html: `
             <h2>Flight details submitted</h2>
             <table style="border-collapse:collapse;font-family:sans-serif;font-size:15px;margin-bottom:20px">
-              <tr><td style="padding:6px 16px 6px 0;color:#666;width:160px">Family</td><td><strong>${escapeHtml(family_name)}</strong></td></tr>
-              <tr><td style="padding:6px 16px 6px 0;color:#666">Email</td><td><a href="mailto:${escapeHtml(contact_email)}">${escapeHtml(contact_email)}</a></td></tr>
+              <tr><td style="padding:6px 16px 6px 0;color:${PALETTE.greyMid};width:160px">Family</td><td><strong>${escapeHtml(family_name)}</strong></td></tr>
+              <tr><td style="padding:6px 16px 6px 0;color:${PALETTE.greyMid}">Email</td><td><a href="mailto:${escapeHtml(contact_email)}">${escapeHtml(contact_email)}</a></td></tr>
             </table>
-            <h3 style="font-family:sans-serif;font-size:13px;text-transform:uppercase;color:#666;letter-spacing:.05em;margin-bottom:8px">Arriving in Hanoi</h3>
+            <h3 style="font-family:sans-serif;font-size:13px;text-transform:uppercase;color:${PALETTE.greyMid};letter-spacing:.05em;margin-bottom:8px">Arriving in Hanoi</h3>
             <table style="border-collapse:collapse;font-family:sans-serif;font-size:14px;margin-bottom:20px">
-              <tr><td style="padding:4px 16px 4px 0;color:#666;width:160px">Flight</td><td>${escapeHtml(body.inbound_flight || '—')}</td></tr>
-              <tr><td style="padding:4px 16px 4px 0;color:#666">Arrival</td><td>${fmt(body.inbound_arr_date, body.inbound_arr_time)}</td></tr>
+              <tr><td style="padding:4px 16px 4px 0;color:${PALETTE.greyMid};width:160px">Flight</td><td>${escapeHtml(body.inbound_flight || '—')}</td></tr>
+              <tr><td style="padding:4px 16px 4px 0;color:${PALETTE.greyMid}">Arrival</td><td>${fmt(body.inbound_arr_date, body.inbound_arr_time)}</td></tr>
             </table>
-            <h3 style="font-family:sans-serif;font-size:13px;text-transform:uppercase;color:#666;letter-spacing:.05em;margin-bottom:8px">Departing from Vietnam</h3>
+            <h3 style="font-family:sans-serif;font-size:13px;text-transform:uppercase;color:${PALETTE.greyMid};letter-spacing:.05em;margin-bottom:8px">Departing from Vietnam</h3>
             <table style="border-collapse:collapse;font-family:sans-serif;font-size:14px">
-              <tr><td style="padding:4px 16px 4px 0;color:#666;width:160px">Flight</td><td>${escapeHtml(body.outbound_flight || '—')}</td></tr>
-              <tr><td style="padding:4px 16px 4px 0;color:#666">Departure</td><td>${fmt(body.outbound_dep_date, body.outbound_dep_time)}</td></tr>
+              <tr><td style="padding:4px 16px 4px 0;color:${PALETTE.greyMid};width:160px">Flight</td><td>${escapeHtml(body.outbound_flight || '—')}</td></tr>
+              <tr><td style="padding:4px 16px 4px 0;color:${PALETTE.greyMid}">Departure</td><td>${fmt(body.outbound_dep_date, body.outbound_dep_time)}</td></tr>
             </table>
-            ${body.notes ? `<h3 style="font-family:sans-serif;font-size:13px;text-transform:uppercase;color:#666;letter-spacing:.05em;margin-bottom:8px">Comments / Requests</h3><p style="font-family:sans-serif;font-size:14px;line-height:1.6;white-space:pre-wrap">${escapeHtml(body.notes)}</p>` : ''}
+            ${body.notes ? `<h3 style="font-family:sans-serif;font-size:13px;text-transform:uppercase;color:${PALETTE.greyMid};letter-spacing:.05em;margin-bottom:8px">Comments / Requests</h3><p style="font-family:sans-serif;font-size:14px;line-height:1.6;white-space:pre-wrap">${escapeHtml(body.notes)}</p>` : ''}
           `,
         })
       } catch (mailErr) {

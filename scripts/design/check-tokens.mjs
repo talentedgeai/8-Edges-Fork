@@ -18,7 +18,7 @@ const SKIP_DIRS = new Set(["node_modules", ".next", "public"]);
 // Places that legitimately paint pixels rather than UI: OG images, SVG
 // favicons/logos, email HTML sent to external inboxes (no stylesheet there).
 // app/api routes and talent/team/actions.ts only build HTML email bodies.
-const SKIP_FILE = /(opengraph-image|icon\.tsx$|apple-icon|lib\/design\/palette\.json$|\/email\.ts$|\/emails?\/|goal-notify|^app\/api\/)/;
+const SKIP_FILE = /(opengraph-image|icon\.tsx$|apple-icon|lib\/design\/palette\.json$|\/email\.ts$|\/emails?\/|goal-notify)/;
 
 const RAW_COLOUR = /(^|[^\w&-])(#[0-9a-fA-F]{3,8}\b|rgba?\(|hsla?\()/;
 const INLINE_STYLE = /style=\{\{([^}]*)\}\}/g;
