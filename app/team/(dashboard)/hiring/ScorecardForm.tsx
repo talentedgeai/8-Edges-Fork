@@ -66,7 +66,7 @@ export function ScorecardForm({
   return (
     <div className="admin-form">
       <div className="u-row u-wrap">
-        <div className="admin-field" style={{ flex: "1 1 200px" }}>
+        <div className="admin-field u-flex-1">
           <label className="admin-label">Recommendation</label>
           <select
             className="admin-select"

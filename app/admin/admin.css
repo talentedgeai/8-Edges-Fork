@@ -5120,3 +5120,10 @@ a.admin-avatar:hover { box-shadow: 0 0 0 3px var(--admin-accent-soft), 0 0 0 1.5
 /* Pattern-library demo values for the role tag: the real board sets --tag inline from the chart ramp. */
 .admin-pat-tag-a { --tag: var(--admin-chart-3); }
 .admin-pat-tag-b { --tag: var(--admin-warn-strong); }
+
+/* ─── Team / portal leftovers (8-Edges-Fork surface pass 5) ─────────────── */
+.admin-overview-text { font-size: var(--admin-text-md); line-height: 1.65; }
+.admin-details-summary { cursor: pointer; list-style: revert; }
+/* Card footer pushed to the bottom of a u-stack card so sibling cards' buttons line up. */
+.admin-card-foot { margin-top: auto; padding-top: var(--admin-space-4); }
+.admin-backlog .admin-backlog-pill--static { cursor: default; }

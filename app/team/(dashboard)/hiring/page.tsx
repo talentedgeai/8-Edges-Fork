@@ -443,8 +443,8 @@ export default async function TeamHiringPage() {
 
         {closedReqs.length > 0 && (
           <details className="admin-card admin-coach-section">
-            <summary style={{ cursor: "pointer", listStyle: "revert" }}>
-              <span className="admin-card-title" style={{ display: "inline" }}>
+            <summary className="admin-details-summary">
+              <span className="admin-card-title u-inline">
                 Closed roles
               </span>{" "}
               <span className="admin-cell-muted">({closedReqs.length})</span>

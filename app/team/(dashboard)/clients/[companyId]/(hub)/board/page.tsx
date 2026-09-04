@@ -41,7 +41,7 @@ export default async function TeamClientBoardTab({ params }: { params: { company
 
   if (!board) {
     return (
-      <div className="admin-card admin-section-card" style={{ padding: 22 }}>
+      <div className="admin-card admin-section-card">
         <p className="admin-page-sub u-m-0">
           {hasPrograms
             ? "No company-wide work board. Program boards live in their AI Program view."
