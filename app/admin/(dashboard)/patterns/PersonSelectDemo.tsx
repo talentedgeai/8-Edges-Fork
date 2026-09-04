@@ -51,7 +51,7 @@ export function PersonSelectDemo() {
           onChange={setOwner}
           options={SAMPLE}
           emptyLabel="Unassigned"
-          style={{ maxWidth: 180 }}
+          className="u-max-160"
         />
       </div>
     </div>

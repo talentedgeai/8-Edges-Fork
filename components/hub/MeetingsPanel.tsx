@@ -99,7 +99,7 @@ export function MeetingsPanel({
                   </div>
                 )}
               </div>
-              <div className="admin-list-aside" style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
+              <div className="admin-list-aside admin-list-aside--row">
                 {canTag && (
                   <select
                     className="admin-select u-max-3"

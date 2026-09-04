@@ -69,13 +69,13 @@ export function PhotoSlider({ photos, ratio = "4 / 3" }: { photos: Photo[]; rati
     >
       <div
         className="site-xp-gallery-viewport"
-        style={{ aspectRatio: ratio }}
+        style={{ aspectRatio: ratio }} /* layout-ok: aspect ratio arrives as a prop */
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
         <div
           className="site-xp-gallery-track"
-          style={{
+          style={{ /* layout-ok: slide offset is runtime state */
             transform: `translateX(-${index * 100}%)`,
             transition: reduced ? "none" : "transform 500ms cubic-bezier(0.4, 0, 0.2, 1)",
           }}
@@ -87,7 +87,7 @@ export function PhotoSlider({ photos, ratio = "4 / 3" }: { photos: Photo[]; rati
                 alt={p.alt}
                 fill
                 sizes="(max-width: 800px) 100vw, 720px"
-                style={{ objectFit: "cover" }}
+                className="site-xp-cover"
               />
               {p.caption && <span className="site-xp-gallery-cap">{p.caption}</span>}
             </div>

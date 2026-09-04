@@ -82,7 +82,7 @@ export function HubProgramsBand({
                     {p.roadmapTotal > 0 && <span>{pct}%</span>}
                   </div>
                   <div className="admin-board-progress">
-                    <div className="admin-board-progress-fill" style={{ width: `${pct}%` }} />
+                    <div className="admin-board-progress-fill" style={{ width: `${pct}%` }} /* layout-ok: data-driven progress width */ />
                   </div>
                 </div>
                 <div className="admin-cell-muted u-mt-3 u-sm">

@@ -80,7 +80,7 @@ export function LoginForm() {
       <form className="admin-form" onSubmit={handleLink}>
         {error && <div className="admin-alert admin-alert--err">{error}</div>}
         {notice && <div className="admin-alert admin-alert--ok">{notice}</div>}
-        <p className="admin-auth-sub" style={{ marginTop: 0 }}>
+        <p className="admin-auth-sub u-mt-0">
           Enter your email and we will send you a sign-in link. No password needed.
         </p>
         <div className="admin-field">
@@ -120,7 +120,7 @@ export function LoginForm() {
       <form className="admin-form" onSubmit={handleReset}>
         {error && <div className="admin-alert admin-alert--err">{error}</div>}
         {notice && <div className="admin-alert admin-alert--ok">{notice}</div>}
-        <p className="admin-auth-sub" style={{ marginTop: 0 }}>
+        <p className="admin-auth-sub u-mt-0">
           Enter your email and we will send a link to reset your password.
         </p>
         <div className="admin-field">
