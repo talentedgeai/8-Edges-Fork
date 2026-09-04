@@ -247,10 +247,10 @@ export function DealManage({ deal, stages }: { deal: DealManageData; stages: Dea
 
           <div className="admin-record-head-actions admin-deal-head-actions">
             <div className="u-right">
-              <div style={{ fontSize: 26, fontWeight: 800, letterSpacing: "-0.02em", fontVariantNumeric: "tabular-nums", lineHeight: 1.05 }}>
+              <div className="admin-money-lg">
                 {formatCents(deal.amountCents, currency)}
               </div>
-              <div className="admin-cell-muted" style={{ fontSize: 12, marginTop: 3, fontVariantNumeric: "tabular-nums" }}>
+              <div className="admin-cell-muted u-sm u-mt-1 u-tabular">
                 {formatCents(deal.amountUsdCents, "usd")} forecast
                 {deal.probability != null && ` · ${formatCents(Math.round(weightedUsd), "usd")} weighted · ${deal.probability}%`}
               </div>

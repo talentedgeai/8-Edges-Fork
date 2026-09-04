@@ -363,7 +363,7 @@ export default async function TeamMemberPage({ params }: { params: { id: string 
               </dd>
             </dl>
 
-            <div style={{ marginBottom: reviewHistory.length ? 16 : 0 }}>
+            <div className={reviewHistory.length ? "u-mb-4" : undefined}>
               <SendReviewButton teamMemberId={m.id} defaultType={defaultReviewType} />
             </div>
 

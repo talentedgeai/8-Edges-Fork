@@ -125,11 +125,8 @@ export default async function CallDetailPage({ params }: { params: { id: string 
             </div>
             <div className="admin-meter u-grow">
               <div
-                style={{
-                  width: `${Math.round(s.share * 100)}%`,
-                  height: "100%",
-                  background: isHostSpeaker(s.name) ? "var(--admin-accent)" : "var(--admin-muted)",
-                }}
+                className={isHostSpeaker(s.name) ? "admin-meter-fill" : "admin-meter-fill admin-meter-fill--muted"}
+                style={{ width: `${Math.round(s.share * 100)}%` }} /* layout-ok: data-driven share width */
               />
             </div>
             <div className="admin-cell-muted u-right u-w-90">
@@ -148,7 +145,7 @@ export default async function CallDetailPage({ params }: { params: { id: string 
                 <span className={isHostSpeaker(seg.speaker) ? "admin-cell-strong" : undefined}>{seg.speaker}</span>{" "}
                 <span className="admin-cell-muted">{seg.time}</span>
               </div>
-              <div style={{ fontSize: 13, whiteSpace: "pre-wrap", wordBreak: "break-word" }}>{seg.text}</div>
+              <div className="admin-transcript-seg">{seg.text}</div>
             </div>
           ))}
         </div>

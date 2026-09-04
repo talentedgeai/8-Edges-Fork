@@ -1043,7 +1043,7 @@ export function BoardView({
                       {s.title}
                     </span>
                     <input
-                      className="admin-input"
+                      className="admin-input admin-input--w-xs u-shrink-0"
                       type="number"
                       min={0}
                       step={1}
@@ -1059,7 +1059,6 @@ export function BoardView({
                         }
                       }}
                       disabled={saving}
-                      style={{ width: 64, flex: "none" }}
                     />
                   </div>
                 ))}
