@@ -194,7 +194,7 @@ One PR per item, into `ds/debt-base`. The PR column fills in as they merge.
 
 | # | What | Where | Count | Fix | PR |
 |---|---|---|---|---|---|
-| 1 | Guardrails run only locally; styled ceiling 11 above the count | no `.github/`, `check-tokens.mjs` | ceiling 26, count 15 | Add `design-guardrails.yml` (check-tokens, check-assets, ratchet) and enable Actions; ceiling to 15 | |
+| 1 | Guardrails run only locally; styled ceiling 11 above the count | no `.github/`, `check-tokens.mjs` | ceiling 26, count 15 | Add `design-guardrails.yml` (check-tokens, check-assets, ratchet) and enable Actions; ceiling to 15 | #15 |
 | 2 | Painters carry their own hex | `lib/ogRender.js`, 8 email builders, 4 API email routes | 71 hex in 13 files | Read `lib/design/palette` (a `palette.json` the CJS renderer can `require`, re-exported by `palette.ts`); drop their `SKIP_FILE` exemptions | |
 | 3 | Module stylesheets exempt from the colour check; undefined font variables | `work.module.css`, `event.module.css`, `survey.module.css`, `RetreatAgenda.tsx` | 31 raw colours, 3 fallbacks | Tokenise; use `--font-body`; drop the `.module.css` exemption | |
 | 4 | Undefined and aliased custom properties | `workflows.css` | `--magenta`, `--orange`, `--wf-green/red/amber` | Swatches on `--color-*` tokens; aliases inlined | |

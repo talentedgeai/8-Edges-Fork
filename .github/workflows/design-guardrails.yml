@@ -1,0 +1,66 @@
+name: Design guardrails
+
+# Runs the same three checks `npm run build` runs locally (check:tokens is
+# the prebuild step) so a PR cannot merge with a raw colour outside
+# app/styles/tokens.css, a styled inline prop above the ceiling, a missing
+# asset or font weight, or an inline-style / page-prefix count above the
+# ratchet baseline. Copied from edge8-web's design-guardrails.yml; only the
+# path list differs (this repo has no kernel/).
+
+on:
+  pull_request:
+    paths:
+      - "app/**"
+      - "components/**"
+      - "lib/**"
+      - "public/**"
+      - "scripts/design/**"
+      - "scripts/check-design-ratchet.mjs"
+      - "scripts/design-ratchet-baseline.json"
+      - "scripts/check-crons.mjs"
+      - "vercel.json"
+      - "next.config.mjs"
+      - ".github/workflows/design-guardrails.yml"
+  push:
+    branches: [main, ds/debt-base]
+
+jobs:
+  check-tokens:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: No raw colour outside app/styles/tokens.css; styled inline props under the ceiling
+        run: node scripts/design/check-tokens.mjs
+
+  check-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Referenced assets exist, font weights are backed by real faces, inline-layout baseline holds
+        run: node scripts/design/check-assets.mjs
+
+  check-ratchet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Inline styles per file and page-prefixed selectors do not grow
+        run: node scripts/check-design-ratchet.mjs
+
+  check-crons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Every cron path reaches a handler instead of a 308
+        run: node scripts/check-crons.mjs
