@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 function Section({ title, sub, children }: { title: string; sub?: string; children: ReactNode }) {
   return (
     <section className="admin-card admin-section-card admin-pat-section">
-      <h2 className="admin-card-title" style={{ marginBottom: sub ? 4 : 14 }}>{title}</h2>
+      <h2 className={sub ? "admin-card-title admin-card-title--tight" : "admin-card-title"}>{title}</h2>
       {sub && <p className="admin-pat-caption u-mt-0 u-mb-4">{sub}</p>}
       {children}
     </section>
@@ -27,7 +27,7 @@ function Section({ title, sub, children }: { title: string; sub?: string; childr
 function Swatch({ name, varName }: { name: string; varName: string }) {
   return (
     <div className="admin-pat-swatch">
-      <div className="admin-pat-swatch-chip" style={{ background: `var(${varName})` }} />
+      <div className="admin-pat-swatch-chip" style={{ background: `var(${varName})` }} /* layout-ok: the swatch reads its token name from the data row */ />
       <div>
         <div className="admin-pat-swatch-name">{name}</div>
         <div className="admin-pat-swatch-meta">{varName}</div>

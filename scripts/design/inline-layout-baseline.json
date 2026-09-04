@@ -3,7 +3,5 @@
   "app/admin/(dashboard)/revenue/page.tsx": 1,
   "app/portal/(dashboard)/company/CompanyForm.tsx": 1,
   "app/portal/(dashboard)/roadmap/ProposeAssist.tsx": 1,
-  "app/team/(dashboard)/hiring/page.tsx": 1,
-  "components/PrivateSessionReserve.tsx": 1,
-  "components/hub/MeetingsPanel.tsx": 1
+  "app/team/(dashboard)/hiring/page.tsx": 1
 }

@@ -52,7 +52,7 @@ export default function Nav() {
         <div className="container">
           <div className="site-nav-inner">
             <Link href="/" className="site-nav-logo">
-              <Image src="/logo.png" alt="Edge8" width={120} height={36} style={{ width: 'auto', height: '36px' }} priority />
+              <Image src="/logo.png" alt="Edge8" width={120} height={36} priority />
             </Link>
 
             <ul className="site-nav-links">

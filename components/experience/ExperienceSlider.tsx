@@ -182,7 +182,7 @@ export function ExperienceSlider() {
     >
       <div
         className="site-xp-track"
-        style={{
+        style={{ /* layout-ok: slide offset is runtime state */
           transform: `translateX(-${index * 100}%)`,
           transition: reduced ? "none" : "transform 600ms cubic-bezier(0.4, 0, 0.2, 1)",
         }}
@@ -246,7 +246,7 @@ function SlideView({
               alt={slide.image.alt}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              style={{ objectFit: "cover" }}
+              className="site-xp-cover"
               priority={active}
             />
           ) : (
