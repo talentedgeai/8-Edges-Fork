@@ -1,0 +1,15 @@
+/* ai-programs: route stylesheet, loaded by app/ai-programs/layout.tsx. Moved out of
+   app/globals.css so the global sheet carries only shared site styles. Reads
+   tokens by name; no raw colour. */
+
+.ai-program-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.ai-stat-card { background: var(--tint); border: 1px solid var(--card-border); border-radius: var(--radius); padding: 32px 28px; }
+
+.ai-stat-num { font-family: var(--font-display); font-size: 40px; font-weight: 800; color: var(--blue); line-height: 1; margin-bottom: 8px; }
+
+.ai-stat-label { font-size: 14px; color: var(--grey-mid); line-height: 1.5; }
+
+@media (max-width: 768px) {
+.ai-program-stats { grid-template-columns: 1fr; }
+}

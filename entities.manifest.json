@@ -1,0 +1,281 @@
+{
+  "$comment": [
+    "The nine product entities and the shared kernel of edge8-web, as decided in",
+    "docs/engineering/2026-09-03-multi-entity-design.md. Every path in the tree resolves",
+    "to exactly one owner by longest-prefix match over `current` and `target`; an entry",
+    "without a file extension also matches that stem's .ts/.tsx/.test.ts siblings.",
+    "Since ME-13 `current` equals `[target]` for every owner: all code lives under",
+    "entities/<name>/ or kernel/, and app/ is the composition root (\"app\"), a tree of",
+    "thin mounts that re-export entity routes, api handlers and crons.",
+    "scripts/gen-entity-zones.mjs turns this file into the ESLint boundary zones and",
+    "scripts/check-entity-imports.mjs fails any cross-entity import that is not a door.",
+    "`tables` lists the Supabase tables and views each owner writes (design \u00a74, then the",
+    "reader with the most call sites for tables the design does not name). Only the owner",
+    "writes a table directly; scripts/check-table-ownership.mjs ratchets cross-entity reads",
+    "and fails cross-entity writes. A few names (trip_*, private_session_blocks,",
+    "brand_contacts, requisition_loop_interviewers) are absent from the generated types",
+    "but still read by code, so they carry an owner too.",
+    "`layer` orders the entities (the kernel is 0): an entity's doors, and everything they reach inside the entity, may import another entity's doors only when that entity has a strictly lower layer, so the door graph is a DAG by construction. Route bodies, api/ and crons/ are the mounts app/ composes and are exempt. scripts/check-entity-layers.mjs enforces it (Q2)."
+  ],
+  "kernel": {
+    "target": "kernel",
+    "current": [
+      "kernel"
+    ],
+    "tables": [
+      "admins",
+      "audit_log",
+      "interactions",
+      "people",
+      "portal_assume_sessions",
+      "portal_members",
+      "routine_runs",
+      "team_members"
+    ]
+  },
+  "entities": {
+    "site": {
+      "target": "entities/site",
+      "layer": 1,
+      "current": [
+        "entities/site"
+      ],
+      "tables": [
+        "gallery_photo_people",
+        "gallery_photos"
+      ]
+    },
+    "company-os": {
+      "target": "entities/company-os",
+      "layer": 2,
+      "modules": [
+        "crm",
+        "hiring",
+        "boards",
+        "campaigns"
+      ],
+      "current": [
+        "entities/company-os"
+      ],
+      "tables": [
+        "affiliates",
+        "application_stage_log",
+        "application_stages",
+        "applications",
+        "availability_blocks",
+        "board_columns",
+        "board_members",
+        "boards",
+        "book_chapters",
+        "books",
+        "brand_contacts",
+        "brand_profiles",
+        "brands",
+        "call_scorecards",
+        "call_transcripts",
+        "candidate_profile",
+        "candidate_sensitive",
+        "candidates",
+        "client_roadmap_overview",
+        "companies",
+        "company_information",
+        "company_profile",
+        "compensation_sensitive",
+        "contractor_payments",
+        "core_values",
+        "current_team_members",
+        "deals",
+        "departments",
+        "documents",
+        "email_campaign_recipients",
+        "email_campaigns",
+        "email_events",
+        "epics",
+        "equipment",
+        "equipment_assignments",
+        "equipment_requests",
+        "event_agenda_blocks",
+        "event_agenda_staff",
+        "event_pnl_lines",
+        "event_talks",
+        "events",
+        "expenses",
+        "fx_rates",
+        "idea_trend_reports",
+        "ideas",
+        "inquiries",
+        "integration_sources",
+        "interview_interviewers",
+        "interview_scorecards",
+        "interviews",
+        "invoices",
+        "issues",
+        "job_requisitions",
+        "key_results",
+        "kr_logs",
+        "lead",
+        "legal_entities",
+        "lifecycle_transitions",
+        "marketing_asset_images",
+        "marketing_campaigns",
+        "marketing_content",
+        "marketing_pillars",
+        "meeting_action_items",
+        "meeting_associations",
+        "meeting_participants",
+        "meetings",
+        "objectives",
+        "offers",
+        "people_sensitive",
+        "people_with_deals",
+        "person_qualifications",
+        "pipeline_stages",
+        "pipelines",
+        "positions",
+        "products",
+        "qbo_connection",
+        "requisition_loop_interviewers",
+        "requisition_loop_steps",
+        "scorecard_scores",
+        "service_lines",
+        "sprints",
+        "staff_assignments",
+        "strategies",
+        "survey_fields",
+        "surveys",
+        "sync_packets",
+        "taggables",
+        "tags",
+        "talks",
+        "task_comments",
+        "task_stage_log",
+        "tasks",
+        "team_directory",
+        "vendors"
+      ]
+    },
+    "team": {
+      "target": "entities/team",
+      "layer": 5,
+      "modules": [
+        "coaching",
+        "hub",
+        "time-off",
+        "onboarding"
+      ],
+      "current": [
+        "entities/team"
+      ],
+      "tables": [
+        "coaching_checkins",
+        "coaching_commitments",
+        "coaching_context",
+        "coaching_goal_comments",
+        "coaching_ocean_profiles",
+        "coaching_one_on_ones",
+        "coaching_priorities",
+        "coaching_profiles",
+        "coaching_talking_points",
+        "coaching_trends",
+        "dayoff_snapshot",
+        "goals",
+        "holidays",
+        "leave_adjustments",
+        "leave_policies",
+        "onboarding_plans",
+        "onboarding_tasks",
+        "performance_reviews",
+        "person_git_emails",
+        "time_off"
+      ]
+    },
+    "portal": {
+      "target": "entities/portal",
+      "layer": 4,
+      "current": [
+        "entities/portal"
+      ],
+      "tables": [
+        "ai_programs",
+        "client_backlog_items",
+        "client_roadmap_groups",
+        "contractor_work_events",
+        "contractor_work_requests",
+        "person_companies",
+        "program_documents",
+        "program_plans",
+        "survey_answers",
+        "survey_list",
+        "survey_responses"
+      ]
+    },
+    "retreats": {
+      "target": "entities/retreats",
+      "layer": 3,
+      "current": [
+        "entities/retreats"
+      ],
+      "tables": [
+        "event_registrations",
+        "private_session_blocks",
+        "public_retreats",
+        "trip_families",
+        "trip_flights",
+        "trip_members",
+        "trip_passports"
+      ]
+    },
+    "htt": {
+      "target": "entities/htt",
+      "layer": 1,
+      "current": [
+        "entities/htt"
+      ],
+      "tables": [
+        "client_identities",
+        "company_github_orgs",
+        "man_hour_entries",
+        "project_goals",
+        "project_summaries",
+        "pull_requests",
+        "repos",
+        "sync_runs",
+        "token_allocations",
+        "token_entries"
+      ]
+    },
+    "billing": {
+      "target": "entities/billing",
+      "layer": 1,
+      "current": [
+        "entities/billing"
+      ],
+      "tables": [
+        "affiliate_commissions",
+        "affiliate_payouts",
+        "bookings",
+        "orders",
+        "subscriptions",
+        "token_purchases"
+      ]
+    },
+    "assistant": {
+      "target": "entities/assistant",
+      "layer": 3,
+      "current": [
+        "entities/assistant"
+      ],
+      "tables": [
+        "assistant_conversations"
+      ]
+    },
+    "library": {
+      "target": "entities/library",
+      "layer": 1,
+      "current": [
+        "entities/library"
+      ],
+      "tables": []
+    }
+  }
+}

@@ -1,0 +1,37 @@
+/* vietnam-adventure-info-form: route stylesheet, loaded by app/vietnam-adventure-info-form/layout.tsx. */
+
+.trip-member {
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--tint);
+}
+
+.trip-member-head { display: flex; align-items: center; justify-content: space-between; }
+
+.trip-member-label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); font-weight: 600; }
+
+.trip-member-remove {
+  background: none; border: none; cursor: pointer;
+  color: var(--grey-mid); font-size: 13px; text-decoration: underline; padding: 0;
+}
+
+.trip-member-remove:hover { color: var(--dark); }
+
+.trip-add {
+  align-self: flex-start;
+  background: var(--blue-glow);
+  border: 1.5px dashed var(--blue);
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.trip-add:hover { background: var(--blue); color: var(--white); }
+
+.trip-files { display: flex; flex-direction: column; gap: 4px; margin: 8px 0 0; }
+
+.trip-file-name { font-size: 13px; color: var(--grey-mid); }
+

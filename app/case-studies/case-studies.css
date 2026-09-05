@@ -1,0 +1,4 @@
+/* case-studies: route stylesheet, loaded by app/case-studies/layout.tsx. Moved out of
+   app/globals.css so the global sheet carries only shared site styles. Reads
+   tokens by name; no raw colour. */
+

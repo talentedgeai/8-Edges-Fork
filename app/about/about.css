@@ -1,0 +1,34 @@
+/* about: route stylesheet, loaded by app/about/layout.tsx. Moved out of
+   app/globals.css so the global sheet carries only shared site styles. Reads
+   tokens by name; no raw colour. */
+
+.about-hero { background: var(--white); padding: 140px 0 80px; position: relative; overflow: hidden; }
+
+.about-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--dark) 3%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--dark) 3%, transparent) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  pointer-events: none;
+}
+
+.about-hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+
+.about-hero-img-wrap { position: relative; }
+
+.about-hero-img-wrap img { width: 100%; border-radius: var(--radius); display: block; object-fit: cover; aspect-ratio: 2/3; max-height: none; }
+
+.about-hero .section-label { color: var(--body-text); background: var(--tint); }
+
+.about-hero .section-title { color: var(--dark); margin-bottom: 20px; }
+
+.about-hero p { font-size: 16px; color: var(--grey-mid); line-height: 1.75; }
+
+@media (max-width: 1024px) {
+.about-hero-inner { grid-template-columns: 1fr; }
+}

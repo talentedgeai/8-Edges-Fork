@@ -1,0 +1,10 @@
+// Thin route: the handler lives in the htt entity (ME-04). The route-segment
+// config is declared here rather than re-exported because Next reads it by
+// statically analysing this module — a re-exported value is invisible to it and
+// the route would silently fall back to the defaults.
+export { POST } from "@/entities/htt/api/backfill";
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+export const maxDuration = 300;
