@@ -19,6 +19,7 @@ those hosts in the environment's network policy and hand the session back.
 | Brand slug | `arca-wellness` (`SELF_BRAND_SLUG` in `kernel/config/brand.ts`) |
 | Project name | `arca-wellness` — Supabase project, Vercel project, repo |
 | Production origin | `https://arca-wellness.vercel.app` (no custom domain yet) |
+| Vercel scope | your **personal account**, not a team |
 | Notification inbox | `derek.nguyen@edge8.ai` |
 | Public marketing site | left as an Edge8 placeholder, by your choice |
 
@@ -34,7 +35,7 @@ psql --version          # apt-get install -y postgresql-client / brew install li
 
 supabase login          # opens a browser
 vercel login            # opens a browser
-vercel teams ls         # confirm the scope you want to deploy into
+vercel whoami           # note your username - this is the --scope value below
 ```
 
 Do **not** run `supabase db dump` or `supabase start` — both need Docker and
@@ -271,18 +272,40 @@ Arca Wellness's own positioning, not mine to invent.
 ## Step 6 — deploy
 
 ```bash
-vercel link --scope <team> --project arca-wellness --yes
+vercel link --scope <your-vercel-username> --project arca-wellness --yes
 vercel --prod
 ```
 
-Pass `--scope` explicitly. The first deployment of a new project is promoted to
-production automatically whatever command you run. If your organisation gates
-production CLI deploys, push to the fork's default branch and let the git
-integration build instead — that is the better habit anyway.
+Pass `--scope` even for a personal account: bare `vercel link` targets the
+account's *default* team, which is not necessarily your personal scope if you
+belong to any team. `vercel whoami` gives the username to use.
 
-Node.js runtime, not Edge. `vercel.json` carries 18 cron jobs; Hobby is limited
-to daily crons, so the hourly and 15-minute jobs need Pro, as does the
-`maxDuration = 300` on the streaming assistant routes.
+The first deployment of a new project is promoted to production automatically
+whatever command you run — a plain `vercel deploy` on a fresh project is not a
+dry run.
+
+Node.js runtime, not Edge — several routes need full Node APIs.
+
+### Personal account: check whether it is Hobby or Pro
+
+Deploying to a personal account is fine, but **on the Hobby plan three things
+in this repo do not work as written**, and none of them fails the build — they
+fail quietly at runtime:
+
+- **Crons.** `vercel.json` declares 22 jobs. Hobby allows daily schedules only,
+  and two are more frequent: `/api/cron/email-campaign-send/` at `*/15 * * * *`
+  and `/api/cron/coaching-recaps/` at `25 * * * *`. On Hobby these are rejected
+  or downgraded, so campaign sends and coaching recaps stop happening.
+- **Function duration.** 20 routes declare `maxDuration = 300`, including the
+  admin and team assistant streams and the marketing publish editor. Hobby caps
+  below that, so long agent turns are cut off mid-stream.
+- **Licensing.** Vercel's Hobby plan is for non-commercial use. This is a
+  client deployment, which is commercial.
+
+If the personal account is already on Pro, all three are non-issues. If it is
+on Hobby, either upgrade it or accept that the two sub-daily crons and long
+assistant turns will not work — worth deciding before you deploy rather than
+debugging it afterwards.
 
 ### Then point Supabase Auth at the domain
 
@@ -360,7 +383,7 @@ feature is real.
 | `entities/team/ui/StartHerePanel.tsx` | team-portal onboarding panel pointing at `aiolabz.com` and `ai-officer.com/certification` — the upstream's certification programme |
 | `entities/company-os/routes/(dashboard)/revenue/aio-pad/` | a whole admin route for the upstream's second brand. Left in place: deleting a feature is not a rebrand |
 | `edge8company.sg.larksuite.com` in `MeetingRow.tsx` and `sales-intelligence/[id]/page.tsx` | meeting-minutes deep links into the upstream's Lark tenant |
-| `VERCEL_ANALYTICS_URL` in `operations/analytics/page.tsx` | points at the upstream's Vercel project — repoint to Arca's once the project exists |
+| `VERCEL_ANALYTICS_URL` in `operations/analytics/page.tsx` | points at the upstream's Vercel project. Repoint to `https://vercel.com/<your-vercel-username>/arca-wellness/analytics` once the project exists |
 | `REGISTRY_REPO` in `entities/htt/registrations.ts` | `talentedgeai/edge8-web` |
 | `DAVE_PERSON_ID` in `edges-shared.ts` | a `people` row id from the upstream's database; no such row exists in a fresh one |
 | `edge8_priority`, `edge8_private_ok`, `edge8_gate_*` | database column and cookie names, deliberately untouched — renaming them would desync the code from `01-schema.sql` |
