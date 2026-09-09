@@ -1,0 +1,146 @@
+"use server";
+
+import { revalidatePath } from "next/cache";
+import { companyOs, type CompanyOsUpdate } from "@/kernel/data/supabase";
+import { requireSuperAdmin } from "@/kernel/identity/admin-auth";
+import { recordAudit } from "@/kernel/audit/audit";
+import { logStageMove } from "@/entities/company-os/modules/hiring/ats/stage-log";
+import { APPLICATION_SOURCES } from "@/entities/company-os/modules/hiring/recruiting-options";
+
+// updateApplication moved out of routes/(dashboard)/talent/applications/actions.ts
+// because ApplicantStatusSelect — shared hiring UI rendered from several admin
+// pages — calls it, and shared UI must not depend on a route. Only this action
+// and the two constants it alone used moved; the rest of that route file
+// (stages, extras, notes, resumes, the candidate pool) stays there.
+
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+// Matches the applications_status_check constraint.
+const APP_STATUSES = new Set([
+  "active",
+  "on_hold",
+  "passive",
+  "withdrawn",
+  "hired",
+  "rejected",
+  "future_consideration",
+]);
+
+// Only keys present in the patch are written. Rejection reason is its own field,
+// distinct from the notes thread. Moving onto a terminal stage stamps decided_at
+// (the recruiter still sets final status), mirroring moveApplicationStage.
+export type ApplicationPatch = {
+  status?: string;
+  rating?: number | null;
+  rejection_reason?: string | null;
+  current_stage_id?: string | null;
+  hr_assessment?: string | null;
+  source?: string | null;
+  source_detail?: string | null;
+  referrer_person_id?: string | null;
+  applied_at?: string | null;
+  decided_at?: string | null;
+};
+
+// The ok result carries decided_at back when a terminal-stage move auto-stamps
+// it, so the client can reconcile a field the user did not type into.
+type UpdateApplicationResult = { ok: true; decidedAt?: string | null } | { ok: false; error: string };
+
+export async function updateApplication(
+  applicationId: string,
+  patch: ApplicationPatch,
+): Promise<UpdateApplicationResult> {
+  const admin = await requireSuperAdmin();
+  const updates: CompanyOsUpdate<"applications"> = {};
+
+  if (patch.status !== undefined) {
+    if (!APP_STATUSES.has(patch.status)) return { ok: false, error: "Unknown status." };
+    updates.status = patch.status;
+  }
+  if (patch.rating !== undefined) {
+    if (patch.rating === null) updates.rating = null;
+    else {
+      const n = Math.round(patch.rating);
+      if (n < 1 || n > 5) return { ok: false, error: "Rating must be between 1 and 5." };
+      updates.rating = n;
+    }
+  }
+  if (patch.rejection_reason !== undefined) {
+    updates.rejection_reason = patch.rejection_reason?.trim() || null;
+  }
+  if (patch.hr_assessment !== undefined) {
+    updates.hr_assessment = patch.hr_assessment?.trim() || null;
+  }
+  if (patch.source !== undefined) {
+    const s = patch.source?.trim() || null;
+    if (s && !APPLICATION_SOURCES.has(s)) return { ok: false, error: "Unknown source." };
+    // `applications.source` is NOT NULL, but clearing the field here has always
+    // sent a null (PostgREST then rejects it). Cast rather than change what the
+    // action does.
+    updates.source = s as string;
+  }
+  if (patch.source_detail !== undefined) {
+    updates.source_detail = patch.source_detail?.trim() || null;
+  }
+  if (patch.referrer_person_id !== undefined) {
+    updates.referrer_person_id = patch.referrer_person_id?.trim() || null;
+  }
+  if (patch.applied_at !== undefined) {
+    const d = patch.applied_at?.trim() || null;
+    if (d && !DATE_RE.test(d)) return { ok: false, error: "Enter a valid applied date." };
+    // `applications.applied_at` is NOT NULL; same note as `source` above.
+    updates.applied_at = d as string;
+  }
+  if (patch.decided_at !== undefined) {
+    const d = patch.decided_at?.trim() || null;
+    if (d && !DATE_RE.test(d)) return { ok: false, error: "Enter a valid decided date." };
+    updates.decided_at = d;
+  }
+  // Captured when the stage changes, so the move can be logged after the write.
+  let stageMove: { from: string | null; to: string | null } | null = null;
+  if (patch.current_stage_id !== undefined) {
+    const { data: cur, error: curErr } = await companyOs
+      .from("applications")
+      .select("current_stage_id")
+      .eq("id", applicationId)
+      .maybeSingle();
+    if (curErr) return { ok: false, error: curErr.message };
+    const from = (cur?.current_stage_id as string | null) ?? null;
+    if (patch.current_stage_id === null) {
+      updates.current_stage_id = null;
+      stageMove = { from, to: null };
+    } else {
+      const { data: stage, error: stageErr } = await companyOs
+        .from("application_stages")
+        .select("is_terminal")
+        .eq("id", patch.current_stage_id)
+        .maybeSingle();
+      if (stageErr || !stage) return { ok: false, error: stageErr?.message ?? "Unknown stage." };
+      updates.current_stage_id = patch.current_stage_id;
+      if (stage.is_terminal) updates.decided_at = new Date().toISOString();
+      stageMove = { from, to: patch.current_stage_id };
+    }
+  }
+
+  if (Object.keys(updates).length === 0) return { ok: true };
+
+  const { error } = await companyOs.from("applications").update(updates).eq("id", applicationId);
+  if (error) return { ok: false, error: error.message };
+  if (stageMove) await logStageMove(applicationId, stageMove.from, stageMove.to);
+  await recordAudit({
+    table: "applications",
+    recordId: applicationId,
+    operation: "update",
+    actor: admin.email,
+    newData: updates,
+  });
+  revalidatePath("/admin/talent/applications");
+  // The detail route is now a name+short-code slug, so revalidate the dynamic
+  // segment itself (the raw-uuid path would no longer match the rendered slug).
+  revalidatePath("/admin/talent/applications/[id]", "page");
+  // Surface decided_at whenever this write set it (terminal-stage auto-stamp or a
+  // manual date edit), so the caller can keep its form in sync without a reload.
+  return Object.prototype.hasOwnProperty.call(updates, "decided_at")
+    ? { ok: true, decidedAt: (updates.decided_at as string | null) ?? null }
+    : { ok: true };
+}

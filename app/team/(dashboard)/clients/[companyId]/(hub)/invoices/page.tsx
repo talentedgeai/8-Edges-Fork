@@ -1,0 +1,3 @@
+export { default, metadata } from "@/entities/team/routes/(dashboard)/clients/[companyId]/(hub)/invoices/page";
+
+export const dynamic = "force-dynamic";

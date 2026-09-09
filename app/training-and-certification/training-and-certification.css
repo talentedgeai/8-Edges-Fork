@@ -1,0 +1,11 @@
+/* training-and-certification: route stylesheet, loaded by app/training-and-certification/layout.tsx. */
+
+.program-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+@media (max-width: 768px) {
+.program-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+.program-stats { grid-template-columns: 1fr 1fr; }
+}

@@ -1,0 +1,427 @@
+/* 8 Edges app landing + install guide. Marketing layer: tokens from globals.css only. */
+
+/* ─── Button rows ──────────────────────────────────── */
+.e8a-btn-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* White pill for the blue closing banner, so the two CTAs contrast */
+.e8a-btn-white {
+  background: var(--white);
+  color: var(--dark);
+}
+.e8a-btn-white:hover { background: var(--tint); }
+
+/* ─── Shared card grid ─────────────────────────────── */
+.e8a-grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 48px;
+}
+.e8a-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.e8a-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.e8a-grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+.e8a-card {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+.e8a-card h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+.e8a-card p {
+  font-size: 15px;
+  color: var(--body-text);
+  line-height: 1.7;
+}
+.e8a-card ul {
+  list-style: none;
+  margin-top: 16px;
+}
+.e8a-card ul li {
+  font-size: 14px;
+  color: var(--body-text);
+  line-height: 1.6;
+  padding: 6px 0;
+  border-top: 1px solid var(--tint);
+}
+.e8a-card ul li strong { color: var(--dark); font-weight: 600; }
+
+/* ─── Stat callouts ────────────────────────────────── */
+.e8a-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.e8a-stat {
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+}
+.e8a-stat-num {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--blue);
+}
+.e8a-stat-label {
+  font-size: 14px;
+  color: var(--body-text);
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* ─── Definition block ─────────────────────────────── */
+.e8a-definition {
+  background: var(--tint);
+  border-radius: var(--radius);
+  padding: 40px;
+  margin-top: 40px;
+  max-width: 720px;
+}
+.e8a-definition-term {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--dark);
+}
+.e8a-definition-phonetic {
+  font-size: 15px;
+  color: var(--grey-mid);
+  margin-left: 10px;
+}
+.e8a-definition-type {
+  font-size: 14px;
+  font-style: italic;
+  color: var(--grey-mid);
+  margin: 4px 0 14px;
+}
+.e8a-definition-body {
+  font-size: 16px;
+  color: var(--body-text);
+  line-height: 1.7;
+}
+
+/* ─── Workflow wall ────────────────────────────────── */
+.e8a-workflow-wall {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.e8a-workflow-chip {
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.e8a-workflow-chip:hover { border-color: var(--blue); }
+.e8a-workflow-chip-office {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--grey-mid);
+  margin-bottom: 4px;
+}
+.e8a-workflow-chip-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.35;
+}
+
+/* ─── Architecture diagram ─────────────────────────── */
+.e8a-arch {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+.e8a-arch-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  width: 100%;
+  max-width: 760px;
+}
+.e8a-arch-node {
+  flex: 1;
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  text-align: center;
+}
+.e8a-arch-node-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dark);
+}
+.e8a-arch-node-sub {
+  font-size: 12px;
+  color: var(--grey-mid);
+  margin-top: 2px;
+}
+.e8a-arch-node--db {
+  background: var(--dark);
+  border-color: var(--dark);
+}
+.e8a-arch-node--db .e8a-arch-node-title { color: var(--white); }
+.e8a-arch-node--db .e8a-arch-node-sub { color: color-mix(in srgb, var(--color-bg-primary) 60%, transparent); }
+.e8a-arch-connector {
+  width: 1px;
+  height: 28px;
+  background: var(--tint-deep);
+}
+
+/* ─── Install steps ────────────────────────────────── */
+.e8a-steps {
+  margin-top: 48px;
+  max-width: 760px;
+  counter-reset: e8a-step;
+}
+.e8a-step {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--tint-deep);
+}
+.e8a-step:last-child { border-bottom: 1px solid var(--tint-deep); }
+.e8a-step-num {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--blue);
+  flex: 0 0 44px;
+}
+.e8a-step h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.e8a-step p {
+  font-size: 15px;
+  color: var(--body-text);
+  line-height: 1.65;
+}
+
+/* ─── Config table ─────────────────────────────────── */
+.e8a-table-wrap {
+  margin-top: 48px;
+  overflow-x: auto;
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+}
+.e8a-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.e8a-table th {
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--grey-mid);
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--card-border);
+  background: var(--tint);
+}
+.e8a-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--tint);
+  color: var(--body-text);
+  vertical-align: top;
+}
+.e8a-table tr:last-child td { border-bottom: none; }
+.e8a-table code {
+  font-size: 13px;
+  background: var(--tint);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: var(--dark);
+  white-space: nowrap;
+}
+
+/* ─── Pricing ──────────────────────────────────────── */
+.e8a-tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  align-items: stretch;
+}
+.e8a-tier {
+  background: var(--white);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.e8a-tier--featured { border-color: var(--blue); border-width: 2px; }
+.e8a-tier-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--grey-mid);
+  margin-bottom: 10px;
+}
+.e8a-tier-price {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.1;
+}
+.e8a-tier-price span {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--grey-mid);
+}
+.e8a-tier-desc {
+  font-size: 15px;
+  color: var(--body-text);
+  line-height: 1.65;
+  margin: 14px 0 20px;
+}
+.e8a-tier ul {
+  list-style: none;
+  flex: 1;
+  margin-bottom: 28px;
+}
+.e8a-tier ul li {
+  font-size: 14px;
+  color: var(--body-text);
+  padding: 8px 0;
+  border-top: 1px solid var(--tint);
+  line-height: 1.5;
+}
+.e8a-tier .btn { justify-content: center; }
+
+/* ─── FAQ ──────────────────────────────────────────── */
+.e8a-faq {
+  max-width: 760px;
+  margin-top: 48px;
+}
+.e8a-faq details {
+  border-top: 1px solid var(--tint-deep);
+}
+.e8a-faq details:last-child { border-bottom: 1px solid var(--tint-deep); }
+.e8a-faq summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--dark);
+}
+.e8a-faq summary::-webkit-details-marker { display: none; }
+.e8a-faq summary:hover { color: var(--blue); }
+.e8a-faq summary::after {
+  content: '+';
+  flex: 0 0 auto;
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 400;
+  color: var(--blue);
+}
+.e8a-faq details[open] summary::after { content: '\2212'; }
+.e8a-faq details p {
+  font-size: 16px;
+  color: var(--body-text);
+  line-height: 1.7;
+  padding-bottom: 24px;
+  max-width: 680px;
+}
+
+/* ─── Install guide (docs page) ────────────────────── */
+.e8a-guide {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.e8a-guide h2 {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 56px 0 12px;
+}
+.e8a-guide h3 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--dark);
+  margin: 32px 0 8px;
+}
+.e8a-guide p, .e8a-guide li {
+  font-size: 16px;
+  color: var(--body-text);
+  line-height: 1.75;
+}
+.e8a-guide p { margin: 12px 0; }
+.e8a-guide ol, .e8a-guide ul { padding-left: 24px; margin: 12px 0; }
+.e8a-guide li { margin: 6px 0; }
+.e8a-guide code {
+  font-size: 13px;
+  background: var(--tint);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: var(--dark);
+}
+.e8a-guide pre {
+  background: var(--dark);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  overflow-x: auto;
+  margin: 16px 0;
+}
+.e8a-guide pre code {
+  background: none;
+  padding: 0;
+  color: var(--white);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.e8a-guide-note {
+  background: var(--tint);
+  border-radius: var(--radius-sm);
+  padding: 18px 24px;
+  font-size: 14px;
+  margin: 16px 0;
+}
+
+/* ─── Responsive ───────────────────────────────────── */
+@media (max-width: 1024px) {
+  .e8a-grid--3, .e8a-grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .e8a-stats { grid-template-columns: repeat(2, 1fr); }
+  .e8a-workflow-wall { grid-template-columns: repeat(3, 1fr); }
+  .e8a-tiers { grid-template-columns: 1fr; max-width: 520px; margin-left: auto; margin-right: auto; }
+}
+@media (max-width: 700px) {
+  .e8a-grid--2, .e8a-grid--3, .e8a-grid--4 { grid-template-columns: 1fr; }
+  .e8a-workflow-wall { grid-template-columns: repeat(2, 1fr); }
+  .e8a-arch-row { flex-direction: column; }
+  .e8a-stats { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
