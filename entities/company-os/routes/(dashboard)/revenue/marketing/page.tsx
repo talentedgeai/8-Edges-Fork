@@ -480,7 +480,7 @@ export default async function MarketingPage({ searchParams }: { searchParams: Se
             ) : !delivery.hasData ? (
               <div className="admin-empty u-mt-3">
                 No delivery data yet. Register the Resend webhook at{" "}
-                <code>https://www.edge8.ai/api/webhooks/resend/</code> (trailing slash required) and
+                <code>https://arca-wellness.vercel.app/api/webhooks/resend/</code> (trailing slash required) and
                 set <code>RESEND_WEBHOOK_SECRET</code>. Events accrue from that point forward.
               </div>
             ) : (

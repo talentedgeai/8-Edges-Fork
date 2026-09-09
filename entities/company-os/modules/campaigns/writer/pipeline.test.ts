@@ -168,9 +168,9 @@ beforeEach(() => {
   storedOutputs.length = 0;
   publishBlogAsset.mockReset();
   publishBlogAsset.mockImplementation(async () => {
-    store.blog!.postedUrl = "https://www.edge8.ai/post/how-to-delegate-work-to-ai/";
+    store.blog!.postedUrl = "https://arca-wellness.vercel.app/post/how-to-delegate-work-to-ai/";
     store.blog!.status = "published";
-    return { ok: true, slug: "how-to-delegate-work-to-ai", liveUrl: "https://www.edge8.ai/post/how-to-delegate-work-to-ai/", verified: true };
+    return { ok: true, slug: "how-to-delegate-work-to-ai", liveUrl: "https://arca-wellness.vercel.app/post/how-to-delegate-work-to-ai/", verified: true };
   });
   profileOverride = {};
   writerOutputs = F.WRITER_OUTPUTS;
@@ -261,7 +261,7 @@ describe("with auto-publish on", () => {
   it("publish: a live URL that does not answer 200 stops the run", async () => {
     profileOverride = { autoPublish: true };
     await runUntil("publish");
-    publishBlogAsset.mockResolvedValue({ ok: true, slug: "s", liveUrl: "https://www.edge8.ai/post/s/", verified: false, warning: "Not yet." });
+    publishBlogAsset.mockResolvedValue({ ok: true, slug: "s", liveUrl: "https://arca-wellness.vercel.app/post/s/", verified: false, warning: "Not yet." });
     await expectBlocked("publish", /did not answer 200/);
   });
   it("channels: a missing channel or a channel without an image stops the run", async () => {
@@ -308,8 +308,8 @@ describe("every check blocks", () => {
     replies["You are the editor"] = () => ({ body_md: F.EDITED_BODY.replace("90-day plan", "staffing audit plan"), change_log: ["x"] });
     await expectBlocked("edit", /audit, staffing/);
     store.campaign.writerError = null;
-    replies["You are the editor"] = () => ({ body_md: F.EDITED_BODY.replace("PR agency", "EDGE8 agency"), change_log: ["x"] });
-    await expectBlocked("edit", /"Edge8" exactly/);
+    replies["You are the editor"] = () => ({ body_md: F.EDITED_BODY.replace("PR agency", "ARCA WELLNESS agency"), change_log: ["x"] });
+    await expectBlocked("edit", /"Arca Wellness" exactly/);
     store.campaign.writerError = null;
     replies["You are the editor"] = () => ({ body_md: F.EDITED_BODY, change_log: [] });
     await expectBlocked("edit", /no change log/);
@@ -356,9 +356,9 @@ describe("every check blocks", () => {
     await expectBlocked("links", /only 1 internal link/);
   });
   it("links: a link to an audit page", async () => {
-    store.campaign.idea = `${F.IDEA}\nAlso https://www.edge8.ai/ai-audit/`;
+    store.campaign.idea = `${F.IDEA}\nAlso https://arca-wellness.vercel.app/ai-audit/`;
     await runUntil("links");
-    replies["Choose two to four published posts"] = () => ({ ...F.LINKS_REPLY, sources: [{ phrase: "Every's review", url: "https://www.edge8.ai/ai-audit/" }] });
+    replies["Choose two to four published posts"] = () => ({ ...F.LINKS_REPLY, sources: [{ phrase: "Every's review", url: "https://arca-wellness.vercel.app/ai-audit/" }] });
     await expectBlocked("links", /audit page/);
   });
   it("assemble: no pull quote verbatim in the idea, or an SEO package without five FAQ", async () => {

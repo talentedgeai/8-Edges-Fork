@@ -15,7 +15,7 @@ export const OBJECTIVE_LEVELS = ["company", "office", "executor"] as const;
 export type ObjectiveLevel = (typeof OBJECTIVE_LEVELS)[number];
 
 export const OFFICES = ["revenue", "talent", "operations", "innovation"] as const;
-export const BRANDS = ["edge8", "aio"] as const;
+export const BRANDS = ["arca-wellness"] as const;
 
 export const AGENTS = [
   "product-manager",
@@ -29,8 +29,7 @@ export const AGENTS = [
 ] as const;
 
 export const BRAND_LABELS: Record<string, string> = {
-  edge8: "Edge8",
-  aio: "AI Officer Institute",
+  "arca-wellness": "Arca Wellness",
   company: "Company",
 };
 

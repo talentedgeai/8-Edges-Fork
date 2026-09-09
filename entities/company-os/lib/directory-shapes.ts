@@ -42,6 +42,6 @@ export type OpenRole = {
 // The people on both sides of an assigned client: Edge8's client-visible
 // assigned staff and the client's own contacts.
 export type HubTeam = {
-  edge8: { name: string; roleTitle: string | null; email: string | null }[];
+  arcaWellness: { name: string; roleTitle: string | null; email: string | null }[];
   client: { name: string; title: string | null; email: string | null }[];
 };

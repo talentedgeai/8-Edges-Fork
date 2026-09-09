@@ -4164,8 +4164,7 @@ a.admin-ideas-share-card:hover {
   padding: 2px 8px;
   border-radius: 5px;
 }
-.admin-edges-ltag--edge8 { background: var(--admin-accent-soft); color: var(--admin-accent); }
-.admin-edges-ltag--aio { background: var(--admin-sidebar-bg); color: var(--admin-accent-on-dark-strong); }
+.admin-edges-ltag--arca-wellness { background: var(--admin-accent-soft); color: var(--admin-accent); }
 .admin-edges-ltag--company { background: var(--admin-ok-bg); color: var(--admin-ok-ink); }
 
 .admin-edges-kr { padding: 10px 18px; border-top: 1px solid var(--admin-line); }

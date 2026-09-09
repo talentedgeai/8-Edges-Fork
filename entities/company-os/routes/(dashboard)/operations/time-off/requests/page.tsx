@@ -147,7 +147,7 @@ export default async function TimeOffPage() {
       <PageHead
         eyebrow="Operations"
         title="Time Off"
-        sub="Edge8 policy auto-approves; On Target waits for a decision. Deny anything that doesn't work."
+        sub="Arca Wellness policy auto-approves; On Target waits for a decision. Deny anything that doesn't work."
         action={
           <div className="u-row">
             <Link href="/admin/operations/time-off/policies" className="admin-btn">

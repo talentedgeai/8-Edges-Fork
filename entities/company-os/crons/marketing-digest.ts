@@ -12,8 +12,8 @@ import { one } from "@/kernel/config/embedded";
 // content (blog, LinkedIn, Facebook) that is due today or overdue and not yet
 // posted. Email is excluded: it sends itself via the campaign engine. Sends
 // nothing when nothing is due.
-const FOUNDER_EMAIL = "dave@edge8.ai";
-const CALENDAR_URL = "https://www.edge8.ai/admin/revenue/marketing/calendar";
+const FOUNDER_EMAIL = "derek.nguyen@edge8.ai";
+const CALENDAR_URL = "https://arca-wellness.vercel.app/admin/revenue/marketing/calendar";
 const MANUAL_CHANNELS = ["blog", "linkedin", "facebook"];
 const CHANNEL_LABEL: Record<string, string> = {
   blog: "Blog",

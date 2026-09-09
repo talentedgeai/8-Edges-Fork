@@ -53,10 +53,10 @@ max_rows = 1000
 # work on previews.
 [auth]
 enabled = true
-site_url = "https://<PROJECT>.vercel.app"
+site_url = "https://arca-wellness.vercel.app"
 additional_redirect_urls = [
-  "https://<PROJECT>.vercel.app/api/auth/callback",
-  "https://<PROJECT>.vercel.app/**",
+  "https://arca-wellness.vercel.app/api/auth/callback",
+  "https://arca-wellness.vercel.app/**",
 ]
 jwt_expiry = 3600
 enable_refresh_token_rotation = true

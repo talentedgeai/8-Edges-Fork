@@ -2,7 +2,7 @@ import { getAllPublishedPosts } from '@/entities/site/lib/blog'
 import { allCaseStudies } from '@/entities/site/lib/caseStudies'
 import { allWorkflows } from '@/entities/library'
 
-const BASE = 'https://www.edge8.ai'
+const BASE = 'https://arca-wellness.vercel.app'
 
 // Served at /llms.txt — a curated, machine-readable map of the site for LLMs and
 // AI search engines (the llms.txt convention: https://llmstxt.org).

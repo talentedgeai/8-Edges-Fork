@@ -5,39 +5,34 @@ import './globals.css'
 import { SiteFrame } from '@/entities/site'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.edge8.ai'),
-  title: 'Edge8 | AI Leadership, Automation & Global Talent Solutions',
-  description: 'Edge8 helps organizations become Tech-Forward through AI Leadership, AI Programs, and Global Talent Staffing. Achieve 8x efficiency.',
+  metadataBase: new URL('https://arca-wellness.vercel.app'),
+  title: 'Arca Wellness | AI Leadership, Automation & Global Talent Solutions',
+  description: 'Arca Wellness helps organizations become Tech-Forward through AI Leadership, AI Programs, and Global Talent Staffing. Achieve 8x efficiency.',
   openGraph: {
-    title: 'Edge8 | AI Leadership, Automation & Global Talent Solutions',
-    description: 'Edge8 helps organizations become Tech-Forward through AI Leadership, AI Programs, and Global Talent Staffing. Achieve 8x efficiency.',
-    url: 'https://www.edge8.ai',
-    siteName: 'Edge8',
+    title: 'Arca Wellness | AI Leadership, Automation & Global Talent Solutions',
+    description: 'Arca Wellness helps organizations become Tech-Forward through AI Leadership, AI Programs, and Global Talent Staffing. Achieve 8x efficiency.',
+    url: 'https://arca-wellness.vercel.app',
+    siteName: 'Arca Wellness',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Edge8 | AI Leadership, Automation & Global Talent Solutions',
-    description: 'Edge8 helps organizations become Tech-Forward through AI Leadership, AI Programs, and Global Talent Staffing. Achieve 8x efficiency.',
+    title: 'Arca Wellness | AI Leadership, Automation & Global Talent Solutions',
+    description: 'Arca Wellness helps organizations become Tech-Forward through AI Leadership, AI Programs, and Global Talent Staffing. Achieve 8x efficiency.',
   },
 }
 
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Edge8',
-  alternateName: 'Edge8 AI',
-  url: 'https://www.edge8.ai',
-  logo: 'https://www.edge8.ai/logo.png',
-  description:
-    'Edge8 helps founders be Tech-Forward through AI Programs, fractional CAIO leadership, AI Officer Certification, and global AI talent staffing.',
-  founder: { '@type': 'Person', name: 'Dave Hajdu' },
-  sameAs: ['https://www.linkedin.com/company/edge8ai/'],
+  name: 'Arca Wellness',
+  url: 'https://arca-wellness.vercel.app',
+  logo: 'https://arca-wellness.vercel.app/logo.png',
   contactPoint: [
     {
       '@type': 'ContactPoint',
       contactType: 'sales',
-      email: 'hello@edge8.ai',
+      email: 'derek.nguyen@edge8.ai',
       areaServed: ['US', 'VN', 'SG', 'MY'],
       availableLanguage: ['English'],
     },

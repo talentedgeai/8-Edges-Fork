@@ -14,5 +14,5 @@ export const LETTER_ACTOR = "letter-agent";
 
 // Where the validate step's test goes, and who is greeted in it.
 export function testRecipient(): string {
-  return process.env.MARKETING_TEST_TO?.trim() || "dave@edge8.co";
+  return process.env.MARKETING_TEST_TO?.trim() || "derek.nguyen@edge8.ai";
 }

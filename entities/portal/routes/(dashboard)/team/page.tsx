@@ -59,7 +59,7 @@ export default async function PortalTeamPage() {
 
   return (
     <>
-      <PageHead eyebrow="Client Portal" title="Edge8 Team" sub="The Edge8 people assigned to your account." />
+      <PageHead eyebrow="Client Portal" title="Arca Wellness Team" sub="The Arca Wellness people assigned to your account." />
 
       {team.length === 0 ? (
         <div className="admin-card admin-section-card">

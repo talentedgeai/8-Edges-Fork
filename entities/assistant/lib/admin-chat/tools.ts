@@ -9,7 +9,7 @@ import type Anthropic from "@anthropic-ai/sdk";
 export const QUERY_TOOL: Anthropic.Tool = {
   name: "query_database",
   description:
-    "Run a single read-only SQL SELECT against the Edge8 Company OS database " +
+    "Run a single read-only SQL SELECT against the Arca Wellness Company OS database " +
     "(schema company_os). Use this for every question about business data — " +
     "contacts, deals, leads, invoices, expenses, hiring, staff, time off, " +
     "events, surveys. Also use it to introspect information_schema.columns when " +
@@ -52,7 +52,7 @@ export const WRITE_TOOL: Anthropic.Tool = {
 export const EMAIL_TOOL: Anthropic.Tool = {
   name: "send_email",
   description:
-    "Send an email to one recipient from notifications@edge8.ai (replies go to " +
+    "Send an email to one recipient from derek.nguyen@edge8.ai (replies go to " +
     "the admin). The full email is shown to the admin, who must approve it " +
     "before it sends — draft it in conversation first. Plain text only: blank " +
     "lines separate paragraphs. One recipient per call, no bulk sends; look " +

@@ -77,7 +77,7 @@ export async function getActiveJobs(): Promise<JobPost[]> {
         type: EMPLOYMENT_LABEL[r.employment_type] ?? 'Full-time',
         posted: r.opened_at ?? '',
         excerpt: typeof meta.excerpt === 'string' ? meta.excerpt : '',
-        applyEmail: 'mai@edge8.ai',
+        applyEmail: 'derek.nguyen@edge8.ai',
         supabaseJobId: r.id,
         featured: meta.featured === true,
         active: true,

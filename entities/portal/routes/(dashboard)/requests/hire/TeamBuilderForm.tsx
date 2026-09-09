@@ -107,7 +107,7 @@ export function TeamBuilderForm({ companies }: { companies: { id: string; name: 
     return (
       <div className="admin-card admin-section-card">
         <div className="admin-alert admin-alert--ok u-mb-3">
-          Request received. The Edge8 team will follow up with next steps.
+          Request received. The Arca Wellness team will follow up with next steps.
         </div>
         <Link href="/portal/requests" className="admin-btn admin-btn--primary">
           Back to requests

@@ -92,7 +92,7 @@ export async function submitEstimate(input: {
   await pingOps(
     `📝 Contractor estimate ${resubmit ? "resubmitted" : "submitted"}: "${req.title}" — ${
       req.person?.full_name ?? req.person?.email ?? "unknown"
-    }, ${hours}h. Review: https://www.edge8.ai/admin/operations/contractor-requests`,
+    }, ${hours}h. Review: https://arca-wellness.vercel.app/admin/operations/contractor-requests`,
   );
 
   if (req.origin === "portal" && req.requester?.email) {
@@ -162,7 +162,7 @@ export async function submitWork(input: {
   await pingOps(
     `✅ Contractor work submitted: "${req.title}" — ${
       req.person?.full_name ?? req.person?.email ?? "unknown"
-    }, ${hours}h${overtime > 0 ? ` + ${overtime}h OT` : ""}. Review: https://www.edge8.ai/admin/operations/contractor-requests`,
+    }, ${hours}h${overtime > 0 ? ` + ${overtime}h OT` : ""}. Review: https://arca-wellness.vercel.app/admin/operations/contractor-requests`,
   );
 
   if (req.origin === "portal" && req.requester?.email) {

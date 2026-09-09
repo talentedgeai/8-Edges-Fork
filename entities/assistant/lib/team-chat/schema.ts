@@ -65,7 +65,7 @@ NULL as "active" unless asked about archived records.
 - departments (name, slug, parent_department_id) + positions (title, level,
   department_id, is_people_manager).
 - staff_assignments — which team_member is placed at which client company_id,
-  role_title, start_date, end_date, status (Edge8 staffing placements).
+  role_title, start_date, end_date, status (Arca Wellness staffing placements).
 - time_off — leave: team_member_id, leave_type, status, start_date, end_date,
   days, hours, is_half_day, approved_by, requested_at. (The free-text reason and
   manager_note are NOT readable here.)

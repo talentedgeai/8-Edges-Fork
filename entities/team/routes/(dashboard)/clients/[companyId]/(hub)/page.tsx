@@ -80,7 +80,7 @@ export default async function TeamClientHubOverview({ params }: { params: { comp
   const sharedDocs = hasPrograms ? (documents ?? []).filter((d) => !d.programId) : documents ?? [];
   const sharedMeetings = meetings ?? [];
 
-  const edge8 = teamRoster?.edge8 ?? [];
+  const arcaWellness = teamRoster?.arcaWellness ?? [];
   const clientContacts = teamRoster?.client ?? [];
 
   return (
@@ -93,7 +93,7 @@ export default async function TeamClientHubOverview({ params }: { params: { comp
         </div>
         {programs.length === 0 ? (
           <div className="admin-card admin-section-card u-mb-4">
-            <div className="admin-empty">No AI Programs yet. Created from the client portal or by Edge8.</div>
+            <div className="admin-empty">No AI Programs yet. Created from the client portal or by Arca Wellness.</div>
           </div>
         ) : (
           programs.map((p) => {
@@ -207,24 +207,24 @@ export default async function TeamClientHubOverview({ params }: { params: { comp
           </>
         )}
 
-        {(edge8.length > 0 || clientContacts.length > 0) && (
+        {(arcaWellness.length > 0 || clientContacts.length > 0) && (
           <>
             <div className="admin-hub-band-head">
               <h2 className="admin-card-title">Team</h2>
               <Link href={`/team/clients/${companyId}/team`} className="admin-cell-muted u-sm">All →</Link>
             </div>
             <div className="admin-card admin-section-card u-mb-4">
-              {edge8.length > 0 && (
+              {arcaWellness.length > 0 && (
                 <>
-                  <div className="admin-eyebrow u-mb-1">Edge8 team</div>
+                  <div className="admin-eyebrow u-mb-1">Arca Wellness team</div>
                   <div className="admin-list">
-                    {edge8.map((m) => (
+                    {arcaWellness.map((m) => (
                       <div className="admin-list-row" key={`e8-${m.name}`}>
                         <div className="admin-list-main u-row u-gap-3">
                           <div className="admin-avatar admin-avatar--soft">{initials(m.name)}</div>
                           <div>
                             <div className="admin-list-title">{m.name}</div>
-                            <div className="admin-list-sub">{m.roleTitle || "Edge8 team"}</div>
+                            <div className="admin-list-sub">{m.roleTitle || "Arca Wellness team"}</div>
                             {m.email && <a href={`mailto:${m.email}`} className="admin-list-sub u-link-plain">{m.email}</a>}
                           </div>
                         </div>
@@ -234,7 +234,7 @@ export default async function TeamClientHubOverview({ params }: { params: { comp
                 </>
               )}
               {clientContacts.length > 0 && (
-                <div className={edge8.length > 0 ? "u-mt-4" : ""}>
+                <div className={arcaWellness.length > 0 ? "u-mt-4" : ""}>
                   <div className="admin-eyebrow u-mb-1">Client contacts</div>
                   <div className="admin-list">
                     {clientContacts.map((m) => (

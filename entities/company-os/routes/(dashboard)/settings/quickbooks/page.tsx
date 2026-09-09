@@ -6,8 +6,7 @@ import { formatDate } from "@/kernel/ui/format";
 import { firstParam, type SearchParamsObj } from "@/kernel/ui/url";
 
 const CONNECTIONS: { entity: QboEntity; label: string; sub: string }[] = [
-  { entity: "edge8", label: "Edge8 (Talent Edge LLC)", sub: "Private retreats + client work-request billing." },
-  { entity: "aio", label: "AIO", sub: "Public retreats." },
+  { entity: "arca-wellness", label: "Arca Wellness", sub: "Client billing and retreats." },
 ];
 
 export const metadata = {
@@ -38,7 +37,7 @@ export default async function QuickBooksSettingsPage({ searchParams }: { searchP
       <PageHead
         eyebrow="Settings"
         title="QuickBooks"
-        sub="One connection per company: Edge8 for client billing and private retreats, AIO for public retreats."
+        sub="One connection per company: Arca Wellness for client billing and retreats."
       />
 
       {flash && (

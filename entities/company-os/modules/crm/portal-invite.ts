@@ -53,7 +53,7 @@ export async function loadPortalTarget(
   const { data: employment, error: empErr } = await companyOs.from("team_members").select("id").eq("person_id", personId).in("status", PORTAL_STATUSES).limit(1);
   if (empErr) return { error: empErr.message };
   if ((employment ?? []).length > 0) {
-    return { error: "This person is an Edge8 team member. Staff use /team, not the client portal." };
+    return { error: "This person is an Arca Wellness team member. Staff use /team, not the client portal." };
   }
 
   return {
@@ -168,7 +168,7 @@ export async function invitePortalMemberCore(
           <p>You've been given access to the <strong>8 Edges Client Portal</strong>.</p>
           <p style="margin:20px 0;"><a href="${verifyUrl}" style="display:inline-block;background:${PALETTE.dark};color:${PALETTE.white};text-decoration:none;font-weight:600;padding:12px 28px;border-radius:10px;">Open the Client Portal</a></p>
           <p style="font-size:13px;color:${PALETTE.greyMid};">The button takes you to a sign-in page — press "Sign in" there and you're in. If the link expires, request a fresh one at <a href="${getSiteOrigin()}/portal/login">${getSiteOrigin()}/portal/login</a> or reply to this email.</p>
-          <p>Dave and the Edge8 team</p>
+          <p>Dave and the Arca Wellness team</p>
         `.trim(),
         logMeta: { source: "portal_invite" },
       });

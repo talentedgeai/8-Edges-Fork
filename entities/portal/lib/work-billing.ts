@@ -94,7 +94,7 @@ async function flagManual(
       to: accounting,
       subject: `Manual invoice needed: ${req.title}`,
       html: lines.map((l) => `<p>${l}</p>`).join("\n"),
-      replyTo: "dave@edge8.co",
+      replyTo: "derek.nguyen@edge8.ai",
     });
   }
   await notifyOps(`⚠️ Client invoicing ${status === "failed" ? "failed" : "needs manual handling"}: "${req.title}" — ${reason}`);
@@ -190,7 +190,7 @@ async function runBilling(requestId: string): Promise<BillingOutcome> {
         emailed ? `<p>QBO has emailed it to the client.</p>` : `<p><strong>QBO could not email it — please send it from QuickBooks.</strong></p>`,
         `<p>Request: ${requestAdminUrl(req.id)}</p>`,
       ].join("\n"),
-      replyTo: "dave@edge8.co",
+      replyTo: "derek.nguyen@edge8.ai",
     });
   }
   await notifyOps(

@@ -22,7 +22,7 @@ export const PRIORITY_LABEL: Record<BacklogPriority, string> = {
 export const BACKLOG_STATUSES = ["proposed", "accepted", "active", "shipped", "parked"] as const;
 export type BacklogStatus = (typeof BACKLOG_STATUSES)[number];
 
-export const BACKLOG_SOURCES = ["edge8", "client"] as const;
+export const BACKLOG_SOURCES = ["arca-wellness", "client"] as const;
 export type BacklogSource = (typeof BACKLOG_SOURCES)[number];
 
 export type RoadmapGroup = {

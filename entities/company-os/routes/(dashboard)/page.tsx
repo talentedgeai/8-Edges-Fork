@@ -157,7 +157,7 @@ export default async function DashboardPage() {
   // ── Revenue ──
   const invoices = ((invoicesRes.data as InvoiceRow[] | null) ?? []).filter((i) => i.txn_date);
   const paidOrders = ((ordersRes.data as OrderRow[] | null) ?? []).filter((o) => o.status === "paid");
-  const invoiceCash = (from: string, to: string, entity?: "edge8" | "aio") =>
+  const invoiceCash = (from: string, to: string, entity?: "arca-wellness" | "aio") =>
     invoices.reduce(
       (s, i) => (i.txn_date! >= from && i.txn_date! < to && (!entity || i.entity === entity) ? s + (i.amount_cents ?? 0) : s),
       0,
@@ -171,7 +171,7 @@ export default async function DashboardPage() {
 
   const cash30 = cashBetween(date30, tomorrow);
   const cashYtd = cashBetween(yearStart, tomorrow);
-  const rev30Edge8 = invoiceCash(date30, tomorrow, "edge8") + stripeCash(date30, tomorrow);
+  const rev30Edge8 = invoiceCash(date30, tomorrow, "arca-wellness") + stripeCash(date30, tomorrow);
   const rev30Aio = invoiceCash(date30, tomorrow, "aio");
 
   const deals = (dealsRes.data as DealRow[] | null) ?? [];
@@ -253,7 +253,7 @@ export default async function DashboardPage() {
           value={formatCents(cash30)}
           sub={
             <>
-              <div>Edge8 {compactUsd(rev30Edge8)}</div>
+              <div>Arca Wellness {compactUsd(rev30Edge8)}</div>
               <div>AIO {compactUsd(rev30Aio)}</div>
             </>
           }

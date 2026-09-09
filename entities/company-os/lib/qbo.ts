@@ -33,8 +33,8 @@ const MINOR_VERSION = "75";
 // Which QuickBooks company a call targets. The row id in qbo_connection IS
 // this string. 'edge8' is the original connection (migrated from the old
 // 'default' row id); 'aio' is the public-retreats company.
-export type QboEntity = "edge8" | "aio";
-const DEFAULT_ENTITY: QboEntity = "edge8";
+export type QboEntity = "arca-wellness";
+const DEFAULT_ENTITY: QboEntity = "arca-wellness";
 
 // The row shape comes from the generated schema snapshot (AR-01) rather than a
 // hand-written copy, so a column rename in company_os.qbo_connection fails the

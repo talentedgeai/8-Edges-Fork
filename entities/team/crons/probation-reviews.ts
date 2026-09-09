@@ -9,7 +9,7 @@ import { getProbationRows } from "@/entities/company-os";
 // before it ends. Firing on the exact-day match means one nudge per person and
 // no "already notified" state to track. Auth is the standard Vercel Cron bearer.
 const REVIEW_LEAD_DAYS = 14;
-const FOUNDER_EMAIL = "dave@edge8.ai";
+const FOUNDER_EMAIL = "derek.nguyen@edge8.ai";
 
 async function handler(req: Request) {
   const today = saigonToday();
@@ -19,7 +19,7 @@ async function handler(req: Request) {
   let sent = 0;
   for (const r of due) {
     const recipients = [...new Set([r.managerEmail, FOUNDER_EMAIL].filter((e): e is string => !!e))];
-    const link = `https://www.edge8.ai/admin/talent/team/${r.teamMemberId}`;
+    const link = `https://arca-wellness.vercel.app/admin/talent/team/${r.teamMemberId}`;
     const ok = await sendTransactionalEmail({
       to: recipients,
       subject: `Probation review due in 2 weeks: ${r.name}`,

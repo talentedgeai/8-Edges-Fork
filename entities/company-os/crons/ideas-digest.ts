@@ -14,7 +14,7 @@ import { one } from "@/kernel/config/embedded";
 // the innovation backlog in the last 24h — build ideas and learnings. Sends
 // nothing when the window is empty. A rolling 24h window matched to a
 // once-daily run needs no "already notified" state to track.
-const FOUNDER_EMAIL = "dave@edge8.ai";
+const FOUNDER_EMAIL = "derek.nguyen@edge8.ai";
 const WINDOW_HOURS = 24;
 
 type DigestRow = {

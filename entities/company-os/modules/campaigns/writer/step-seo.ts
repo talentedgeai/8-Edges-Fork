@@ -81,7 +81,7 @@ ${blog.seoMd ?? "(none)"}`;
   else if (await slugTaken(slug, blog.id)) failures.push(`Slug "${slug}" is already in use by another post.`);
   if (!out.title_tag?.trim()) failures.push("No title tag.");
   if (!out.meta_description?.trim()) failures.push("No meta description.");
-  if (/\|\s*Edge8 Blog\s*$/i.test(out.title_tag ?? "")) failures.push("Title tag is the generic '... | Edge8 Blog' pattern.");
+  if (/\|\s*Arca Wellness Blog\s*$/i.test(out.title_tag ?? "")) failures.push("Title tag is the generic '... | Arca Wellness Blog' pattern.");
   for (const e of [emDashError([out.title, out.title_tag, out.meta_description, out.excerpt].join("\n"))]) if (e) failures.push(e);
   const faq = (out.faq ?? []).filter((f) => f.question?.trim() && f.answer?.trim());
   const faqProblem = faqError(faqBlock(faq), out.primary_keyword ?? null);

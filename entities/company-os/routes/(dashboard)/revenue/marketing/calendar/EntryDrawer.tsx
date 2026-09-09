@@ -527,7 +527,7 @@ export function EntryDrawer({
             )}
           </div>
           <div className="admin-hint u-mt-2">
-            Publishes straight to edge8.ai from the database: validates the post, sets it live, and
+            Publishes straight to arca-wellness.vercel.app from the database: validates the post, sets it live, and
             verifies the URL. No code deploy. Needs a body, an image, and an SEO plan with a slug.
           </div>
         </div>

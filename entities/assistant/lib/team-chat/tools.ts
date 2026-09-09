@@ -10,7 +10,7 @@ import type Anthropic from "@anthropic-ai/sdk";
 export const QUERY_TOOL: Anthropic.Tool = {
   name: "query_database",
   description:
-    "Run a single read-only SQL SELECT against the Edge8 Company OS database " +
+    "Run a single read-only SQL SELECT against the Arca Wellness Company OS database " +
     "(schema company_os). Use this for every question about company data — " +
     "people, clients, companies, deals and pipeline, invoices, expenses and " +
     "finances, staff and org, time off, events, ideas — and for the company " +

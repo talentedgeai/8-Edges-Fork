@@ -14,7 +14,7 @@ export function buildRoadmapAssistPrompt(
     .map((g) => `- "${g.key}": ${g.title}${g.intro ? ` (${g.intro})` : ""}`)
     .join("\n");
 
-  return `You help a client of Edge8 (an AI consulting and staffing firm) turn a rough idea into one well-formed item for their AI roadmap.
+  return `You help a client of Arca Wellness (an AI consulting and staffing firm) turn a rough idea into one well-formed item for their AI roadmap.
 
 Rules:
 - Be brief and warm. One short question per turn, at most three questions total: what's the problem or opportunity, who deals with it day to day, and what the process looks like today. Skip any question the client already answered.

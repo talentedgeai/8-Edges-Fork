@@ -75,7 +75,7 @@ export default async function PortalEventsPage() {
 
   return (
     <>
-      <PageHead eyebrow="Client Portal" title="My Events" sub="Your registrations, plus what's coming up at Edge8." />
+      <PageHead eyebrow="Client Portal" title="My Events" sub="Your registrations, plus what's coming up at Arca Wellness." />
 
       <div className="admin-card admin-section-card">
         <h2 className="admin-card-title">Upcoming ({upcoming.length})</h2>

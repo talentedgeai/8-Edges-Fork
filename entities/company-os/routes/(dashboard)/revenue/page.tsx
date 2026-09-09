@@ -302,7 +302,7 @@ export default async function SalesCockpitPage() {
   // ── Revenue office overview ──
   const invoices = ((invoicesRes.data as InvoiceRow[] | null) ?? []).filter((i) => i.txn_date);
   const paidOrders = ((ordersRes.data as OrderRow[] | null) ?? []).filter((o) => o.status === "paid");
-  const invoiceCash = (from: string, to: string, entity?: "edge8" | "aio") =>
+  const invoiceCash = (from: string, to: string, entity?: "arca-wellness" | "aio") =>
     invoices.reduce(
       (s, i) => (i.txn_date! >= from && i.txn_date! < to && (!entity || i.entity === entity) ? s + (i.amount_cents ?? 0) : s),
       0,
@@ -322,7 +322,7 @@ export default async function SalesCockpitPage() {
   const revenueYtd = cashBetween(yearStart, tomorrow);
   const entitySplit = (from: string, to: string) => (
     <>
-      <div>Edge8 {compactUsd(invoiceCash(from, to, "edge8") + stripeCash(from, to))}</div>
+      <div>Arca Wellness {compactUsd(invoiceCash(from, to, "arca-wellness") + stripeCash(from, to))}</div>
       <div>AIO {compactUsd(invoiceCash(from, to, "aio"))}</div>
     </>
   );

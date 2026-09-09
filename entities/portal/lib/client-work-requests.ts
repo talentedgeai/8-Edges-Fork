@@ -242,7 +242,7 @@ export async function createWorkRequestForActor(
 
   const companyName = actor.memberships.find((m) => m.companyId === input.companyId)?.companyName ?? "client";
   await pingOps(
-    `🧑‍💼 Client work request: "${title}" — ${companyName} → ${person?.full_name ?? "contractor"}. Review: https://www.edge8.ai/admin/operations/contractor-requests?open=${data.id}`,
+    `🧑‍💼 Client work request: "${title}" — ${companyName} → ${person?.full_name ?? "contractor"}. Review: https://arca-wellness.vercel.app/admin/operations/contractor-requests?open=${data.id}`,
   );
 
   return { ok: true, id: data.id };
@@ -333,7 +333,7 @@ export async function cancelWorkRequestForActor(
   const req = await loadOwnedRequest(actor, id);
   if (!req) return { ok: false, error: "Request not found." };
   if (!CLIENT_CANCELLABLE.includes(req.status)) {
-    return { ok: false, error: "Work is already underway — reply to your Edge8 contact to cancel this request." };
+    return { ok: false, error: "Work is already underway — reply to your Arca Wellness contact to cancel this request." };
   }
   const r = await applyCancel(req, decider(actor), note);
   if (r.ok) {
@@ -368,7 +368,7 @@ export async function createPortalInquiryForActor(
     subject,
     message,
     source: "portal",
-    source_site: "edge8.ai",
+    source_site: "arca-wellness.vercel.app",
     status: "new_lead",
     metadata: {
       origin: "portal",
@@ -382,7 +382,7 @@ export async function createPortalInquiryForActor(
 
   const companyName = actor.memberships[0]?.companyName ?? "client";
   await notifyOps(
-    `🧑‍💼 Portal general request from ${actor.displayName} (${companyName}): "${subject}". Review: https://www.edge8.ai/admin/revenue/inquiries`,
+    `🧑‍💼 Portal general request from ${actor.displayName} (${companyName}): "${subject}". Review: https://arca-wellness.vercel.app/admin/revenue/inquiries`,
   );
   return { ok: true };
 }

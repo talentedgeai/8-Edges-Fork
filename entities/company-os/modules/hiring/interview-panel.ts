@@ -47,8 +47,8 @@ export const DEFAULT_CRITERIA = ["Technical depth", "Communication", "Ownership"
 
 // The AI panelist is a real people row so it can hold interviewer + scorecard
 // rows like any human. It is identified by this sentinel email and metadata.is_ai.
-export const AI_PANELIST_EMAIL = "ai-panelist@edge8.local";
-export const AI_PANELIST_NAME = "Edge8 AI Panelist";
+export const AI_PANELIST_EMAIL = "ai-panelist@arca-wellness.local";
+export const AI_PANELIST_NAME = "Arca Wellness AI Panelist";
 
 // The single source of truth for "is this person the AI panelist". Kept here
 // (client-safe, alongside the sentinel it checks) so admin and team share one

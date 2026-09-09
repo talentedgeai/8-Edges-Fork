@@ -31,7 +31,7 @@ export const runWrite: StepRunner = async ({ letter, profile }) => {
   const system = `${brandPreamble(profile)}
 
 # Task
-Write Dave's weekly letter to the people on the Edge8 list: founders and leaders who know him. It is a note from a person, not a newsletter. Rules that hold every week:
+Write Dave's weekly letter to the people on the Arca Wellness list: founders and leaders who know him. It is a note from a person, not a newsletter. Rules that hold every week:
 - Open with "Hi {first_name}," exactly, on its own line. The placeholder is filled per reader.
 - Two or three short paragraphs from the data points: where he was, what happened, what it showed. Specific and true; nothing that is not in the data points.
 - Then one line that says what the three posts below have in common, in his words.

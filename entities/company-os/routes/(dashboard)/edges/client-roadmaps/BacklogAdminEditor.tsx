@@ -112,7 +112,7 @@ export function BacklogAdminEditor({
                 className={`admin-backlog-editor-pill${it.edge8_priority === p ? ` on-${p}` : ""}`}
                 disabled={pending}
                 onClick={() => run(() => setEdge8Priority(it.id, p))}
-                title="Edge8 proposed priority"
+                title="Arca Wellness proposed priority"
               >
                 {PRIORITY_LABEL[p]}
               </button>
@@ -132,7 +132,7 @@ export function BacklogAdminEditor({
             {liveCardItemIds?.has(it.id) && <span className="admin-backlog-editor-chip tok">on a board</span>}
             {tok && <span className="admin-backlog-editor-chip tok">est. {tok} Human Tokens</span>}
             {it.source === "client" && <span className="admin-backlog-editor-chip client">client proposed</span>}
-            {it.status !== "accepted" && it.source === "edge8" && <span className="admin-backlog-editor-chip">{it.status}</span>}
+            {it.status !== "accepted" && it.source === "arca-wellness" && <span className="admin-backlog-editor-chip">{it.status}</span>}
             {it.client_priority && (
               <span className="admin-backlog-editor-chip client">client set: {PRIORITY_LABEL[it.client_priority]}</span>
             )}
@@ -374,7 +374,7 @@ export function BacklogAdminEditor({
         <div className="admin-backlog-editor-empty">
           <p>
             No roadmap yet. A roadmap is a set of milestones you define for this client:
-            start from a blank one, or seed the standard Edge8 5-milestone layout and
+            start from a blank one, or seed the standard Arca Wellness 5-milestone layout and
             shape it from there.
           </p>
           {newGroupOpen ? (
@@ -383,7 +383,7 @@ export function BacklogAdminEditor({
             <div className="row">
               <button type="button" className="admin-backlog-editor-btn" onClick={() => setNewGroupOpen(true)}>Create a group</button>
               <button type="button" className="admin-backlog-editor-btn ghost" disabled={pending} onClick={() => run(() => seedTemplateGroups(companyId))}>
-                Start from the Edge8 template
+                Start from the Arca Wellness template
               </button>
             </div>
           )}

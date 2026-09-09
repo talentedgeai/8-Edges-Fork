@@ -191,7 +191,7 @@ export default async function CareersPage() {
                 and we&rsquo;ll reach out when something fits.
               </p>
               <a
-                href="mailto:hello@edge8.ai?subject=Expression of Interest — Edge8"
+                href="mailto:derek.nguyen@edge8.ai?subject=Expression of Interest — Edge8"
                 className="btn btn-primary"
               >
                 Express Interest →
@@ -264,10 +264,10 @@ export default async function CareersPage() {
               to know.
             </p>
             <a
-              href="mailto:hello@edge8.ai?subject=Expression of Interest — Edge8"
+              href="mailto:derek.nguyen@edge8.ai?subject=Expression of Interest — Edge8"
               className="btn btn-secondary careers-cta-btn"
             >
-              hello@edge8.ai →
+              derek.nguyen@edge8.ai →
             </a>
           </div>
         </div>

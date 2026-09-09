@@ -11,8 +11,8 @@ import { generateMarketingRecap, monthBounds } from "@/entities/company-os/lib/a
 // the recap, posts it to the Marketing Lark channel, and emails the founder.
 // Runs on the 4th (not the 1st) so every broadcast in the month is past its 72h
 // settle window before it is graded. Skips cleanly when the month had no sends.
-const FOUNDER_EMAIL = "dave@edge8.ai";
-const RECAPS_URL = "https://www.edge8.ai/admin/revenue/marketing/recaps";
+const FOUNDER_EMAIL = "derek.nguyen@edge8.ai";
+const RECAPS_URL = "https://arca-wellness.vercel.app/admin/revenue/marketing/recaps";
 
 function pct(n: number, of: number): string {
   return of > 0 ? `${Math.round((n / of) * 100)}%` : "—";

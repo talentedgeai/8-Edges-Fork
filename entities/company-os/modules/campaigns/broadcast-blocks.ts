@@ -36,7 +36,7 @@ export async function resolveBroadcastBlocks(blocks: BroadcastBlocks): Promise<R
   const posts = blocks.posts.flatMap((id) => {
     const r = byId.get(id);
     if (!r || !r.slug || r.status !== "published") return [];
-    const domain = siteForBrandSlug(one(r.brands)?.slug ?? null)?.domain ?? "https://www.edge8.ai";
+    const domain = siteForBrandSlug(one(r.brands)?.slug ?? null)?.domain ?? "https://arca-wellness.vercel.app";
     return [{ title: r.title, excerpt: r.excerpt ?? "", imageUrl: r.image_url, url: `${domain}/post/${r.slug}/`, pillar: one(r.marketing_pillars)?.name ?? null }];
   });
   return { posts, cta, layout };

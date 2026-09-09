@@ -20,7 +20,7 @@ function sourceBucket(raw: string | null): string {
   if (
     s === "inbound" ||
     s === "aio-pad" ||
-    s.includes("edge8.ai") ||
+    s.includes("arca-wellness.vercel.app") ||
     s.includes("ai-officer") ||
     s.includes("infiniteleverage")
   )

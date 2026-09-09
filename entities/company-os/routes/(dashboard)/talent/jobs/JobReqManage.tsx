@@ -188,7 +188,7 @@ export function JobReqManage({
             <dt>Public URL</dt>
             <dd>
               {live ? (
-                <a href={`https://www.edge8.ai/careers/${req.slug}/`} target="_blank" rel="noreferrer">
+                <a href={`https://arca-wellness.vercel.app/careers/${req.slug}/`} target="_blank" rel="noreferrer">
                   /careers/{req.slug} ↗
                 </a>
               ) : (

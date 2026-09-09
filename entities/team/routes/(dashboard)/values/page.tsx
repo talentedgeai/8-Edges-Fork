@@ -5,7 +5,7 @@ import { CoreValuesGrid, type ValueRow } from "@/entities/company-os";
 
 export const metadata = {
   title: "Core Values",
-  description: "The six values Edge8 works by.",
+  description: "The six values Arca Wellness works by.",
 };
 
 // /team/values — the six core values, company-visible and read-only. Rows live

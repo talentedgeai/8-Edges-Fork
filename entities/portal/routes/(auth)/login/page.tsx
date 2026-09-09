@@ -8,7 +8,7 @@ export default function PortalLoginPage() {
         <div className="admin-auth-brand">
           8 Edges Client Portal
         </div>
-        <p className="admin-auth-sub">Sign in to your Edge8 client portal.</p>
+        <p className="admin-auth-sub">Sign in to your Arca Wellness client portal.</p>
         <Suspense>
           <LoginForm />
         </Suspense>

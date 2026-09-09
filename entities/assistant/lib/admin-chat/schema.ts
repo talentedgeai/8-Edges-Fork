@@ -101,7 +101,7 @@ as "active" unless the user asks about archived records.
 - departments (name, slug, parent_department_id, head_team_member_id) +
   positions (title, level, department_id, employment_type, is_people_manager).
 - staff_assignments — staffing: which team_member is placed at which client
-  company_id, role_title, start_date, end_date, status. (Edge8 staffing clients.)
+  company_id, role_title, start_date, end_date, status. (Arca Wellness staffing clients.)
 - time_off — leave requests/records: team_member_id, leave_type (e.g. vacation),
   status (approved|cancelled|...), start_date, end_date, days, hours, is_half_day,
   reason, approved_by, requested_at, external_source. 288 rows, mostly approved.

@@ -164,7 +164,7 @@ export async function sendReviewLink(reviewId: string): Promise<{ ok: true; to: 
       (row.rater_kind === "external"
         ? `<p style="font-size:13px;color:${PALETTE.greyMid};">This link is yours alone and needs no account. Please don't forward it.</p>`
         : "") +
-      `<p>Thank you,<br/>the Edge8 team</p>`,
+      `<p>Thank you,<br/>the Arca Wellness team</p>`,
     logMeta: { source: "review-requests", kind: "review_link", reviewId: row.id },
   });
   if (!sent) return { ok: false, error: "The email could not be sent." };

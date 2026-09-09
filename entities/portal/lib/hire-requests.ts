@@ -101,7 +101,7 @@ export async function createTeamRequestForActor(
   if (error || !data) return { ok: false, error: "Couldn't submit your request. Please try again." };
 
   await notifyOps(
-    `👥 Build Your Team request: ${count} ${count === 1 ? "hire" : "hires"} for ${companyName}. Budget ~$${annualUsd.toLocaleString()}/yr${discounted ? " (10% team discount)" : ""}. Review: https://www.edge8.ai/admin/revenue/deals?open=${data.id}`,
+    `👥 Build Your Team request: ${count} ${count === 1 ? "hire" : "hires"} for ${companyName}. Budget ~$${annualUsd.toLocaleString()}/yr${discounted ? " (10% team discount)" : ""}. Review: https://arca-wellness.vercel.app/admin/revenue/deals?open=${data.id}`,
   );
 
   return { ok: true, id: data.id };

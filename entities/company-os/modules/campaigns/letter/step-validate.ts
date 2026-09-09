@@ -25,7 +25,7 @@ export const runValidate: StepRunner = async ({ letter }) => {
     preheader: letter.preheader,
     bodyMd: letter.bodyMd,
     blocks,
-    unsubscribeLink: "https://www.edge8.ai/unsubscribe/?token=validate",
+    unsubscribeLink: "https://arca-wellness.vercel.app/unsubscribe/?token=validate",
     utmCampaign,
   });
 

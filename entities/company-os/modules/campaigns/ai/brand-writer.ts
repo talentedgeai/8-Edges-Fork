@@ -203,7 +203,7 @@ Draft the deliverables the content rules specify, re-purposed to this brand's le
 // to a brief.
 export async function fetchSourceText(url: string, maxChars = 6000): Promise<string> {
   try {
-    const res = await fetch(url, { headers: { "user-agent": "Edge8-Writer/1.0" } });
+    const res = await fetch(url, { headers: { "user-agent": "Arca Wellness-Writer/1.0" } });
     if (!res.ok) return "";
     const html = await res.text();
     const text = html

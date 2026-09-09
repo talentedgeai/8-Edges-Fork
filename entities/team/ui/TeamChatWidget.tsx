@@ -11,18 +11,18 @@ export function TeamChatWidget() {
   return (
     <ChatWidget
       endpoint="/api/team/chat"
-      storageKey="edge8-team-chat"
+      storageKey="arca-wellness-team-chat"
       surface="team"
       fabLabel="Open team assistant"
       panelLabel="Team assistant"
       eyebrow="8 Edges Team"
       inputLabel="Message the team assistant"
-      placeholder="Ask about Edge8…"
+      placeholder="Ask about Arca Wellness…"
       historyEmptyHint="No saved conversations yet. Start chatting and they'll show up here."
       toolChipLabel={() => "Looked it up"}
       emptyState={
         <>
-          <p>Ask me anything about Edge8:</p>
+          <p>Ask me anything about Arca Wellness:</p>
           <ul>
             <li>What&apos;s our time-off policy?</li>
             <li>Who&apos;s out on vacation next week?</li>

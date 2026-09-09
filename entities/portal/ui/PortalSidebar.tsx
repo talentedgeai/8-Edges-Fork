@@ -50,7 +50,7 @@ const NAV: NavGroup[] = [
     label: "People",
     items: [
       // "Edge8 Team": the staff assigned to the client, not the client's own users.
-      { label: "Edge8 Team", href: "/portal/team", ico: "\u2637", built: true, entitlementKey: "team" },
+      { label: "Arca Wellness Team", href: "/portal/team", ico: "\u2637", built: true, entitlementKey: "team" },
       { label: "Time Off", href: "/portal/time-off", ico: "\u263c", built: true, entitlementKey: "timeOff" },
     ],
   },

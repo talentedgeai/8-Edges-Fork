@@ -25,12 +25,12 @@ export default async function NewPortalRequestPage() {
       <div className="admin-content--form">
         {contractors.length === 0 ? (
           <div className="admin-empty">
-            No contractors are available right now — send a general request instead and the Edge8 team
+            No contractors are available right now — send a general request instead and the Arca Wellness team
             will line one up.
           </div>
         ) : companies.length === 0 ? (
           <div className="admin-empty">
-            Your portal access isn&apos;t linked to a company yet — reply to your Edge8 contact to fix this.
+            Your portal access isn&apos;t linked to a company yet — reply to your Arca Wellness contact to fix this.
           </div>
         ) : (
           <NewRequestForm contractors={contractors} companies={companies} />

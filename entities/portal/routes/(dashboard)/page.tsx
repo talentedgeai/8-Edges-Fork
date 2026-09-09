@@ -135,7 +135,7 @@ export default async function PortalHome() {
           </div>
           {programs.length === 0 ? (
             <div className="admin-card admin-section-card u-mb-4">
-              <div className="admin-empty">No AI Programs yet. Start one with Add AI Program, or Edge8 sets one up with you.</div>
+              <div className="admin-empty">No AI Programs yet. Start one with Add AI Program, or Arca Wellness sets one up with you.</div>
             </div>
           ) : (
             programs.map((p) => {
@@ -274,7 +274,7 @@ export default async function PortalHome() {
           {team.length > 0 && (
             <>
             <div className="admin-hub-band-head">
-              <h2 className="admin-card-title">Your Edge8 team</h2>
+              <h2 className="admin-card-title">Your Arca Wellness team</h2>
               <Link href="/portal/team" className="admin-cell-muted u-sm">All →</Link>
             </div>
             <div className="admin-card admin-section-card u-mb-4">
@@ -293,7 +293,7 @@ export default async function PortalHome() {
                         <div>
                           <div className="admin-list-title">{name}</div>
                           <div className="admin-list-sub">
-                            {m.roleTitle || m.positionTitle || "Edge8 team"}
+                            {m.roleTitle || m.positionTitle || "Arca Wellness team"}
                             {away && ` · away ${timeOffRange(away.startDate, away.endDate, away.isHalfDay)}`}
                           </div>
                         </div>

@@ -106,7 +106,7 @@ export function BroadcastBlocksEditor({
           <label className="admin-label" htmlFor="ctaUrl">
             Button URL
           </label>
-          <input id="ctaUrl" className="admin-input" type="url" value={ctaUrl} disabled={!isDraft} placeholder="https://www.edge8.ai/contact/" onChange={(e) => setCtaUrl(e.target.value)} />
+          <input id="ctaUrl" className="admin-input" type="url" value={ctaUrl} disabled={!isDraft} placeholder="https://arca-wellness.vercel.app/contact/" onChange={(e) => setCtaUrl(e.target.value)} />
         </div>
         <div className="admin-form-actions">
           <button

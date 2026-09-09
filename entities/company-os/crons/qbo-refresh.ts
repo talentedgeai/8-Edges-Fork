@@ -3,7 +3,7 @@ import { withRoutineRun } from "@/kernel/audit/routine-runs";
 import { getQboConnectionStatus, refreshQboTokens, type QboEntity } from "@/entities/company-os/lib/qbo";
 import { notifyOps } from "@/kernel/messaging/lark";
 
-const ENTITIES: QboEntity[] = ["edge8", "aio"];
+const ENTITIES: QboEntity[] = ["arca-wellness"];
 
 // Vercel cron (see vercel.json): weekly QuickBooks token keepalive, run for
 // every connected company. Intuit refresh tokens die ~100 days after issue;
@@ -20,7 +20,7 @@ async function keepalive(entity: QboEntity) {
   const result = await refreshQboTokens(entity);
   if (!result.ok) {
     await notifyOps(
-      `⚠️ QuickBooks (${entity}) token refresh failed (${result.error}). Invoicing degrades to manual until reconnected: https://www.edge8.ai/admin/settings/quickbooks`,
+      `⚠️ QuickBooks (${entity}) token refresh failed (${result.error}). Invoicing degrades to manual until reconnected: https://arca-wellness.vercel.app/admin/settings/quickbooks`,
     );
     return { entity, connected: true as const, refreshed: false as const, error: result.error };
   }
@@ -30,7 +30,7 @@ async function keepalive(entity: QboEntity) {
     const daysLeft = (new Date(after.refreshTokenExpiresAt).getTime() - Date.now()) / 86_400_000;
     if (daysLeft < 14) {
       await notifyOps(
-        `⚠️ QuickBooks (${entity}) refresh token expires in ${Math.floor(daysLeft)} days — reconnect at https://www.edge8.ai/admin/settings/quickbooks`,
+        `⚠️ QuickBooks (${entity}) refresh token expires in ${Math.floor(daysLeft)} days — reconnect at https://arca-wellness.vercel.app/admin/settings/quickbooks`,
       );
     }
   }

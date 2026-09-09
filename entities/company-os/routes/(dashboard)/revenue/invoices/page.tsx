@@ -19,7 +19,7 @@ export const metadata = {
 const PAGE_SIZES = [25, 50, 100];
 const SORTABLE = new Set(["doc_number", "txn_date", "due_date", "amount_cents", "balance_cents"]);
 const STATUSES = ["paid", "open", "overdue", "voided"] as const;
-const ENTITIES = ["edge8", "aio"] as const;
+const ENTITIES = ["arca-wellness"] as const;
 
 export default async function InvoicesPage({ searchParams }: { searchParams: SearchParamsObj }) {
   const page = Math.max(1, Number(firstParam(searchParams.page) ?? "1") || 1);

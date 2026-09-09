@@ -35,7 +35,7 @@ export function GeneralRequest() {
   if (sent && !open) {
     return (
       <div className="u-stack">
-        <div className="admin-alert admin-alert--ok">Sent — the Edge8 team will get back to you.</div>
+        <div className="admin-alert admin-alert--ok">Sent — the Arca Wellness team will get back to you.</div>
         <button type="button" className="admin-btn" onClick={() => setSent(false)}>
           Send another
         </button>

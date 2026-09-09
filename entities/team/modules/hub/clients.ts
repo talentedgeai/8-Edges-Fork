@@ -383,9 +383,9 @@ export async function getClientTeamForActor(actor: TeamActor, companyId: string)
       .eq("company_id", companyId),
   ]);
 
-  const edge8 = assignments
+  const arcaWellness = assignments
     .filter((a) => a.client_visible)
-    .map((a) => ({ name: a.full_name || a.email || "Edge8", roleTitle: a.role_title || a.position_title, email: a.email }));
+    .map((a) => ({ name: a.full_name || a.email || "Arca Wellness", roleTitle: a.role_title || a.position_title, email: a.email }));
 
   const rows = (peopleRows ?? []) as Array<{
     role: string | null;
@@ -400,7 +400,7 @@ export async function getClientTeamForActor(actor: TeamActor, companyId: string)
     .sort((a, b) => Number(b.isPrimary) - Number(a.isPrimary) || a.name.localeCompare(b.name))
     .map(({ name, title, email }) => ({ name, title, email }));
 
-  return { edge8, client };
+  return { arcaWellness, client };
 }
 
 // The actor's email, from their own person row. uploaded_by on

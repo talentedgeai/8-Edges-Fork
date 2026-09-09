@@ -10,7 +10,7 @@
 import { companyOs } from "@/kernel/data/supabase";
 
 export type LeaveApprover = {
-  kind: "client" | "edge8";
+  kind: "client" | "arca-wellness";
   personId: string;
   email: string;
   displayName: string;
@@ -96,7 +96,7 @@ export async function resolveLeaveApprover(teamMemberId: string): Promise<LeaveA
   if (mgrError) console.error("[team/time-off] manager person lookup", mgrError);
   const p = await person((mgr as { person_id: string | null } | null)?.person_id ?? null);
   if (!p?.email) return null;
-  return { kind: "edge8", personId: p.id, email: p.email, displayName: displayNameOf(p), companyId: null };
+  return { kind: "arca-wellness", personId: p.id, email: p.email, displayName: displayNameOf(p), companyId: null };
 }
 
 // Other people to keep in the loop on a client-approved request: the client's

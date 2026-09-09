@@ -112,8 +112,8 @@ async function generateViaOpenRouter(
       Authorization: `Bearer ${key}`,
       "Content-Type": "application/json",
       // Attribution headers OpenRouter asks apps to send.
-      "HTTP-Referer": "https://www.edge8.ai",
-      "X-Title": "Edge8 AI Programs",
+      "HTTP-Referer": "https://arca-wellness.vercel.app",
+      "X-Title": "Arca Wellness AI Programs",
     },
     body: JSON.stringify({
       model: OPENROUTER_MODEL,

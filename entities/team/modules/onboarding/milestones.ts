@@ -76,7 +76,7 @@ export async function day8SurveyMilestone(row: CycleRow, ctx: MilestoneCtx): Pro
       subject: "One week in — 3 quick questions",
       html:
         `<p>Hi ${name},</p>` +
-        `<p>You are one week into Edge8. Three quick questions (about a minute) so we can fix anything that is not working:</p>` +
+        `<p>You are one week into Arca Wellness. Three quick questions (about a minute) so we can fix anything that is not working:</p>` +
         `<p><a href="${origin}/surveys/${DAY8_SURVEY_SLUG}">Answer the Day 8 survey</a></p>` +
         `<p>Your manager and the talent team read every response.</p>`,
       logMeta: { source: "onboarding-cycle", kind: "day8_survey" },
@@ -172,12 +172,12 @@ export async function day60PromotionMilestone(row: CycleRow, ctx: MilestoneCtx):
         ))];
         await sendTransactionalEmail({
           to: [row.member.email, ...cc],
-          subject: `Congratulations ${name} — you're a full-time Edge8 team member!`,
+          subject: `Congratulations ${name} — you're a full-time Arca Wellness team member!`,
           html:
             `<p>Hi ${name},</p>` +
-            `<p><strong>Congratulations!</strong> You passed probation and as of today you are a full-time member of the Edge8 team.</p>` +
+            `<p><strong>Congratulations!</strong> You passed probation and as of today you are a full-time member of the Arca Wellness team.</p>` +
             `<p>Thank you for everything you have put in over your first 60 days — we are glad you are here.</p>` +
-            `<p>— The Edge8 team</p>`,
+            `<p>— The Arca Wellness team</p>`,
           logMeta: { source: "onboarding-cycle", kind: "day60_congrats" },
         });
       }

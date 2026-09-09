@@ -146,18 +146,28 @@ async function fetchAllEmployees(
   return { employees: [...byId.values()], activeIds };
 }
 
-// Legal entities (all current team members are Edge8 AI). Map a created record's
-// entity by email domain; unknown domains (e.g. ontargetclinical.com — a separate
-// company with no matching entity) import under Edge8 AI so history is not lost,
-// but are flagged for review/reassignment rather than silently mislabeled.
-const EDGE8_AI_ENTITY = "b0dd0696-9801-4062-a923-30d6a195c08c";
-const TALENT_EDGE_ENTITY = "996771d6-1ca5-442a-be67-30f05084c33d";
+// Legal entities. Map a created record's entity by email domain; unknown
+// domains import under the primary entity so history is not lost, but are
+// flagged for review/reassignment rather than silently mislabeled.
+// REBRAND TODO: these are legal-entity row ids, not brand names. A fresh
+// database has no legal_entities rows, so set both to this deployment's own ids
+// before running a dayoff import.
+const PRIMARY_ENTITY = process.env.DAYOFF_PRIMARY_ENTITY_ID ?? "";
+const SECONDARY_ENTITY = process.env.DAYOFF_SECONDARY_ENTITY_ID ?? "";
+
+// Staff email domains that map to each legal entity, comma-separated. Anything
+// else imports under the primary entity but is flagged for reassignment rather
+// than silently mislabeled. Unset means every row is flagged, which is safe.
+const domains = (v: string | undefined) =>
+  (v ?? "").split(",").map((d) => d.trim().toLowerCase()).filter(Boolean);
+const PRIMARY_DOMAINS = domains(process.env.DAYOFF_PRIMARY_DOMAINS);
+const SECONDARY_DOMAINS = domains(process.env.DAYOFF_SECONDARY_DOMAINS);
 
 function entityForEmail(email: string): { id: string; flagged: boolean } {
-  const domain = email.split("@")[1] ?? "";
-  if (domain === "edge8.ai" || domain === "edge8.co") return { id: EDGE8_AI_ENTITY, flagged: false };
-  if (domain === "talentedge.io" || domain === "talentedge.ai") return { id: TALENT_EDGE_ENTITY, flagged: false };
-  return { id: EDGE8_AI_ENTITY, flagged: true };
+  const domain = (email.split("@")[1] ?? "").toLowerCase();
+  if (domain && PRIMARY_DOMAINS.includes(domain)) return { id: PRIMARY_ENTITY, flagged: false };
+  if (domain && SECONDARY_DOMAINS.includes(domain)) return { id: SECONDARY_ENTITY, flagged: false };
+  return { id: PRIMARY_ENTITY, flagged: true };
 }
 
 // Find the person by email, or create a minimal employee person record.

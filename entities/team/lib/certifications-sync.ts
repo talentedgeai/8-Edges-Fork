@@ -18,7 +18,8 @@ import type { CertStatus, CertTrack } from "@/entities/team/lib/certifications";
 // A learner is matched to a person by email, lowercased on both sides. The
 // aiolabz ids never enter company_os.
 
-const EDGE8_DOMAIN = "@edge8.ai";
+// REBRAND TODO: set to this deployment's own staff mail domain.
+const STAFF_EMAIL_DOMAIN = process.env.STAFF_EMAIL_DOMAIN ?? "@edge8.ai";
 
 // Certification slugs on the Institute -> the keys the home card reads.
 const TRACK_KEY: Record<string, CertTrack["key"]> = {
@@ -42,7 +43,7 @@ type PersonTracks = Partial<Record<CertTrack["key"], TrackProgress>>;
 export type CertificationsSyncResult = {
   ok: boolean;
   error?: string;
-  fetched: number; // progress rows for @edge8.ai learners
+  fetched: number; // progress rows for staff-domain learners
   learners: number; // distinct learner emails
   matched: number; // learners with a people row
   updated: number; // people rows whose progress changed
@@ -72,7 +73,7 @@ function canonicalTracks(map: Record<string, Json>): string {
 async function fetchProgress(url: string, key: string): Promise<z.infer<typeof ProgressRows>> {
   const q = new URLSearchParams({
     select: "completed,total_published,complete,app_user!inner(email),certification!inner(slug)",
-    "app_user.email": `ilike.*${EDGE8_DOMAIN}`,
+    "app_user.email": `ilike.*${STAFF_EMAIL_DOMAIN}`,
     limit: "1000",
   });
   const res = await fetch(`${url}/rest/v1/v_certification_progress?${q}`, {
@@ -110,7 +111,7 @@ export async function syncCertifications(): Promise<CertificationsSyncResult> {
   const { data: people, error: peopleError } = await companyOs
     .from("people")
     .select("id, email, metadata")
-    .ilike("email", `%${EDGE8_DOMAIN}`);
+    .ilike("email", `%${STAFF_EMAIL_DOMAIN}`);
   if (peopleError) return { ok: false, error: `people read: ${peopleError.message}`, ...empty, fetched: rows.length, learners: byEmail.size };
 
   const personByEmail = new Map(

@@ -18,7 +18,7 @@ import { one } from "@/kernel/config/embedded";
 
 export const metadata = {
   title: "Team",
-  description: "Edge8 team members and departments.",
+  description: "Arca Wellness team members and departments.",
 };
 
 // Talent office: internal team (persona=employee). Rows open an inline-editable

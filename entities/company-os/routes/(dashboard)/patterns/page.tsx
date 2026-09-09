@@ -365,7 +365,7 @@ export default function PatternsPage() {
             <dt>Phone</dt>
             <dd>+84 90 123 4567</dd>
             <dt>Source</dt>
-            <dd>Edge8</dd>
+            <dd>Arca Wellness</dd>
             <dt>Created</dt>
             <dd className="admin-cell-mono">2026-07-06</dd>
           </dl>

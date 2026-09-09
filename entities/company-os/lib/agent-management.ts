@@ -194,7 +194,7 @@ export const MAC_MINI_ROUTINES: Routine[] = [
     description:
       "Nightly. Syncs pull requests for every tracked repo, ingests recorder telemetry from the tracker branch, and backfills the Mac mini's own Claude sessions into the Human Token Tracker. Bridges the hosted pipeline until its secrets exist.",
     host: "mac-mini",
-    hostLabel: "Office Mac mini (launchd ai.edge8.htt-nightly-sync)",
+    hostLabel: "Office Mac mini (launchd ai.arca-wellness.htt-nightly-sync)",
     schedule: "Daily, 03:30 Asia/Ho_Chi_Minh",
     cron: "30 3 * * *",
     content: ["GitHub PRs (tracked repos)", "Recorder telemetry", "Local Claude transcripts"],

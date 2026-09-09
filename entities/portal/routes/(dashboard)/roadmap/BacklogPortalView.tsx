@@ -140,7 +140,7 @@ export function BacklogPortalView({
                         className={`admin-backlog-pill${eff === p ? ` on-${p}` : ""}`}
                         disabled={pending}
                         onClick={() => run(() => setMyPriority(it.id, it.client_priority === p ? null : p))}
-                        title={it.client_priority ? "Your priority" : "Edge8 proposed, click to set yours"}
+                        title={it.client_priority ? "Your priority" : "Arca Wellness proposed, click to set yours"}
                       >
                         {PRIORITY_LABEL[p]}
                       </button>
@@ -158,15 +158,15 @@ export function BacklogPortalView({
                   {(it.needs ?? []).map((n) => <span key={n} className="admin-backlog-chip">{n}</span>)}
                   {tok && <span className="admin-backlog-chip tok">est. {tok} Human Tokens</span>}
                   {it.source === "client" && (
-                    <span className="admin-backlog-chip proposed">{it.status === "proposed" ? "your proposal, awaiting Edge8" : "your idea"}</span>
+                    <span className="admin-backlog-chip proposed">{it.status === "proposed" ? "your proposal, awaiting Arca Wellness" : "your idea"}</span>
                   )}
                   {it.client_priority && it.client_priority !== it.edge8_priority && (
-                    <span className="admin-backlog-chip mine">you changed from Edge8&apos;s {PRIORITY_LABEL[it.edge8_priority]}</span>
+                    <span className="admin-backlog-chip mine">you changed from Arca Wellness&apos;s {PRIORITY_LABEL[it.edge8_priority]}</span>
                   )}
                 </div>
                 {canPrioritize && it.client_priority && (
                   <div className="admin-backlog-hint">
-                    You set this. Click the highlighted pill again to revert to Edge8&apos;s suggestion ({PRIORITY_LABEL[it.edge8_priority]}).
+                    You set this. Click the highlighted pill again to revert to Arca Wellness&apos;s suggestion ({PRIORITY_LABEL[it.edge8_priority]}).
                   </div>
                 )}
               </div>
@@ -180,7 +180,7 @@ export function BacklogPortalView({
   return (
     <div className="admin-backlog">
       <p className="admin-backlog-intro">
-        Your roadmap, section by section, as agreed with Edge8.{" "}
+        Your roadmap, section by section, as agreed with Arca Wellness.{" "}
         {canPrioritize && (
           <>Set your priority on any item, drag the handle to reorder within a section, and use{" "}
           <em>Propose an item</em> to add your own (it comes to us to review).{" "}</>
@@ -189,7 +189,7 @@ export function BacklogPortalView({
           <>Use <em>Propose an item</em> to add your own (it comes to us to review); your account
           admin controls priorities.{" "}</>
         )}
-        Human Token estimates are pre-research ranges (1 Human Token = 1 hour of Edge8 expert time).
+        Human Token estimates are pre-research ranges (1 Human Token = 1 hour of Arca Wellness expert time).
       </p>
 
       <div className="admin-backlog-counts">
@@ -230,7 +230,7 @@ export function BacklogPortalView({
                       const suggested = groups.find((x) => x.key === d.groupKey);
                       setPHint(
                         d.groupKey !== g.key
-                          ? `Tip: this might fit better under ${suggested?.title ?? d.groupKey}. You can propose it there instead, or send it here and Edge8 will place it.`
+                          ? `Tip: this might fit better under ${suggested?.title ?? d.groupKey}. You can propose it there instead, or send it here and Arca Wellness will place it.`
                           : null,
                       );
                     }}
@@ -251,7 +251,7 @@ export function BacklogPortalView({
                         () => { setProposeGroup(null); setPTitle(""); setPNote(""); setPPriority("next"); setPHint(null); },
                       )}
                     >
-                      Send to Edge8
+                      Send to Arca Wellness
                     </button>
                     <button type="button" className="admin-backlog-btn ghost" onClick={() => { setProposeGroup(null); setPTitle(""); setPNote(""); setPHint(null); }}>Cancel</button>
                   </div>

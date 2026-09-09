@@ -223,7 +223,7 @@ export async function sendAffiliateInvite(personId: string): Promise<Result> {
   if (!person) return { ok: false, error: "Person not found." };
   if (person.archived_at) return { ok: false, error: "This person is archived." };
   const email = ((person.email as string | null) ?? "").trim().toLowerCase();
-  if (!email || email.endsWith("@edge8.local")) return { ok: false, error: "This person has no real email on file." };
+  if (!email || email.endsWith("@arca-wellness.local")) return { ok: false, error: "This person has no real email on file." };
   if (await isAdminEmail(email)) return { ok: false, error: "Admins use /admin, not the portal." };
 
   await ensurePortalAllowlist(personId, admin.email);
@@ -316,7 +316,7 @@ export async function activateCompanyAffiliate(companyId: string, code?: string)
   // Portal access for the company's primary contact (invite held until sent).
   const contact = await primaryContactOfCompany(companyId);
   const contactEmail = (contact?.email ?? "").trim().toLowerCase();
-  if (contact && contactEmail && !contactEmail.endsWith("@edge8.local") && !(await isAdminEmail(contactEmail))) {
+  if (contact && contactEmail && !contactEmail.endsWith("@arca-wellness.local") && !(await isAdminEmail(contactEmail))) {
     await ensurePortalAllowlist(contact.id, admin.email, companyId);
   }
 

@@ -8,8 +8,8 @@ import { escapeHtml } from '@/kernel/config/html'
 import { isEmail } from '@/kernel/config/validate'
 
 
-const FROM = 'Edge8 Adventures <contact@edge8.ai>'
-const DEFAULT_NOTIFY = 'accounting@edge8.ai'
+const FROM = 'Edge8 Adventures <derek.nguyen@edge8.ai>'
+const DEFAULT_NOTIFY = 'derek.nguyen@edge8.ai'
 const MAX_PASSPORT_BYTES = 10 * 1024 * 1024
 const SIZES = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL']
 const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf']

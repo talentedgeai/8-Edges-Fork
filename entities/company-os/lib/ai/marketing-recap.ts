@@ -138,7 +138,7 @@ export async function generateMarketingRecap(month: Date): Promise<MarketingReca
         {
           role: "user",
           content:
-            "Below is one month of email marketing performance for Edge8. Write a short readout of how the month went, then propose 3-5 content types or topics to produce next month. Ground every suggestion in what actually earned opens and clicks this month (lean into topics that pulled, and name what to drop or change if something underperformed). Do not invent metrics that are not given.\n\n" +
+            "Below is one month of email marketing performance for Arca Wellness. Write a short readout of how the month went, then propose 3-5 content types or topics to produce next month. Ground every suggestion in what actually earned opens and clicks this month (lean into topics that pulled, and name what to drop or change if something underperformed). Do not invent metrics that are not given.\n\n" +
             material,
         },
       ],

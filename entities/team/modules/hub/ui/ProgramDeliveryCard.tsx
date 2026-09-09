@@ -46,7 +46,7 @@ export function ProgramDeliveryCard(p: ProgramDeliveryCardProps) {
         <MetricCard
           label="Roadmap"
           value={p.roadmapTotal > 0 ? `${p.roadmapDone} / ${p.roadmapTotal}` : "None yet"}
-          sub={p.roadmapTotal > 0 ? `${pct}% shipped` : "Edge8 adds items"}
+          sub={p.roadmapTotal > 0 ? `${pct}% shipped` : "Arca Wellness adds items"}
         />
         <MetricCard
           label="Delivered"

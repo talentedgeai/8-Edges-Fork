@@ -92,8 +92,8 @@ export function JobPostingEditor({ reqId, posting }: { reqId: string; posting: P
               <input className="admin-input" value={slug} onChange={(e) => setSlug(e.target.value)} />
               {live && slug && (
                 <div className="admin-hint u-mt-1">
-                  <a href={`https://www.edge8.ai/careers/${slug}/apply`} target="_blank" rel="noreferrer">
-                    edge8.ai/careers/{slug}/apply ↗
+                  <a href={`https://arca-wellness.vercel.app/careers/${slug}/apply`} target="_blank" rel="noreferrer">
+                    arca-wellness.vercel.app/careers/{slug}/apply ↗
                   </a>
                 </div>
               )}
@@ -130,7 +130,7 @@ export function JobPostingEditor({ reqId, posting }: { reqId: string; posting: P
               <input
                 key={i}
                 className="admin-input u-mb-2"
-                placeholder={`Question ${i + 1}${i === 0 ? " — e.g. Why Edge8?" : " (optional)"}`}
+                placeholder={`Question ${i + 1}${i === 0 ? " — e.g. Why Arca Wellness?" : " (optional)"}`}
                 value={q}
                 onChange={(e) => setQuestions((cur) => cur.map((x, j) => (j === i ? e.target.value : x)))}
               />

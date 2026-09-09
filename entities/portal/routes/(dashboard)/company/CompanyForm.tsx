@@ -60,7 +60,7 @@ export function CompanyForm({ initial }: { initial: CompanyProfileView }) {
         <h2 className="admin-card-title">{initial.name}</h2>
         {(since || initial.clientTypes.length > 0) && (
           <p className="admin-page-sub u-mt-0">
-            {since && `With Edge8 since ${since}.`}
+            {since && `With Arca Wellness since ${since}.`}
             {initial.clientTypes.length > 0 && ` ${initial.clientTypes.join(" · ")}`}
           </p>
         )}

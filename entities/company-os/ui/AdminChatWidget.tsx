@@ -93,7 +93,7 @@ export function AdminChatWidget({ canWrite = false }: { canWrite?: boolean }) {
   return (
     <ChatWidget
       endpoint="/api/admin/chat"
-      storageKey="edge8-admin-chat"
+      storageKey="arca-wellness-admin-chat"
       surface="admin"
       fabLabel="Open admin assistant"
       panelLabel="Admin assistant"

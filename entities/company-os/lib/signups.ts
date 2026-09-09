@@ -48,8 +48,8 @@ export async function recordRetreatSignup(
   }
 
   const source = input.eventId
-    ? `edge8:${input.eventId}${input.tierId ? `:${input.tierId}` : ""}`
-    : "edge8";
+    ? `arca-wellness:${input.eventId}${input.tierId ? `:${input.tierId}` : ""}`
+    : "arca-wellness";
 
   // Compose a richer message body from the structured answers so the admin
   // dashboard (which reads inquiries.message) sees the full context.

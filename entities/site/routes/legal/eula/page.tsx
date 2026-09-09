@@ -45,7 +45,7 @@ export default function TermsOfServicePage() {
               Some parts of our services, such as the client and team portal, require an account.
               You&apos;re responsible for maintaining the confidentiality of your login credentials and
               for all activity under your account. Notify us promptly at{' '}
-              <a href="mailto:hello@edge8.ai">hello@edge8.ai</a> if you suspect unauthorized use.
+              <a href="mailto:derek.nguyen@edge8.ai">derek.nguyen@edge8.ai</a> if you suspect unauthorized use.
             </p>
           </Block>
 
@@ -143,7 +143,7 @@ export default function TermsOfServicePage() {
           <Block heading="Contact us">
             <p>
               Questions about these terms? Email us at{' '}
-              <a href="mailto:hello@edge8.ai">hello@edge8.ai</a>.
+              <a href="mailto:derek.nguyen@edge8.ai">derek.nguyen@edge8.ai</a>.
             </p>
           </Block>
         </div>

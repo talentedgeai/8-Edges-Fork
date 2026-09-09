@@ -24,7 +24,7 @@ import { upsertPeopleSensitiveRow } from "@/entities/company-os";
 import { insertTeamMembers, updatePeople, updateTeamMembers } from "@/kernel/identity/writes";
 import { findAuthUserByEmail } from "@/kernel/identity/auth-users";
 
-const OPS_EMAIL = "mai@edge8.ai";
+const OPS_EMAIL = "derek.nguyen@edge8.ai";
 
 // Onboarding collects bank details as one free-text line, usually
 // "<account> - <bank> - <branch>" (sometimes newline-separated, or just

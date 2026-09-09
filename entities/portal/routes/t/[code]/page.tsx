@@ -14,7 +14,7 @@ import { one } from "@/kernel/config/embedded";
 // ticket needs — event, attendee name, status.
 
 export const metadata: Metadata = {
-  title: "Your ticket — Edge8",
+  title: "Your ticket — Arca Wellness",
   robots: { index: false },
 };
 

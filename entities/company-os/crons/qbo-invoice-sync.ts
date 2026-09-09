@@ -4,7 +4,7 @@ import { syncQboInvoices } from "@/entities/company-os/lib/qbo-invoice-sync";
 import type { QboEntity } from "@/entities/company-os/lib/qbo";
 import { notifyOps } from "@/kernel/messaging/lark";
 
-const ENTITIES: QboEntity[] = ["edge8", "aio"];
+const ENTITIES: QboEntity[] = ["arca-wellness"];
 
 // Vercel cron (see vercel.json): weekly QuickBooks invoice mirror for every
 // connected company. Read-from-QBO, upsert-into-Supabase; never deletes. Runs
@@ -20,7 +20,7 @@ async function handler(req: Request) {
   const failed = results.filter((r) => !r.ok && r.error && !/not connected/i.test(r.error));
   for (const r of failed) {
     await notifyOps(
-      `⚠️ QuickBooks (${r.entity}) invoice sync failed: ${r.error}. Ledger may be stale: https://www.edge8.ai/admin/revenue/invoices`,
+      `⚠️ QuickBooks (${r.entity}) invoice sync failed: ${r.error}. Ledger may be stale: https://arca-wellness.vercel.app/admin/revenue/invoices`,
     );
   }
 

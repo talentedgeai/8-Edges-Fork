@@ -26,14 +26,14 @@ export default async function PortalReferralsPage() {
         <div className="admin-card admin-section-card u-mb-4">
           <h2 className="admin-card-title u-mb-3">How it works</h2>
           <p className="admin-page-sub u-m-0">
-            Know a company that could use Edge8? Refer them, and when their first engagement pays, you choose
-            how to take your commission: <strong>20% as work credit</strong> toward your own Edge8 work, or{" "}
+            Know a company that could use Arca Wellness? Refer them, and when their first engagement pays, you choose
+            how to take your commission: <strong>20% as work credit</strong> toward your own Arca Wellness work, or{" "}
             <strong>10% as cash</strong>. You&apos;ll get a personal referral code and track everything right here.
           </p>
           <div className="u-mt-4">
             <a
               className="admin-btn admin-btn--primary"
-              href="mailto:hello@edge8.ai?subject=Referral%20program%20sign-up"
+              href="mailto:derek.nguyen@edge8.ai?subject=Referral%20program%20sign-up"
             >
               Contact us to sign up
             </a>
@@ -53,8 +53,8 @@ export default async function PortalReferralsPage() {
 
       <div className="admin-card admin-section-card u-mb-4">
         <p className="admin-page-sub u-m-0">
-          Thanks for referring people to Edge8. For each referral that pays, you choose how to take your
-          commission: <strong>20% as work credit</strong> toward your own Edge8 work, or <strong>10% as cash</strong>.
+          Thanks for referring people to Arca Wellness. For each referral that pays, you choose how to take your
+          commission: <strong>20% as work credit</strong> toward your own Arca Wellness work, or <strong>10% as cash</strong>.
         </p>
       </div>
 

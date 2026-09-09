@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { getAdminUser } from "@/kernel/identity/admin-auth";
-import { buildQboAuthUrl, qboConfigured } from "@/entities/company-os/lib/qbo";
+import { buildQboAuthUrl, qboConfigured, type QboEntity } from "@/entities/company-os/lib/qbo";
 import { getSiteOrigin } from "@/kernel/config/site-origin";
 
 // Starts the QuickBooks OAuth flow (admin-only). The random state lands in an
@@ -15,7 +15,7 @@ export async function GET(request: Request) {
     return NextResponse.redirect(`${getSiteOrigin()}/admin/settings/quickbooks?status=unconfigured`);
   }
 
-  const entity = new URL(request.url).searchParams.get("entity") === "aio" ? "aio" : "edge8";
+  const entity: QboEntity = "arca-wellness";
 
   const state = crypto.randomUUID();
   const cookieOpts = { httpOnly: true, secure: true, sameSite: "lax" as const, path: "/", maxAge: 10 * 60 };

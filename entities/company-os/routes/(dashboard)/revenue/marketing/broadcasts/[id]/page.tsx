@@ -64,7 +64,7 @@ export default async function BroadcastDetailPage({ params }: { params: { id: st
     preheader: campaign.preheader,
     bodyMd: personaliseBody(campaign.bodyMd, null),
     blocks: await resolveBroadcastBlocks(campaign.blocks),
-    unsubscribeLink: "https://www.edge8.ai/unsubscribe/?token=preview",
+    unsubscribeLink: "https://arca-wellness.vercel.app/unsubscribe/?token=preview",
     utmCampaign: utmCampaignFor({ subject: campaign.subject, date: campaign.scheduledAt ?? new Date().toISOString() }),
   });
   const agent: LetterAgentState = letter.ok

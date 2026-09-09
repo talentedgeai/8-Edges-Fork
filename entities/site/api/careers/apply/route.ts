@@ -10,8 +10,8 @@ import { escapeHtml } from '@/kernel/config/html'
 import { isEmail } from '@/kernel/config/validate'
 import { updatePeople } from '@/kernel/identity/writes'
 
-const FROM = 'Edge8 Careers <contact@edge8.ai>'
-const DEFAULT_RECIPIENTS = ['mai@edge8.ai']
+const FROM = 'Edge8 Careers <derek.nguyen@edge8.ai>'
+const DEFAULT_RECIPIENTS = ['derek.nguyen@edge8.ai']
 const MAX_RESUME_BYTES = 10 * 1024 * 1024
 const MAX_TEXT_CHARS = 10_000
 
@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
       name: full_name,
       phone,
       linkedin,
-      source: 'edge8.ai/careers',
+      source: 'arca-wellness.vercel.app/careers',
     })
     if (!person.ok) {
       console.error('Person upsert error:', person.error)

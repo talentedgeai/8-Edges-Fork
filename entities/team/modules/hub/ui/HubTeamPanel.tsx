@@ -8,12 +8,12 @@ export function HubTeamPanel({ team }: { team: HubTeam }) {
   return (
     <div className="u-stack u-gap-4">
       <section className="admin-card admin-section-card">
-        <h2 className="admin-card-title u-mb-3">Edge8 team</h2>
-        {team.edge8.length === 0 ? (
+        <h2 className="admin-card-title u-mb-3">Arca Wellness team</h2>
+        {team.arcaWellness.length === 0 ? (
           <div className="admin-empty">No staff assigned yet.</div>
         ) : (
           <div className="admin-list">
-            {team.edge8.map((m, i) => (
+            {team.arcaWellness.map((m, i) => (
               <div className="admin-list-row" key={`${m.name}-${i}`}>
                 <div className="admin-list-main">
                   <div className="admin-list-title">{m.name}</div>

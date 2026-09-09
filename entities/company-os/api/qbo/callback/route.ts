@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { getAdminUser } from "@/kernel/identity/admin-auth";
 import { recordAudit } from "@/kernel/audit/audit";
-import { exchangeQboCode } from "@/entities/company-os/lib/qbo";
+import { exchangeQboCode, type QboEntity } from "@/entities/company-os/lib/qbo";
 import { getSiteOrigin } from "@/kernel/config/site-origin";
 
 // Intuit OAuth callback: verifies the state cookie, exchanges the code for
@@ -21,7 +21,7 @@ export async function GET(request: Request) {
   const state = url.searchParams.get("state");
 
   const cookieState = cookies().get("qbo_oauth_state")?.value;
-  const entity = cookies().get("qbo_oauth_entity")?.value === "aio" ? "aio" : "edge8";
+  const entity: QboEntity = "arca-wellness";
   cookies().delete("qbo_oauth_state");
   cookies().delete("qbo_oauth_entity");
   if (!state || !cookieState || state !== cookieState) return settingsUrl("state_mismatch");

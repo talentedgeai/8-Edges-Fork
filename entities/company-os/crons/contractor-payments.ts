@@ -23,7 +23,7 @@ async function handler(req: Request) {
     await pingOps(
       `💸 Contractor payment roll-up for ${period}: ${result.created} created, ${result.updated} updated, ${result.requestsLinked} work items.` +
         (result.skipped.length ? `\nSkipped: ${result.skipped.join("; ")}` : "") +
-        `\nReview: https://www.edge8.ai/admin/operations/contractor-payments`,
+        `\nReview: https://arca-wellness.vercel.app/admin/operations/contractor-payments`,
     );
   }
 

@@ -6,7 +6,7 @@ import { notifyOps } from '@/kernel/messaging/lark'
 import { NextRequest, NextResponse } from 'next/server'
 import { insertInquiries } from '@/entities/company-os';
 
-const FROM = 'Edge8 <contact@edge8.ai>'
+const FROM = 'Edge8 <derek.nguyen@edge8.ai>'
 
 // ── Spam gate ──────────────────────────────────────────────────────────────
 // The honeypot below catches naive bots. This catches the form-spam wave that
@@ -67,20 +67,20 @@ export async function POST(req: NextRequest) {
     }
 
     // Recipients — split ADMIN_EMAILS CSV or fall back
-    const to = (process.env.ADMIN_EMAILS ?? 'dave@edge8.ai')
+    const to = (process.env.ADMIN_EMAILS ?? 'derek.nguyen@edge8.ai')
       .split(',').map((e: string) => e.trim()).filter(Boolean)
 
     // 1️⃣ Save to company_os (people + inquiries). `company` has no column on
     //    people (relational model) so it rides in inquiries.metadata.
-    const person = await getOrCreatePerson({ email, name, source: 'edge8.ai' })
+    const person = await getOrCreatePerson({ email, name, source: 'arca-wellness.vercel.app' })
     if (person.ok) {
       const { error: inquiryError } = await insertInquiries({
         person_id:   person.id,
         type:        'consultation',
         subject:     'AI Audit Request',
         message:     message || null,
-        source:      'edge8.ai',
-        source_site: 'edge8.ai',
+        source:      'arca-wellness.vercel.app',
+        source_site: 'arca-wellness.vercel.app',
         status:      'new_lead',
         metadata:    { company, team_size: teamSize || null, name, email },
       })

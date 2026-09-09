@@ -43,21 +43,20 @@ describe("house rules", () => {
     expect(bannedLanguageError("Your first AI hire should own the process.")).toBeNull();
   });
   it("blocks the brand name in the wrong casing but leaves the domain alone", () => {
-    expect(brandNameError("EDGE8 is here")).not.toBeNull();
-    expect(brandNameError("Edge 8 is here")).not.toBeNull();
-    expect(brandNameError("edge8 is here")).not.toBeNull();
-    expect(brandNameError("Edge8 at edge8.ai and dave@edge8.co")).toBeNull();
+    expect(brandNameError("ARCA WELLNESS is here")).not.toBeNull();
+    expect(brandNameError("ArcaWellness is here")).not.toBeNull();
+    expect(brandNameError("arca wellness is here")).not.toBeNull();
+    expect(brandNameError("Arca Wellness at arca-wellness.vercel.app")).toBeNull();
   });
   it("blocks any link to an audit page", () => {
-    expect(auditLinkError("see [this](https://www.edge8.ai/ai-audit/)")).toMatch(/audit/);
+    expect(auditLinkError("see [this](https://arca-wellness.vercel.app/ai-audit/)")).toMatch(/audit/);
     expect(auditLinkError('<a href="https://x.com/audit-report">x</a>')).toMatch(/audit/);
     expect(auditLinkError("see [this](/post/other/)")).toBeNull();
   });
   it("knows our own hosts", () => {
     expect(isInternalUrl("/post/x/")).toBe(true);
-    expect(isInternalUrl("https://www.edge8.ai/blog/")).toBe(true);
-    expect(isInternalUrl("https://www.ai-officer.com/")).toBe(true);
-    expect(isInternalUrl("https://www.davehajdu.com/")).toBe(true);
+    expect(isInternalUrl("https://arca-wellness.vercel.app/blog/")).toBe(true);
+    expect(isInternalUrl("https://www.ai-officer.com/")).toBe(false);
     expect(isInternalUrl("https://every.to/x")).toBe(false);
   });
   it("counts internal post links above the FAQ only", () => {

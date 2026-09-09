@@ -56,15 +56,17 @@ export function bannedLanguageError(md: string): string | null {
   return hits.length ? `Uses audit, staffing or hiring language (${Array.from(new Set(hits.map((h) => h.toLowerCase()))).join(", ")}). Remove it.` : null;
 }
 
-// "Edge8", never all caps, never split. The domain edge8.ai and addresses
-// at edge8 are left alone.
+// "Arca Wellness", never all caps, never run together. The slug arca-wellness
+// and addresses at that domain are left alone.
 export function brandNameError(text: string): string | null {
-  return /\bEDGE8\b|\bEdge 8\b|\bedge8\b(?![.@])/.test(text) ? 'The brand name is written "Edge8" exactly; fix the casing.' : null;
+  return /\bARCA WELLNESS\b|\bArcaWellness\b|\barca wellness\b/.test(text)
+    ? 'The brand name is written "Arca Wellness" exactly; fix the casing.'
+    : null;
 }
 
 // Where a link is allowed to point. Our own sites are internal; anything else
 // is an external source. An audit page is never linked, on any host.
-const INTERNAL_HOSTS = new Set(["edge8.ai", "www.edge8.ai", "www.ai-officer.com", "ai-officer.com", "www.davehajdu.com", "davehajdu.com"]);
+const INTERNAL_HOSTS = new Set(["arca-wellness.vercel.app"]);
 
 export function isInternalUrl(url: string): boolean {
   if (url.startsWith("/")) return true;
@@ -84,7 +86,7 @@ export function linkTargets(md: string): string[] {
 
 export function auditLinkError(md: string): string | null {
   const hit = linkTargets(md).find((u) => /audit/i.test(u));
-  return hit ? `Links to an audit page (${hit}). Edge8 has no audit offer; remove the link.` : null;
+  return hit ? `Links to an audit page (${hit}). Arca Wellness has no audit offer; remove the link.` : null;
 }
 
 // The internal-link floor counts markdown links to /post/<slug>/ in the body

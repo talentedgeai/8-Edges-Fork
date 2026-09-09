@@ -56,7 +56,7 @@ export const DECISION_BY_CHOICE: Record<string, CycleDecision> = {
 // The three Day 1 orientation activities, seeded as onboarding_tasks.
 const DAY1_TASKS = [
   "HR Handbook with Mai",
-  "Intro to Edge8 with Dave",
+  "Intro to Arca Wellness with Dave",
   "Team Overview with team manager",
 ] as const;
 const DAY1_CATEGORY = "day_1";

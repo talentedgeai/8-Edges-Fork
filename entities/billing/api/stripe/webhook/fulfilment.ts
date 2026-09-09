@@ -233,7 +233,7 @@ async function handleInfiniteLeveragePaid(session: Stripe.Checkout.Session): Pro
           <p>We'll follow up before the event with everything you need to prepare. Reply to this email any time with questions.</p>
           <p>Dave and the Infinite Leverage team</p>
         `.trim(),
-        replyTo: "dave@edge8.co",
+        replyTo: "derek.nguyen@edge8.ai",
         logMeta: { source: "il_retreat_paid" },
       });
     }
@@ -349,7 +349,7 @@ async function handleTokenPackPaid(session: Stripe.Checkout.Session): Promise<Fu
     const name = person?.full_name?.split(" ")[0] || "there";
     await sendTransactionalEmail({
       to: toEmail,
-      subject: `Your Edge8 human tokens: ${purchase.tokens} hours`,
+      subject: `Your Arca Wellness human tokens: ${purchase.tokens} hours`,
       html: `
         <p>Hi ${name},</p>
         <p>Thanks — your payment of <strong>${amountLabel}</strong> for ${purchase.packs} ${
@@ -357,9 +357,9 @@ async function handleTokenPackPaid(session: Stripe.Checkout.Session): Promise<Fu
         } (<strong>${purchase.tokens} human tokens</strong>, 1 token = 1 hour of skilled work) is confirmed.</p>
         <p>Your balance is live in your portal: ${getSiteOrigin()}/portal/tokens</p>
         <p style="margin-top:24px;">Reply to this email any time to put them to work.</p>
-        <p>Dave and the Edge8 team</p>
+        <p>Dave and the Arca Wellness team</p>
       `.trim(),
-      replyTo: "dave@edge8.co",
+      replyTo: "derek.nguyen@edge8.ai",
     });
   }
   if (process.env.ACCOUNTING_EMAIL) {
@@ -369,7 +369,7 @@ async function handleTokenPackPaid(session: Stripe.Checkout.Session): Promise<Fu
       html: `<p>${company?.name ?? "A client"} bought ${purchase.packs} human-token ${
         purchase.packs === 1 ? "pack" : "packs"
       } (${purchase.tokens} tokens) for ${amountLabel} via Stripe. Paid by ${toEmail ?? "unknown"}.</p>`,
-      replyTo: "dave@edge8.co",
+      replyTo: "derek.nguyen@edge8.ai",
     });
   }
   await notifyOps(

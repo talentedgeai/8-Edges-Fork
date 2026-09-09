@@ -31,9 +31,9 @@ export async function getCompanyHubTeam(companyId: string): Promise<HubTeam> {
       .eq("company_id", companyId),
   ]);
 
-  const edge8 = assignments
+  const arcaWellness = assignments
     .filter((a) => a.client_visible)
-    .map((a) => ({ name: a.full_name || a.email || "Edge8", roleTitle: a.role_title || a.position_title, email: a.email }));
+    .map((a) => ({ name: a.full_name || a.email || "Arca Wellness", roleTitle: a.role_title || a.position_title, email: a.email }));
 
   const rows = (peopleRows ?? []) as Array<{
     role: string | null;
@@ -48,7 +48,7 @@ export async function getCompanyHubTeam(companyId: string): Promise<HubTeam> {
     .sort((a, b) => Number(b.isPrimary) - Number(a.isPrimary) || a.name.localeCompare(b.name))
     .map(({ name, title, email }) => ({ name, title, email }));
 
-  return { edge8, client };
+  return { arcaWellness, client };
 }
 
 // The names a roadmap item can be assigned to: Edge8 people with an active

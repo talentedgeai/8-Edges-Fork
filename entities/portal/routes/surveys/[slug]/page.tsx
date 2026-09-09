@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     .maybeSingle();
   if (metaErr) console.error("[portal/surveys] surveys", metaErr);
   return {
-    title: data ? `${data.name} — Edge8` : "Survey — Edge8",
+    title: data ? `${data.name} — Arca Wellness` : "Survey — Arca Wellness",
     description: data?.description ?? undefined,
     robots: { index: false },
   };

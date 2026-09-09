@@ -106,7 +106,7 @@ async function handler(_req: Request) {
     sentRows.length === 0 ? "Emails: none sent" : `Emails: ${sentRows.length} broadcast${sentRows.length === 1 ? "" : "s"}`,
     ...emailLines,
     "",
-    "https://www.edge8.ai/admin/revenue/marketing",
+    "https://arca-wellness.vercel.app/admin/revenue/marketing",
   ];
   await notifyMarketing(lines.join("\n"));
 

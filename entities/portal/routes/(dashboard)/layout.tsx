@@ -13,7 +13,7 @@ import { AssumeBanner } from "@/entities/portal/ui/AssumeBanner";
 
 export const metadata: Metadata = {
   title: { template: "%s · 8 Edges Client Portal", default: "8 Edges Client Portal" },
-  description: "Your Edge8 client portal.",
+  description: "Your Arca Wellness client portal.",
   robots: { index: false, follow: false },
 };
 

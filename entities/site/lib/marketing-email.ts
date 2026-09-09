@@ -36,11 +36,11 @@ function getResend(): Resend | null {
 }
 
 function defaultFrom(): string {
-  return optionalEnv("MARKETING_EMAIL_FROM") ?? "Edge8 <hello@edge8.ai>";
+  return optionalEnv("MARKETING_EMAIL_FROM") ?? "Edge8 <derek.nguyen@edge8.ai>";
 }
 
 function siteUrl(): string {
-  return (optionalEnv("NEXT_PUBLIC_SITE_URL") ?? "https://www.edge8.ai").replace(/\/$/, "");
+  return (optionalEnv("NEXT_PUBLIC_SITE_URL") ?? "https://arca-wellness.vercel.app").replace(/\/$/, "");
 }
 
 // CAN-SPAM requires a physical postal address on commercial email.

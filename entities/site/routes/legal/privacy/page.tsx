@@ -110,14 +110,14 @@ export default function PrivacyPolicyPage() {
             <p>
               You may request access to, correction of, or deletion of your personal information by
               emailing{' '}
-              <a href="mailto:hello@edge8.ai">hello@edge8.ai</a>. Depending on where you live, you
+              <a href="mailto:derek.nguyen@edge8.ai">derek.nguyen@edge8.ai</a>. Depending on where you live, you
               may have additional rights under local law; we&apos;ll honor requests to the extent
               required.
             </p>
             <p>
               <strong>Email preferences.</strong> You can stop receiving marketing email at any time
               using the unsubscribe link at the bottom of any such message, or by emailing{' '}
-              <a href="mailto:hello@edge8.ai">hello@edge8.ai</a>. Unsubscribing from marketing does
+              <a href="mailto:derek.nguyen@edge8.ai">derek.nguyen@edge8.ai</a>. Unsubscribing from marketing does
               not stop essential messages about services you use, such as event tickets, invoices,
               or account and security notices.
             </p>
@@ -148,7 +148,7 @@ export default function PrivacyPolicyPage() {
           <Block heading="Contact us">
             <p>
               Questions about this policy or your information? Email us at{' '}
-              <a href="mailto:hello@edge8.ai">hello@edge8.ai</a>.
+              <a href="mailto:derek.nguyen@edge8.ai">derek.nguyen@edge8.ai</a>.
             </p>
           </Block>
         </div>

@@ -14,7 +14,7 @@ const ApplicationsBoard = dynamic(() => import("./ApplicationsBoard").then((m) =
   loading: () => <div className="admin-empty">Loading…</div>,
 });
 
-const VIEW_KEY = "edge8-admin-applications-view";
+const VIEW_KEY = "arca-wellness-admin-applications-view";
 
 // List/board switcher. Renders list on the server pass and swaps to the
 // remembered view after mount — reading localStorage in the initial render

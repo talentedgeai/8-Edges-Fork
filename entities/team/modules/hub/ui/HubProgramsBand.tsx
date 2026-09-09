@@ -86,7 +86,7 @@ export function HubProgramsBand({
       </div>
       {programs.length === 0 ? (
         <div className="admin-card admin-section-card u-mb-5">
-          <div className="admin-empty">No AI Programs yet. Created from the client portal or by Edge8.</div>
+          <div className="admin-empty">No AI Programs yet. Created from the client portal or by Arca Wellness.</div>
         </div>
       ) : (
         <div className="admin-kpi-grid admin-hub-programs-grid">

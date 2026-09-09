@@ -100,9 +100,9 @@ export function AssignedStaffCard({
                     value={a.client_manager_person_id ?? ""}
                     disabled={pending}
                     onChange={(e) => setClientManager(a.id, e.target.value)}
-                    title="Person at this client who approves this person's time off. Blank leaves it with their Edge8 manager."
+                    title="Person at this client who approves this person's time off. Blank leaves it with their Arca Wellness manager."
                   >
-                    <option value="">Edge8 manager</option>
+                    <option value="">Arca Wellness manager</option>
                     {clientContacts.map((c) => (
                       <option key={c.id} value={c.id}>{c.name}</option>
                     ))}

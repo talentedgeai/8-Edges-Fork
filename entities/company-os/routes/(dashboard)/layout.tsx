@@ -7,7 +7,7 @@ import { AdminChatWidget } from "@/entities/company-os/ui/AdminChatWidget";
 import { isPrivilegedChatUser } from "@/entities/assistant";
 export const metadata: Metadata = {
   title: { template: "%s · 8 Edges", default: "8 Edges" },
-  description: "Edge8 Company OS — the internal admin for contacts, revenue, talent, and operations.",
+  description: "Arca Wellness Company OS — the internal admin for contacts, revenue, talent, and operations.",
   robots: { index: false, follow: false },
 };
 

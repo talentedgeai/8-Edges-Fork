@@ -8,21 +8,21 @@ import { PALETTE } from "@/kernel/config/palette";
 
 export const PROFILE = {
   brandId: "brand-1",
-  brandSlug: "edge8",
-  brandName: "Edge8",
+  brandSlug: "arca-wellness",
+  brandName: "Arca Wellness",
   positioning: "AI leadership for founders.",
   audience: "Founders and CTOs.",
   offer: "AI programs.",
   primaryCta: "Read the next post.",
   authorMd: "Dave Hajdu",
   voiceMd: "Direct, practical.",
-  rulesMd: "- Write \"Edge8\" exactly like that.\n- Never use em dashes.",
+  rulesMd: "- Write \"Arca Wellness\" exactly like that.\n- Never use em dashes.",
   channelsMd: "## Active channels\nBlog, LinkedIn, Facebook, email.\n\n## Blog\n600 to 1200 words. Lead with the business problem.\n\n## LinkedIn\nHook first.",
   processMd: "## Blog production workflow\n1. Develop the idea.\n4. Draft: 600 to 1200 words.",
   blogStylesMd: "thesis",
   editingLensMd: "## Editing lens (Dan Shipper)\n- Is the thinking sharp?",
   seoLensMd: "## SEO lens (Neil Patel)\n- Keyword realism.",
-  imageStyleMd: "Edge8 palette, editorial. Navy ground, Blue and Mint accents, Manrope.",
+  imageStyleMd: "Arca Wellness palette, editorial. Navy ground, Blue and Mint accents, Manrope.",
   preferredBlogTypes: ["thesis"],
   preferredImageStyles: ["concept-card"],
   preferredSocialStyles: ["hook-story"],
@@ -111,7 +111,7 @@ const svg = (text: string) =>
 export const EXHIBITS_REPLY = {
   exhibits: [
     { svg: svg("42% of pilots stall"), alt: "Bar showing 42% of pilots stall", caption: "Pilots that stall against those that ship.", source: "Every, Fable 5.1 review", anchor_heading: "Four things the model needs from you" },
-    { svg: svg("7 lines, 6 hours"), alt: "The median brief against the run time", caption: "A 7 line brief and a 6 hour run.", source: "Edge8 analysis", anchor_heading: "The speed of the model is the point" },
+    { svg: svg("7 lines, 6 hours"), alt: "The median brief against the run time", caption: "A 7 line brief and a 6 hour run.", source: "Arca Wellness analysis", anchor_heading: "The speed of the model is the point" },
   ],
 };
 

@@ -38,7 +38,7 @@ export async function getOrCreateApplication(
       person_id: personId,
       job_requisition_id: jobRequisitionId,
       source: input.source ?? "career_site",
-      source_detail: input.sourceDetail ?? "edge8.ai/careers",
+      source_detail: input.sourceDetail ?? "arca-wellness.vercel.app/careers",
       status: "active",
       current_stage_id: stage?.id ?? null,
       cover_letter: input.coverLetter?.trim() || null,

@@ -119,7 +119,7 @@ export default function ContactPage() {
                   <input type="text" name="website" value={form.website} onChange={handleChange} tabIndex={-1} aria-hidden className="u-hidden" /* layout-ok: hidden honeypot field */ />
 
                   {status === 'error' && (
-                    <p className="contact-error">Something went wrong. Please try again or email us directly at <a href="mailto:hello@edge8.ai">hello@edge8.ai</a>.</p>
+                    <p className="contact-error">Something went wrong. Please try again or email us directly at <a href="mailto:derek.nguyen@edge8.ai">derek.nguyen@edge8.ai</a>.</p>
                   )}
 
                   <button type="submit" className="btn btn-primary site-contact-submit" disabled={status === 'sending'}>

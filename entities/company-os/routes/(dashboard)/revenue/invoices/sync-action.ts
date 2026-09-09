@@ -18,7 +18,7 @@ export type SyncSummary = {
 
 export async function runInvoiceSync(): Promise<SyncSummary[]> {
   await requireAdmin();
-  const entities: QboEntity[] = ["edge8", "aio"];
+  const entities: QboEntity[] = ["arca-wellness"];
   const out: SyncSummary[] = [];
   for (const entity of entities) {
     const r = await syncQboInvoices(entity);

@@ -19,7 +19,7 @@ export function OnboardingDeckEmbed() {
           </a>
         }
       />
-      <iframe src={ONBOARDING_DECK_PATH} title="Edge8 onboarding deck" className="admin-deck-frame" />
+      <iframe src={ONBOARDING_DECK_PATH} title="Arca Wellness onboarding deck" className="admin-deck-frame" />
     </>
   );
 }

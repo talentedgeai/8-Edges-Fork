@@ -27,8 +27,8 @@ export function InvoicesShelfProvider({ children }: { children: ReactNode }) {
         eyebrow="Invoice"
         title={selected?.doc_number ? `#${selected.doc_number}` : "Invoice"}
         action={
-          selected && (
-            <a href={qboInvoiceUrl(selected.external_id, selected.entity)} target="_blank" rel="noreferrer" className="admin-btn">
+          selected && qboInvoiceUrl(selected.external_id, selected.entity) && (
+            <a href={qboInvoiceUrl(selected.external_id, selected.entity)!} target="_blank" rel="noreferrer" className="admin-btn">
               Open in QuickBooks ↗
             </a>
           )

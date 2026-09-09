@@ -8,7 +8,7 @@ import { TeamChatWidget } from "@/entities/team/ui/TeamChatWidget";
 
 export const metadata: Metadata = {
   title: { template: "%s · 8 Edges Team", default: "8 Edges Team" },
-  description: "Your Edge8 team workspace.",
+  description: "Your Arca Wellness team workspace.",
   robots: { index: false, follow: false },
 };
 

@@ -56,7 +56,7 @@ export default function Footer() {
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
                 </div>
-                <a href="mailto:dave@edge8.ai">dave@edge8.ai</a>
+                <a href="mailto:derek.nguyen@edge8.ai">derek.nguyen@edge8.ai</a>
               </div>
               <div className="footer-contact-item">
                 <div className="footer-contact-icon">

@@ -5,7 +5,7 @@ import { DirectoryTable } from "@/entities/team/ui/DirectoryTable";
 
 export const metadata = {
   title: "Directory",
-  description: "Who's who at Edge8: roles, departments, and reporting lines.",
+  description: "Who's who at Arca Wellness: roles, departments, and reporting lines.",
 };
 
 // /team/directory — read-only, company-visible roster. getDirectory() returns a
@@ -18,7 +18,7 @@ export default async function TeamDirectoryPage() {
 
   return (
     <>
-      <PageHead eyebrow="Me" title="Directory" sub="Who's who at Edge8" />
+      <PageHead eyebrow="Me" title="Directory" sub="Who's who at Arca Wellness" />
       {entries.length === 0 ? (
         <div className="admin-empty">No team members found.</div>
       ) : (

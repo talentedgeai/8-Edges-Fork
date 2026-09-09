@@ -72,7 +72,7 @@ export function AssignmentsBlock({
                 </div>
                 <div className="admin-list-sub">
                   Leave approved by{" "}
-                  {a.client_manager_name ? `${a.client_manager_name} (client)` : "their Edge8 manager"}
+                  {a.client_manager_name ? `${a.client_manager_name} (client)` : "their Arca Wellness manager"}
                 </div>
               </div>
               <div className="admin-list-aside admin-list-aside--row">

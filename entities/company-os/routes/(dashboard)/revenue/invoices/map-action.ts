@@ -20,8 +20,7 @@ export type CompanyHit = { id: string; name: string | null };
 // The mapping list is realm-scoped: each entity has its own key on company
 // metadata, because a customer id is only unique within one QuickBooks company.
 const MAPPING_KEY: Record<QboEntity, string> = {
-  edge8: "qbo_customer_ids",
-  aio: "qbo_customer_ids_aio",
+  "arca-wellness": "qbo_customer_ids",
 };
 
 // Typeahead for the company picker. Same sanitizing and shape as the deals

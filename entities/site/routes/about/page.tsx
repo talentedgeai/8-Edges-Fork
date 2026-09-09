@@ -192,7 +192,7 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <div className="site-eyebrow">Email</div>
-                <div className="site-contact-value"><a href="mailto:dave@edge8.ai" className="u-link-plain">dave@edge8.ai</a></div>
+                <div className="site-contact-value"><a href="mailto:derek.nguyen@edge8.ai" className="u-link-plain">derek.nguyen@edge8.ai</a></div>
               </div>
               <div className="u-stack u-items-center u-gap-3">
                 <div className="site-contact-icon">

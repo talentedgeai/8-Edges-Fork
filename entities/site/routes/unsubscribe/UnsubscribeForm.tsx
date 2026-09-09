@@ -62,7 +62,7 @@ export function UnsubscribeForm({ token }: { token: string }) {
       {status === 'error' && (
         <p>
           {message} You can also email{' '}
-          <a href="mailto:hello@edge8.ai">hello@edge8.ai</a> and we will remove you by hand.
+          <a href="mailto:derek.nguyen@edge8.ai">derek.nguyen@edge8.ai</a> and we will remove you by hand.
         </p>
       )}
     </>

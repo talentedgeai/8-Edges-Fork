@@ -204,7 +204,7 @@ export function PrivateSessionReserve() {
           </p>
           <p className="rt-reserve-fine">
             Not ready to commit?{" "}
-            <a href="mailto:quan@edge8.ai" className="text-link u-inline">Email quan@edge8.ai</a>
+            <a href="mailto:derek.nguyen@edge8.ai" className="text-link u-inline">Email derek.nguyen@edge8.ai</a>
           </p>
         </div>
       </form>

@@ -479,7 +479,7 @@ export default function SaigonPrivatePage() {
             <h2 className="section-title">Common <span className="accent">questions.</span></h2>
             <p className="section-sub u-mt-4">
               Not answered here? Email{" "}
-              <a href="mailto:quan@edge8.ai" className="text-link u-inline">quan@edge8.ai</a>{" "}
+              <a href="mailto:derek.nguyen@edge8.ai" className="text-link u-inline">derek.nguyen@edge8.ai</a>{" "}
               and we will reply within a business day.
             </p>
           </div>

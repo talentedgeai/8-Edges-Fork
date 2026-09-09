@@ -25,9 +25,9 @@ describe("getSiteOrigin", () => {
   });
 
   it("builds the origin from the request host and forwarded proto", () => {
-    headerBag.set("host", "edge8.ai");
+    headerBag.set("host", "arca-wellness.vercel.app");
     headerBag.set("x-forwarded-proto", "https");
-    expect(getSiteOrigin()).toBe("https://edge8.ai");
+    expect(getSiteOrigin()).toBe("https://arca-wellness.vercel.app");
   });
 
   it("infers http for localhost when no proto header is present", () => {
@@ -36,8 +36,8 @@ describe("getSiteOrigin", () => {
   });
 
   it("infers https for a non-localhost host when no proto header is present", () => {
-    headerBag.set("host", "www.edge8.ai");
-    expect(getSiteOrigin()).toBe("https://www.edge8.ai");
+    headerBag.set("host", "arca-wellness.vercel.app");
+    expect(getSiteOrigin()).toBe("https://arca-wellness.vercel.app");
   });
 
   it("falls back to NEXT_PUBLIC_SITE_URL when there is no host header", () => {
@@ -46,18 +46,18 @@ describe("getSiteOrigin", () => {
   });
 
   it("falls back to the production domain when neither host nor env is set", () => {
-    expect(getSiteOrigin()).toBe("https://www.edge8.ai");
+    expect(getSiteOrigin()).toBe("https://arca-wellness.vercel.app");
   });
 
   it("treats a *.vercel.app host as the no-request case", () => {
-    headerBag.set("host", "edge8-web-abc123.vercel.app");
+    headerBag.set("host", "arca-wellness-abc123.vercel.app");
     headerBag.set("x-forwarded-proto", "https");
-    process.env.NEXT_PUBLIC_SITE_URL = "https://www.edge8.ai";
-    expect(getSiteOrigin()).toBe("https://www.edge8.ai");
+    process.env.NEXT_PUBLIC_SITE_URL = "https://arca-wellness.vercel.app";
+    expect(getSiteOrigin()).toBe("https://arca-wellness.vercel.app");
   });
 
   it("ignores an empty NEXT_PUBLIC_SITE_URL and uses the production domain", () => {
     process.env.NEXT_PUBLIC_SITE_URL = "";
-    expect(getSiteOrigin()).toBe("https://www.edge8.ai");
+    expect(getSiteOrigin()).toBe("https://arca-wellness.vercel.app");
   });
 });

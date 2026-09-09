@@ -108,15 +108,15 @@ describe("sendTransactionalEmail — what gets persisted", () => {
 
   it("sends with the default sender unless `from` overrides it", async () => {
     await sendTransactionalEmail({ to: "a@example.com", subject: "Hi", html: "<p>x</p>" });
-    expect(send.mock.calls[0][0].from).toBe("Edge8 <notifications@edge8.ai>");
+    expect(send.mock.calls[0][0].from).toBe("Arca Wellness <derek.nguyen@edge8.ai>");
 
     await sendTransactionalEmail({
       to: "a@example.com",
       subject: "Hi",
       html: "<p>x</p>",
-      from: "Dave <dave@edge8.ai>",
+      from: "Dave <derek.nguyen@edge8.ai>",
     });
-    expect(send.mock.calls[1][0].from).toBe("Dave <dave@edge8.ai>");
+    expect(send.mock.calls[1][0].from).toBe("Dave <derek.nguyen@edge8.ai>");
   });
 
   it("omits replyTo entirely rather than sending it undefined", async () => {

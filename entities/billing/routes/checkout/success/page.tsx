@@ -3,7 +3,7 @@ import Link from "next/link";
 import { stripe } from "@/entities/billing/stripe";
 
 export const metadata: Metadata = {
-  title: "You're in · Edge8",
+  title: "You're in · Arca Wellness",
   description: "Your retreat is reserved.",
   robots: { index: false, follow: false },
 };
@@ -80,7 +80,7 @@ export default async function CheckoutSuccess({ searchParams }: { searchParams: 
             </ol>
             <p className="site-note u-mt-5">
               Questions? Email{" "}
-              <a href="mailto:quan@edge8.ai" className="site-reserve-inline-link">quan@edge8.ai</a>.
+              <a href="mailto:derek.nguyen@edge8.ai" className="site-reserve-inline-link">derek.nguyen@edge8.ai</a>.
             </p>
           </div>
         </div>

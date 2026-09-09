@@ -15,7 +15,7 @@ vi.mock("@/kernel/data/supabase", () => ({
 vi.mock("@/kernel/messaging/email", () => ({
   sendTransactionalEmail: (args: EmailArgs) => sendTransactionalEmail(args),
 }));
-vi.mock("@/kernel/config/site-origin", () => ({ getSiteOrigin: () => "https://edge8.test" }));
+vi.mock("@/kernel/config/site-origin", () => ({ getSiteOrigin: () => "https://arca-wellness.test" }));
 vi.mock("@/kernel/audit/audit", () => ({ recordAudit: vi.fn(async () => {}) }));
 vi.mock("@/kernel/identity/writes", () => ({ updateTeamMembers: vi.fn() }));
 
@@ -25,7 +25,7 @@ import { planNagMilestone, type MilestoneCtx } from "./milestones";
 const member = (over: Partial<CycleRow["member"]> = {}): CycleRow["member"] => ({
   personId: "p1",
   name: "Mai",
-  email: "mai@edge8.ai",
+  email: "derek.nguyen@edge8.ai",
   avatarUrl: null,
   positionTitle: "Analyst",
   startDate: "2026-08-01",
@@ -120,10 +120,10 @@ describe("planNagMilestone", () => {
     d: cycleDay("2026-08-01", "2026-07-28"), // -3
     start: "2026-08-01",
     probEnd: "2026-09-29",
-    manager: { name: "Linh", email: "linh@edge8.ai" },
+    manager: { name: "Linh", email: "derek.nguyen@edge8.ai" },
     name: "Mai",
-    origin: "https://edge8.test",
-    boardLink: "https://edge8.test/team/onboarding",
+    origin: "https://arca-wellness.test",
+    boardLink: "https://arca-wellness.test/team/onboarding",
     alreadyFullTime: false,
     summary: summary(),
     patchJourney: vi.fn(async () => {}),
@@ -138,7 +138,7 @@ describe("planNagMilestone", () => {
     expect(await planNagMilestone(row(), c)).toBe(false);
     expect(sendTransactionalEmail).toHaveBeenCalledTimes(1);
     const call = sendTransactionalEmail.mock.calls[0][0];
-    expect(call.to).toEqual(["linh@edge8.ai", "mai@edge8.ai"]);
+    expect(call.to).toEqual(["derek.nguyen@edge8.ai", "derek.nguyen@edge8.ai"]);
     expect(call.subject).toBe("Onboarding plan needed before Day 1: Mai");
     expect(call.html).toContain("4 days away");
     expect(c.summary.planNags).toBe(1);

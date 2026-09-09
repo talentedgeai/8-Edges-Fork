@@ -13,5 +13,5 @@ export function getSiteOrigin(): string {
   const host = h.get("host");
   const proto = h.get("x-forwarded-proto") ?? (host?.includes("localhost") ? "http" : "https");
   if (host && !host.endsWith(".vercel.app")) return `${proto}://${host}`;
-  return process.env.NEXT_PUBLIC_SITE_URL || "https://www.edge8.ai";
+  return process.env.NEXT_PUBLIC_SITE_URL || "https://arca-wellness.vercel.app";
 }

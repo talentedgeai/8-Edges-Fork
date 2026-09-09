@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/t/', '/workflows/private/', '/board/'],
       },
     ],
-    sitemap: 'https://www.edge8.ai/sitemap.xml',
-    host: 'https://www.edge8.ai',
+    sitemap: 'https://arca-wellness.vercel.app/sitemap.xml',
+    host: 'https://arca-wellness.vercel.app',
   }
 }

@@ -15,7 +15,7 @@ import { generateBroadcastTakeaway } from "@/entities/company-os/lib/ai/broadcas
 
 const SETTLE_HOURS = 72;
 const BATCH = 20; // safety cap; a normal day has at most one or two due.
-const RECAPS_URL = "https://www.edge8.ai/admin/revenue/marketing/broadcasts";
+const RECAPS_URL = "https://arca-wellness.vercel.app/admin/revenue/marketing/broadcasts";
 
 type DueRow = { id: string; name: string; subject: string; approved_at: string | null };
 

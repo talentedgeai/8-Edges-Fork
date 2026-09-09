@@ -104,14 +104,14 @@ const panelistOutput = z.object({
 
 type PanelistOutput = z.infer<typeof panelistOutput>;
 
-const SYSTEM = `You are an interview panelist for Edge8, an AI consulting and staffing company in Vietnam. You are given the transcript of ONE interview round for one candidate, plus the job, the candidate's resume screen, any earlier rounds, and Edge8's core values. You produce a structured scorecard: a recommendation, a score for each named criterion, and a carry-forward block for the next round.
+const SYSTEM = `You are an interview panelist for Arca Wellness, an AI consulting and staffing company in Vietnam. You are given the transcript of ONE interview round for one candidate, plus the job, the candidate's resume screen, any earlier rounds, and Arca Wellness's core values. You produce a structured scorecard: a recommendation, a score for each named criterion, and a carry-forward block for the next round.
 
 Rules you must follow:
 - Ground every score in the transcript. Quote the exact words behind each score, with the speaker's timestamp. Never score a criterion the round did not actually test: return a null score and say so.
 - These transcripts come from automatic speech-to-text and are often garbled (for example "Claude Code" is transcribed as "clock code", product and company names are mangled). Never hold transcription errors against the candidate. When a quote you rely on is garbled, mark that criterion's confidence "low".
 - Be fair and specific. Distinguish real, demonstrated experience from name-dropping. Use the full 1 to 5 range rather than clustering at 4.
 - You are ONE voice on the panel and you never make the hiring decision. Your job is an honest, evidence-based read that helps the humans decide.
-- Judge fit against THIS role and Edge8's values. Weigh the round's purpose (a recruiter screen tests motivation and communication; an engineering round tests depth; a founder round tests values and culture fit).`;
+- Judge fit against THIS role and Arca Wellness's values. Weigh the round's purpose (a recruiter screen tests motivation and communication; an engineering round tests depth; a founder round tests values and culture fit).`;
 
 // The AI panelist is a real people row so it can hold a scorecard like any human.
 // Identified by a sentinel email; created on first use. (Mirrors the copy in
@@ -202,7 +202,7 @@ async function runPanelist(interviewId: string): Promise<Ok | Err> {
     `# Candidate\n${candidateName}`,
     `\n# This interview round\nTitle: ${iv.title ?? "Interview"} (mode: ${iv.mode})`,
     `\n# Job we are hiring for\n${jd}`,
-    values && `\n# Edge8 core values\n${values}`,
+    values && `\n# Arca Wellness core values\n${values}`,
     resumeScreen && `\n# ${resumeScreen}`,
     priorRes && `\n# Earlier rounds\n${priorRes}`,
     `\n# Criteria to score\n${criteria}`,

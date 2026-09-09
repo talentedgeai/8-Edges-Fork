@@ -111,7 +111,7 @@ export async function createBacklogItem(
     company_id: companyId,
     group_key: groupKey,
     title,
-    source: "edge8" as const,
+    source: "arca-wellness" as const,
     status: input.status ?? "accepted",
     sort_order: 999,
   };

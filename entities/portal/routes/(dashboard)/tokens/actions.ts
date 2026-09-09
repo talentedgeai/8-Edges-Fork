@@ -74,7 +74,7 @@ export async function purchaseTokenPacks(
             currency: "usd",
             unit_amount: PACK_PRICE_CENTS,
             product_data: {
-              name: `Edge8 human-token pack (${PACK_TOKENS} tokens)`,
+              name: `Arca Wellness human-token pack (${PACK_TOKENS} tokens)`,
               description: "1 token = 1 hour of skilled work",
             },
           },
@@ -94,7 +94,7 @@ export async function purchaseTokenPacks(
         company_id: companyId,
         person_id: actor.personId,
         packs: String(n),
-        source_site: "edge8.ai",
+        source_site: "arca-wellness.vercel.app",
       },
     });
 

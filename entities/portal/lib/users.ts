@@ -123,7 +123,7 @@ export async function inviteCompanyUser(
   if (existing && !existing.archived_at) {
     personId = existing.id as string;
   } else if (existing?.archived_at) {
-    return { ok: false, error: "This email belongs to an archived contact. Ask Edge8 to restore it." };
+    return { ok: false, error: "This email belongs to an archived contact. Ask Arca Wellness to restore it." };
   } else {
     const { data: created, error } = await insertPeople({ email, full_name: name, source: "portal_user_invite" })
       .select("id")
@@ -169,7 +169,7 @@ export async function revokeCompanyUser(
 ): Promise<Result> {
   if (!isPortalAdmin(actor, input.companyId)) return { ok: false, error: ROLE_DENIED };
   if (input.personId === actor.personId) {
-    return { ok: false, error: "You cannot revoke your own access. Ask Edge8." };
+    return { ok: false, error: "You cannot revoke your own access. Ask Arca Wellness." };
   }
   if (!(await memberOfCompany(input.personId, input.companyId))) {
     return { ok: false, error: "Not a member of your company." };
@@ -184,7 +184,7 @@ export async function setCompanyUserRole(
   if (!isPortalAdmin(actor, input.companyId)) return { ok: false, error: ROLE_DENIED };
   if (!isAssignableRole(input.role)) return { ok: false, error: "Unknown role." };
   if (input.personId === actor.personId) {
-    return { ok: false, error: "You cannot change your own role. Ask Edge8." };
+    return { ok: false, error: "You cannot change your own role. Ask Arca Wellness." };
   }
   const { data, error } = await updatePortalMembers({ role: input.role, updated_at: new Date().toISOString() })
     .eq("person_id", input.personId)

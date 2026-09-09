@@ -56,7 +56,7 @@ const SCHEMA = {
   },
 } as const;
 
-const SYSTEM = `You are an assistant that turns raw client-meeting transcripts into clean, professional meeting notes for Edge8, an AI consultancy. You produce a short title, a concise summary a client could read, the list of attendees, and the meeting date. Work only from the transcript: never invent attendees, decisions, action items, figures, or a date that is not supported by the text. If something is unclear, leave it out rather than guessing. The summary is written for the client who was in the meeting, so keep it neutral and free of internal asides.`;
+const SYSTEM = `You are an assistant that turns raw client-meeting transcripts into clean, professional meeting notes for Arca Wellness, an AI consultancy. You produce a short title, a concise summary a client could read, the list of attendees, and the meeting date. Work only from the transcript: never invent attendees, decisions, action items, figures, or a date that is not supported by the text. If something is unclear, leave it out rather than guessing. The summary is written for the client who was in the meeting, so keep it neutral and free of internal asides.`;
 
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 

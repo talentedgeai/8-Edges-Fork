@@ -2,4 +2,4 @@
 // queries filter on it and company-os's brand-site map keys off it; it sits in
 // the kernel because the site (layer 1) may not reach company-os's door for a
 // constant (Q2). Browser-safe: a pure string.
-export const SELF_BRAND_SLUG = "edge8";
+export const SELF_BRAND_SLUG = "arca-wellness";

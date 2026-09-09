@@ -100,7 +100,7 @@ export async function applyEstimateDecision(
 
   if (decider.actorType === "client") {
     await pingOps(
-      `🧑‍💼 Client ${decision === "approved" ? "approved" : decision === "rejected" ? "declined" : "requested changes on"} the estimate for "${req.title}" (${decider.email}). Review: https://www.edge8.ai/admin/operations/contractor-requests`,
+      `🧑‍💼 Client ${decision === "approved" ? "approved" : decision === "rejected" ? "declined" : "requested changes on"} the estimate for "${req.title}" (${decider.email}). Review: https://arca-wellness.vercel.app/admin/operations/contractor-requests`,
     );
   }
 
@@ -154,7 +154,7 @@ export async function applyScopeAddition(
 
   if (decider.actorType === "client") {
     await pingOps(
-      `🧑‍💼 Client added scope to "${req.title}" (${decider.email}) — contractor to re-estimate. Review: https://www.edge8.ai/admin/operations/contractor-requests?open=${req.id}`,
+      `🧑‍💼 Client added scope to "${req.title}" (${decider.email}) — contractor to re-estimate. Review: https://arca-wellness.vercel.app/admin/operations/contractor-requests?open=${req.id}`,
     );
   }
 
@@ -207,7 +207,7 @@ export async function applyWorkDecision(
 
   if (decider.actorType === "client") {
     await pingOps(
-      `🧑‍💼 Client ${decision === "accepted" ? "accepted the work on" : "requested a revision on"} "${req.title}" (${decider.email}). Review: https://www.edge8.ai/admin/operations/contractor-requests`,
+      `🧑‍💼 Client ${decision === "accepted" ? "accepted the work on" : "requested a revision on"} "${req.title}" (${decider.email}). Review: https://arca-wellness.vercel.app/admin/operations/contractor-requests`,
     );
   }
 

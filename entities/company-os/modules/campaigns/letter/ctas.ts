@@ -9,7 +9,7 @@ import type { BroadcastCta, BroadcastLayout } from "@/entities/site/client";
 
 export type CtaEntry = { key: string; cta: BroadcastCta | null };
 
-const site = () => (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.edge8.ai").replace(/\/$/, "");
+const site = () => (process.env.NEXT_PUBLIC_SITE_URL ?? "https://arca-wellness.vercel.app").replace(/\/$/, "");
 
 export function ctaCatalog(): CtaEntry[] {
   const linkedin = process.env.LETTER_CTA_LINKEDIN_URL?.trim() || null;
@@ -28,7 +28,7 @@ export function ctaCatalog(): CtaEntry[] {
       key: "retreat",
       cta: {
         tagline: "Two days. Your data. A working system by Friday.",
-        line: "A private build retreat with the Edge8 team: install the stack on your own data, then customise it with us in the room.",
+        line: "A private build retreat with the Arca Wellness team: install the stack on your own data, then customise it with us in the room.",
         label: "Book a private retreat",
         url: `${site()}/my-retreat/`,
       },

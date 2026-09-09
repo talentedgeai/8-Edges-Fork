@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
-const title = 'Infinite Leverage Retreats P&L | Edge8 Program Brief'
+const title = 'Infinite Leverage Retreats P&L | Arca Wellness Program Brief'
 const description =
   'A 5Ds program brief: move retreat profit-and-loss out of a fragile Excel workbook and onto the Events module, with a confidential, history-preserving home for employee wages that only Dave and Mai can see.'
 
@@ -28,7 +28,7 @@ export default function RetreatsPnlBrief() {
             </div>
             <h1 className="section-title">Infinite Leverage Retreats P&amp;L</h1>
             <p className="wf-hero-sub">
-              Move retreat profit-and-loss out of a fragile Excel workbook and onto the Events module in the Edge8
+              Move retreat profit-and-loss out of a fragile Excel workbook and onto the Events module in the Arca Wellness
               admin, with a confidential, history-preserving home for employee wages that only Dave and Mai can see.
             </p>
             <div className="brief-hero-pills">
@@ -368,7 +368,7 @@ export default function RetreatsPnlBrief() {
               ← See the workflow
             </Link>
             <Link href="/contact" className="btn btn-secondary">
-              Talk to Edge8 →
+              Talk to Arca Wellness →
             </Link>
           </div>
         </div>

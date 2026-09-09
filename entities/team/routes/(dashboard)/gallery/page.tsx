@@ -3,7 +3,7 @@ import { PageHead } from "@/kernel/ui/PageHead";
 import { listGalleryPhotos, taggablePeople } from "@/entities/site";
 import { GalleryBrowser } from "@/entities/team/ui/GalleryBrowser";
 
-export const metadata = { title: "Gallery", description: "Photos from the Edge8 team." };
+export const metadata = { title: "Gallery", description: "Photos from the Arca Wellness team." };
 
 // Company photo wall. Company-visible (no per-actor scope); admins add photos in
 // /admin/operations/gallery. Public-bucket images, so a plain <img>. Any team

@@ -120,8 +120,8 @@ export async function requestOwnTimeOff(input: {
         html: body({
           withReason: true,
           where: isClient
-            ? "It is waiting for your decision in the Edge8 client portal, under Time Off."
-            : "It is awaiting approval in the Edge8 admin under Operations &gt; Time Off.",
+            ? "It is waiting for your decision in the Arca Wellness client portal, under Time Off."
+            : "It is awaiting approval in the Arca Wellness admin under Operations &gt; Time Off.",
           link: isClient ? portalLink : "",
         }),
       });

@@ -245,7 +245,7 @@ async function createCheckoutForHold(args: {
         registration_id: registrationId,
         order_id: order.id,
         person_id: personId,
-        source_site: "edge8.ai",
+        source_site: "arca-wellness.vercel.app",
       },
     });
     checkoutUrl = session.url;

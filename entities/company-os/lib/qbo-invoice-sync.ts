@@ -15,8 +15,7 @@ import { listQboInvoices, type QboEntity, type QboSyncInvoice } from "@/entities
 // are mostly individuals, so most AIO invoices stay unmapped by design.
 
 const MAPPING_KEY: Record<QboEntity, string> = {
-  edge8: "qbo_customer_ids",
-  aio: "qbo_customer_ids_aio",
+  "arca-wellness": "qbo_customer_ids",
 };
 
 // Sync only covers 2025 onward — matches the existing Edge8 backfill depth and

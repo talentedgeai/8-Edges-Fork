@@ -38,7 +38,7 @@ import { NextRequest } from "next/server";
 
 function post(body: unknown) {
   return POST(
-    new NextRequest("https://www.edge8.ai/api/team/chat", {
+    new NextRequest("https://arca-wellness.vercel.app/api/team/chat", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(body),
@@ -85,7 +85,7 @@ describe("POST /api/team/chat", () => {
 
   it("400s on an unparseable body", async () => {
     const res = await POST(
-      new NextRequest("https://www.edge8.ai/api/team/chat", {
+      new NextRequest("https://arca-wellness.vercel.app/api/team/chat", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: "{",
@@ -196,7 +196,7 @@ describe("POST /api/team/chat", () => {
       vi.clearAllMocks();
       runChatTurn.mockResolvedValue(undefined);
       getTeamActor.mockResolvedValue({
-        actor: { authUserId: "a", personId: "p", displayName: "Mai", email: "mai@edge8.ai", role: "employee", isAdmin: false },
+        actor: { authUserId: "a", personId: "p", displayName: "Mai", email: "derek.nguyen@edge8.ai", role: "employee", isAdmin: false },
       });
       await optionsFor({ messages: [{ role: "user", content: "q" }] });
       expect(teamChatTools).toHaveBeenLastCalledWith({ canRequestReviews: true });
@@ -210,7 +210,7 @@ describe("POST /api/team/chat", () => {
     });
 
     it("chips and runs request_review_link for a manager, relaying the outcome", async () => {
-      const actor = { authUserId: "a", personId: "p", displayName: "Q", email: "q@edge8.ai", role: "manager", isAdmin: false };
+      const actor = { authUserId: "a", personId: "p", displayName: "Q", email: "derek.nguyen@edge8.ai", role: "manager", isAdmin: false };
       getTeamActor.mockResolvedValue({ actor });
       const opts = await optionsFor({ messages: [{ role: "user", content: "q" }] });
       const outcome = { ok: true, links: [{ name: "L", kind: "external", link: "https://x/y", created: true }], skipped: [] };

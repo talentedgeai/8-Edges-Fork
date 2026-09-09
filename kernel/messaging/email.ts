@@ -5,7 +5,7 @@ import { companyOs } from "@/kernel/data/supabase";
 // environments and local dev should never hard-fail on email send.
 
 const resendApiKey = process.env.RESEND_API_KEY;
-const emailFrom = process.env.EMAIL_FROM || "Edge8 <notifications@edge8.ai>";
+const emailFrom = process.env.EMAIL_FROM || "Arca Wellness <derek.nguyen@edge8.ai>";
 
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
@@ -109,14 +109,14 @@ export async function sendEventTicketEmail(opts: {
     <p style="margin:20px 0;"><a href="${opts.ticketUrl}" style="display:inline-block;background:#04102D;color:#ffffff;text-decoration:none;font-weight:600;padding:12px 28px;border-radius:10px;">View my ticket</a></p>
     <p style="font-size:13px;color:#64748b;">Or copy this link: ${opts.ticketUrl}</p>
     <p style="margin-top:24px;">Reply to this email any time if plans change.</p>
-    <p>Dave and the Edge8 team</p>
+    <p>Dave and the Arca Wellness team</p>
   `.trim();
 
   return sendTransactionalEmail({
     to: opts.to,
     subject: `You're in: ${opts.eventTitle}`,
     html,
-    replyTo: "quan@edge8.ai",
+    replyTo: "derek.nguyen@edge8.ai",
   });
 }
 
@@ -127,14 +127,14 @@ export async function sendBankChangeAlert(opts: {
   employeeName: string;
   employeeEmail: string;
 }): Promise<void> {
-  const hrEmail = process.env.HR_ALERT_EMAIL || "dave@edge8.ai";
+  const hrEmail = process.env.HR_ALERT_EMAIL || "derek.nguyen@edge8.ai";
   const when = new Intl.DateTimeFormat("en-GB", {
     timeZone: "Asia/Ho_Chi_Minh",
     dateStyle: "medium",
     timeStyle: "short",
   }).format(new Date());
   const html = `
-    <p>Heads up — the bank details on ${opts.employeeName}'s Edge8 profile were just changed.</p>
+    <p>Heads up — the bank details on ${opts.employeeName}'s Arca Wellness profile were just changed.</p>
     <p style="color:#64748b;font-size:13px;">${when} (Saigon time)</p>
     <p>If this wasn't expected, review it in the admin People area and confirm with ${opts.employeeName} directly before the next payroll run.</p>
     <p>8 Edges</p>

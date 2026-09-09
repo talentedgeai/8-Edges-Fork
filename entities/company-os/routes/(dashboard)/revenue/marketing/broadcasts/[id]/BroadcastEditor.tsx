@@ -113,7 +113,7 @@ export function BroadcastEditor({
                 <option key={b.id} value={b.id}>{b.name}</option>
               ))}
             </select>
-            <div className="admin-hint">Which identity this send goes out as (Edge8, AI Officer Institute).</div>
+            <div className="admin-hint">Which identity this send goes out as (Arca Wellness, AI Officer Institute).</div>
             {activeProfile && (activeProfile.voiceMd || activeProfile.primaryCta || activeProfile.positioning) && (
               <details className="admin-card u-mt-2 u-p-3">
                 <summary className="u-strong u-pointer">
@@ -187,7 +187,7 @@ export function BroadcastEditor({
             />
             <div className="admin-hint">
               Markdown: # headings, **bold**, *italic*, [links](https://…), and - lists. Write{" "}
-              {"{first_name}"} for the reader&apos;s first name. The Edge8 wrapper, footer, and
+              {"{first_name}"} for the reader&apos;s first name. The Arca Wellness wrapper, footer, and
               unsubscribe link are added automatically; featured posts and the call to action go below.
             </div>
           </div>
@@ -200,7 +200,7 @@ export function BroadcastEditor({
               className="admin-input"
               value={replyTo}
               disabled={!isDraft}
-              placeholder="dave@edge8.ai"
+              placeholder="derek.nguyen@edge8.ai"
               onChange={(e) => setReplyTo(e.target.value)}
             />
           </div>
@@ -232,9 +232,9 @@ export function BroadcastEditor({
           anyone flagged do-not-contact are excluded no matter what you pick here.
         </p>
         <p className="admin-page-sub u-mt-1">
-          {campaign.brandName && campaign.brandName !== "Edge8"
+          {campaign.brandName && campaign.brandName !== "Arca Wellness"
             ? `This is a ${campaign.brandName} broadcast, so it reaches only ${campaign.brandName}'s brand audience.`
-            : "With no brand (or the Edge8 brand) set, this reaches the full house list. Pick a guest brand to scope the send to that brand's audience only."}
+            : "With no brand (or the Arca Wellness brand) set, this reaches the full house list. Pick a guest brand to scope the send to that brand's audience only."}
         </p>
         <div className="admin-form u-mt-3">
           <div className="admin-field">
