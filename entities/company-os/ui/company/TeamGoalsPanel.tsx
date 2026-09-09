@@ -118,7 +118,7 @@ export function TeamGoalsPanel({
             <div key={o.objectiveId ?? "unaligned"} className="admin-cg-obj-group">
               <div className="admin-cg-obj-head">
                 {o.objectiveId !== null && (
-                  <span className={`admin-edges-ltag edges-ltag--${o.lineTag}`}>{o.lineLabel}</span>
+                  <span className={`admin-edges-ltag admin-edges-ltag--${o.lineTag}`}>{o.lineLabel}</span>
                 )}
                 <h4>{o.label}</h4>
                 <span className="admin-cell-muted">

@@ -129,7 +129,7 @@ export function CompanyGoalsEditor({
       {tree.map((o, oi) => (
         <div key={o.id} className="admin-card u-mb-4 u-p-0 u-clip">
           <div className="admin-edges-ohead">
-            <span className={`admin-edges-ltag edges-ltag--${o.brand ?? "company"}`}>
+            <span className={`admin-edges-ltag admin-edges-ltag--${o.brand ?? "company"}`}>
               {BRAND_LABELS[o.brand ?? "company"]}
             </span>
             <h3>
