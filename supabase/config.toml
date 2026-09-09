@@ -48,15 +48,16 @@ max_rows = 1000
 # is not listed is silently ignored and the user is bounced to site_url, which
 # looks like a broken app rather than a missing setting.
 #
-# Add the custom domain here too once there is one. Preview deployments get
-# their own hostnames — add "https://*-<team>.vercel.app/**" if auth needs to
-# work on previews.
+# Add the custom domain here too once there is one. The third entry covers
+# preview deployments, which get their own per-branch hostnames under the
+# edge8-ais-projects team; drop it if auth should only work in production.
 [auth]
 enabled = true
 site_url = "https://arca-wellness.vercel.app"
 additional_redirect_urls = [
   "https://arca-wellness.vercel.app/api/auth/callback",
   "https://arca-wellness.vercel.app/**",
+  "https://*-edge8-ais-projects.vercel.app/**",
 ]
 jwt_expiry = 3600
 enable_refresh_token_rotation = true

@@ -10,7 +10,7 @@ import {
 } from "@/entities/company-os/lib/vercel-analytics";
 import { firstParam, mergeQuery, type SearchParamsObj } from "@/kernel/ui/url";
 
-const VERCEL_ANALYTICS_URL = "https://vercel.com/edge8-ais-projects/edge8-web/analytics";
+const VERCEL_ANALYTICS_URL = "https://vercel.com/edge8-ais-projects/arca-wellness/analytics";
 
 const RANGES: { key: AnalyticsRange; label: string; sub: string }[] = [
   { key: "7d", label: "Last 7 days", sub: "rolling 7 days" },
