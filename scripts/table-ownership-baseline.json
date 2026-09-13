@@ -1,0 +1,10 @@
+{
+  "billing->retreats": 1,
+  "company-os->assistant": 2,
+  "company-os->billing": 6,
+  "company-os->portal": 8,
+  "portal->billing": 3,
+  "portal->htt": 9,
+  "portal->retreats": 1,
+  "team->htt": 6
+}

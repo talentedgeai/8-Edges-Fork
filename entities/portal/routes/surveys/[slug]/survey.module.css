@@ -1,0 +1,271 @@
+/* Public survey runner. Marketing side: brand tokens from globals.css only,
+   nothing admin-scoped. One question per screen, Typeform style. */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  background: var(--white);
+}
+
+.progressTrack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--blue-glow);
+  z-index: 10;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--blue);
+  transition: width 0.3s ease;
+}
+
+.card {
+  width: 100%;
+  max-width: 640px;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.sub {
+  color: var(--body-text);
+  font-size: 16px;
+  margin-bottom: 8px;
+  white-space: pre-line;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--blue-glow);
+  color: var(--blue);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.count {
+  color: var(--grey-light);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 4vw, 30px);
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.help {
+  color: var(--body-text);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--dark);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--input-border);
+  border-radius: 0;
+  padding: 12px 0;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.input:focus,
+.textarea:focus {
+  border-bottom-color: var(--blue);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 96px;
+  line-height: 1.5;
+}
+
+.choices {
+  display: grid;
+  gap: 10px;
+}
+
+.choice {
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--dark);
+  padding: 14px 18px;
+  border: 1.5px solid var(--input-border);
+  border-radius: 12px;
+  background: var(--white);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.choice:hover {
+  border-color: var(--blue);
+}
+
+.choiceActive {
+  border-color: var(--blue);
+  background: var(--blue-glow);
+}
+
+.scale {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.scaleBtn {
+  min-width: 44px;
+  height: 44px;
+  padding: 0 8px;
+  border-radius: 10px;
+  border: 1.5px solid var(--input-border);
+  background: var(--white);
+  color: var(--dark);
+  font-size: 16px;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.scaleBtn:hover {
+  border-color: var(--blue);
+}
+
+.scaleActive {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+.scaleLabels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--body-text);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* Performance reviews: the "expected for level" marker row under an AI-craft
+   scale. One cell per scale button (same flex geometry as .scale). */
+.scaleTicks {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.scaleTick {
+  /* Mirror .scaleBtn's footprint (min-width 44 + 0 8px padding) so each tick
+     sits under its button. */
+  min-width: 44px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 11px;
+  color: var(--body-text);
+  min-height: 1em;
+}
+
+.scaleTick b {
+  font-weight: 700;
+  color: var(--dark);
+  border-bottom: 3px solid var(--mint);
+  padding: 0 4px 1px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.btnPrimary {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-btn);
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.btnPrimary:hover {
+  background: var(--blue-bright);
+}
+
+.btnPrimary:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.btnGhost {
+  background: none;
+  border: none;
+  color: var(--grey-mid);
+  font-size: 15px;
+  padding: 14px 8px;
+  cursor: pointer;
+}
+
+.btnGhost:hover {
+  color: var(--dark);
+}
+
+.hint {
+  color: var(--grey-light);
+  font-size: 13px;
+}
+
+.error {
+  color: var(--color-err-strong);
+  font-size: 15px;
+  margin-top: 14px;
+}
+
+.fieldRow {
+  margin-bottom: 20px;
+}
+
+.fieldLabel {
+  display: block;
+  color: var(--dark);
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
