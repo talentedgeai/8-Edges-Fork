@@ -1,0 +1,18 @@
+#!/bin/sh
+# Lint what is about to be committed. The private-route rule in .eslintrc.json
+# is what stops a hardcoded /workflows/private path at the keyboard instead of
+# at the fork mirror. Only staged .ts/.tsx/.mjs files, so it takes seconds.
+set -e
+# .github/ is outside ESLint's config (fork overlay stubs live there), and eslint
+# reports an ignored file as a warning, which --max-warnings=0 turns into a
+# refused commit. Leave those paths to the fork build that compiles them.
+files=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.(ts|tsx|mjs)$' | grep -v '^\.github/' || true)
+if [ -n "$files" ]; then
+  echo "pre-commit: eslint on $(echo "$files" | wc -l | tr -d ' ') staged file(s)"
+  # shellcheck disable=SC2086
+  npx eslint --max-warnings=0 $files
+fi
+# Chain to a locally installed hook of the same name, if any.
+local_hook="$(git rev-parse --git-common-dir)/hooks/pre-commit"
+[ -x "$local_hook" ] && exec "$local_hook" "$@"
+exit 0
