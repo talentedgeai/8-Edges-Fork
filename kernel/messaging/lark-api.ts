@@ -1,0 +1,251 @@
+// Lark tenant-app API client: DMs to team members and Minutes transcript
+// pulls for the coaching cycle. Distinct from kernel/messaging/lark.ts (incoming webhooks
+// to group channels) — this one authenticates as the Edge8 Lark app and can
+// message individuals and read Minutes.
+//
+// FAIL-SOFT EVERYWHERE: when LARK_APP_ID / LARK_APP_SECRET are unset, or a
+// call fails, or a scope is missing, functions return false/null/[] and log.
+// Email remains the delivery guarantee (the cron sends both channels).
+//
+// Required app scopes (grant in the Lark developer console):
+//   im:message              — send DMs
+//   contact:user.id:readonly — resolve open_id by email
+//   minutes:minutes:readonly — read Minutes meta + transcript
+// The Minutes LIST endpoint may be unavailable to tenant apps (v1 hit the
+// same wall enumerating wiki children) — listRecentMinutes degrades to [].
+
+// LARK_API_BASE is the legacy name this variable had in the webhook module that
+// used to carry its own DM client; accept it as an alias so an existing
+// deployment that only sets LARK_API_BASE keeps pointing at the same host.
+import { larkDmOptedOut } from "./dm-preference";
+
+const HOST = process.env.LARK_API_HOST || process.env.LARK_API_BASE || "https://open.larksuite.com";
+
+export function larkConfigured(): boolean {
+  return Boolean(process.env.LARK_APP_ID && process.env.LARK_APP_SECRET);
+}
+
+let cached: { token: string; expiresAt: number } | null = null;
+
+async function tenantToken(): Promise<string | null> {
+  if (!larkConfigured()) return null;
+  if (cached && Date.now() < cached.expiresAt - 60_000) return cached.token;
+  try {
+    const res = await fetch(`${HOST}/open-apis/auth/v3/tenant_access_token/internal`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        app_id: process.env.LARK_APP_ID,
+        app_secret: process.env.LARK_APP_SECRET,
+      }),
+      cache: "no-store",
+    });
+    const json = (await res.json()) as { code: number; tenant_access_token?: string; expire?: number; msg?: string };
+    if (json.code !== 0 || !json.tenant_access_token) {
+      console.error("[lark-api] tenant token failed:", json.code, json.msg);
+      return null;
+    }
+    cached = { token: json.tenant_access_token, expiresAt: Date.now() + (json.expire ?? 3600) * 1000 };
+    return cached.token;
+  } catch (err) {
+    console.error("[lark-api] tenant token error:", err instanceof Error ? err.message : err);
+    return null;
+  }
+}
+
+async function larkFetch(path: string, init?: RequestInit): Promise<Response | null> {
+  const token = await tenantToken();
+  if (!token) return null;
+  try {
+    return await fetch(`${HOST}${path}`, {
+      ...init,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+        ...(init?.headers ?? {}),
+      },
+      cache: "no-store",
+    });
+  } catch (err) {
+    console.error(`[lark-api] ${path} error:`, err instanceof Error ? err.message : err);
+    return null;
+  }
+}
+
+// Lark's gateway answers a path it does not serve with a plain-text "404 page
+// not found", and a proxy in front of it can answer with an HTML error page, so
+// res.json() can throw. That throw escaped the fail-soft promise above and
+// stopped the whole coaching cycle (2026-09-10 onward); a body that is not
+// JSON now reads as null and the caller degrades like any other miss.
+async function readJson<T>(res: Response, path: string): Promise<T | null> {
+  try {
+    const text = await res.text();
+    try {
+      return JSON.parse(text) as T;
+    } catch {
+      console.error(`[lark-api] ${path}: HTTP ${res.status}, body is not JSON: ${text.slice(0, 80)}`);
+      return null;
+    }
+  } catch (err) {
+    console.error(`[lark-api] ${path} read error:`, err instanceof Error ? err.message : err);
+    return null;
+  }
+}
+
+// open_id by email; null when unknown to the tenant.
+export async function larkOpenIdByEmail(email: string): Promise<string | null> {
+  const path = "/open-apis/contact/v3/users/batch_get_id?user_id_type=open_id";
+  const res = await larkFetch(path, {
+    method: "POST",
+    body: JSON.stringify({ emails: [email] }),
+  });
+  if (!res) return null;
+  const json = await readJson<{
+    code: number;
+    msg?: string;
+    data?: { user_list?: Array<{ email?: string; user_id?: string }> };
+  }>(res, path);
+  if (!json) return null;
+  if (json.code !== 0) {
+    console.error("[lark-api] batch_get_id failed:", json.code, json.msg);
+    return null;
+  }
+  return json.data?.user_list?.find((u) => u.user_id)?.user_id ?? null;
+}
+
+// Plain-text DM to a team member by email. False (and a log line) on any miss.
+export async function sendLarkDm(email: string | null, text: string): Promise<boolean> {
+  if (!email || !larkConfigured()) return false;
+  // A person who declined DMs is skipped here, before any Lark call, so the
+  // preference holds for every caller. Their email still goes out.
+  if (await larkDmOptedOut(email)) return false;
+  const openId = await larkOpenIdByEmail(email);
+  if (!openId) {
+    console.warn(`[lark-api] no open_id for ${email}; DM skipped`);
+    return false;
+  }
+  const path = "/open-apis/im/v1/messages?receive_id_type=open_id";
+  const res = await larkFetch(path, {
+    method: "POST",
+    body: JSON.stringify({
+      receive_id: openId,
+      msg_type: "text",
+      content: JSON.stringify({ text }),
+    }),
+  });
+  if (!res) return false;
+  const json = await readJson<{ code: number; msg?: string }>(res, path);
+  if (!json) return false;
+  if (json.code !== 0) {
+    console.error("[lark-api] DM failed:", json.code, json.msg);
+    return false;
+  }
+  return true;
+}
+
+// The email Lark holds for an open_id. This is the inbound direction of
+// larkOpenIdByEmail: a card tap tells us who tapped only as an open_id, and the
+// only identity our own tables share with Lark is the email address.
+export async function larkEmailByOpenId(openId: string): Promise<string | null> {
+  const path = `/open-apis/contact/v3/users/${encodeURIComponent(openId)}?user_id_type=open_id`;
+  const res = await larkFetch(path, { method: "GET" });
+  if (!res) return null;
+  const json = await readJson<{
+    code: number;
+    msg?: string;
+    data?: { user?: { email?: string; enterprise_email?: string } };
+  }>(res, path);
+  if (!json) return null;
+  if (json.code !== 0) {
+    console.error("[lark-api] user lookup failed:", json.code, json.msg);
+    return null;
+  }
+  // A tenant may hold only the work address, only the personal one, or both.
+  const user = json.data?.user;
+  return user?.email || user?.enterprise_email || null;
+}
+
+// An interactive card DM to a team member by email. Same fail-soft contract as
+// sendLarkDm: false and a log line on any miss, never a throw.
+export async function sendLarkCard(email: string | null, card: Record<string, unknown>): Promise<boolean> {
+  if (!email || !larkConfigured()) return false;
+  const openId = await larkOpenIdByEmail(email);
+  if (!openId) {
+    console.warn(`[lark-api] no open_id for ${email}; card skipped`);
+    return false;
+  }
+  const path = "/open-apis/im/v1/messages?receive_id_type=open_id";
+  const res = await larkFetch(path, {
+    method: "POST",
+    body: JSON.stringify({
+      receive_id: openId,
+      msg_type: "interactive",
+      content: JSON.stringify(card),
+    }),
+  });
+  if (!res) return false;
+  const json = await readJson<{ code: number; msg?: string }>(res, path);
+  if (!json) return false;
+  if (json.code !== 0) {
+    console.error("[lark-api] card send failed:", json.code, json.msg);
+    return false;
+  }
+  return true;
+}
+
+export type MinutesMeta = { token: string; title: string | null; startTime: string | null };
+
+// The full transcript as plain text; null when the scope/endpoint is missing.
+export async function fetchMinutesTranscript(token: string): Promise<string | null> {
+  const res = await larkFetch(
+    `/open-apis/minutes/v1/minutes/${token}/transcript?need_speaker=true&need_timestamp=false&file_format=txt`,
+    { method: "GET" },
+  );
+  if (!res || !res.ok) {
+    if (res) console.error(`[lark-api] transcript ${token} failed: HTTP ${res.status}`);
+    return null;
+  }
+  // Success returns the file stream; error bodies are JSON with a code.
+  const text = await res.text();
+  if (text.startsWith("{")) {
+    try {
+      const json = JSON.parse(text) as { code?: number; msg?: string };
+      if (json.code && json.code !== 0) {
+        console.error(`[lark-api] transcript ${token} failed:`, json.code, json.msg);
+        return null;
+      }
+    } catch {
+      /* not JSON — treat as transcript text */
+    }
+  }
+  return text.trim() || null;
+}
+
+// Best-effort recent-Minutes listing for auto-detection. Tenant apps may not
+// have this endpoint at all — in that case (or on any error) return [] and
+// the cycle falls back to link-paste tokens.
+export async function listRecentMinutes(sinceDays: number): Promise<MinutesMeta[]> {
+  const since = Date.now() - sinceDays * 86_400_000;
+  const res = await larkFetch(
+    `/open-apis/minutes/v1/minutes?start_time=${since}&end_time=${Date.now()}&page_size=50`,
+    { method: "GET" },
+  );
+  if (!res) return [];
+  const json = await readJson<{
+    code: number;
+    msg?: string;
+    data?: { minutes?: Array<{ minute_token?: string; title?: string; start_time?: string | number }> };
+  }>(res, "/open-apis/minutes/v1/minutes");
+  if (!json) return [];
+  if (json.code !== 0 || !json.data?.minutes) {
+    if (json.code !== 0) console.warn("[lark-api] minutes list unavailable:", json.code, json.msg);
+    return [];
+  }
+  return json.data.minutes
+    .filter((m) => m.minute_token)
+    .map((m) => ({
+      token: m.minute_token as string,
+      title: m.title ?? null,
+      startTime: m.start_time != null ? new Date(Number(m.start_time)).toISOString() : null,
+    }));
+}

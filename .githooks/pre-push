@@ -1,0 +1,12 @@
+#!/bin/sh
+# Before anything leaves this machine: would the tree be refused by the fork
+# mirror? Stages and scans exactly as the workflow does (about ten seconds).
+# The two gates that most often bite after a merge run too.
+set -e
+echo "pre-push: fork safety, action auth, entity imports"
+npm run -s check:fork-safe
+npm run -s check:action-auth > /dev/null
+npm run -s check:entity-imports > /dev/null
+local_hook="$(git rev-parse --git-common-dir)/hooks/pre-push"
+[ -x "$local_hook" ] && exec "$local_hook" "$@"
+exit 0
